@@ -83,15 +83,11 @@ void loop(){
   Serial.write(CMD);  //<---- This was missing
   Serial.write(TURN); 
   Serial.write(40);
-  
-
     
  delay(3 * s);
  
  }
 
-
- 
 
  long readEncoder(){                        // Function to read and display the value of both encoders, returns value of first encoder
   long result1 = 0; 
