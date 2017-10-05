@@ -33,6 +33,8 @@ MD25_REGISTER_SOFTWARE_REV = 0x0D
 MD25_REGISTER_ACCELERATION_RATE = 0x0E
 MD25_REGISTER_MODE = 0x0F
 MD25_REGISTER_COMMAND = 0x10
+# MD25_REGISTER_RESET_ENCODERS = 0x10
+
 
 
 class md25:
@@ -64,7 +66,7 @@ class md25:
                     "%s (%i) was out of range (%i - %i). %s" % (name, args[name], range[0], range[1], message))
 
     def drive(self, motor0=None, motor1=None, speed=None, turn=None):
-        print (motor0, motor1, speed, turn)
+        # print (motor0, motor1, speed, turn)
         if 0 == self.mode:
             self.ensureSet({'motor0': motor0, 'motor1': motor1}, all=False)
             self.ensureRange((1, 255), {'motor0': motor0, 'motor1': motor1})
@@ -105,32 +107,144 @@ class md25:
         else:
             return 120
 
+    def read_encoder1(self):
+        if self.bus:
+            e1= self.bus.read_byte_data(self.address, MD25_REGISTER_ENC1A)
+            e2= self.bus.read_byte_data(self.address, MD25_REGISTER_ENC1B)
+            e3= self.bus.read_byte_data(self.address, MD25_REGISTER_ENC1C)
+            e4= self.bus.read_byte_data(self.address, MD25_REGISTER_ENC1D)
+            return [e1, e2, e3, e4]
+        else:
+            return "Error while reading encder for motor 1"
+
+    def read_encoder2(self):
+        if self.bus:
+            e1= self.bus.read_byte_data(self.address, MD25_REGISTER_ENC2A)
+            e2= self.bus.read_byte_data(self.address, MD25_REGISTER_ENC2B)
+            e3= self.bus.read_byte_data(self.address, MD25_REGISTER_ENC2C)
+            e4= self.bus.read_byte_data(self.address, MD25_REGISTER_ENC2D)
+            return [e1, e2, e3, e4]
+        else:
+            return "Error while reading encder for motor 1"
+
+    def reset_encoders(self):
+        if self.bus:
+            self.bus.write_byte_data(self.address, MD25_REGISTER_COMMAND, 0x20)
+            print ("Encoders were reset")
+        else:
+            print ("Could not reset encoders")
+
+
+import RPi.GPIO as GPIO
+
+import thread
+
+
+def measure():
+    GPIO.setmode(GPIO.BOARD)
+
+    TRIG = 7
+    ECHO = 11
+
+    GPIO.setup(TRIG, GPIO.OUT)
+    GPIO.output(TRIG, 0)
+
+    GPIO.setup(ECHO, GPIO.IN)
+
+    time.sleep(0.1)
+
+    print ("starting measurment..")
+
+    GPIO.output(TRIG,1)
+    time.sleep(0.00001)
+
+    GPIO.output(TRIG,0)
+
+    while GPIO.input(ECHO) == 0:
+            pass
+
+    start = time.time()
+
+    while GPIO.input(ECHO) == 1:
+            pass
+
+    stop = time.time()
+
+    distance = ((stop - start) * 17000)
+
+    print (distance)
+
+    GPIO.cleanup()
+
+    return distance
+
 
 start = md25(mode=1)
+
+start.reset_encoders()
+print start.read_encoder1()
+print start.read_encoder2()
+
 
 e1=time.time() + 1
 e2=time.time() + 3
 e3=time.time() + 4
-e4=time.time() + 10
+e4=time.time() + 20
 
 
-while (time.time() < e1):
-    start.drive(50, 50)
+def dr():
+    e1 = time.time() + 1
+    while time.time() < e1:
+        start.drive(50, 50)
+    start.stop()
+
+debug = True
+
+
+if (debug):
+    while (debug):
+        start.drive(127, 127)
+        print(start.read_encoder1())
+        print(start.read_encoder2())
+        if (measure() < 4):
+            start.stop()
+            print (start.read_encoder1())
+            print (start.read_encoder2())
+            break
+        elif ((start.read_encoder1() >= [0, 0, 50, 100]) and (start.read_encoder2() >= [0, 0, 50, 100])):
+            start.stop()
+            break
+
+# print ("Final measure")
+# print(start.read_encoder1())
+# print(start.read_encoder2())
+
+if not (debug):
+    while (time.time() < e4):
+        print(start.read_encoder1())
+
+        if (start.read_encoder1() == [0, 0, 3, 0]):
+            start.reset_encoders()
 
 
 
-start.stop()
 
 
 
-# while (time.time() < e2):
-#     start.drive(-100, 0)
+    # elif (time.time() < e2):
+    #     start.stop()
+    # else:
+    #     start.drive(100, 100)
+
+
+
+#start.drive(100, 100)
 #
 # start.stop()
 #
 # while (time.time() < e3):
 #     start.drive(100, 100)
-#
+
 #
 # start.stop()
 # time.sleep(1)
@@ -149,5 +263,14 @@ start.stop()
 
 
 
+#
+# try:
+#    thread.start_new_thread( measure() )
+#    thread.start_new_thread( dr() )
+# except:
+#    print "Error: unable to start thread"
+#
+# while 1:
+#    pass
 
 
