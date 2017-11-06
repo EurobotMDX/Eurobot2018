@@ -137,28 +137,25 @@ class md25:
 
 import RPi.GPIO as GPIO
 
-import thread
-
-
 def measure():
     GPIO.setmode(GPIO.BOARD)
 
-    TRIG = 7
-    ECHO = 11
-
-    GPIO.setup(TRIG, GPIO.OUT)
-    GPIO.output(TRIG, 0)
-
-    GPIO.setup(ECHO, GPIO.IN)
-
-    time.sleep(0.1)
+    TRIG = 23
+    ECHO = 24
 
     print ("starting measurment..")
 
-    GPIO.output(TRIG,1)
+    GPIO.setup(TRIG, GPIO.OUT)
+
+    GPIO.setup(ECHO, GPIO.IN)
+
+    GPIO.output(TRIG, False)
+    time.sleep(2)
+    GPIO.output(TRIG,True)
+
     time.sleep(0.00001)
 
-    GPIO.output(TRIG,0)
+    GPIO.output(TRIG, False)
 
     while GPIO.input(ECHO) == 0:
             pass
@@ -172,105 +169,41 @@ def measure():
 
     distance = ((stop - start) * 17000)
 
-    print (distance)
-
     GPIO.cleanup()
 
     return distance
 
-
 start = md25(mode=1)
-
-start.reset_encoders()
-print start.read_encoder1()
-print start.read_encoder2()
 
 
 e1=time.time() + 1
 e2=time.time() + 3
 e3=time.time() + 4
-e4=time.time() + 20
+
+e4=time.time() + 25
 
 
-def dr():
-    e1 = time.time() + 1
-    while time.time() < e1:
-        start.drive(50, 50)
-    start.stop()
-
-debug = True
-
-
-if (debug):
-    while (debug):
-        start.drive(127, 127)
-        print(start.read_encoder1())
-        print(start.read_encoder2())
-        if (measure() < 4):
-            start.stop()
-            print (start.read_encoder1())
-            print (start.read_encoder2())
-            break
-        elif ((start.read_encoder1() >= [0, 0, 50, 100]) and (start.read_encoder2() >= [0, 0, 50, 100])):
-            start.stop()
-            break
-
-# print ("Final measure")
-# print(start.read_encoder1())
-# print(start.read_encoder2())
-
-if not (debug):
-    while (time.time() < e4):
-        print(start.read_encoder1())
-
-        if (start.read_encoder1() == [0, 0, 3, 0]):
-            start.reset_encoders()
-
-
-
-
-
-
-    # elif (time.time() < e2):
-    #     start.stop()
-    # else:
-    #     start.drive(100, 100)
-
-
-
-#start.drive(100, 100)
+start.reset_encoders()
 #
-# start.stop()
+# while ((start.read_encoder1() <= [0, 0, 1, 100]) and (start.read_encoder2() <= [0, 0, 1, 100])):
+#     start.drive(2, 2)
+#     print(start.read_encoder1())
+#     print(start.read_encoder2())
 #
-# while (time.time() < e3):
-#     start.drive(100, 100)
-
-#
-# start.stop()
-# time.sleep(1)
-#
-# while (time.time() < e4):
-#     start.drive(127, -127)
-#
-# start.stop()
-
-
-# start.drive(50, 50)
-
-# start.drive(127, 0)
-
-# start.drive(-50, -50)
+# else:
+#     start.stop()
+#     print("\n After stop print encoders")
+#     print(start.read_encoder1())
+#     print(start.read_encoder2())
 
 
 
-#
-# try:
-#    thread.start_new_thread( measure() )
-#    thread.start_new_thread( dr() )
-# except:
-#    print "Error: unable to start thread"
-#
-# while 1:
-#    pass
+# while(time.time() < e4):
+#     print("\n After stop print encoders")
+#     print(start.read_encoder1())
+#     print(start.read_encoder2())
+#     time.sleep(1)
 
-
+while (time.time() < e4):
+    print (measure())
+    time.sleep(1)
