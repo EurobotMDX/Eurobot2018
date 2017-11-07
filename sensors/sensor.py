@@ -3,36 +3,41 @@ import time
 
 GPIO.setmode(GPIO.BOARD)
 
-TRIG = 23
-ECHO = 24
+TRIG = 11
+ECHO = 12
 
 GPIO.setup(TRIG, GPIO.OUT)
 GPIO.output(TRIG, 0)
 
-
 GPIO.setup(ECHO, GPIO.IN)
 
-time.sleep(0.1)
+print("starting measurment..")
 
-print ("starting measurment..")
+e4=time.time() + 25
 
-GPIO.output(TRIG,1)
-time.sleep(0.00001)
+while (e4 >= time.time()):
+    time.sleep(0.1)
 
 
-GPIO.output(TRIG,0)
+    GPIO.output(TRIG, 1)
+    time.sleep(0.00001)
 
-while GPIO.input(ECHO) == 0:
+    GPIO.output(TRIG, 0)
+
+    while GPIO.input(ECHO) == 0:
         pass
 
-start = time.time()
-print("here")
+    start = time.time()
 
-while GPIO.input(ECHO) == 1:
+    while GPIO.input(ECHO) == 1:
         pass
 
-stop = time.time()
+    stop = time.time()
+    print ((stop - start) * 17000)
+    time.sleep(1)
 
-print ((stop - start) * 17000)
+
+
+# print ((stop - start) * 17000)
 
 GPIO.cleanup()
