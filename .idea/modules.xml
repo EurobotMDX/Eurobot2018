@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Eurobot2018.iml" filepath="$PROJECT_DIR$/.idea/Eurobot2018.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/eurobot.iml" filepath="$PROJECT_DIR$/.idea/eurobot.iml" />
+    </modules>
+  </component>
+</project>

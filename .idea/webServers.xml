@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="69d86c2a-c587-49fe-97c3-9c1b95ee8bc0" name="rasperry" url="http://192.168.2.2">
+        <fileTransfer host="192.168.2.2" port="22" rootFolder="/home/pi/Desktop/robot" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
