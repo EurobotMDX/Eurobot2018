@@ -1,4 +1,5 @@
 import time
+import RPi.GPIO as GPIO
 
 dummy = True
 try:
@@ -11,7 +12,6 @@ except:
     print
     'smbus not available; in dummy mode'
 
-import time
 
 MD25_DEFAULT_ADDRESS = 0x58
 MD25_DEFAULT_MODE = 0
@@ -34,7 +34,6 @@ MD25_REGISTER_ACCELERATION_RATE = 0x0E
 MD25_REGISTER_MODE = 0x0F
 MD25_REGISTER_COMMAND = 0x10
 # MD25_REGISTER_RESET_ENCODERS = 0x10
-
 
 
 class md25:
@@ -130,60 +129,185 @@ class md25:
     def reset_encoders(self):
         if self.bus:
             self.bus.write_byte_data(self.address, MD25_REGISTER_COMMAND, 0x20)
-            print ("Encoders were reset")
+            print("Encoders were reset")
         else:
-            print ("Could not reset encoders")
+            print("Could not reset encoders")
 
 
-import RPi.GPIO as GPIO
+start = md25(mode=1)
 
-def measure():
-    GPIO.setmode(GPIO.BOARD)
 
-    TRIG = 23
-    ECHO = 24
 
-    print ("starting measurment..")
 
-    GPIO.setup(TRIG, GPIO.OUT)
+### ----- Setup for sensors -----
 
-    GPIO.setup(ECHO, GPIO.IN)
+GPIO.setmode(GPIO.BOARD)
 
-    GPIO.output(TRIG, False)
-    time.sleep(2)
-    GPIO.output(TRIG,True)
+TRIG = 23
+ECHO = 24
+
+GPIO.setup(TRIG, GPIO.OUT)
+GPIO.output(TRIG, 0)
+
+GPIO.setup(ECHO, GPIO.IN)
+
+print("Starting measurement...")
+
+e4 = time.time() + 25
+
+def measureDistance():
+
+    time.sleep(0.1)
+
+    GPIO.output(TRIG, 1)
 
     time.sleep(0.00001)
 
-    GPIO.output(TRIG, False)
+    GPIO.output(TRIG, 0)
 
     while GPIO.input(ECHO) == 0:
-            pass
+        pass
 
     start = time.time()
 
     while GPIO.input(ECHO) == 1:
-            pass
+        pass
 
     stop = time.time()
 
     distance = ((stop - start) * 17000)
 
-    GPIO.cleanup()
-
     return distance
 
-start = md25(mode=1)
 
 
-e1=time.time() + 1
-e2=time.time() + 3
-e3=time.time() + 4
-
-e4=time.time() + 25
 
 
-start.reset_encoders()
+# e1=time.time() + 1
+# e2=time.time() + 3
+# e3=time.time() + 4
+# e4=time.time() + 25
+
+# def driveForward(enc1 = [], enc2 = []):
+#     if (enc1 <= [0, 0, 1, 200] or enc2 <= [0, 0, 1, 200]):
+#         start.drive(30, 30)
+#         start.stop()
+#     else:
+#         start.reset_encoders()
+#         break
+
+
+
+def driveForward(enc1, enc2, speed):
+
+    start.reset_encoders()
+    currentENC1 = start.read_encoder1()
+    currentENC2 = start.read_encoder2()
+
+    while currentENC1 <= enc1 or currentENC2 <= enc2:
+        start.drive(speed, speed)
+
+        currentENC1 = start.read_encoder1()
+        currentENC2 = start.read_encoder2()
+
+    else:
+
+        start.stop()
+        start.reset_encoders()
+
+        # print("Robot driven forward for  values are --- encoder 1: {} --- encoder 2: {}\n".format(enc1, enc2))
+
+
+def driveBackward(enc1, enc2, speed):
+    start.reset_encoders()
+
+    currentENC1 = [255, 255, 255, 255]
+    currentENC2 = [255, 255, 255, 255]
+
+    # currentENC1 = start.read_encoder1()
+    # currentENC2 = start.read_encoder2()
+
+    # Change direction by changing a speed to negative number
+
+    speed = 0 - speed
+
+    enc1 = [255 - enc1[0], 255 - enc1[1], 255 - enc1[2], 255 - enc1[3]]
+    enc2 = [255 - enc2[0], 255 - enc2[1], 255 - enc2[2], 255 - enc2[3]]
+
+    while currentENC1 >= enc1 or currentENC2 >= enc2:
+    # while True:
+
+        # print("speed is : {}".format(speed))
+
+
+        start.drive(speed, speed)
+        time.sleep(0.3)
+        currentENC1 = start.read_encoder1()
+        currentENC2 = start.read_encoder2()
+
+        # print("Encoders values are --- encoder 1: {} --- encoder 2: {}\n".format(enc1, enc2))
+        # print("Encoders values are --- encoder 1: {} --- encoder 2: {}\n".format(currentENC1, currentENC2))
+
+    else:
+        start.stop()
+
+
+if __name__ == '__main__':
+    try:
+        # start.reset_encoders()
+        #
+        # enc1 = []
+        # enc2 = []
+
+        driveForward([0, 0, 1, 200], [0, 0, 1, 200], 30)
+        driveBackward([0, 0, 1, 200], [0, 0, 1, 200], 30)
+
+        # driveBackward([255, 255, 255 , 0], [255, 255, 255, 0], -30)
+
+
+        # while enc1 <= [0, 0, 1, 200] or enc2 <= [0, 0, 1, 200]:
+        #     start.drive(30, 30)
+        #
+        #     enc1 = start.read_encoder1()
+        #     enc2 = start.read_encoder2()
+        #
+        #     sensortDist = measureDistance()
+        #     sensortDist = round(sensortDist, 2)
+        #
+        #     if (sensortDist < 0.01):
+        #         print(sensortDist)
+        #
+        #     # print("Encoders values are --- encoder 1: {} --- encoder 2: {}\n".format(enc1, enc2))
+        #
+        #     time.sleep(0.01)
+        #
+        # else:
+        #     start.stop()
+
+
+    except KeyboardInterrupt:
+        print("Stopped by user")
+        GPIO.cleanup()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#start.reset_encoders()
 #
 # while ((start.read_encoder1() <= [0, 0, 1, 100]) and (start.read_encoder2() <= [0, 0, 1, 100])):
 #     start.drive(2, 2)
@@ -203,7 +327,3 @@ start.reset_encoders()
 #     print(start.read_encoder1())
 #     print(start.read_encoder2())
 #     time.sleep(1)
-
-while (time.time() < e4):
-    print (measure())
-    time.sleep(1)
