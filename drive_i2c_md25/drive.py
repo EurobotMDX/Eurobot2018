@@ -137,35 +137,31 @@ class md25:
 
 import RPi.GPIO as GPIO
 
+####setup for sensors
+
+GPIO.setmode(GPIO.BOARD)
+TRIG = 23
+ECHO = 24
+
+GPIO.setup(TRIG, GPIO.OUT)
+
+GPIO.setup(ECHO, GPIO.IN)
+
 def measure():
-    GPIO.setmode(GPIO.BOARD)
 
-    TRIG = 23
-    ECHO = 24
-
-    print ("starting measurment..")
-
-    GPIO.setup(TRIG, GPIO.OUT)
-
-    GPIO.setup(ECHO, GPIO.IN)
-
-    GPIO.output(TRIG, False)
-    time.sleep(2)
     GPIO.output(TRIG,True)
 
     time.sleep(0.00001)
 
     GPIO.output(TRIG, False)
 
-    while GPIO.input(ECHO) == 0:
-            pass
-
     start = time.time()
+    
+    while GPIO.input(ECHO) == 0:
+            start = time.time()
 
     while GPIO.input(ECHO) == 1:
-            pass
-
-    stop = time.time()
+            stop = time.time()
 
     distance = ((stop - start) * 17000)
 
@@ -204,6 +200,14 @@ start.reset_encoders()
 #     print(start.read_encoder2())
 #     time.sleep(1)
 
-while (time.time() < e4):
-    print (measure())
-    time.sleep(1)
+
+if __name__ == '__main__':
+    try:
+        while True:
+            print (measure())
+            time.sleep(0.3)
+
+    except KeyboardInterrupt:
+        print("Stopped by user")
+        GPIO.cleanup()
+
