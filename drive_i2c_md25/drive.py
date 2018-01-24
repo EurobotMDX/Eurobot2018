@@ -137,61 +137,8 @@ class md25:
 start = md25(mode=1)
 
 
-####setup for sensors
 
-GPIO.setmode(GPIO.BOARD)
-TRIG = 23
-ECHO = 24
-
-GPIO.setup(TRIG, GPIO.OUT)
-
-GPIO.setup(ECHO, GPIO.IN)
-
-# def measure():
-
-    # GPIO.output(TRIG,True)
-### ----- Setup for sensors -----
-
-GPIO.setmode(GPIO.BOARD)
-
-TRIG = 23
-ECHO = 24
-
-GPIO.setup(TRIG, GPIO.OUT)
-GPIO.output(TRIG, 0)
-
-GPIO.setup(ECHO, GPIO.IN)
-
-print("Starting measurement...")
-
-e4 = time.time() + 25
-
-def measureDistance():
-
-    time.sleep(0.1)
-
-    GPIO.output(TRIG, 1)
-
-    time.sleep(0.00001)
-
-    GPIO.output(TRIG, 0)
-
-    while GPIO.input(ECHO) == 0:
-        pass
-
-    start = time.time()
-    
-    while GPIO.input(ECHO) == 0:
-            start = time.time()
-
-    while GPIO.input(ECHO) == 1:
-        stop = time.time()
-        pass
-
-    stop = time.time()
-    distance = ((stop - start) * 17000)
-    return distance
-
+# Custom timing
 
 # e1=time.time() + 1
 # e2=time.time() + 3
@@ -262,6 +209,7 @@ def driveBackward(enc1, enc2, speed):
         start.stop()
 
 
+
 if __name__ == '__main__':
     try:
         # start.reset_encoders()
@@ -270,80 +218,9 @@ if __name__ == '__main__':
         # enc2 = []
 
         driveForward([0, 0, 1, 200], [0, 0, 1, 200], 30)
-        driveBackward([0, 0, 1, 200], [0, 0, 1, 200], 30)
-
-        # driveBackward([255, 255, 255 , 0], [255, 255, 255, 0], -30)
+#        driveBackward([0, 0, 1, 200], [0, 0, 1, 200], 30)
 
 
-        # while enc1 <= [0, 0, 1, 200] or enc2 <= [0, 0, 1, 200]:
-        #     start.drive(30, 30)
-        #
-        #     enc1 = start.read_encoder1()
-        #     enc2 = start.read_encoder2()
-        #
-        #     sensortDist = measureDistance()
-        #     sensortDist = round(sensortDist, 2)
-        #
-        #     if (sensortDist < 0.01):
-        #         print(sensortDist)
-        #
-        #     # print("Encoders values are --- encoder 1: {} --- encoder 2: {}\n".format(enc1, enc2))
-        #
-        #     time.sleep(0.01)
-        #
-        # else:
-        #     start.stop()
-
-
-    except KeyboardInterrupt:
-        print("Stopped by user")
-        GPIO.cleanup()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#start.reset_encoders()
-#
-# while ((start.read_encoder1() <= [0, 0, 1, 100]) and (start.read_encoder2() <= [0, 0, 1, 100])):
-#     start.drive(2, 2)
-#     print(start.read_encoder1())
-#     print(start.read_encoder2())
-#
-# else:
-#     start.stop()
-#     print("\n After stop print encoders")
-#     print(start.read_encoder1())
-#     print(start.read_encoder2())
-
-
-
-# while(time.time() < e4):
-#     print("\n After stop print encoders")
-#     print(start.read_encoder1())
-#     print(start.read_encoder2())
-#     time.sleep(1)
-
-
-if __name__ == '__main__':
-    try:
-        while True:
-            print (measure())
-            time.sleep(0.3)
 
     except KeyboardInterrupt:
         print("Stopped by user")
