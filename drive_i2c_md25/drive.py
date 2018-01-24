@@ -86,10 +86,10 @@ class md25:
         if (2 == self.mode or 3 == self.mode) and self.bus:
             if speed:
                 self.bus.write_byte_data(self.address, MD25_REGISTER_SPEED1, speed)
-                time.sleep(5)
+                #time.sleep(5)
             if turn:
                 self.bus.write_byte_data(self.address, MD25_REGISTER_SPEED2_TURN, turn)
-                time.sleep(5)
+                #time.sleep(5)
 
     def stop(self):
         print('STOP!!!')
