@@ -137,9 +137,6 @@ class md25:
 start = md25(mode=1)
 
 
-
-
-<<<<<<< HEAD
 ####setup for sensors
 
 GPIO.setmode(GPIO.BOARD)
@@ -150,10 +147,9 @@ GPIO.setup(TRIG, GPIO.OUT)
 
 GPIO.setup(ECHO, GPIO.IN)
 
-def measure():
+# def measure():
 
-    GPIO.output(TRIG,True)
-=======
+    # GPIO.output(TRIG,True)
 ### ----- Setup for sensors -----
 
 GPIO.setmode(GPIO.BOARD)
@@ -189,7 +185,7 @@ def measureDistance():
             start = time.time()
 
     while GPIO.input(ECHO) == 1:
-            stop = time.time()
+        stop = time.time()
         pass
 
     stop = time.time()
@@ -341,7 +337,6 @@ if __name__ == '__main__':
 #     print(start.read_encoder1())
 #     print(start.read_encoder2())
 #     time.sleep(1)
-<<<<<<< HEAD
 
 
 if __name__ == '__main__':
@@ -354,5 +349,3 @@ if __name__ == '__main__':
         print("Stopped by user")
         GPIO.cleanup()
 
-=======
->>>>>>> 8c443a88d1b923e58259f581f5a4e5ac29901eba
