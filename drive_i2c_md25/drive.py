@@ -175,38 +175,26 @@ def measureDistance():
     time.sleep(0.1)
 
     GPIO.output(TRIG, 1)
->>>>>>> 8c443a88d1b923e58259f581f5a4e5ac29901eba
 
     time.sleep(0.00001)
 
     GPIO.output(TRIG, 0)
 
-<<<<<<< HEAD
-=======
     while GPIO.input(ECHO) == 0:
         pass
 
->>>>>>> 8c443a88d1b923e58259f581f5a4e5ac29901eba
     start = time.time()
     
     while GPIO.input(ECHO) == 0:
             start = time.time()
 
     while GPIO.input(ECHO) == 1:
-<<<<<<< HEAD
             stop = time.time()
-=======
         pass
 
     stop = time.time()
->>>>>>> 8c443a88d1b923e58259f581f5a4e5ac29901eba
-
     distance = ((stop - start) * 17000)
-
     return distance
-
-
-
 
 
 # e1=time.time() + 1
