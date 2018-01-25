@@ -1,6 +1,5 @@
 import time
 import RPi.GPIO as GPIO
-import struct
 
 dummy = True
 try:
