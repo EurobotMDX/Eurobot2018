@@ -143,6 +143,13 @@ class md25:
         else:
             print("Could not reset encoders")
 
+    def disable_2s_timeout(self):
+        if self.bus:
+            self.bus.write_byte_data(self.address, MD25_REGISTER_COMMAND, 0x32)
+            print("Disabled 2s timeout")
+        else:
+            print("Error when attempting to disable 2s timeout")
+
 
 start = md25(mode=1)
 
@@ -202,7 +209,7 @@ if __name__ == '__main__':
     try:
         # showCounterForWheel(25)
         driveForward(10, 10)
-        driveBackward(30, 10)
+        # driveBackward(30, 10)
 
 
     except KeyboardInterrupt:

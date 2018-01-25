@@ -1,10 +1,10 @@
 import curses
 from drive import *
+
 # import RPi.GPIO as GPIO
 
 # get the curses screen window
 screen = curses.initscr()
-
 
 # respond to keys immediately (don't wait for enter)
 curses.cbreak()
@@ -13,22 +13,21 @@ curses.cbreak()
 screen.keypad(True)
 
 start = md25(mode=1)
+start.disable_2s_timeout()
 
 speed = 50
-
 turnSpeed = 30
 
 try:
     while True:
-        print("Encoders values are --- encoder 1: {} --- encoder 2: {}\n".format(start.read_encoder1(), start.read_encoder2()))
         char = screen.getch()
         if char == ord('q'):
             break
         elif char == ord('f'):
-            global speed 
+            global speed
             speed = speed + 10
             print("Speed: {}".format(speed))
-            
+
         elif char == ord('s'):
             global speed
             speed = speed - 10
