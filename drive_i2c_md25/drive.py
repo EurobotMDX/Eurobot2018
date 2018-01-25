@@ -1,10 +1,10 @@
 import time
 import RPi.GPIO as GPIO
+import struct
 
 dummy = True
 try:
     import smbus
-
     dummy = False
     print
     'smbus is available'
@@ -92,13 +92,13 @@ class md25:
                 #time.sleep(5)
 
     def stop(self):
-        print('STOP!!!')
         if (0 == self.mode or 2 == self.mode) and self.bus:
             self.bus.write_byte_data(self.address, MD25_REGISTER_SPEED1, 128)
             self.bus.write_byte_data(self.address, MD25_REGISTER_SPEED2_TURN, 128)
         if (1 == self.mode or 3 == self.mode) and self.bus:
             self.bus.write_byte_data(self.address, MD25_REGISTER_SPEED1, 0)
             self.bus.write_byte_data(self.address, MD25_REGISTER_SPEED2_TURN, 0)
+        # print('STOP!!!')
 
     def battery(self):
         if self.bus:
@@ -112,7 +112,12 @@ class md25:
             e2= self.bus.read_byte_data(self.address, MD25_REGISTER_ENC1B)
             e3= self.bus.read_byte_data(self.address, MD25_REGISTER_ENC1C)
             e4= self.bus.read_byte_data(self.address, MD25_REGISTER_ENC1D)
-            return [e1, e2, e3, e4]
+
+            # Return an array of encoder values
+            # return [e1, e2, e3, e4]
+            totalEncoder = e4 + (255 * e3) + (65025 * e2) + (16581375 * e1)
+
+            return totalEncoder
         else:
             return "Error while reading encder for motor 1"
 
@@ -122,7 +127,12 @@ class md25:
             e2= self.bus.read_byte_data(self.address, MD25_REGISTER_ENC2B)
             e3= self.bus.read_byte_data(self.address, MD25_REGISTER_ENC2C)
             e4= self.bus.read_byte_data(self.address, MD25_REGISTER_ENC2D)
-            return [e1, e2, e3, e4]
+
+            # Return an array of encoder values
+            # return [e1, e2, e3, e4]
+            totalEncoder = e4 + (255 * e3) + (65025 * e2) + (16581375 * e1)
+
+            return totalEncoder
         else:
             return "Error while reading encder for motor 1"
 
@@ -136,90 +146,63 @@ class md25:
 
 start = md25(mode=1)
 
+oneEnc = 0.872664626
 
+def showCounterForWheel(timein = 10):
+    countdown = time.time() + timein
+    startTime = time.time()
 
-# Custom timing
-
-# e1=time.time() + 1
-# e2=time.time() + 3
-# e3=time.time() + 4
-# e4=time.time() + 25
-
-# def driveForward(enc1 = [], enc2 = []):
-#     if (enc1 <= [0, 0, 1, 200] or enc2 <= [0, 0, 1, 200]):
-#         start.drive(30, 30)
-#         start.stop()
-#     else:
-#         start.reset_encoders()
-#         break
-
-
-
-def driveForward(enc1, enc2, speed):
+    print("coundown is: {} starttime is: {}".format(countdown, startTime))
 
     start.reset_encoders()
-    currentENC1 = start.read_encoder1()
-    currentENC2 = start.read_encoder2()
 
-    while currentENC1 <= enc1 or currentENC2 <= enc2:
-        start.drive(speed, speed)
-
-        currentENC1 = start.read_encoder1()
-        currentENC2 = start.read_encoder2()
-
-    else:
-
-        start.stop()
-        start.reset_encoders()
-
-        # print("Robot driven forward for  values are --- encoder 1: {} --- encoder 2: {}\n".format(enc1, enc2))
+    while (countdown > startTime):
+        print("Encoders values are --- encoder 1: {} --- encoder 2: {}\n".format(start.read_encoder1(), start.read_encoder2()))
 
 
-def driveBackward(enc1, enc2, speed):
+def driveForward(distance, speed):
     start.reset_encoders()
 
-    currentENC1 = [255, 255, 255, 255]
-    currentENC2 = [255, 255, 255, 255]
+    encoderCount = (distance * 10) / oneEnc
 
-    # currentENC1 = start.read_encoder1()
-    # currentENC2 = start.read_encoder2()
-
-    # Change direction by changing a speed to negative number
-
-    speed = 0 - speed
-
-    enc1 = [255 - enc1[0], 255 - enc1[1], 255 - enc1[2], 255 - enc1[3]]
-    enc2 = [255 - enc2[0], 255 - enc2[1], 255 - enc2[2], 255 - enc2[3]]
-
-    while currentENC1 >= enc1 or currentENC2 >= enc2:
-    # while True:
-
-        # print("speed is : {}".format(speed))
-
-
+    while (start.read_encoder1() <= encoderCount and start.read_encoder2() <= encoderCount):
         start.drive(speed, speed)
-        time.sleep(0.3)
-        currentENC1 = start.read_encoder1()
-        currentENC2 = start.read_encoder2()
-
-        # print("Encoders values are --- encoder 1: {} --- encoder 2: {}\n".format(enc1, enc2))
-        # print("Encoders values are --- encoder 1: {} --- encoder 2: {}\n".format(currentENC1, currentENC2))
-
     else:
         start.stop()
 
+
+def driveBackward(distance, speed):
+    start.reset_encoders()
+
+    encoderCount = (distance * 10) / oneEnc
+
+    encMax = 4244897279
+
+    encoderCountBack = encMax - encoderCount
+
+    speed = - speed
+
+    start.drive(speed, speed)
+
+    print(encoderCountBack)
+    print(speed)
+    print("Encoders values are --- encoder 1: {} --- encoder 2: {}\n".format(start.read_encoder1(), start.read_encoder2()))
+
+
+    while (start.read_encoder1() >= encoderCountBack and start.read_encoder2() >= encoderCountBack or (start.read_encoder2() == 0 or start.read_encoder1() == 0)):
+        print("\n")
+        print("Encoders values are --- encoder 1: {} --- encoder 2: {}\n".format(start.read_encoder1(), start.read_encoder2()))
+
+        start.drive(speed, speed)
+    else:
+        start.stop()
 
 
 if __name__ == '__main__':
     try:
-        # start.reset_encoders()
-        #
-        # enc1 = []
-        # enc2 = []
-
-        driveForward([0, 0, 1, 200], [0, 0, 1, 200], 30)
-#        driveBackward([0, 0, 1, 200], [0, 0, 1, 200], 30)
-
+        # showCounterForWheel(25)
+        driveForward(10, 10)
+        driveBackward(30, 10)
 
 
     except KeyboardInterrupt:
