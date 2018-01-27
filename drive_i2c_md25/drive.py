@@ -1,15 +1,15 @@
 import time
 import RPi.GPIO as GPIO
+import math
+from math import pi
 
 dummy = True
 try:
     import smbus
     dummy = False
-    print
-    'smbus is available'
+    print('SMBUS is available')
 except:
-    print
-    'smbus not available; in dummy mode'
+    print('SMBUS not available; in dummy mode')
 
 
 MD25_DEFAULT_ADDRESS = 0x58
@@ -32,7 +32,6 @@ MD25_REGISTER_SOFTWARE_REV = 0x0D
 MD25_REGISTER_ACCELERATION_RATE = 0x0E
 MD25_REGISTER_MODE = 0x0F
 MD25_REGISTER_COMMAND = 0x10
-# MD25_REGISTER_RESET_ENCODERS = 0x10
 
 
 class md25:
@@ -40,11 +39,9 @@ class md25:
         self.mode = mode
         self.address = address
         self.bus = None
-        print
-        'dummy is', dummy
+        print('Dummy is:', dummy)
         if not dummy:
-            print
-            'setting up SMBus'
+            print('Setting up SMBus\n')
             self.bus = smbus.SMBus(bus)
             self.bus.write_byte_data(self.address, MD25_REGISTER_MODE, self.mode)
 
@@ -159,13 +156,25 @@ class md25:
 
 start = md25(mode=1)
 
-oneEnc = 0.872664626
+# Constants for robot
+
+# Diameter of wheels in mm
+wheelDiameter = 100
+
+# Encoder values for one full revolution of the wheel
+oneRevolution = 360
+
+# Encoder value when robot travel 1 mm
+oneEncMM = 2 * pi * (wheelDiameter / 2) / oneRevolution / 10
+
+# Distance between wheels in cm
+wheelsSpacing = 25.9
 
 def showCounterForWheel(timein = 10):
     countdown = time.time() + timein
     startTime = time.time()
 
-    print("coundown is: {} starttime is: {}".format(countdown, startTime))
+    print("Coundown is: {} starttime is: {}".format(countdown, startTime))
 
     start.reset_encoders()
 
@@ -173,10 +182,10 @@ def showCounterForWheel(timein = 10):
         print("Encoders values are --- encoder 1: {} --- encoder 2: {}\n".format(start.read_encoder1(), start.read_encoder2()))
 
 
-def driveForward(distance, speed):
+def driveRobot(distance, speed):
     start.reset_encoders()
 
-    encoderCount = (distance * 10) / oneEnc
+    encoderCount = distance / oneEncMM
 
     while (start.read_encoder1() <= encoderCount and start.read_encoder2() <= encoderCount):
         start.drive(speed, speed)
@@ -184,39 +193,35 @@ def driveForward(distance, speed):
         start.stop()
 
 
-def driveBackward(distance, speed):
+def turnRobot(degrees, speed, clockwise=True):
     start.reset_encoders()
 
-    encoderCount = (distance * 10) / oneEnc
+    circumferenceOfCircle = 2 * pi * (wheelsSpacing / 2)
 
-    encMax = 4244897279
+    oneWheelDistance = (circumferenceOfCircle / 360) * degrees
 
-    encoderCountBack = encMax - encoderCount
+    encoderCount = oneWheelDistance / oneEncMM
 
-    speed = - speed
+    if clockwise:
+        while start.read_encoder1() <= encoderCount:
+            start.drive(speed, -speed)
+        else:
+            start.stop()
 
-    start.drive(speed, speed)
+    elif not clockwise:
+        while start.read_encoder2() <= encoderCount:
+            start.drive(-speed, speed)
+        else:
+            start.stop()
 
-    print(encoderCountBack)
-    print(speed)
-    print("Encoders values are --- encoder 1: {} --- encoder 2: {}\n".format(start.read_encoder1(), start.read_encoder2()))
-
-
-    while (start.read_encoder1() >= encoderCountBack and start.read_encoder2() >= encoderCountBack or (start.read_encoder2() == 0 or start.read_encoder1() == 0)):
-        print("\n")
-        print("Encoders values are --- encoder 1: {} --- encoder 2: {}\n".format(start.read_encoder1(), start.read_encoder2()))
-
-        start.drive(speed, speed)
     else:
-        start.stop()
+        print("Error while robot turning!")
 
 
 if __name__ == '__main__':
     try:
-        # showCounterForWheel(25)
-        driveForward(10, 10)
-        # driveBackward(30, 10)
 
+        turnRobot(360, 10)
 
     except KeyboardInterrupt:
         print("Stopped by user")
