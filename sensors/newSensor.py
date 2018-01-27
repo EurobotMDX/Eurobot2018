@@ -1,90 +1,60 @@
 #!/usr/bin/python
-#+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-#|R|a|s|p|b|e|r|r|y|P|i|-|S|p|y|.|c|o|.|u|k|
-#+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-#
-# ultrasonic_2.py
-# Measure distance using an ultrasonic module
-# in a loop.
-#
-# Author : Matt Hawkins
-# Date   : 28/01/2013
-
-# -----------------------
-# Import required Python libraries
-# -----------------------
+# speed of sound 1126 feet per second
+# 13512 inches per second
+# import time module
 import time
+
+# import gpio module
 import RPi.GPIO as GPIO
 
-# -----------------------
-# Define some functions
-# -----------------------
+GPIO.setmode(GPIO.BOARD)
 
-def measure():
-  # This function measures a distance
-  GPIO.output(GPIO_TRIGGER, True)
-  time.sleep(0.00001)
-  GPIO.output(GPIO_TRIGGER, False)
-  start = time.time()
+count = 0
+# loop used to check values multiple times
+while (True):
 
-  while GPIO.input(GPIO_ECHO)==0:
-    start = time.time()
+    alpha = 0
+    beta = 0
+    gamma = 0
+    delta = 0
+    inch = 0
+    cm = 0
 
-  while GPIO.input(GPIO_ECHO)==1:
-    stop = time.time()
+    # set up gpio pin 11 as output
+    GPIO.setup(11, GPIO.OUT)
 
-  elapsed = stop-start
-  distance = (elapsed * 34300)/2
+    # Be sure there is no signal to parallax ping: pin 11, 0 = False
+    GPIO.output(11, 0)
 
-  return distance
+    # send parallax ping a signal: pin 11, 1 = True
+    GPIO.output(11, 1)
 
-def measure_average():
-  # This function takes 3 measurements and
-  # returns the average.
-  distance1=measure()
-  time.sleep(0.1)
-  distance2=measure()
-  time.sleep(0.1)
-  distance3=measure()
-  distance = distance1 + distance2 + distance3
-  distance = distance / 3
-  return distance
+    time.sleep(0.00075)
+    # set up gpio pin 11 as input
+    GPIO.setup(11, GPIO.IN)
 
-# -----------------------
-# Main Script
-# -----------------------
+    # send parallax ping a signal: pin 11, 1 = True
+    GPIO.input(11)
 
-# Use BCM GPIO references
-# instead of physical pin numbers
-GPIO.setmode(GPIO.BCM)
+    # Start time
+    alpha = time.time()
 
-# Define GPIO to use on Pi
-GPIO_TRIGGER = 23
-GPIO_ECHO    = 24
-
-print "Ultrasonic Measurement"
-
-# Set pins as output and input
-GPIO.setup(GPIO_TRIGGER,GPIO.OUT)  # Trigger
-GPIO.setup(GPIO_ECHO,GPIO.IN)      # Echo
-
-# Set trigger to False (Low)
-GPIO.output(GPIO_TRIGGER, False)
-
-# Wrap main content in a try block so we can
-# catch the user pressing CTRL-C and run the
-# GPIO cleanup function. This will also prevent
-# the user seeing lots of unnecessary error
-# messages.
-try:
-
-  while True:
-
-    distance = measure_average()
-    print "Distance : %.1f" % distance
-    time.sleep(1)
-
-except KeyboardInterrupt:
-  # User pressed CTRL-C
-  # Reset GPIO settings
-  GPIO.cleanup()
+    while GPIO.input(11) == 1 and delta < 20:
+        delta = delta + 1
+    else:
+        # Stop time
+        beta = time.time()
+        gamma = beta - alpha
+        # print parallax ping value
+        # calc for speed of sound at inches per second should be "correct"
+        inch = 13512 * gamma
+        # calc for speed at centimeters per second should be "correct"
+        cm = 34320.48 * gamma
+        # displays time, inches, cm should be the distance the object is from the device
+        print "Time: ", gamma
+        print "Inch: ", inch
+        print "CM: ", cm
+    # increase count by 1
+    count = count + 1
+    # sleep thread for 2 seconds
+    time.sleep(0.00001)

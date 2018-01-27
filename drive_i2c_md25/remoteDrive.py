@@ -1,14 +1,10 @@
 import curses
-import drive
+from drive import *
 # import RPi.GPIO as GPIO
-
-
 
 # get the curses screen window
 screen = curses.initscr()
 
-# turn off input echoing
-curses.noecho()
 
 # respond to keys immediately (don't wait for enter)
 curses.cbreak()
@@ -17,35 +13,39 @@ curses.cbreak()
 screen.keypad(True)
 
 start = md25(mode=1)
-    #
-    #
-    # except KeyboardInterrupt:
-    #     print("Stopped by user")
-    #     GPIO.cleanup()
-    #
 
+speed = 50
 
+turnSpeed = 30
 
 try:
     while True:
+        print("Encoders values are --- encoder 1: {} --- encoder 2: {}\n".format(start.read_encoder1(), start.read_encoder2()))
         char = screen.getch()
         if char == ord('q'):
             break
+        elif char == ord('f'):
+            global speed 
+            speed = speed + 10
+            print("Speed: {}".format(speed))
+            
+        elif char == ord('s'):
+            global speed
+            speed = speed - 10
+            print("Speed: {}".format(speed))
+
+        elif char == ord(' '):
+            start.stop()
         elif char == curses.KEY_RIGHT:
-            print("right")
-            # print doesn't work with curses, use addstr instead
-            # screen.addstr(0, 0, 'right')
+            start.drive(turnSpeed, -turnSpeed)
         elif char == curses.KEY_LEFT:
-            print("left")
-            # screen.addstr(0, 0, 'left ')
+            start.drive(-turnSpeed, turnSpeed)
         elif char == curses.KEY_UP:
-            start.drive(30, 30)
-            # screen.addstr(0, 0, 'up   ')
+            start.drive(speed, speed)
         elif char == curses.KEY_DOWN:
-            print("down")
-            # screen.addstr(0, 0, 'down ')
-        else:
-            start.drive(0, 0)
+            start.drive(-speed, -speed)
+        elif not char:
+            start.stop()
 finally:
     # shut down cleanly
     curses.nocbreak();
