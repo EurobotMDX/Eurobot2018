@@ -1,5 +1,6 @@
 import curses
-from drive import *
+from robotFunctions import *
+
 
 # get the curses screen window
 screen = curses.initscr()
