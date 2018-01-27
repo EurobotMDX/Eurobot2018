@@ -1,18 +1,16 @@
 import time
 import RPi.GPIO as GPIO
+import math
+from math import pi
 
 dummy = True
 try:
     import smbus
-
     dummy = False
-    print
-    'smbus is available'
+    print('SMBUS is available')
 except:
-    print
-    'smbus not available; in dummy mode'
+    print('SMBUS not available; in dummy mode')
 
-import time
 
 MD25_DEFAULT_ADDRESS = 0x58
 MD25_DEFAULT_MODE = 0
@@ -36,18 +34,14 @@ MD25_REGISTER_MODE = 0x0F
 MD25_REGISTER_COMMAND = 0x10
 
 
-# MD25_REGISTER_RESET_ENCODERS = 0x10
-
 class md25:
     def __init__(self, mode=MD25_DEFAULT_MODE, bus=1, address=MD25_DEFAULT_ADDRESS):
         self.mode = mode
         self.address = address
         self.bus = None
-        print
-        'dummy is', dummy
+        print('Dummy is:', dummy)
         if not dummy:
-            print
-            'setting up SMBus'
+            print('Setting up SMBus\n')
             self.bus = smbus.SMBus(bus)
             self.bus.write_byte_data(self.address, MD25_REGISTER_MODE, self.mode)
 
@@ -88,19 +82,19 @@ class md25:
         if (2 == self.mode or 3 == self.mode) and self.bus:
             if speed:
                 self.bus.write_byte_data(self.address, MD25_REGISTER_SPEED1, speed)
-                time.sleep(5)
+                #time.sleep(5)
             if turn:
                 self.bus.write_byte_data(self.address, MD25_REGISTER_SPEED2_TURN, turn)
-                time.sleep(5)
+                #time.sleep(5)
 
     def stop(self):
-        print('STOP!!!')
         if (0 == self.mode or 2 == self.mode) and self.bus:
             self.bus.write_byte_data(self.address, MD25_REGISTER_SPEED1, 128)
             self.bus.write_byte_data(self.address, MD25_REGISTER_SPEED2_TURN, 128)
         if (1 == self.mode or 3 == self.mode) and self.bus:
             self.bus.write_byte_data(self.address, MD25_REGISTER_SPEED1, 0)
             self.bus.write_byte_data(self.address, MD25_REGISTER_SPEED2_TURN, 0)
+        # print('STOP!!!')
 
     def battery(self):
         if self.bus:
@@ -110,21 +104,31 @@ class md25:
 
     def read_encoder1(self):
         if self.bus:
-            e1 = self.bus.read_byte_data(self.address, MD25_REGISTER_ENC1A)
-            e2 = self.bus.read_byte_data(self.address, MD25_REGISTER_ENC1B)
-            e3 = self.bus.read_byte_data(self.address, MD25_REGISTER_ENC1C)
-            e4 = self.bus.read_byte_data(self.address, MD25_REGISTER_ENC1D)
-            return [e1, e2, e3, e4]
+            e1= self.bus.read_byte_data(self.address, MD25_REGISTER_ENC1A)
+            e2= self.bus.read_byte_data(self.address, MD25_REGISTER_ENC1B)
+            e3= self.bus.read_byte_data(self.address, MD25_REGISTER_ENC1C)
+            e4= self.bus.read_byte_data(self.address, MD25_REGISTER_ENC1D)
+
+            # Return an array of encoder values
+            # return [e1, e2, e3, e4]
+            totalEncoder = e4 + (255 * e3) + (65025 * e2) + (16581375 * e1)
+
+            return totalEncoder
         else:
             return "Error while reading encder for motor 1"
 
     def read_encoder2(self):
         if self.bus:
-            e1 = self.bus.read_byte_data(self.address, MD25_REGISTER_ENC2A)
-            e2 = self.bus.read_byte_data(self.address, MD25_REGISTER_ENC2B)
-            e3 = self.bus.read_byte_data(self.address, MD25_REGISTER_ENC2C)
-            e4 = self.bus.read_byte_data(self.address, MD25_REGISTER_ENC2D)
-            return [e1, e2, e3, e4]
+            e1= self.bus.read_byte_data(self.address, MD25_REGISTER_ENC2A)
+            e2= self.bus.read_byte_data(self.address, MD25_REGISTER_ENC2B)
+            e3= self.bus.read_byte_data(self.address, MD25_REGISTER_ENC2C)
+            e4= self.bus.read_byte_data(self.address, MD25_REGISTER_ENC2D)
+
+            # Return an array of encoder values
+            # return [e1, e2, e3, e4]
+            totalEncoder = e4 + (255 * e3) + (65025 * e2) + (16581375 * e1)
+
+            return totalEncoder
         else:
             return "Error while reading encder for motor 1"
 
@@ -135,90 +139,80 @@ class md25:
         else:
             print("Could not reset encoders")
 
+    def disable_2s_timeout(self):
+        if self.bus:
+            self.bus.write_byte_data(self.address, MD25_REGISTER_COMMAND, 0x32)
+            print("Disabled 2s timeout")
+        else:
+            print("Error when attempting to disable 2s timeout")
 
-GPIO.setmode(GPIO.BOARD)
-
-TRIG = 11
-ECHO = 12
-
-GPIO.setup(TRIG, GPIO.OUT)
-GPIO.output(TRIG, 0)
-
-GPIO.setup(ECHO, GPIO.IN)
-
-print("starting measurment..")
-
-e4 = time.time() + 25
-
-
-# while (e4 >= time.time()):
-
-def printDist():
-    time.sleep(0.1)
-
-    GPIO.output(TRIG, 1)
-    time.sleep(0.00001)
-
-    GPIO.output(TRIG, 0)
-
-    while GPIO.input(ECHO) == 0:
-        pass
-
-    start = time.time()
-
-    while GPIO.input(ECHO) == 1:
-        pass
-
-    stop = time.time()
-
-    distance = ((stop - start) * 17000)
-    # print ((stop - start) * 17000)
-    # time.sleep(1)
-
-    return distance
-
-
-# print ((stop - start) * 17000)
+    def enable_2s_timeout(self):
+        if self.bus:
+            self.bus.write_byte_data(self.address, MD25_REGISTER_COMMAND, 0x33)
+            print("Disabled 2s timeout")
+        else:
+            print("Error when attempting to disable 2s timeout")
 
 
 start = md25(mode=1)
 
-e1 = time.time() + 1
-e2 = time.time() + 3
-e3 = time.time() + 4
+# Constants for robot
 
-e4 = time.time() + 25
+# Diameter of wheels in mm
+wheelDiameter = 100
 
-start.reset_encoders()
-#
-# while ((start.read_encoder1() <= [0, 0, 1, 100]) and (start.read_encoder2() <= [0, 0, 1, 100])):
-#     start.drive(2, 2)
-#     print(start.read_encoder1())
-#     print(start.read_encoder2())
-#
-# else:
-#     start.stop()
-#     print("\n After stop print encoders")
-#     print(start.read_encoder1())
-#     print(start.read_encoder2())
+# Encoder values for one full revolution of the wheel
+oneRevolution = 360
+
+# Encoder value when robot travel 1 mm
+oneEncMM = 2 * pi * (wheelDiameter / 2) / oneRevolution / 10
+
+# Distance between wheels in cm
+wheelsSpacing = 25.9
+
+def showCounterForWheel(timein = 10):
+    countdown = time.time() + timein
+    startTime = time.time()
+
+    print("Coundown is: {} starttime is: {}".format(countdown, startTime))
+
+    start.reset_encoders()
+
+    while (countdown > startTime):
+        print("Encoders values are --- encoder 1: {} --- encoder 2: {}\n".format(start.read_encoder1(), start.read_encoder2()))
 
 
+def driveRobot(distance, speed):
+    start.reset_encoders()
 
-# while(time.time() < e4):
-#     print("\n After stop print encoders")
-#     print(start.read_encoder1())
-#     print(start.read_encoder2())
-#     time.sleep(1)
+    encoderCount = distance / oneEncMM
 
-# In this mode we can drive forward in a range from 0 -127 and drive backwards in the range of 0 - (-127)
-# This values determine  a speed of the motors
-# An example is: start.drive(motor1 speed, motor2 speed) the sign of the value determines the direction
+    while (start.read_encoder1() <= encoderCount and start.read_encoder2() <= encoderCount):
+        start.drive(speed, speed)
+    else:
+        start.stop()
 
-while (time.time() < e4):
-    start.drive(100, 100)
 
-    print(printDist())
+def turnRobot(degrees, speed, clockwise=True):
+    start.reset_encoders()
 
-    time.sleep(1)
+    circumferenceOfCircle = 2 * pi * (wheelsSpacing / 2)
 
-GPIO.cleanup()
+    oneWheelDistance = (circumferenceOfCircle / 360) * degrees
+
+    encoderCount = oneWheelDistance / oneEncMM
+
+    if clockwise:
+        while start.read_encoder1() <= encoderCount:
+            start.drive(speed, -speed)
+        else:
+            start.stop()
+
+    elif not clockwise:
+        while start.read_encoder2() <= encoderCount:
+            start.drive(-speed, speed)
+        else:
+            start.stop()
+
+    else:
+        print("Error while robot turning!")
