@@ -3,6 +3,8 @@ import RPi.GPIO as GPIO
 import sys
 sys.path.insert(0,'..')
 import robotConfig as config
+from sensor import *
+import thread
 
 dummy = True
 try:
@@ -155,10 +157,15 @@ class md25:
             print("Error when attempting to disable 2s timeout")
 
 
+# Init configuration for robot
 start = md25(mode=1)
 
 circumferenceOfCircle = config.robotSettings['circumferenceOfCircle']
 oneEncMM = config.robotSettings['oneEncMM']
+sensorThreshold = config.robotSettings['sensorThreshold']
+
+# Setup sensors
+sensor1 = Sensor(11, "Front", 0.10)
 
 def showCounterForWheel(timein = 10):
     '''
@@ -177,6 +184,25 @@ def showCounterForWheel(timein = 10):
         print("Encoders values are --- encoder 1: {} --- encoder 2: {}\n".format(start.read_encoder1(), start.read_encoder2()))
 
 
+clearWay = True
+sensorRun = True
+
+def sensorRun():
+    sensor1.setUp()
+    global clearWay
+
+    while sensorRun:
+        sensorValue = sensor1.getSensorValue()
+
+        print sensorValue
+
+        if sensorValue < sensorThreshold:
+            clearWay = False
+        else:
+            clearWay = True
+    else:
+        sensor1.stop()
+
 def driveRobot(distance, speed):
     '''
     This function drives a robot forward. By adjusting values such as: speed and distance can control a robot.
@@ -188,8 +214,21 @@ def driveRobot(distance, speed):
 
     encoderCount = distance / oneEncMM
 
+    global clearWay
+
+    # Create sensor thread
+    try:
+        thread.start_new_thread(sensorRun, ())
+        print ("Successfully initialized sensor thread")
+    except:
+        print ("Error: unable to start sensor thread")
+
     while (start.read_encoder1() <= encoderCount and start.read_encoder2() <= encoderCount):
-        start.drive(speed, speed)
+        # Check if sensor detected any obstacle on the way if yes then stop the robot and wait
+        if clearWay == False:
+            start.stop()
+        else:
+            start.drive(speed, speed)
     else:
         start.stop()
 
