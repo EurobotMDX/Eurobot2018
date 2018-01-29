@@ -1,7 +1,8 @@
 import time
 import RPi.GPIO as GPIO
-import math
-from math import pi
+import sys
+sys.path.insert(0,'..')
+import robotConfig as config
 
 dummy = True
 try:
@@ -115,7 +116,7 @@ class md25:
 
             return totalEncoder
         else:
-            return "Error while reading encder for motor 1"
+            return "Error while reading encoder for motor 1"
 
     def read_encoder2(self):
         if self.bus:
@@ -130,7 +131,7 @@ class md25:
 
             return totalEncoder
         else:
-            return "Error while reading encder for motor 1"
+            return "Error while reading encoder for motor 1"
 
     def reset_encoders(self):
         if self.bus:
@@ -156,25 +157,15 @@ class md25:
 
 start = md25(mode=1)
 
-# Constants for robot
+circumferenceOfCircle = config.robotSettings['circumferenceOfCircle']
 
-# Diameter of wheels in mm
-wheelDiameter = 100
-
-# Encoder values for one full revolution of the wheel
-oneRevolution = 360
-
-# Encoder value when robot travel 1 mm
-oneEncMM = 2 * pi * (wheelDiameter / 2) / oneRevolution / 10
-
-# Distance between wheels in cm
-wheelsSpacing = 25.9
+oneEncMM = config.robotSettings['oneEncMM']
 
 def showCounterForWheel(timein = 10):
     countdown = time.time() + timein
     startTime = time.time()
 
-    print("Coundown is: {} starttime is: {}".format(countdown, startTime))
+    print("Coundown is: {} startTime is: {}".format(countdown, startTime))
 
     start.reset_encoders()
 
@@ -195,8 +186,6 @@ def driveRobot(distance, speed):
 
 def turnRobot(degrees, speed, clockwise=True):
     start.reset_encoders()
-
-    circumferenceOfCircle = 2 * pi * (wheelsSpacing / 2)
 
     oneWheelDistance = (circumferenceOfCircle / 360) * degrees
 
