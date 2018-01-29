@@ -14,7 +14,7 @@ screen.keypad(True)
 start = md25(mode=1)
 
 speed = 50
-turnSpeed = 30
+turnSpeed = 20
 
 try:
     while True:
@@ -27,13 +27,20 @@ try:
 
         elif char == ord('f'):
             # global speed
-            speed = speed + 10
-            print("Speed: {}".format(speed))
+            if speed + 10 < 127:
+                speed = speed + 10
+                print("++ Speed: {}".format(speed))
+            else:
+                print("Reached max speed. Speed: {}".format(speed))
 
         elif char == ord('s'):
             # global speed
-            speed = speed - 10
-            print("Speed: {}".format(speed))
+            if speed - 10 > 0:
+                speed = speed - 10
+                print("-- Speed: {}".format(speed))
+            else:
+                print("Reached min speed. Speed: {}".format(speed))
+
 
         elif char == ord(' '):
             start.stop()
