@@ -8,9 +8,8 @@ if __name__ == '__main__':
         time.sleep(0.5)
         turnRobot(360, 50, False)
         time.sleep(0.5)
-        # turnRobot(360, 10)
-        # time.sleep(0.5)
-        # turnRobot(360, 10)
+        driveRobot()
+        
 
     except KeyboardInterrupt:
         print("Stopped by user")

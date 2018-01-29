@@ -158,10 +158,14 @@ class md25:
 start = md25(mode=1)
 
 circumferenceOfCircle = config.robotSettings['circumferenceOfCircle']
-
 oneEncMM = config.robotSettings['oneEncMM']
 
 def showCounterForWheel(timein = 10):
+    '''
+    This function prints encoders values for given time in variable 'timein'.
+    :param timein:
+    :return:
+    '''
     countdown = time.time() + timein
     startTime = time.time()
 
@@ -174,6 +178,12 @@ def showCounterForWheel(timein = 10):
 
 
 def driveRobot(distance, speed):
+    '''
+    This function drives a robot forward. By adjusting values such as: speed and distance can control a robot.
+    :param distance:
+    :param speed:
+    :return:
+    '''
     start.reset_encoders()
 
     encoderCount = distance / oneEncMM
@@ -185,6 +195,13 @@ def driveRobot(distance, speed):
 
 
 def turnRobot(degrees, speed, clockwise=True):
+    '''
+    This function turns a robot. Depending on the argument 'clockwise', a robot can turn right or left
+    :param degrees:
+    :param speed:
+    :param clockwise:
+    :return:
+    '''
     start.reset_encoders()
 
     oneWheelDistance = (circumferenceOfCircle / 360) * degrees
