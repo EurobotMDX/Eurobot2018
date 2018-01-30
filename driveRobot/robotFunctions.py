@@ -9,13 +9,13 @@ from sensor import *
 
 dummy = True
 
-def importSmbus():
-    try:
-        import smbus
-        dummy = False
-        print('SMBUS is available')
-    except:
-        print('SMBUS not available; in dummy mode')
+try:
+    import smbus
+    dummy = False
+    print('SMBUS is available')
+except:
+    print('SMBUS not available; in dummy mode')
+
 
 MD25_DEFAULT_ADDRESS = 0x58
 MD25_DEFAULT_MODE = 0
@@ -175,7 +175,6 @@ class md25:
 
 
 # Init configuration for robot
-importSmbus()
 mainRobot = md25(mode=1)
 
 circumferenceOfCircle = config.robotSettings['circumferenceOfCircle']
