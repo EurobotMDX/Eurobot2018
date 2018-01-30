@@ -4,17 +4,18 @@ import sys
 
 sys.path.insert(0, '..')
 import robotConfig as config
+from terminalColors import bcolors as tc
 from sensor import *
-import thread
 
 dummy = True
-try:
-    import smbus
 
-    dummy = False
-    print('SMBUS is available')
-except:
-    print('SMBUS not available; in dummy mode')
+def importSmbus():
+    try:
+        import smbus
+        dummy = False
+        print('SMBUS is available')
+    except:
+        print('SMBUS not available; in dummy mode')
 
 MD25_DEFAULT_ADDRESS = 0x58
 MD25_DEFAULT_MODE = 0
@@ -174,7 +175,8 @@ class md25:
 
 
 # Init configuration for robot
-start = md25(mode=1)
+importSmbus()
+mainRobot = md25(mode=1)
 
 circumferenceOfCircle = config.robotSettings['circumferenceOfCircle']
 oneEncMM = config.robotSettings['oneEncMM']
@@ -195,11 +197,25 @@ def showCounterForWheel(timein=10):
 
     print("Countdown is: {} startTime is: {}".format(countdown, startTime))
 
-    start.reset_encoders()
+    mainRobot.reset_encoders()
 
     while (countdown > startTime):
-        print("Encoders values are --- encoder 1: {} --- encoder 2: {}\n".format(start.read_encoder1(),
-                                                                                 start.read_encoder2()))
+        print("Encoders values are --- encoder 1: {} --- encoder 2: {}\n".format(mainRobot.read_encoder1(),
+                                                                                 mainRobot.read_encoder2()))
+
+def travelledDistance(distance, current):
+    '''
+    Function takes two inputs such as; current distance travelled and destination distance, calculates the percentages of travelled distance
+    :param distance: float
+    :param current: float
+    :return: percentage of travelled distance
+    '''
+    if current != 0:
+        remainingDistancePercentage = (current / distance) * 100
+        return round(remainingDistancePercentage, 1)
+    else:
+        return 0
+
 
 def driveRobot(distance, speed):
     '''
@@ -208,46 +224,44 @@ def driveRobot(distance, speed):
     :param speed:
     :return:
     '''
-    start.reset_encoders()
+    mainRobot.reset_encoders()
 
     encoderDestination = distance / oneEncMM
 
     sensor1.setUp()
 
-    encoder1Reading = start.read_encoder1()
-    encoder2Reading = start.read_encoder2()
+    encoder1Reading = mainRobot.read_encoder1()
+    encoder2Reading = mainRobot.read_encoder2()
 
-    print("Dest ", round(encoderDestination, 3))
-    print("Dest provided ", distance * 100)
+    distance = float(distance)
 
-    changeAcc(10)
-    while (start.read_encoder1() <= encoderDestination and start.read_encoder2() <= encoderDestination):
+    # Change acceleration mode if necessary
+    # changeAcc(10)
+
+    while (mainRobot.read_encoder1() <= encoderDestination and mainRobot.read_encoder2() <= encoderDestination):
         # Check if sensor detected any obstacle on the way if yes then stop the robot and wait
         if sensor1.getSensorValue() <= sensorThreshold:
-            start.stop()
+            mainRobot.stop()
         else:
-            start.drive(speed, speed)
+            mainRobot.drive(speed, speed)
 
-        # Checked distance remained
-        encodersAvg = (encoder1Reading + encoder1Reading) / 2
+        encodersAvg = (encoder1Reading + encoder1Reading) / 2.0
 
-        remainingDistance = round((encoderDestination - encodersAvg) * oneEncMM, 3)
+        currentTravelDistance = round(encodersAvg * oneEncMM, 3)
 
-        # print encodersAvg
-        # remainingDistancePercentage =
+        tDist = travelledDistance(distance, currentTravelDistance)
 
-        # print(remainingDistance)
-        print(round(encodersAvg, 3))
+        print ("Travelled distance: {}".format(tDist))
 
-        # if(remainingDistance )
+        # if (tDist > 85):
+        #     speed = 10
 
-        encoder1Reading = start.read_encoder1()
-        encoder2Reading = start.read_encoder2()
-
+        encoder1Reading = mainRobot.read_encoder1()
+        encoder2Reading = mainRobot.read_encoder2()
 
     else:
         sensor1.stopSensor()
-        start.stop()
+        mainRobot.stop()
 
 
 def turnRobot(degrees, speed, clockwise=True):
@@ -258,23 +272,23 @@ def turnRobot(degrees, speed, clockwise=True):
     :param clockwise:
     :return:
     '''
-    start.reset_encoders()
+    mainRobot.reset_encoders()
 
     oneWheelDistance = (circumferenceOfCircle / 360) * degrees
 
     encoderCount = oneWheelDistance / oneEncMM
 
     if clockwise:
-        while start.read_encoder1() <= encoderCount:
-            start.drive(speed, -speed)
+        while mainRobot.read_encoder1() <= encoderCount:
+            mainRobot.drive(speed, -speed)
         else:
-            start.stop()
+            mainRobot.stop()
 
     elif not clockwise:
-        while start.read_encoder2() <= encoderCount:
-            start.drive(-speed, speed)
+        while mainRobot.read_encoder2() <= encoderCount:
+            mainRobot.drive(-speed, speed)
         else:
-            start.stop()
+            mainRobot.stop()
 
     else:
         print("Error while robot turning!")
@@ -295,14 +309,28 @@ def sensorTest(timein=10):
         print (sensor1.getSensorValue)
 
     else:
-        print ("Stopped")
+        print("Stopped")
 
 
-def printBatteryVoltage():
-    getBattery = start.battery()
-    print("\033[1;41mBattery Status: {}V\033[1;m\n".format(getBattery/10.0))
+def checkStatus():
+    canRun = True
+
+    getBatteryVoltage = mainRobot.battery()
+    getBatteryVoltage = getBatteryVoltage / 10.0
+
+    print("\n" + tc.FAIL + "Battery Status: " + str(getBatteryVoltage) + "V" + tc.ENDC + "\n")
+
+    if float(getBatteryVoltage) < 11.0:
+        print(tc.FAIL + "Critical Battery Level. PLEASE REPLACE BATTERY!" + tc.ENDC)
+        canRun = False
+
+    else:
+        print(tc.OKGREEN + "Battery in good level." + tc.ENDC + "\n")
+        canRun = True
+
+    return canRun
 
 def changeAcc(value=5):
     print("Changed acceleration to: {}".format(value))
-    start.setAcceleration(value)
+    mainRobot.setAcceleration(value)
 
