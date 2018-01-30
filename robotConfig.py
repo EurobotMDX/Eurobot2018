@@ -12,14 +12,13 @@ oneRevolution = 360
 # Space  between wheels
 wheelsSpacing = 25.9
 
-
 # Robot types:
 # main or secondary
 
 robotSettings = {'robotType': 'main',
                  'oneEncMM': 2 * pi * (wheelDiameter / 2) / oneRevolution / 10,
                  'circumferenceOfCircle': 2 * pi * (wheelsSpacing / 2),
-                 'sensorThreshold': 20,
+                 'sensorThreshold': 30,
                  }
 
 debugMode = True

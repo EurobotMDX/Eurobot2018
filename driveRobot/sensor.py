@@ -42,7 +42,7 @@ class Sensor:
 
         # Set to input
         GPIO.setup(sensorPin, GPIO.IN)
-
+        starttime = 0
         # Count microseconds that SIG was high
         while GPIO.input(sensorPin) == 0:
           starttime = time.time()
@@ -57,17 +57,12 @@ class Sensor:
         # distance = duration / 29 / 2
         distance = duration * 34000 / 2
 
-        # print (distance, "cm")
+        # print (distance)
 
         time.sleep(self.frequency)
 
         return distance
 
-    def stop(self):
+    def stopSensor(self):
         GPIO.cleanup()
-
-        # if self.measureRunning == True:
-        #     self.measureRunning = False
         print("Sensor stopped! Cleanup done!")
-        # else:
-        #     print ("Error when stopping sensor!")
