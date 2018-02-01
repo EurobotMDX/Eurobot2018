@@ -337,7 +337,6 @@ def checkStatus():
 
     else:
         print(tc.OKGREEN + "Battery in good level." + tc.ENDC + "\n")
-        canRun = True
 
     return canRun
 
