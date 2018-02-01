@@ -237,7 +237,8 @@ def driveRobot(distance, speed):
 
     distance = float(distance)
 
-    speedAdjusted = False
+    speedAdjusted1 = False
+    speedAdjusted2 = False
 
     # Change acceleration mode if necessary
     # changeAcc(10)
@@ -257,21 +258,38 @@ def driveRobot(distance, speed):
 
         print("Travelled distance: {}".format(tDist))
 
-        if not speedAdjusted and tDist > 90.0:
-            speed = 5
-            speedAdjusted = True
-            print("Robot slowing down to speed: {}".format(speed))
+        slowingDownCounter = 0
 
-            # if tDist > 95.0:
-            #     speed = 3
-                # print("Robot slowing down to speed: {}".format(speed))
+        # TODO check if loop does not break anything
 
+        # Enter this loop to slow down every two encoder values
+        if not speedAdjusted1 and tDist > 85.0 and int(encodersAvg) % 2 == 0:
+
+            if speed > 30:
+                speed = 29
+
+            speed = speed - 1
+            slowingDownCounter += 1
+
+            if slowingDownCounter >= 20:
+                print("Slow down 1. Speed = {}".format(speed))
+                speedAdjusted1 = True
+                slowingDownCounter = 0
+
+        if not speedAdjusted2 and tDist > 95.0:
+            speed = speed - 1
+            slowingDownCounter += 1
+
+            if slowingDownCounter1 >= 8:
+                print("Slow down 1. Speed = {}".format(speed))
+                speedAdjusted2 = True
+                slowingDownCounter = 0
 
         encoder1Reading = mainRobot.read_encoder1()
         encoder2Reading = mainRobot.read_encoder2()
 
     else:
-        # sensor1.stopSensor()
+        sensor1.stopSensor()
         mainRobot.stop()
 
 
@@ -343,4 +361,3 @@ def checkStatus():
 def changeAcc(value=5):
     print("Changed acceleration to: {}".format(value))
     mainRobot.setAcceleration(value)
-

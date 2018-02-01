@@ -4,8 +4,6 @@ from terminalColors import bcolors as tc
 if __name__ == '__main__':
     if checkStatus():
         try:
-
-            startMatch = time.time()
             # Delay between is used in order to make sure that encoders were reset completely.
             # driveRobot(100, 50)
 

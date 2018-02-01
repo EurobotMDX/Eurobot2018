@@ -40,8 +40,6 @@ class Sensor:
         # Set low
         GPIO.output(sensorPin, False)
 
-
-
         # Set to input
         GPIO.setup(sensorPin, GPIO.IN)
         starttime = 0
@@ -49,8 +47,8 @@ class Sensor:
         while GPIO.input(sensorPin) == 0:
           starttime = time.time()
 
-        #TODO fix the problem with end time
-        endtime = time.time()
+        # TODO changed to none object, do some testing to make sure is not breaking anything
+        endtime = None
 
         while GPIO.input(sensorPin) == 1:
           endtime = time.time()
