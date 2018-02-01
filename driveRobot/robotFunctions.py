@@ -120,7 +120,7 @@ class md25:
                 totalEncoder = e4 + (255 * e3) + (65025 * e2) + (16581375 * e1)
             except IOError:
                 totalEncoder = 0
-                print "CAUGHT: IOError"
+                print("CAUGHT: IOError")
 
             return totalEncoder
         else:
@@ -139,7 +139,7 @@ class md25:
                 totalEncoder = e4 + (255 * e3) + (65025 * e2) + (16581375 * e1)
             except IOError:
                 totalEncoder = 0
-                print "CAUGHT: IOError"
+                print("CAUGHT: IOError")
 
             return totalEncoder
         else:
@@ -148,7 +148,7 @@ class md25:
     def reset_encoders(self):
         if self.bus:
             self.bus.write_byte_data(self.address, MD25_REGISTER_COMMAND, 0x20)
-            print("Encoders were reset")
+            print("Encoders are reset")
         else:
             print("Could not reset encoders")
 
@@ -225,6 +225,9 @@ def driveRobot(distance, speed):
     '''
     mainRobot.reset_encoders()
 
+    print("Encoders values are --- encoder 1: {} --- encoder 2: {}\n".format(mainRobot.read_encoder1(),
+                                                                             mainRobot.read_encoder2()))
+
     encoderDestination = distance / oneEncMM
 
     sensor1.setUp()
@@ -233,6 +236,8 @@ def driveRobot(distance, speed):
     encoder2Reading = mainRobot.read_encoder2()
 
     distance = float(distance)
+
+    speedAdjusted = False
 
     # Change acceleration mode if necessary
     # changeAcc(10)
@@ -250,16 +255,23 @@ def driveRobot(distance, speed):
 
         tDist = travelledDistance(distance, currentTravelDistance)
 
-        print ("Travelled distance: {}".format(tDist))
+        print("Travelled distance: {}".format(tDist))
 
-        # if (tDist > 85):
-        #     speed = 10
+        if not speedAdjusted and tDist > 90.0:
+            speed = 5
+            speedAdjusted = True
+            print("Robot slowing down to speed: {}".format(speed))
+
+            # if tDist > 95.0:
+            #     speed = 3
+                # print("Robot slowing down to speed: {}".format(speed))
+
 
         encoder1Reading = mainRobot.read_encoder1()
         encoder2Reading = mainRobot.read_encoder2()
 
     else:
-        sensor1.stopSensor()
+        # sensor1.stopSensor()
         mainRobot.stop()
 
 
@@ -290,7 +302,7 @@ def turnRobot(degrees, speed, clockwise=True):
             mainRobot.stop()
 
     else:
-        print("Error while robot turning!")
+        print("Error while robot turning the robot!")
 
 
 def sensorTest(timein=10):

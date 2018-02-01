@@ -4,10 +4,21 @@ from terminalColors import bcolors as tc
 if __name__ == '__main__':
     if checkStatus():
         try:
-            # turnRobot(360, 50)
-            # time.sleep(0.5)
-            driveRobot(400, 40)
-            # turnRobot(180, 20, False)
+
+            startMatch = time.time()
+            # Delay between is used in order to make sure that encoders were reset completely.
+            # driveRobot(100, 50)
+
+            driveRobot(178, 50)
+            time.sleep(4)
+            turnRobot(180, 3, False)
+            time.sleep(3)
+            driveRobot(178, 50)
+            time.sleep(4)
+            turnRobot(180, 3, False)
+
+
+
             # driveRobot(100, 127)
 
             # time.sleep(2)
