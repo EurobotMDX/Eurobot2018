@@ -7,7 +7,7 @@ import time
 
 class Sensor:
     "This class provides capabilities to measure a distance from different sensors"
-    def __init__(self, sensorPin, sensorPos="Front", frequency = 0.1):
+    def __init__(self, sensorPin, sensorPos="Front", frequency=0.1):
         # Setup
         self.sensorPin = sensorPin
         self.sensorPosition = sensorPos
@@ -40,12 +40,17 @@ class Sensor:
         # Set low
         GPIO.output(sensorPin, False)
 
+
+
         # Set to input
         GPIO.setup(sensorPin, GPIO.IN)
-
+        starttime = 0
         # Count microseconds that SIG was high
         while GPIO.input(sensorPin) == 0:
           starttime = time.time()
+
+        #TODO fix the problem with end time
+        endtime = time.time()
 
         while GPIO.input(sensorPin) == 1:
           endtime = time.time()
@@ -57,17 +62,12 @@ class Sensor:
         # distance = duration / 29 / 2
         distance = duration * 34000 / 2
 
-        # print (distance, "cm")
+        # print (distance)
 
         time.sleep(self.frequency)
 
         return distance
 
-    def stop(self):
+    def stopSensor(self):
         GPIO.cleanup()
-
-        # if self.measureRunning == True:
-        #     self.measureRunning = False
         print("Sensor stopped! Cleanup done!")
-        # else:
-        #     print ("Error when stopping sensor!")

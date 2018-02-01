@@ -1,6 +1,6 @@
 import curses
 from robotFunctions import *
-
+from sensor import *
 
 # get the curses screen window
 screen = curses.initscr()
@@ -14,7 +14,13 @@ screen.keypad(True)
 start = md25(mode=1)
 
 speed = 50
-turnSpeed = 20
+
+turnSpeed = 15
+
+# Setup sensors
+sensor1 = Sensor(11, "Front", 0.02)
+
+sensor1.setUp()
 
 try:
     while True:
@@ -46,16 +52,28 @@ try:
             start.stop()
 
         elif char == curses.KEY_RIGHT:
-            start.drive(turnSpeed, -turnSpeed)
+            if sensor1.getSensorValue() <= sensorThreshold:
+                mainRobot.stop()
+            else:
+                start.drive(turnSpeed, -turnSpeed)
 
         elif char == curses.KEY_LEFT:
-            start.drive(-turnSpeed, turnSpeed)
+            if sensor1.getSensorValue() <= sensorThreshold:
+                mainRobot.stop()
+            else:
+                start.drive(-turnSpeed, turnSpeed)
 
         elif char == curses.KEY_UP:
-            start.drive(speed, speed)
+            if sensor1.getSensorValue() <= sensorThreshold:
+                mainRobot.stop()
+            else:
+                start.drive(speed, speed)
 
         elif char == curses.KEY_DOWN:
-            start.drive(-speed, -speed)
+            if sensor1.getSensorValue() <= sensorThreshold:
+                mainRobot.stop()
+            else:
+                start.drive(-speed, -speed)
 
 finally:
     # shut down cleanly

@@ -1,12 +1,14 @@
 import time
 import RPi.GPIO as GPIO
 import sys
-sys.path.insert(0,'..')
+
+sys.path.insert(0, '..')
 import robotConfig as config
+from terminalColors import bcolors as tc
 from sensor import *
-import thread
 
 dummy = True
+
 try:
     import smbus
     dummy = False
@@ -85,10 +87,10 @@ class md25:
         if (2 == self.mode or 3 == self.mode) and self.bus:
             if speed:
                 self.bus.write_byte_data(self.address, MD25_REGISTER_SPEED1, speed)
-                #time.sleep(5)
+                # time.sleep(5)
             if turn:
                 self.bus.write_byte_data(self.address, MD25_REGISTER_SPEED2_TURN, turn)
-                #time.sleep(5)
+                # time.sleep(5)
 
     def stop(self):
         if (0 == self.mode or 2 == self.mode) and self.bus:
@@ -97,24 +99,28 @@ class md25:
         if (1 == self.mode or 3 == self.mode) and self.bus:
             self.bus.write_byte_data(self.address, MD25_REGISTER_SPEED1, 0)
             self.bus.write_byte_data(self.address, MD25_REGISTER_SPEED2_TURN, 0)
-        # print('STOP!!!')
+            # print('STOP!!!')
 
     def battery(self):
         if self.bus:
             return self.bus.read_byte_data(self.address, MD25_REGISTER_BATTERY_VOLTS)
         else:
-            return 120
+            return 999
 
     def read_encoder1(self):
         if self.bus:
-            e1= self.bus.read_byte_data(self.address, MD25_REGISTER_ENC1A)
-            e2= self.bus.read_byte_data(self.address, MD25_REGISTER_ENC1B)
-            e3= self.bus.read_byte_data(self.address, MD25_REGISTER_ENC1C)
-            e4= self.bus.read_byte_data(self.address, MD25_REGISTER_ENC1D)
+            try:
+                e1 = self.bus.read_byte_data(self.address, MD25_REGISTER_ENC1A)
+                e2 = self.bus.read_byte_data(self.address, MD25_REGISTER_ENC1B)
+                e3 = self.bus.read_byte_data(self.address, MD25_REGISTER_ENC1C)
+                e4 = self.bus.read_byte_data(self.address, MD25_REGISTER_ENC1D)
 
-            # Return an array of encoder values
-            # return [e1, e2, e3, e4]
-            totalEncoder = e4 + (255 * e3) + (65025 * e2) + (16581375 * e1)
+                # Return an array of encoder values
+                # return [e1, e2, e3, e4]
+                totalEncoder = e4 + (255 * e3) + (65025 * e2) + (16581375 * e1)
+            except IOError:
+                totalEncoder = 0
+                print("CAUGHT: IOError")
 
             return totalEncoder
         else:
@@ -122,14 +128,18 @@ class md25:
 
     def read_encoder2(self):
         if self.bus:
-            e1= self.bus.read_byte_data(self.address, MD25_REGISTER_ENC2A)
-            e2= self.bus.read_byte_data(self.address, MD25_REGISTER_ENC2B)
-            e3= self.bus.read_byte_data(self.address, MD25_REGISTER_ENC2C)
-            e4= self.bus.read_byte_data(self.address, MD25_REGISTER_ENC2D)
+            try:
+                e1 = self.bus.read_byte_data(self.address, MD25_REGISTER_ENC2A)
+                e2 = self.bus.read_byte_data(self.address, MD25_REGISTER_ENC2B)
+                e3 = self.bus.read_byte_data(self.address, MD25_REGISTER_ENC2C)
+                e4 = self.bus.read_byte_data(self.address, MD25_REGISTER_ENC2D)
 
-            # Return an array of encoder values
-            # return [e1, e2, e3, e4]
-            totalEncoder = e4 + (255 * e3) + (65025 * e2) + (16581375 * e1)
+                # Return an array of encoder values
+                # return [e1, e2, e3, e4]
+                totalEncoder = e4 + (255 * e3) + (65025 * e2) + (16581375 * e1)
+            except IOError:
+                totalEncoder = 0
+                print("CAUGHT: IOError")
 
             return totalEncoder
         else:
@@ -138,7 +148,7 @@ class md25:
     def reset_encoders(self):
         if self.bus:
             self.bus.write_byte_data(self.address, MD25_REGISTER_COMMAND, 0x20)
-            print("Encoders were reset")
+            print("Encoders are reset")
         else:
             print("Could not reset encoders")
 
@@ -156,18 +166,26 @@ class md25:
         else:
             print("Error when attempting to disable 2s timeout")
 
+    def setAcceleration(self, value):
+        if self.bus:
+            self.bus.write_byte_data(self.address, MD25_REGISTER_ACCELERATION_RATE, value)
+            print("Changed acceleration mode")
+        else:
+            print("Error when acceleration")
+
 
 # Init configuration for robot
-start = md25(mode=1)
+mainRobot = md25(mode=1)
 
 circumferenceOfCircle = config.robotSettings['circumferenceOfCircle']
 oneEncMM = config.robotSettings['oneEncMM']
 sensorThreshold = config.robotSettings['sensorThreshold']
 
 # Setup sensors
-sensor1 = Sensor(11, "Front", 0.10)
+sensor1 = Sensor(11, "Front", 0.02)
 
-def showCounterForWheel(timein = 10):
+
+def showCounterForWheel(timein=10):
     '''
     This function prints encoders values for given time in variable 'timein'.
     :param timein:
@@ -176,32 +194,27 @@ def showCounterForWheel(timein = 10):
     countdown = time.time() + timein
     startTime = time.time()
 
-    print("Coundown is: {} startTime is: {}".format(countdown, startTime))
+    print("Countdown is: {} startTime is: {}".format(countdown, startTime))
 
-    start.reset_encoders()
+    mainRobot.reset_encoders()
 
     while (countdown > startTime):
-        print("Encoders values are --- encoder 1: {} --- encoder 2: {}\n".format(start.read_encoder1(), start.read_encoder2()))
+        print("Encoders values are --- encoder 1: {} --- encoder 2: {}\n".format(mainRobot.read_encoder1(),
+                                                                                 mainRobot.read_encoder2()))
 
-
-clearWay = True
-sensorRun = True
-
-def sensorRun():
-    sensor1.setUp()
-    global clearWay
-
-    while sensorRun:
-        sensorValue = sensor1.getSensorValue()
-
-        print sensorValue
-
-        if sensorValue < sensorThreshold:
-            clearWay = False
-        else:
-            clearWay = True
+def travelledDistance(distance, current):
+    '''
+    Function takes two inputs such as; current distance travelled and destination distance, calculates the percentages of travelled distance
+    :param distance: float
+    :param current: float
+    :return: percentage of travelled distance
+    '''
+    if current != 0:
+        remainingDistancePercentage = (current / distance) * 100
+        return round(remainingDistancePercentage, 1)
     else:
-        sensor1.stop()
+        return 0
+
 
 def driveRobot(distance, speed):
     '''
@@ -210,27 +223,56 @@ def driveRobot(distance, speed):
     :param speed:
     :return:
     '''
-    start.reset_encoders()
+    mainRobot.reset_encoders()
 
-    encoderCount = distance / oneEncMM
+    print("Encoders values are --- encoder 1: {} --- encoder 2: {}\n".format(mainRobot.read_encoder1(),
+                                                                             mainRobot.read_encoder2()))
 
-    global clearWay
+    encoderDestination = distance / oneEncMM
 
-    # Create sensor thread
-    try:
-        thread.start_new_thread(sensorRun, ())
-        print ("Successfully initialized sensor thread")
-    except:
-        print ("Error: unable to start sensor thread")
+    sensor1.setUp()
 
-    while (start.read_encoder1() <= encoderCount and start.read_encoder2() <= encoderCount):
+    encoder1Reading = mainRobot.read_encoder1()
+    encoder2Reading = mainRobot.read_encoder2()
+
+    distance = float(distance)
+
+    speedAdjusted = False
+
+    # Change acceleration mode if necessary
+    # changeAcc(10)
+
+    while (mainRobot.read_encoder1() <= encoderDestination and mainRobot.read_encoder2() <= encoderDestination):
         # Check if sensor detected any obstacle on the way if yes then stop the robot and wait
-        if clearWay == False:
-            start.stop()
+        if sensor1.getSensorValue() <= sensorThreshold:
+            mainRobot.stop()
         else:
-            start.drive(speed, speed)
+            mainRobot.drive(speed, speed)
+
+        encodersAvg = (encoder1Reading + encoder1Reading) / 2.0
+
+        currentTravelDistance = round(encodersAvg * oneEncMM, 3)
+
+        tDist = travelledDistance(distance, currentTravelDistance)
+
+        print("Travelled distance: {}".format(tDist))
+
+        if not speedAdjusted and tDist > 90.0:
+            speed = 5
+            speedAdjusted = True
+            print("Robot slowing down to speed: {}".format(speed))
+
+            # if tDist > 95.0:
+            #     speed = 3
+                # print("Robot slowing down to speed: {}".format(speed))
+
+
+        encoder1Reading = mainRobot.read_encoder1()
+        encoder2Reading = mainRobot.read_encoder2()
+
     else:
-        start.stop()
+        # sensor1.stopSensor()
+        mainRobot.stop()
 
 
 def turnRobot(degrees, speed, clockwise=True):
@@ -241,23 +283,64 @@ def turnRobot(degrees, speed, clockwise=True):
     :param clockwise:
     :return:
     '''
-    start.reset_encoders()
+    mainRobot.reset_encoders()
 
     oneWheelDistance = (circumferenceOfCircle / 360) * degrees
 
     encoderCount = oneWheelDistance / oneEncMM
 
     if clockwise:
-        while start.read_encoder1() <= encoderCount:
-            start.drive(speed, -speed)
+        while mainRobot.read_encoder1() <= encoderCount:
+            mainRobot.drive(speed, -speed)
         else:
-            start.stop()
+            mainRobot.stop()
 
     elif not clockwise:
-        while start.read_encoder2() <= encoderCount:
-            start.drive(-speed, speed)
+        while mainRobot.read_encoder2() <= encoderCount:
+            mainRobot.drive(-speed, speed)
         else:
-            start.stop()
+            mainRobot.stop()
 
     else:
-        print("Error while robot turning!")
+        print("Error while robot turning the robot!")
+
+
+def sensorTest(timein=10):
+    '''
+    This function prints sensor values for given time in variable 'timein'.
+    :param timein:
+    :return:
+    '''
+    countdown = time.time() + timein
+    startTime = time.time()
+
+    sensor1.setUp()
+
+    while (countdown > startTime):
+        print (sensor1.getSensorValue)
+
+    else:
+        print("Stopped")
+
+
+def checkStatus():
+    canRun = True
+
+    getBatteryVoltage = mainRobot.battery()
+    getBatteryVoltage = getBatteryVoltage / 10.0
+
+    print("\n" + tc.FAIL + "Battery Status: " + str(getBatteryVoltage) + "V" + tc.ENDC + "\n")
+
+    if float(getBatteryVoltage) < 11.0:
+        print(tc.FAIL + "Critical Battery Level. PLEASE REPLACE BATTERY!" + tc.ENDC)
+        canRun = False
+
+    else:
+        print(tc.OKGREEN + "Battery in good level." + tc.ENDC + "\n")
+
+    return canRun
+
+def changeAcc(value=5):
+    print("Changed acceleration to: {}".format(value))
+    mainRobot.setAcceleration(value)
+
