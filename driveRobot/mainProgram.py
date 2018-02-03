@@ -7,13 +7,14 @@ if __name__ == '__main__':
             # Delay between is used in order to make sure that encoders were reset completely.
             # driveRobot(100, 50)
 
-            driveRobot(178, 50)
-            time.sleep(4)
-            turnRobot(180, 3, False)
-            time.sleep(3)
-            driveRobot(178, 50)
-            time.sleep(4)
-            turnRobot(180, 3, False)
+            # driveRobot(178, 40)
+            driveRobot(178, -40)
+            # time.sleep(4)
+            # turnRobot(180, 3, False)
+            # time.sleep(3)
+            # driveRobot(178, 50)
+            # time.sleep(4)
+            # turnRobot(180, 3, False)
 
 
 

@@ -52,28 +52,16 @@ try:
             start.stop()
 
         elif char == curses.KEY_RIGHT:
-            if sensor1.getSensorValue() <= sensorThreshold:
-                mainRobot.stop()
-            else:
-                start.drive(turnSpeed, -turnSpeed)
+            start.drive(turnSpeed, -turnSpeed)
 
         elif char == curses.KEY_LEFT:
-            if sensor1.getSensorValue() <= sensorThreshold:
-                mainRobot.stop()
-            else:
-                start.drive(-turnSpeed, turnSpeed)
+            start.drive(-turnSpeed, turnSpeed)
 
         elif char == curses.KEY_UP:
-            if sensor1.getSensorValue() <= sensorThreshold:
-                mainRobot.stop()
-            else:
-                start.drive(speed, speed)
+            start.drive(speed, speed)
 
         elif char == curses.KEY_DOWN:
-            if sensor1.getSensorValue() <= sensorThreshold:
-                mainRobot.stop()
-            else:
-                start.drive(-speed, -speed)
+            start.drive(-speed, -speed)
 
 finally:
     # shut down cleanly

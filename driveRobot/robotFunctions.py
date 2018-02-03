@@ -225,6 +225,7 @@ def driveRobot(distance, speed):
     '''
     mainRobot.reset_encoders()
 
+
     print("Encoders values are --- encoder 1: {} --- encoder 2: {}\n".format(mainRobot.read_encoder1(),
                                                                              mainRobot.read_encoder2()))
 
@@ -238,10 +239,12 @@ def driveRobot(distance, speed):
     distance = float(distance)
 
     speedAdjusted1 = False
-    speedAdjusted2 = False
+    speedAdjusted2 = True
 
     # Change acceleration mode if necessary
     # changeAcc(10)
+
+    slowingDownCounter = 0
 
     while (mainRobot.read_encoder1() <= encoderDestination and mainRobot.read_encoder2() <= encoderDestination):
         # Check if sensor detected any obstacle on the way if yes then stop the robot and wait
@@ -258,12 +261,10 @@ def driveRobot(distance, speed):
 
         print("Travelled distance: {}".format(tDist))
 
-        slowingDownCounter = 0
-
         # TODO check if loop does not break anything
 
         # Enter this loop to slow down every two encoder values
-        if not speedAdjusted1 and tDist > 85.0 and int(encodersAvg) % 2 == 0:
+        if not speedAdjusted1 and tDist > 80.0 and int(encodersAvg) % 2 == 0:
 
             if speed > 30:
                 speed = 29
@@ -274,17 +275,20 @@ def driveRobot(distance, speed):
             if slowingDownCounter >= 20:
                 print("Slow down 1. Speed = {}".format(speed))
                 speedAdjusted1 = True
+                speedAdjusted2 = False
                 slowingDownCounter = 0
 
         if not speedAdjusted2 and tDist > 95.0:
             speed = speed - 1
             slowingDownCounter += 1
 
-            if slowingDownCounter1 >= 8:
-                print("Slow down 1. Speed = {}".format(speed))
+            if slowingDownCounter >= 6:
+                print("Slow down 2. Speed = {}".format(speed))
                 speedAdjusted2 = True
                 slowingDownCounter = 0
 
+        print ("Speed is {}".format(speed))
+        
         encoder1Reading = mainRobot.read_encoder1()
         encoder2Reading = mainRobot.read_encoder2()
 
