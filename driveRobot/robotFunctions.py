@@ -1,45 +1,26 @@
 import time
 import RPi.GPIO as GPIO
 import sys
-
 sys.path.insert(0, '..')
-import robotConfig as config
+import settings as config
 from terminalColors import bcolors as tc
 from sensor import *
-import logging
-import datetime
 
-
-# Logger settings
-logging.root.handlers = []
-
-FORMAT = '%(asctime)s : %(levelname)s : %(message)s\r'
-
-logging.basicConfig(format=FORMAT, level=logging.DEBUG,
-                    filename='../logs.log')
-
-# set up logging to console
-console = logging.StreamHandler()
-console.setLevel(logging.DEBUG)  # this is only if we want to error logs be printed out to console
-
-# set a format which is simpler for console use
-formatter = logging.Formatter('%(asctime)s : %(levelname)s : %(message)s\r')
-console.setFormatter(formatter)
-logging.getLogger("").addHandler(console)
+log = config.logging
 
 # General settings
 todays_date = datetime.datetime.now().strftime("%A")
 
-logging.info("Today is " + (todays_date) + " ----- Program started. -----")
+log.info("Today is " + (todays_date) + " ----- Program started. -----")
 
 dummy = True
 
 try:
     import smbus
     dummy = False
-    logging.info('SMBUS is available')
+    log.info('SMBUS is available')
 except:
-    logging.info('SMBUS not available; in dummy mode')
+    log.info('SMBUS not available; in dummy mode')
 
 
 MD25_DEFAULT_ADDRESS = 0x58
@@ -69,10 +50,10 @@ class md25:
         self.mode = mode
         self.address = address
         self.bus = None
-        logging.info('Dummy is: %s' % dummy)
+        log.info('Dummy is: %s' % dummy)
 
         if not dummy:
-            logging.debug('Setting up SMBus')
+            log.debug('Setting up SMBus')
             self.bus = smbus.SMBus(bus)
             self.bus.write_byte_data(self.address, MD25_REGISTER_MODE, self.mode)
 
