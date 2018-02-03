@@ -18,6 +18,7 @@ class Sensor:
         try:
             # Setup
             GPIO.setmode(GPIO.BOARD)
+            print("Successfully, set up sensor")
         except Exception as error:
             print ("Failed setup for sensor")
 
@@ -48,7 +49,7 @@ class Sensor:
           starttime = time.time()
 
         # TODO changed to none object, do some testing to make sure is not breaking anything
-        endtime = None
+        endtime = time.time()
 
         while GPIO.input(sensorPin) == 1:
           endtime = time.time()

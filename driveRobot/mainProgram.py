@@ -9,10 +9,15 @@ if __name__ == '__main__':
         try:
             # Delay between is used in order to make sure that encoders were reset completely.
             # driveRobot(100, 50)
-            robot.turnRobot(180, 10, False)
-            time.sleep(1)
+            robot.turnRobot(180, 20, False)
+            # time.sleep(1)
+            # robot.driveRobot(178, 120)
+            # time.sleep(1)
+            # robot.turnRobot(180, 60, False)
+            # robot.driveRobot(178, 120)
+            # time.sleep(1)
+            # robot.turnRobot(180, 60, False)
 
-            robot.driveRobot(178, 120)
             # driveRobot(178, 40)
             # time.sleep(3)
             # driveRobot(178, 50)
