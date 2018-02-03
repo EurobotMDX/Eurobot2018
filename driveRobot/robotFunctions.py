@@ -246,7 +246,7 @@ def driveRobot(distance, speed):
 
     slowingDownCounter = 0
 
-    while (mainRobot.read_encoder1() <= encoderDestination and mainRobot.read_encoder2() <= encoderDestination):
+    while encoder1Reading <= encoderDestination and encoder2Reading <= encoderDestination:
         # Check if sensor detected any obstacle on the way if yes then stop the robot and wait
         if sensor1.getSensorValue() <= sensorThreshold:
             mainRobot.stop()
@@ -287,8 +287,8 @@ def driveRobot(distance, speed):
                 speedAdjusted2 = True
                 slowingDownCounter = 0
 
-        print ("Speed is {}".format(speed))
-        
+        print("Speed is {}".format(speed))
+
         encoder1Reading = mainRobot.read_encoder1()
         encoder2Reading = mainRobot.read_encoder2()
 
@@ -309,17 +309,42 @@ def turnRobot(degrees, speed, clockwise=True):
 
     oneWheelDistance = (circumferenceOfCircle / 360) * degrees
 
-    encoderCount = oneWheelDistance / oneEncMM
+    encoderDestination = oneWheelDistance / oneEncMM
+
+    encoder1Reading = mainRobot.read_encoder1()
+    encoder2Reading = mainRobot.read_encoder2()
 
     if clockwise:
-        while mainRobot.read_encoder1() <= encoderCount:
+        while encoder1Reading <= encoderDestination:
             mainRobot.drive(speed, -speed)
+
+            # encodersAvg = (encoder1Reading + encoder1Reading) / 2.0
+
+            # currentTravelDistance = round(encoder1Reading * oneEncMM, 3)
+
+            tDist = travelledDistance(encoderDestination, encoder1Reading)
+
+            print("Travelled distance: {}".format(tDist))
+
+            encoder1Reading = mainRobot.read_encoder1()
+
         else:
             mainRobot.stop()
 
     elif not clockwise:
-        while mainRobot.read_encoder2() <= encoderCount:
+
+        while encoder2Reading <= encoderDestination:
+
             mainRobot.drive(-speed, speed)
+
+            # currentTravelDistance = round(encoder1Reading * oneEncMM, 3)
+
+            tDist = travelledDistance(encoderDestination, encoder2Reading)
+
+            print("Travelled distance: {}".format(tDist))
+
+            encoder2Reading = mainRobot.read_encoder2()
+
         else:
             mainRobot.stop()
 
