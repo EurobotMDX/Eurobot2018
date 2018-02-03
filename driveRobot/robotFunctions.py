@@ -215,6 +215,20 @@ def travelledDistance(distance, current):
     else:
         return 0
 
+def stoppingThreshold(speed):
+    if (speed >= 110):
+        threshold1 = 70.0
+        threshold2 = 90.0
+    elif (speed >= 90):
+        threshold1 = 80.0
+        threshold2 = 90.0
+    elif (speed >= 70):
+        threshold1 = 85.0
+        threshold2 = 90.0
+    else:
+        threshold1 = 90.0
+        threshold2 = 95.0
+    return [threshold1, threshold2]
 
 def driveRobot(distance, speed):
     '''
@@ -237,6 +251,8 @@ def driveRobot(distance, speed):
     encoder2Reading = mainRobot.read_encoder2()
 
     distance = float(distance)
+
+    stoppingThresholds = stoppingThreshold(speed)
 
     speedAdjusted1 = False
     speedAdjusted2 = True
@@ -264,7 +280,7 @@ def driveRobot(distance, speed):
         # TODO check if loop does not break anything
 
         # Enter this loop to slow down every two encoder values
-        if not speedAdjusted1 and tDist > 80.0 and int(encodersAvg) % 2 == 0:
+        if not speedAdjusted1 and tDist > stoppingThresholds[0] and int(encodersAvg) % 2 == 0:
 
             if speed > 30:
                 speed = 29
@@ -278,7 +294,7 @@ def driveRobot(distance, speed):
                 speedAdjusted2 = False
                 slowingDownCounter = 0
 
-        if not speedAdjusted2 and tDist > 95.0:
+        if not speedAdjusted2 and tDist > stoppingThresholds[1]:
             speed = speed - 1
             slowingDownCounter += 1
 
