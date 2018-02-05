@@ -1,6 +1,7 @@
 import time
 import RPi.GPIO as GPIO
 import sys
+
 sys.path.insert(0, '..')
 import settings as config
 from terminalColors import bcolors as tc
@@ -8,20 +9,15 @@ from sensor import *
 
 log = config.logging
 
-# General settings
-todays_date = datetime.datetime.now().strftime("%A")
-
-log.info("Today is " + (todays_date) + " ----- Program started. -----")
-
 dummy = True
 
 try:
     import smbus
+
     dummy = False
     log.info('SMBUS is available')
 except:
     log.info('SMBUS not available; in dummy mode')
-
 
 MD25_DEFAULT_ADDRESS = 0x58
 MD25_DEFAULT_MODE = 0
@@ -181,11 +177,10 @@ class md25:
             print("Error when acceleration")
 
 
-
 class driving():
     def __init__(self):
         self.mainRobot = md25(mode=1)
-            
+
         # Init configuration for robot
         self.circumferenceOfCircle = config.robotSettings['circumferenceOfCircle']
         self.oneEncMM = config.robotSettings['oneEncMM']
@@ -198,7 +193,6 @@ class driving():
         self.speedAdjusted1 = False
         self.speedAdjusted2 = True
 
-
     def showCounterForWheel(self, timein=10):
         '''
         This function prints encoders values for given time in variable 'timein'.
@@ -207,14 +201,15 @@ class driving():
         '''
         countdown = time.time() + timein
         startTime = time.time()
-    
+
         print("Countdown is: {} startTime is: {}".format(countdown, startTime))
-    
+
         self.self.mainRobot.reset_encoders()
-    
+
         while (countdown > startTime):
-            print("Encoders values are --- encoder 1: {} --- encoder 2: {}\n".format(self.self.mainRobot.read_encoder1(),
-                                                                                     self.mainRobot.read_encoder2()))
+            print(
+            "Encoders values are --- encoder 1: {} --- encoder 2: {}\n".format(self.self.mainRobot.read_encoder1(),
+                                                                               self.mainRobot.read_encoder2()))
 
     def travelledDistance(self, distance, current):
         '''
@@ -228,7 +223,7 @@ class driving():
             return round(remainingDistancePercentage, 1)
         else:
             return 0
-    
+
     def calcStoppingThreshold(self, speed):
         enterSecondSlowDownOnly = False
 
@@ -238,22 +233,21 @@ class driving():
         if (speed >= 110):
             threshold1 = 70.0
             threshold2 = 95.0
-    
+
         elif (speed >= 90):
             threshold1 = 75.0
             threshold2 = 95.0
-    
+
         elif (speed >= 70):
             threshold1 = 80.0
             threshold2 = 95.0
         else:
             threshold1 = 85.0
             threshold2 = 95.0
-    
+
         return [threshold1, threshold2, enterSecondSlowDownOnly]
 
-            
-    def slowDown(self, speed, tDist, stoppingThresholds, turn = False):
+    def slowDown(self, speed, tDist, stoppingThresholds, turn=False):
         speedThreshold = 3
 
         if turn:
@@ -284,7 +278,6 @@ class driving():
 
         return speed
 
-
     def driveRobot(self, distance, speed):
         '''
         This function drives a robot forward. By adjusting values such as: speed and distance can control a robot.
@@ -293,21 +286,21 @@ class driving():
         :return:
         '''
         self.mainRobot.reset_encoders()
-    
+
         encoderDestination = distance / self.oneEncMM
-    
+
         self.sensor1.setUp()
-    
+
         encoder1Reading = self.mainRobot.read_encoder1()
         encoder2Reading = self.mainRobot.read_encoder2()
-    
+
         distance = float(distance)
-    
+
         stoppingThresholds = self.calcStoppingThreshold(speed)
 
         # Change acceleration mode if necessary
         # changeAcc(10)
-    
+
         while encoder1Reading <= encoderDestination and encoder2Reading <= encoderDestination:
             # Check if sensor detected any obstacle on the way if yes then stop the robot and wait
             if self.sensor1.getSensorValue() <= self.sensorThreshold:
@@ -316,26 +309,25 @@ class driving():
                 self.mainRobot.drive(speed, speed)
 
             encodersAvg = (encoder1Reading + encoder1Reading) / 2.0
-    
+
             currentTravelDistance = round(encodersAvg * self.oneEncMM, 3)
-    
+
             tDist = self.travelledDistance(distance, currentTravelDistance)
-    
+
             print("Travelled distance: {}".format(tDist))
 
             # Enter this function to slow down
             speed = self.slowDown(speed, tDist, stoppingThresholds)
 
             print("Speed is {}".format(speed))
-    
+
             encoder1Reading = self.mainRobot.read_encoder1()
             encoder2Reading = self.mainRobot.read_encoder2()
-    
+
         else:
             self.sensor1.stopSensor()
             self.mainRobot.stop()
 
-    
     def turnRobot(self, degrees, speed, clockwise=True):
         '''
         This function turns a robot. Depending on the argument 'clockwise', a robot can turn right or left
@@ -345,16 +337,16 @@ class driving():
         :return:
         '''
         self.mainRobot.reset_encoders()
-    
+
         oneWheelDistance = (self.circumferenceOfCircle / 360) * degrees
-    
+
         encoderDestination = oneWheelDistance / self.oneEncMM
 
         stoppingThresholds = self.calcStoppingThreshold(speed)
-    
+
         encoder1Reading = self.mainRobot.read_encoder1()
         encoder2Reading = self.mainRobot.read_encoder2()
-    
+
         if clockwise:
             while encoder1Reading <= encoderDestination:
                 self.mainRobot.drive(speed, -speed)
@@ -362,18 +354,18 @@ class driving():
                 tDist = self.travelledDistance(encoderDestination, encoder1Reading)
 
                 speed = self.slowDown(speed, tDist, stoppingThresholds, True)
-    
+
                 print("Travelled distance: {}".format(tDist))
-    
+
                 encoder1Reading = self.mainRobot.read_encoder1()
-    
+
             else:
                 self.mainRobot.stop()
-    
+
         elif not clockwise:
-    
+
             while encoder2Reading <= encoderDestination:
-    
+
                 self.mainRobot.drive(-speed, speed)
 
                 tDist = self.travelledDistance(encoderDestination, encoder2Reading)
@@ -381,15 +373,14 @@ class driving():
                 speed = self.slowDown(speed, tDist, stoppingThresholds, True)
 
                 print("Travelled distance: {}".format(tDist))
-    
+
                 encoder2Reading = self.mainRobot.read_encoder2()
-    
+
             else:
                 self.mainRobot.stop()
-    
+
         else:
             print("Error while robot turning the robot!")
-
 
     def sensorTest(self, timein=10):
         '''
@@ -399,33 +390,32 @@ class driving():
         '''
         countdown = time.time() + timein
         startTime = time.time()
-    
+
         self.sensor1.setUp()
-    
+
         while (countdown > startTime):
             print (self.sensor1.getSensorValue)
-    
+
         else:
             print("Stopped")
 
-    
     def checkStatus(self):
         canRun = True
-    
+
         getBatteryVoltage = self.mainRobot.battery()
         getBatteryVoltage = getBatteryVoltage / 10.0
-    
+
         print("\n" + tc.FAIL + "Battery Status: " + str(getBatteryVoltage) + "V" + tc.ENDC + "\n")
-    
+
         if float(getBatteryVoltage) < 11.0:
             print(tc.FAIL + "Critical Battery Level. PLEASE REPLACE BATTERY!" + tc.ENDC)
             canRun = False
-    
+
         else:
             print(tc.OKGREEN + "Battery in good level." + tc.ENDC + "\n")
-    
+
         return canRun
-    
+
     def changeAcc(self, value=5):
         print("Changed acceleration to: {}".format(value))
         self.mainRobot.setAcceleration(value)

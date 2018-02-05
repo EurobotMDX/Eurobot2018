@@ -1,9 +1,5 @@
 import RPi.GPIO as GPIO
 import time
-import sys
-sys.path.insert(0, '..')
-
-from settings import logging as log
 
 # NOTE: don't use GPIO02 or GPIO03, they have
 # internal pullup resistors that prevents results.
@@ -22,9 +18,9 @@ class Sensor:
         try:
             # Setup
             GPIO.setmode(GPIO.BOARD)
-            log.info("Successfully, set up sensor")
+            print("Successfully, set up sensor")
         except Exception as error:
-            log.error("Failed setup for sensor")
+            print ("Failed setup for sensor")
 
     def getSensorValue(self):
         sensorPin = self.sensorPin
@@ -73,4 +69,4 @@ class Sensor:
 
     def stopSensor(self):
         GPIO.cleanup()
-        log.info("Sensor stopped! Cleanup done!")
+        print("Sensor stopped! Cleanup done!")
