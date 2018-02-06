@@ -26,9 +26,9 @@ if __name__ == '__main__':
             # Delay between is used in order to make sure that encoders were reset completely.
             robot.driveRobot(100, 50)
             robot.turnRobot(90, 30, False)
-            sleep(1)
-            servo.setAngle(0)
-            servo.setAngle(180)
+            sleep(0.5)
+            # servo.setAngle(0)
+            # servo.setAngle(180)
 
 
         except KeyboardInterrupt:
