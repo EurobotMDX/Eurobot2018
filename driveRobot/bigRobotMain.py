@@ -22,14 +22,16 @@ if __name__ == '__main__':
 
     if robot.checkStatus() and canRun:
         try:
-
+            # robot.turnRobot(90, 15, False)
+            # sleep(0.5)
             # Delay between is used in order to make sure that encoders were reset completely.
             robot.driveRobot(100, 50)
-            robot.turnRobot(90, 30, False)
-            sleep(0.5)
+            # robot.turnRobot(180, 15, False)
+            # sleep(0.5)
             # servo.setAngle(0)
             # servo.setAngle(180)
-
+            # sleep(2)
+            # servo.setAngle(0)
 
         except KeyboardInterrupt:
             log.debug("\nStopped by user\n")
