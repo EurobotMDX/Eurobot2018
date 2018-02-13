@@ -50,8 +50,11 @@ class md25:
 
         if not dummy:
             log.debug('Setting up SMBus')
-            self.bus = smbus.SMBus(bus)
-            self.bus.write_byte_data(self.address, MD25_REGISTER_MODE, self.mode)
+            try:
+                self.bus = smbus.SMBus(bus)
+                self.bus.write_byte_data(self.address, MD25_REGISTER_MODE, self.mode)
+            except IOError:
+                log.error("IO error. Please check if batter is connected and MD25 working correctly.")
 
     def ensureSet(self, args, message='', all=True):
         for name in args:
@@ -69,45 +72,52 @@ class md25:
                     "%s (%i) was out of range (%i - %i). %s" % (name, args[name], range[0], range[1], message))
 
     def drive(self, motor0=None, motor1=None, speed=None, turn=None):
-        # print (motor0, motor1, speed, turn)
-        if 0 == self.mode:
-            self.ensureSet({'motor0': motor0, 'motor1': motor1}, all=False)
-            self.ensureRange((1, 255), {'motor0': motor0, 'motor1': motor1})
-        if 1 == self.mode:
-            self.ensureSet({'motor0': motor0, 'motor1': motor1}, all=False)
-            self.ensureRange((-128, 127), {'motor0': motor0, 'motor1': motor1})
-        if (0 == self.mode or 1 == self.mode) and self.bus:
-            if motor0:
-                self.bus.write_byte_data(self.address, MD25_REGISTER_SPEED1, motor0)
-            if motor1:
-                self.bus.write_byte_data(self.address, MD25_REGISTER_SPEED2_TURN, motor1)
-        if 2 == self.mode:
-            self.ensureSet({'speed': speed, 'turn': turn}, all=False)
-            self.ensureRange((1, 255), {'speed': speed, 'turn': turn})
-        if 3 == self.mode:
-            self.ensureSet({'speed': speed, 'turn': turn}, all=False)
-            self.ensureRange((-128, 127), {'speed': speed, 'turn': turn})
-        if (2 == self.mode or 3 == self.mode) and self.bus:
-            if speed:
-                self.bus.write_byte_data(self.address, MD25_REGISTER_SPEED1, speed)
-                # time.sleep(5)
-            if turn:
-                self.bus.write_byte_data(self.address, MD25_REGISTER_SPEED2_TURN, turn)
-                # time.sleep(5)
+        try:
+            if 0 == self.mode:
+                self.ensureSet({'motor0': motor0, 'motor1': motor1}, all=False)
+                self.ensureRange((1, 255), {'motor0': motor0, 'motor1': motor1})
+            if 1 == self.mode:
+                self.ensureSet({'motor0': motor0, 'motor1': motor1}, all=False)
+                self.ensureRange((-128, 127), {'motor0': motor0, 'motor1': motor1})
+            if (0 == self.mode or 1 == self.mode) and self.bus:
+                if motor0:
+                    self.bus.write_byte_data(self.address, MD25_REGISTER_SPEED1, motor0)
+                if motor1:
+                    self.bus.write_byte_data(self.address, MD25_REGISTER_SPEED2_TURN, motor1)
+            if 2 == self.mode:
+                self.ensureSet({'speed': speed, 'turn': turn}, all=False)
+                self.ensureRange((1, 255), {'speed': speed, 'turn': turn})
+            if 3 == self.mode:
+                self.ensureSet({'speed': speed, 'turn': turn}, all=False)
+                self.ensureRange((-128, 127), {'speed': speed, 'turn': turn})
+            if (2 == self.mode or 3 == self.mode) and self.bus:
+                if speed:
+                    self.bus.write_byte_data(self.address, MD25_REGISTER_SPEED1, speed)
+                if turn:
+                    self.bus.write_byte_data(self.address, MD25_REGISTER_SPEED2_TURN, turn)
+        except IOError:
+            log.warrning("CAUGHT: IOError")
 
     def stop(self):
         if (0 == self.mode or 2 == self.mode) and self.bus:
-            self.bus.write_byte_data(self.address, MD25_REGISTER_SPEED1, 128)
-            self.bus.write_byte_data(self.address, MD25_REGISTER_SPEED2_TURN, 128)
+            try:
+                self.bus.write_byte_data(self.address, MD25_REGISTER_SPEED1, 128)
+                self.bus.write_byte_data(self.address, MD25_REGISTER_SPEED2_TURN, 128)
+            except IOError:
+                log.warrning("CAUGHT: IOError")
+
         if (1 == self.mode or 3 == self.mode) and self.bus:
-            self.bus.write_byte_data(self.address, MD25_REGISTER_SPEED1, 0)
-            self.bus.write_byte_data(self.address, MD25_REGISTER_SPEED2_TURN, 0)
-            # print('STOP!!!')
+            try:
+                self.bus.write_byte_data(self.address, MD25_REGISTER_SPEED1, 0)
+                self.bus.write_byte_data(self.address, MD25_REGISTER_SPEED2_TURN, 0)
+            except IOError:
+                log.warrning("CAUGHT: IOError")
 
     def battery(self):
         if self.bus:
             return self.bus.read_byte_data(self.address, MD25_REGISTER_BATTERY_VOLTS)
         else:
+            log.error("Problem while reading the batter voltage!")
             return 999
 
     def read_encoder1(self):
@@ -123,7 +133,7 @@ class md25:
                 totalEncoder = e4 + (255 * e3) + (65025 * e2) + (16581375 * e1)
             except IOError:
                 totalEncoder = 0
-                print("CAUGHT: IOError")
+                log.warrning("CAUGHT: IOError")
 
             return totalEncoder
         else:
@@ -190,8 +200,8 @@ class driving():
         self.sensor1 = Sensor(11, "Front", 0.02)
 
         # Slowing down variables
-        self.speedAdjusted1 = False
-        self.speedAdjusted2 = True
+        self.enterSpeedLoop1 = True
+        self.enterSpeedLoop2 = False
 
     def showCounterForWheel(self, timein=10):
         '''
@@ -247,28 +257,29 @@ class driving():
 
         return [threshold1, threshold2, enterSecondSlowDownOnly]
 
-    def slowDown(self, speed, tDist, stoppingThresholds, turn=False):
+    def speedControl(self, speed, tDist, stoppingThresholds, turn=False):
         speedThreshold = 3
 
         if turn:
             speedThreshold = 2
 
         if stoppingThresholds[2] == True:
-            self.speedAdjusted2 = False
+            self.enterSpeedLoop1 = False
+            self.enterSpeedLoop2 = True
 
-        if not self.speedAdjusted1 and tDist > stoppingThresholds[0] and speed > 11 and not stoppingThresholds[2]:
+        if self.enterSpeedLoop1 and tDist > stoppingThresholds[0] and speed > 11 and not stoppingThresholds[2]:
+
+            speed = speed - 1
 
             if speed > 30:
                 speed = 29
 
             if speed == 12:
-                self.speedAdjusted1 = True
-                self.speedAdjusted2 = False
+                self.enterSpeedLoop1 = False
+                self.enterSpeedLoop2 = False
                 print("Slow down 1 finished. Speed = {}".format(speed))
 
-            speed = speed - 1
-
-        if not self.speedAdjusted2 and tDist > stoppingThresholds[1] and speed >= speedThreshold:
+        if self.enterSpeedLoop2 and tDist > stoppingThresholds[1] and speed >= speedThreshold:
 
             speed = speed - 1
 
@@ -290,6 +301,8 @@ class driving():
         encoderDestination = distance / self.oneEncMM
 
         self.sensor1.setUp()
+
+        print ("sadsd")
 
         encoder1Reading = self.mainRobot.read_encoder1()
         encoder2Reading = self.mainRobot.read_encoder2()
@@ -317,9 +330,9 @@ class driving():
             print("Travelled distance: {}".format(tDist))
 
             # Enter this function to slow down
-            speed = self.slowDown(speed, tDist, stoppingThresholds)
+            speed = self.speedControl(speed, tDist, stoppingThresholds)
 
-            print("Speed is {}".format(speed))
+            # print("Speed is {}".format(speed))
 
             encoder1Reading = self.mainRobot.read_encoder1()
             encoder2Reading = self.mainRobot.read_encoder2()
@@ -353,7 +366,7 @@ class driving():
 
                 tDist = self.travelledDistance(encoderDestination, encoder1Reading)
 
-                speed = self.slowDown(speed, tDist, stoppingThresholds, True)
+                speed = self.speedControl(speed, tDist, stoppingThresholds, True)
 
                 print("Travelled distance: {}".format(tDist))
 
@@ -370,7 +383,7 @@ class driving():
 
                 tDist = self.travelledDistance(encoderDestination, encoder2Reading)
 
-                speed = self.slowDown(speed, tDist, stoppingThresholds, True)
+                speed = self.speedControl(speed, tDist, stoppingThresholds, True)
 
                 print("Travelled distance: {}".format(tDist))
 
