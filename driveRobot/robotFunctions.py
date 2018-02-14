@@ -302,8 +302,6 @@ class driving():
 
         self.sensor1.setUp()
 
-        print ("sadsd")
-
         encoder1Reading = self.mainRobot.read_encoder1()
         encoder2Reading = self.mainRobot.read_encoder2()
 

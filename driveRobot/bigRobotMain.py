@@ -28,12 +28,13 @@ if __name__ == '__main__':
             # robot.driveRobot(100, 50)
             # robot.turnRobot(180, 15, False)
             # sleep(0.5)
-            servo.setAngle(0)
-            sleep(1)
-            servo.setAngle(100)
-            sleep(2)
-            servo.setAngle(0)
+            # sleep(10)
 
+            servo.setAngle(7)
+            sleep(2)
+            servo.setAngle(5)
+            sleep(5)
+            servo.setAngle(6.5)
 
             servo.cleanup()
 
