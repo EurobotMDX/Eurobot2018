@@ -62,27 +62,3 @@ Stopped by user
 2018-02-08 20:48:57,158 : DEBUG : Setting up SMBus
 2018-02-08 20:48:57,159 : INFO : Successful set up for servo!
 2018-02-08 20:48:57,160 : INFO : Initialized main objects
-2018-02-13 21:46:37,429 : INFO : SMBUS is available
-2018-02-13 21:46:37,437 : INFO : Dummy is: False
-2018-02-13 21:46:37,438 : DEBUG : Setting up SMBus
-2018-02-13 21:46:37,439 : INFO : Successful set up for servo!
-2018-02-13 21:46:37,440 : INFO : Initialized main objects
-2018-02-13 21:47:08,643 : DEBUG : 
-Stopped by user
-
-2018-02-13 21:47:30,254 : INFO : SMBUS is available
-2018-02-13 21:47:30,255 : INFO : Dummy is: False
-2018-02-13 21:47:30,256 : DEBUG : Setting up SMBus
-2018-02-13 21:47:30,257 : INFO : Successful set up for servo!
-2018-02-13 21:47:30,257 : INFO : Initialized main objects
-2018-02-13 21:47:32,236 : DEBUG : 
-Stopped by user
-
-2018-02-13 21:47:48,964 : INFO : SMBUS is available
-2018-02-13 21:47:48,965 : INFO : Dummy is: False
-2018-02-13 21:47:48,966 : DEBUG : Setting up SMBus
-2018-02-13 21:47:48,967 : INFO : Successful set up for servo!
-2018-02-13 21:47:48,967 : INFO : Initialized main objects
-2018-02-13 21:50:30,180 : DEBUG : 
-Stopped by user
-

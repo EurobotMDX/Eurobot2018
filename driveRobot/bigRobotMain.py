@@ -13,7 +13,7 @@ if __name__ == '__main__':
 
     try:
         robot = driving()
-        servo = Servo(13, "Balls pipe servo")
+        servo = Servo(15, "Balls pipe servo")
         log.info("Initialized main objects")
         canRun = True
     except Exception as error:
@@ -25,13 +25,17 @@ if __name__ == '__main__':
             # robot.turnRobot(90, 15, False)
             # sleep(0.5)
             # Delay between is used in order to make sure that encoders were reset completely.
-            robot.driveRobot(100, 50)
+            # robot.driveRobot(100, 50)
             # robot.turnRobot(180, 15, False)
             # sleep(0.5)
-            # servo.setAngle(0)
-            # servo.setAngle(180)
-            # sleep(2)
-            # servo.setAngle(0)
+            servo.setAngle(0)
+            sleep(1)
+            servo.setAngle(100)
+            sleep(2)
+            servo.setAngle(0)
+
+
+            servo.cleanup()
 
         except KeyboardInterrupt:
             log.debug("\nStopped by user\n")

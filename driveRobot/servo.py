@@ -15,8 +15,8 @@ class Servo():
 
     def setAngle(self, angle):
         duty = angle / 18 + 2
-        # GPIO.output(self.pin, True)
-        # self.pwm.ChangeDutyCycle(duty)
+        GPIO.output(self.pin, True)
+        self.pwm.ChangeDutyCycle(duty)
         sleep(1)
         GPIO.output(self.pin, False)
         self.pwm.ChangeDutyCycle(0)
