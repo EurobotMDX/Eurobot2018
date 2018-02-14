@@ -393,6 +393,59 @@ class driving():
         else:
             print("Error while robot turning the robot!")
 
+    def driveBack(self, distance, speed, sensorEnabled=True):
+        '''
+        This function drives a robot backward. By adjusting values such as: speed and distance can control a robot.
+        :param distance:
+        :param speed:
+        :return:
+        '''
+        self.mainRobot.reset_encoders()
+
+        encoderDestination = distance / self.oneEncMM
+
+        self.sensor1.setUp()
+
+        encoder1Reading = self.mainRobot.read_encoder1()
+        encoder2Reading = self.mainRobot.read_encoder2()
+
+        distance = float(distance)
+
+        # stoppingThresholds = self.calcStoppingThreshold(speed)
+
+        # Change acceleration mode if necessary
+        # changeAcc(10)
+
+        while encoder1Reading >= encoderDestination and encoder2Reading >= encoderDestination or encoder1Reading == 0 or encoder2Reading == 0:
+
+            encodersAvg = (encoder1Reading + encoder1Reading) / 2.0
+            currentTravelDistance = round(encodersAvg * self.oneEncMM, 3)
+            tDist = self.travelledDistance(distance, currentTravelDistance)
+
+            # Check if sensor detected any obstacle on the way if yes then stop the robot and wait
+            if sensorEnabled == True:
+                if self.sensor1.getSensorValue() <= self.sensorThreshold:
+                    print("Obstacle detected by {}".format(self.sensor1.sensorPosition))
+                    self.mainRobot.stop()
+                else:
+                    self.mainRobot.drive(-speed, -speed)
+                    print("Travelled distance: {}".format(tDist))
+            else:
+                print("Travelled distance: {}  {}".format(tDist, encodersAvg))
+
+
+            # Enter this function to slow down
+            # speed = self.speedControl(speed, tDist, stoppingThresholds)
+
+            # print("Speed is {}".format(speed))
+
+            encoder1Reading = self.mainRobot.read_encoder1()
+            encoder2Reading = self.mainRobot.read_encoder2()
+
+        else:
+            self.sensor1.stopSensor()
+            self.mainRobot.stop()
+
     def sensorTest(self, timein=10):
         '''
         This function prints sensor values for given time in variable 'timein'.
