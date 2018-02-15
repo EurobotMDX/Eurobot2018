@@ -22,7 +22,9 @@ if __name__ == '__main__':
 
     if robot.checkStatus() and canRun:
         try:
-            robot.driveBack(30, 10, False)
+            # robot.driveBack(30, 10, False)
+
+
             # robot.turnRobot(90, 15, False)
             # sleep(0.5)
             # Delay between is used in order to make sure that encoders were reset completely.
@@ -31,10 +33,16 @@ if __name__ == '__main__':
             # sleep(0.5)
             # sleep(10)
 
-            # servo.setAngle(7)
-            # sleep(2)
-            # servo.setAngle(5)
-            # sleep(5)
+            servo.setAngle(1)
+            sleep(1)
+            servo.setAngle(0)
+            sleep(3)
+            servo.setAngle(8)
+            sleep(3)
+            servo.setAngle(0)
+
+            # Servo on 7 stops, middle point
+
             # servo.setAngle(6.5)
 
             servo.cleanup()
