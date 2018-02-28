@@ -62,3 +62,1612 @@ Stopped by user
 2018-02-08 20:48:57,158 : DEBUG : Setting up SMBus
 2018-02-08 20:48:57,159 : INFO : Successful set up for servo!
 2018-02-08 20:48:57,160 : INFO : Initialized main objects
+2018-02-13 21:46:37,429 : INFO : SMBUS is available
+2018-02-13 21:46:37,437 : INFO : Dummy is: False
+2018-02-13 21:46:37,438 : DEBUG : Setting up SMBus
+2018-02-13 21:46:37,439 : INFO : Successful set up for servo!
+2018-02-13 21:46:37,440 : INFO : Initialized main objects
+2018-02-13 21:47:08,643 : DEBUG : 
+Stopped by user
+
+2018-02-13 21:47:30,254 : INFO : SMBUS is available
+2018-02-13 21:47:30,255 : INFO : Dummy is: False
+2018-02-13 21:47:30,256 : DEBUG : Setting up SMBus
+2018-02-13 21:47:30,257 : INFO : Successful set up for servo!
+2018-02-13 21:47:30,257 : INFO : Initialized main objects
+2018-02-13 21:47:32,236 : DEBUG : 
+Stopped by user
+
+2018-02-13 21:47:48,964 : INFO : SMBUS is available
+2018-02-13 21:47:48,965 : INFO : Dummy is: False
+2018-02-13 21:47:48,966 : DEBUG : Setting up SMBus
+2018-02-13 21:47:48,967 : INFO : Successful set up for servo!
+2018-02-13 21:47:48,967 : INFO : Initialized main objects
+2018-02-13 21:50:30,180 : DEBUG : 
+Stopped by user
+
+2018-02-13 21:57:16,348 : INFO : SMBUS is available
+2018-02-13 21:57:16,350 : INFO : Dummy is: False
+2018-02-13 21:57:16,350 : DEBUG : Setting up SMBus
+2018-02-13 21:57:16,351 : INFO : Successful set up for servo!
+2018-02-13 21:57:16,352 : INFO : Initialized main objects
+2018-02-13 22:00:21,480 : INFO : SMBUS is available
+2018-02-13 22:00:21,484 : INFO : Dummy is: False
+2018-02-13 22:00:21,485 : DEBUG : Setting up SMBus
+2018-02-13 22:00:21,486 : INFO : Successful set up for servo!
+2018-02-13 22:00:21,487 : INFO : Initialized main objects
+2018-02-13 22:01:16,756 : DEBUG : 
+Stopped by user
+
+2018-02-13 22:07:29,571 : INFO : SMBUS is available
+2018-02-13 22:07:29,574 : INFO : Dummy is: False
+2018-02-13 22:07:29,574 : DEBUG : Setting up SMBus
+2018-02-13 22:07:29,576 : INFO : Successful set up for servo!
+2018-02-13 22:07:29,576 : INFO : Initialized main objects
+2018-02-13 22:07:29,577 : INFO : [1;41m[4mCould not start the program please check the conditions of the robot![0m
+2018-02-13 22:08:40,591 : INFO : SMBUS is available
+2018-02-13 22:08:40,594 : INFO : Dummy is: False
+2018-02-13 22:08:40,594 : DEBUG : Setting up SMBus
+2018-02-13 22:08:40,595 : ERROR : IO error. Please check if batter is connected and MD25 working correctly.
+2018-02-13 22:08:40,596 : INFO : Successful set up for servo!
+2018-02-13 22:08:40,596 : INFO : Initialized main objects
+2018-02-13 22:08:55,844 : INFO : SMBUS is available
+2018-02-13 22:08:55,847 : INFO : Dummy is: False
+2018-02-13 22:08:55,848 : DEBUG : Setting up SMBus
+2018-02-13 22:08:55,849 : INFO : Successful set up for servo!
+2018-02-13 22:08:55,850 : INFO : Initialized main objects
+2018-02-13 22:09:21,742 : INFO : SMBUS is available
+2018-02-13 22:09:21,745 : INFO : Dummy is: False
+2018-02-13 22:09:21,745 : DEBUG : Setting up SMBus
+2018-02-13 22:09:21,746 : INFO : Successful set up for servo!
+2018-02-13 22:09:21,747 : INFO : Initialized main objects
+2018-02-13 22:09:39,677 : DEBUG : 
+Stopped by user
+
+2018-02-13 22:10:05,401 : INFO : SMBUS is available
+2018-02-13 22:10:05,404 : INFO : Dummy is: False
+2018-02-13 22:10:05,405 : DEBUG : Setting up SMBus
+2018-02-13 22:10:05,405 : ERROR : IO error. Please check if batter is connected and MD25 working correctly.
+2018-02-13 22:10:05,406 : INFO : Successful set up for servo!
+2018-02-13 22:10:05,407 : INFO : Initialized main objects
+2018-02-13 22:10:07,525 : INFO : SMBUS is available
+2018-02-13 22:10:07,527 : INFO : Dummy is: False
+2018-02-13 22:10:07,528 : DEBUG : Setting up SMBus
+2018-02-13 22:10:07,529 : ERROR : IO error. Please check if batter is connected and MD25 working correctly.
+2018-02-13 22:10:07,530 : INFO : Successful set up for servo!
+2018-02-13 22:10:07,530 : INFO : Initialized main objects
+2018-02-13 22:10:09,312 : INFO : SMBUS is available
+2018-02-13 22:10:09,314 : INFO : Dummy is: False
+2018-02-13 22:10:09,315 : DEBUG : Setting up SMBus
+2018-02-13 22:10:09,316 : ERROR : IO error. Please check if batter is connected and MD25 working correctly.
+2018-02-13 22:10:09,317 : INFO : Successful set up for servo!
+2018-02-13 22:10:09,317 : INFO : Initialized main objects
+2018-02-13 22:10:10,479 : INFO : SMBUS is available
+2018-02-13 22:10:10,482 : INFO : Dummy is: False
+2018-02-13 22:10:10,482 : DEBUG : Setting up SMBus
+2018-02-13 22:10:10,483 : ERROR : IO error. Please check if batter is connected and MD25 working correctly.
+2018-02-13 22:10:10,484 : INFO : Successful set up for servo!
+2018-02-13 22:10:10,484 : INFO : Initialized main objects
+2018-02-13 22:10:11,459 : INFO : SMBUS is available
+2018-02-13 22:10:11,462 : INFO : Dummy is: False
+2018-02-13 22:10:11,462 : DEBUG : Setting up SMBus
+2018-02-13 22:10:11,463 : ERROR : IO error. Please check if batter is connected and MD25 working correctly.
+2018-02-13 22:10:11,464 : INFO : Successful set up for servo!
+2018-02-13 22:10:11,464 : INFO : Initialized main objects
+2018-02-13 22:10:12,987 : INFO : SMBUS is available
+2018-02-13 22:10:12,990 : INFO : Dummy is: False
+2018-02-13 22:10:12,990 : DEBUG : Setting up SMBus
+2018-02-13 22:10:12,991 : ERROR : IO error. Please check if batter is connected and MD25 working correctly.
+2018-02-13 22:10:12,992 : INFO : Successful set up for servo!
+2018-02-13 22:10:12,993 : INFO : Initialized main objects
+2018-02-13 22:10:13,929 : INFO : SMBUS is available
+2018-02-13 22:10:13,932 : INFO : Dummy is: False
+2018-02-13 22:10:13,932 : DEBUG : Setting up SMBus
+2018-02-13 22:10:13,933 : ERROR : IO error. Please check if batter is connected and MD25 working correctly.
+2018-02-13 22:10:13,934 : INFO : Successful set up for servo!
+2018-02-13 22:10:13,935 : INFO : Initialized main objects
+2018-02-13 22:10:14,774 : INFO : SMBUS is available
+2018-02-13 22:10:14,777 : INFO : Dummy is: False
+2018-02-13 22:10:14,777 : DEBUG : Setting up SMBus
+2018-02-13 22:10:14,778 : ERROR : IO error. Please check if batter is connected and MD25 working correctly.
+2018-02-13 22:10:14,779 : INFO : Successful set up for servo!
+2018-02-13 22:10:14,780 : INFO : Initialized main objects
+2018-02-13 22:10:15,691 : INFO : SMBUS is available
+2018-02-13 22:10:15,694 : INFO : Dummy is: False
+2018-02-13 22:10:15,695 : DEBUG : Setting up SMBus
+2018-02-13 22:10:15,696 : ERROR : IO error. Please check if batter is connected and MD25 working correctly.
+2018-02-13 22:10:15,697 : INFO : Successful set up for servo!
+2018-02-13 22:10:15,698 : INFO : Initialized main objects
+2018-02-13 22:10:16,746 : INFO : SMBUS is available
+2018-02-13 22:10:16,749 : INFO : Dummy is: False
+2018-02-13 22:10:16,750 : DEBUG : Setting up SMBus
+2018-02-13 22:10:16,750 : ERROR : IO error. Please check if batter is connected and MD25 working correctly.
+2018-02-13 22:10:16,751 : INFO : Successful set up for servo!
+2018-02-13 22:10:16,752 : INFO : Initialized main objects
+2018-02-13 22:10:17,633 : INFO : SMBUS is available
+2018-02-13 22:10:17,635 : INFO : Dummy is: False
+2018-02-13 22:10:17,636 : DEBUG : Setting up SMBus
+2018-02-13 22:10:17,637 : ERROR : IO error. Please check if batter is connected and MD25 working correctly.
+2018-02-13 22:10:17,638 : INFO : Successful set up for servo!
+2018-02-13 22:10:17,638 : INFO : Initialized main objects
+2018-02-13 22:10:18,615 : INFO : SMBUS is available
+2018-02-13 22:10:18,618 : INFO : Dummy is: False
+2018-02-13 22:10:18,618 : DEBUG : Setting up SMBus
+2018-02-13 22:10:18,619 : ERROR : IO error. Please check if batter is connected and MD25 working correctly.
+2018-02-13 22:10:18,620 : INFO : Successful set up for servo!
+2018-02-13 22:10:18,621 : INFO : Initialized main objects
+2018-02-13 22:10:19,518 : INFO : SMBUS is available
+2018-02-13 22:10:19,521 : INFO : Dummy is: False
+2018-02-13 22:10:19,522 : DEBUG : Setting up SMBus
+2018-02-13 22:10:19,523 : ERROR : IO error. Please check if batter is connected and MD25 working correctly.
+2018-02-13 22:10:19,524 : INFO : Successful set up for servo!
+2018-02-13 22:10:19,525 : INFO : Initialized main objects
+2018-02-13 22:10:20,456 : INFO : SMBUS is available
+2018-02-13 22:10:20,459 : INFO : Dummy is: False
+2018-02-13 22:10:20,460 : DEBUG : Setting up SMBus
+2018-02-13 22:10:20,461 : ERROR : IO error. Please check if batter is connected and MD25 working correctly.
+2018-02-13 22:10:20,462 : INFO : Successful set up for servo!
+2018-02-13 22:10:20,462 : INFO : Initialized main objects
+2018-02-13 22:10:27,289 : INFO : SMBUS is available
+2018-02-13 22:10:27,291 : INFO : Dummy is: False
+2018-02-13 22:10:27,292 : DEBUG : Setting up SMBus
+2018-02-13 22:10:27,293 : ERROR : IO error. Please check if batter is connected and MD25 working correctly.
+2018-02-13 22:10:27,294 : INFO : Successful set up for servo!
+2018-02-13 22:10:27,295 : INFO : Initialized main objects
+2018-02-13 22:10:28,197 : INFO : SMBUS is available
+2018-02-13 22:10:28,200 : INFO : Dummy is: False
+2018-02-13 22:10:28,201 : DEBUG : Setting up SMBus
+2018-02-13 22:10:28,202 : ERROR : IO error. Please check if batter is connected and MD25 working correctly.
+2018-02-13 22:10:28,203 : INFO : Successful set up for servo!
+2018-02-13 22:10:28,203 : INFO : Initialized main objects
+2018-02-13 22:10:29,009 : INFO : SMBUS is available
+2018-02-13 22:10:29,012 : INFO : Dummy is: False
+2018-02-13 22:10:29,013 : DEBUG : Setting up SMBus
+2018-02-13 22:10:29,014 : ERROR : IO error. Please check if batter is connected and MD25 working correctly.
+2018-02-13 22:10:29,016 : INFO : Successful set up for servo!
+2018-02-13 22:10:29,017 : INFO : Initialized main objects
+2018-02-13 22:10:29,768 : INFO : SMBUS is available
+2018-02-13 22:10:29,772 : INFO : Dummy is: False
+2018-02-13 22:10:29,772 : DEBUG : Setting up SMBus
+2018-02-13 22:10:29,774 : ERROR : IO error. Please check if batter is connected and MD25 working correctly.
+2018-02-13 22:10:29,775 : INFO : Successful set up for servo!
+2018-02-13 22:10:29,776 : INFO : Initialized main objects
+2018-02-13 22:10:30,625 : INFO : SMBUS is available
+2018-02-13 22:10:30,628 : INFO : Dummy is: False
+2018-02-13 22:10:30,628 : DEBUG : Setting up SMBus
+2018-02-13 22:10:30,629 : ERROR : IO error. Please check if batter is connected and MD25 working correctly.
+2018-02-13 22:10:30,630 : INFO : Successful set up for servo!
+2018-02-13 22:10:30,631 : INFO : Initialized main objects
+2018-02-13 22:10:31,301 : INFO : SMBUS is available
+2018-02-13 22:10:31,304 : INFO : Dummy is: False
+2018-02-13 22:10:31,305 : DEBUG : Setting up SMBus
+2018-02-13 22:10:31,306 : ERROR : IO error. Please check if batter is connected and MD25 working correctly.
+2018-02-13 22:10:31,307 : INFO : Successful set up for servo!
+2018-02-13 22:10:31,308 : INFO : Initialized main objects
+2018-02-13 22:10:31,866 : INFO : SMBUS is available
+2018-02-13 22:10:31,869 : INFO : Dummy is: False
+2018-02-13 22:10:31,870 : DEBUG : Setting up SMBus
+2018-02-13 22:10:31,871 : ERROR : IO error. Please check if batter is connected and MD25 working correctly.
+2018-02-13 22:10:31,872 : INFO : Successful set up for servo!
+2018-02-13 22:10:31,874 : INFO : Initialized main objects
+2018-02-13 22:10:32,378 : INFO : SMBUS is available
+2018-02-13 22:10:32,380 : INFO : Dummy is: False
+2018-02-13 22:10:32,381 : DEBUG : Setting up SMBus
+2018-02-13 22:10:32,383 : ERROR : IO error. Please check if batter is connected and MD25 working correctly.
+2018-02-13 22:10:32,384 : INFO : Successful set up for servo!
+2018-02-13 22:10:32,385 : INFO : Initialized main objects
+2018-02-13 22:10:33,023 : INFO : SMBUS is available
+2018-02-13 22:10:33,025 : INFO : Dummy is: False
+2018-02-13 22:10:33,026 : DEBUG : Setting up SMBus
+2018-02-13 22:10:33,027 : ERROR : IO error. Please check if batter is connected and MD25 working correctly.
+2018-02-13 22:10:33,028 : INFO : Successful set up for servo!
+2018-02-13 22:10:33,029 : INFO : Initialized main objects
+2018-02-13 22:10:33,694 : INFO : SMBUS is available
+2018-02-13 22:10:33,697 : INFO : Dummy is: False
+2018-02-13 22:10:33,698 : DEBUG : Setting up SMBus
+2018-02-13 22:10:33,698 : ERROR : IO error. Please check if batter is connected and MD25 working correctly.
+2018-02-13 22:10:33,699 : INFO : Successful set up for servo!
+2018-02-13 22:10:33,700 : INFO : Initialized main objects
+2018-02-13 22:10:34,512 : INFO : SMBUS is available
+2018-02-13 22:10:34,514 : INFO : Dummy is: False
+2018-02-13 22:10:34,515 : DEBUG : Setting up SMBus
+2018-02-13 22:10:34,516 : INFO : Successful set up for servo!
+2018-02-13 22:10:34,517 : INFO : Initialized main objects
+2018-02-13 22:10:34,982 : INFO : SMBUS is available
+2018-02-13 22:10:34,984 : INFO : Dummy is: False
+2018-02-13 22:10:34,985 : DEBUG : Setting up SMBus
+2018-02-13 22:10:34,986 : INFO : Successful set up for servo!
+2018-02-13 22:10:34,987 : INFO : Initialized main objects
+2018-02-13 22:10:42,522 : INFO : SMBUS is available
+2018-02-13 22:10:42,525 : INFO : Dummy is: False
+2018-02-13 22:10:42,525 : DEBUG : Setting up SMBus
+2018-02-13 22:10:42,527 : INFO : Successful set up for servo!
+2018-02-13 22:10:42,527 : INFO : Initialized main objects
+2018-02-13 22:10:45,012 : INFO : SMBUS is available
+2018-02-13 22:10:45,014 : INFO : Dummy is: False
+2018-02-13 22:10:45,015 : DEBUG : Setting up SMBus
+2018-02-13 22:10:45,016 : INFO : Successful set up for servo!
+2018-02-13 22:10:45,017 : INFO : Initialized main objects
+2018-02-13 22:10:45,564 : DEBUG : 
+Stopped by user
+
+2018-02-13 22:12:49,283 : INFO : SMBUS is available
+2018-02-13 22:12:49,286 : INFO : Dummy is: False
+2018-02-13 22:12:49,286 : DEBUG : Setting up SMBus
+2018-02-13 22:12:49,287 : INFO : Successful set up for servo!
+2018-02-13 22:12:49,288 : INFO : Initialized main objects
+2018-02-13 22:13:59,052 : INFO : SMBUS is available
+2018-02-13 22:13:59,055 : INFO : Dummy is: False
+2018-02-13 22:13:59,056 : DEBUG : Setting up SMBus
+2018-02-13 22:13:59,057 : INFO : Successful set up for servo!
+2018-02-13 22:13:59,057 : INFO : Initialized main objects
+2018-02-13 22:15:09,313 : INFO : SMBUS is available
+2018-02-13 22:15:09,329 : INFO : Dummy is: False
+2018-02-13 22:15:09,333 : DEBUG : Setting up SMBus
+2018-02-13 22:15:09,337 : INFO : Successful set up for servo!
+2018-02-13 22:15:09,340 : INFO : Initialized main objects
+2018-02-13 22:17:01,953 : INFO : SMBUS is available
+2018-02-13 22:17:01,956 : INFO : Dummy is: False
+2018-02-13 22:17:01,956 : DEBUG : Setting up SMBus
+2018-02-13 22:17:01,958 : INFO : Successful set up for servo!
+2018-02-13 22:17:01,958 : INFO : Initialized main objects
+2018-02-13 22:17:54,560 : INFO : SMBUS is available
+2018-02-13 22:17:54,563 : INFO : Dummy is: False
+2018-02-13 22:17:54,564 : DEBUG : Setting up SMBus
+2018-02-13 22:17:54,565 : INFO : Successful set up for servo!
+2018-02-13 22:17:54,566 : INFO : Initialized main objects
+2018-02-13 22:18:45,598 : INFO : SMBUS is available
+2018-02-13 22:18:45,601 : INFO : Dummy is: False
+2018-02-13 22:18:45,602 : DEBUG : Setting up SMBus
+2018-02-13 22:18:45,603 : INFO : Successful set up for servo!
+2018-02-13 22:18:45,603 : INFO : Initialized main objects
+2018-02-14 17:05:04,321 : INFO : SMBUS is available
+2018-02-14 17:05:04,326 : INFO : Dummy is: False
+2018-02-14 17:05:04,327 : DEBUG : Setting up SMBus
+2018-02-14 17:05:04,328 : ERROR : IO error. Please check if batter is connected and MD25 working correctly.
+2018-02-14 17:05:04,329 : INFO : Successful set up for servo!
+2018-02-14 17:05:04,329 : INFO : Initialized main objects
+2018-02-14 17:05:27,955 : INFO : SMBUS is available
+2018-02-14 17:05:27,957 : INFO : Dummy is: False
+2018-02-14 17:05:27,958 : DEBUG : Setting up SMBus
+2018-02-14 17:05:27,959 : ERROR : IO error. Please check if batter is connected and MD25 working correctly.
+2018-02-14 17:05:27,960 : INFO : Successful set up for servo!
+2018-02-14 17:05:27,960 : INFO : Initialized main objects
+2018-02-14 17:09:21,256 : INFO : SMBUS is available
+2018-02-14 17:09:21,259 : INFO : Dummy is: False
+2018-02-14 17:09:21,259 : DEBUG : Setting up SMBus
+2018-02-14 17:09:21,260 : INFO : Successful set up for servo!
+2018-02-14 17:09:21,261 : INFO : Initialized main objects
+2018-02-14 17:09:30,749 : DEBUG : 
+Stopped by user
+
+2018-02-14 17:09:38,063 : INFO : SMBUS is available
+2018-02-14 17:09:38,066 : INFO : Dummy is: False
+2018-02-14 17:09:38,067 : DEBUG : Setting up SMBus
+2018-02-14 17:09:38,068 : INFO : Successful set up for servo!
+2018-02-14 17:09:38,069 : INFO : Initialized main objects
+2018-02-14 17:09:42,838 : DEBUG : 
+Stopped by user
+
+2018-02-14 17:10:22,459 : INFO : SMBUS is available
+2018-02-14 17:10:22,462 : INFO : Dummy is: False
+2018-02-14 17:10:22,462 : DEBUG : Setting up SMBus
+2018-02-14 17:10:22,464 : INFO : Successful set up for servo!
+2018-02-14 17:10:22,464 : INFO : Initialized main objects
+2018-02-14 17:10:37,880 : DEBUG : 
+Stopped by user
+
+2018-02-14 17:10:43,816 : INFO : SMBUS is available
+2018-02-14 17:10:43,819 : INFO : Dummy is: False
+2018-02-14 17:10:43,819 : DEBUG : Setting up SMBus
+2018-02-14 17:10:43,821 : INFO : Successful set up for servo!
+2018-02-14 17:10:43,821 : INFO : Initialized main objects
+2018-02-14 17:11:05,398 : DEBUG : 
+Stopped by user
+
+2018-02-14 17:11:06,841 : INFO : SMBUS is available
+2018-02-14 17:11:06,844 : INFO : Dummy is: False
+2018-02-14 17:11:06,845 : DEBUG : Setting up SMBus
+2018-02-14 17:11:06,846 : INFO : Successful set up for servo!
+2018-02-14 17:11:06,847 : INFO : Initialized main objects
+2018-02-14 17:11:11,470 : DEBUG : 
+Stopped by user
+
+2018-02-14 17:11:58,715 : INFO : SMBUS is available
+2018-02-14 17:11:58,718 : INFO : Dummy is: False
+2018-02-14 17:11:58,719 : DEBUG : Setting up SMBus
+2018-02-14 17:11:58,720 : INFO : Successful set up for servo!
+2018-02-14 17:11:58,720 : INFO : Initialized main objects
+2018-02-14 17:12:01,995 : DEBUG : 
+Stopped by user
+
+2018-02-14 17:12:04,368 : INFO : SMBUS is available
+2018-02-14 17:12:04,371 : INFO : Dummy is: False
+2018-02-14 17:12:04,372 : DEBUG : Setting up SMBus
+2018-02-14 17:12:04,373 : INFO : Successful set up for servo!
+2018-02-14 17:12:04,374 : INFO : Initialized main objects
+2018-02-14 17:12:05,944 : DEBUG : 
+Stopped by user
+
+2018-02-14 17:12:14,449 : INFO : SMBUS is available
+2018-02-14 17:12:14,452 : INFO : Dummy is: False
+2018-02-14 17:12:14,452 : DEBUG : Setting up SMBus
+2018-02-14 17:12:14,454 : INFO : Successful set up for servo!
+2018-02-14 17:12:14,454 : INFO : Initialized main objects
+2018-02-14 17:12:16,787 : DEBUG : 
+Stopped by user
+
+2018-02-14 17:13:04,254 : INFO : SMBUS is available
+2018-02-14 17:13:04,257 : INFO : Dummy is: False
+2018-02-14 17:13:04,274 : DEBUG : Setting up SMBus
+2018-02-14 17:13:04,276 : INFO : Successful set up for servo!
+2018-02-14 17:13:04,276 : INFO : Initialized main objects
+2018-02-14 17:13:10,264 : DEBUG : 
+Stopped by user
+
+2018-02-14 17:13:12,721 : INFO : SMBUS is available
+2018-02-14 17:13:12,724 : INFO : Dummy is: False
+2018-02-14 17:13:12,725 : DEBUG : Setting up SMBus
+2018-02-14 17:13:12,726 : INFO : Successful set up for servo!
+2018-02-14 17:13:12,727 : INFO : Initialized main objects
+2018-02-14 17:13:14,015 : DEBUG : 
+Stopped by user
+
+2018-02-14 17:14:04,802 : INFO : SMBUS is available
+2018-02-14 17:14:04,805 : INFO : Dummy is: False
+2018-02-14 17:14:04,805 : DEBUG : Setting up SMBus
+2018-02-14 17:14:04,807 : INFO : Successful set up for servo!
+2018-02-14 17:14:04,807 : INFO : Initialized main objects
+2018-02-14 17:14:07,595 : DEBUG : 
+Stopped by user
+
+2018-02-14 17:14:32,675 : INFO : SMBUS is available
+2018-02-14 17:14:32,677 : INFO : Dummy is: False
+2018-02-14 17:14:32,678 : DEBUG : Setting up SMBus
+2018-02-14 17:14:32,679 : INFO : Successful set up for servo!
+2018-02-14 17:14:32,680 : INFO : Initialized main objects
+2018-02-14 17:15:19,060 : INFO : SMBUS is available
+2018-02-14 17:15:19,063 : INFO : Dummy is: False
+2018-02-14 17:15:19,063 : DEBUG : Setting up SMBus
+2018-02-14 17:15:19,065 : INFO : Successful set up for servo!
+2018-02-14 17:15:19,065 : INFO : Initialized main objects
+2018-02-14 17:18:17,650 : INFO : SMBUS is available
+2018-02-14 17:18:17,657 : INFO : Dummy is: False
+2018-02-14 17:18:17,658 : DEBUG : Setting up SMBus
+2018-02-14 17:18:17,659 : INFO : Successful set up for servo!
+2018-02-14 17:18:17,659 : INFO : Initialized main objects
+2018-02-14 17:18:44,383 : INFO : SMBUS is available
+2018-02-14 17:18:44,385 : INFO : Dummy is: False
+2018-02-14 17:18:44,386 : DEBUG : Setting up SMBus
+2018-02-14 17:18:44,388 : INFO : Successful set up for servo!
+2018-02-14 17:18:44,389 : INFO : Initialized main objects
+2018-02-14 17:19:37,423 : INFO : SMBUS is available
+2018-02-14 17:19:37,424 : INFO : Dummy is: False
+2018-02-14 17:19:37,425 : DEBUG : Setting up SMBus
+2018-02-14 17:19:37,426 : INFO : Successful set up for servo!
+2018-02-14 17:19:37,427 : INFO : Initialized main objects
+2018-02-14 17:20:26,926 : INFO : SMBUS is available
+2018-02-14 17:20:26,927 : INFO : Dummy is: False
+2018-02-14 17:20:26,928 : DEBUG : Setting up SMBus
+2018-02-14 17:20:26,929 : INFO : Successful set up for servo!
+2018-02-14 17:20:26,929 : INFO : Initialized main objects
+2018-02-14 17:20:37,086 : INFO : SMBUS is available
+2018-02-14 17:20:37,088 : INFO : Dummy is: False
+2018-02-14 17:20:37,089 : DEBUG : Setting up SMBus
+2018-02-14 17:20:37,091 : INFO : Successful set up for servo!
+2018-02-14 17:20:37,092 : INFO : Initialized main objects
+2018-02-14 17:20:59,075 : INFO : SMBUS is available
+2018-02-14 17:20:59,077 : INFO : Dummy is: False
+2018-02-14 17:20:59,078 : DEBUG : Setting up SMBus
+2018-02-14 17:20:59,079 : INFO : Successful set up for servo!
+2018-02-14 17:20:59,080 : INFO : Initialized main objects
+2018-02-14 17:21:31,703 : INFO : SMBUS is available
+2018-02-14 17:21:31,704 : INFO : Dummy is: False
+2018-02-14 17:21:31,705 : DEBUG : Setting up SMBus
+2018-02-14 17:21:31,706 : INFO : Successful set up for servo!
+2018-02-14 17:21:31,706 : INFO : Initialized main objects
+2018-02-14 17:22:45,425 : INFO : SMBUS is available
+2018-02-14 17:22:45,426 : INFO : Dummy is: False
+2018-02-14 17:22:45,427 : DEBUG : Setting up SMBus
+2018-02-14 17:22:45,428 : INFO : Successful set up for servo!
+2018-02-14 17:22:45,428 : INFO : Initialized main objects
+2018-02-14 17:23:14,001 : INFO : SMBUS is available
+2018-02-14 17:23:14,002 : INFO : Dummy is: False
+2018-02-14 17:23:14,003 : DEBUG : Setting up SMBus
+2018-02-14 17:23:14,004 : INFO : Successful set up for servo!
+2018-02-14 17:23:14,004 : INFO : Initialized main objects
+2018-02-14 17:23:54,223 : INFO : SMBUS is available
+2018-02-14 17:23:54,224 : INFO : Dummy is: False
+2018-02-14 17:23:54,225 : DEBUG : Setting up SMBus
+2018-02-14 17:23:54,226 : INFO : Successful set up for servo!
+2018-02-14 17:23:54,226 : INFO : Initialized main objects
+2018-02-14 17:24:01,235 : INFO : Servo cleanup done!
+2018-02-14 17:24:04,918 : INFO : SMBUS is available
+2018-02-14 17:24:04,920 : INFO : Dummy is: False
+2018-02-14 17:24:04,920 : DEBUG : Setting up SMBus
+2018-02-14 17:24:04,922 : INFO : Successful set up for servo!
+2018-02-14 17:24:04,922 : INFO : Initialized main objects
+2018-02-14 17:24:11,932 : INFO : Servo cleanup done!
+2018-02-14 17:25:21,598 : INFO : SMBUS is available
+2018-02-14 17:25:21,600 : INFO : Dummy is: False
+2018-02-14 17:25:21,600 : DEBUG : Setting up SMBus
+2018-02-14 17:25:21,601 : INFO : Successful set up for servo!
+2018-02-14 17:25:21,602 : INFO : Initialized main objects
+2018-02-14 17:25:28,610 : INFO : Servo cleanup done!
+2018-02-14 17:26:27,197 : INFO : SMBUS is available
+2018-02-14 17:26:27,198 : INFO : Dummy is: False
+2018-02-14 17:26:27,199 : DEBUG : Setting up SMBus
+2018-02-14 17:26:27,200 : INFO : Successful set up for servo!
+2018-02-14 17:26:27,200 : INFO : Initialized main objects
+2018-02-14 17:26:34,209 : INFO : Servo cleanup done!
+2018-02-14 17:26:42,422 : INFO : SMBUS is available
+2018-02-14 17:26:42,423 : INFO : Dummy is: False
+2018-02-14 17:26:42,423 : DEBUG : Setting up SMBus
+2018-02-14 17:26:42,424 : INFO : Successful set up for servo!
+2018-02-14 17:26:42,425 : INFO : Initialized main objects
+2018-02-14 17:26:49,433 : INFO : Servo cleanup done!
+2018-02-14 17:27:25,899 : INFO : SMBUS is available
+2018-02-14 17:27:25,900 : INFO : Dummy is: False
+2018-02-14 17:27:25,901 : DEBUG : Setting up SMBus
+2018-02-14 17:27:25,902 : INFO : Successful set up for servo!
+2018-02-14 17:27:25,902 : INFO : Initialized main objects
+2018-02-14 17:27:32,911 : INFO : Servo cleanup done!
+2018-02-14 17:27:55,710 : INFO : SMBUS is available
+2018-02-14 17:27:55,712 : INFO : Dummy is: False
+2018-02-14 17:27:55,712 : DEBUG : Setting up SMBus
+2018-02-14 17:27:55,713 : INFO : Successful set up for servo!
+2018-02-14 17:27:55,714 : INFO : Initialized main objects
+2018-02-14 17:28:02,722 : INFO : Servo cleanup done!
+2018-02-14 17:28:21,108 : INFO : SMBUS is available
+2018-02-14 17:28:21,110 : INFO : Dummy is: False
+2018-02-14 17:28:21,110 : DEBUG : Setting up SMBus
+2018-02-14 17:28:21,111 : INFO : Successful set up for servo!
+2018-02-14 17:28:21,112 : INFO : Initialized main objects
+2018-02-14 17:28:27,119 : INFO : Servo cleanup done!
+2018-02-14 17:28:31,193 : INFO : SMBUS is available
+2018-02-14 17:28:31,195 : INFO : Dummy is: False
+2018-02-14 17:28:31,197 : DEBUG : Setting up SMBus
+2018-02-14 17:28:31,198 : INFO : Successful set up for servo!
+2018-02-14 17:28:31,198 : INFO : Initialized main objects
+2018-02-14 17:28:37,206 : INFO : Servo cleanup done!
+2018-02-14 17:29:22,224 : INFO : SMBUS is available
+2018-02-14 17:29:22,226 : INFO : Dummy is: False
+2018-02-14 17:29:22,226 : DEBUG : Setting up SMBus
+2018-02-14 17:29:22,227 : INFO : Successful set up for servo!
+2018-02-14 17:29:22,228 : INFO : Initialized main objects
+2018-02-14 17:29:28,235 : INFO : Servo cleanup done!
+2018-02-14 17:29:34,435 : INFO : SMBUS is available
+2018-02-14 17:29:34,436 : INFO : Dummy is: False
+2018-02-14 17:29:34,437 : DEBUG : Setting up SMBus
+2018-02-14 17:29:34,438 : INFO : Successful set up for servo!
+2018-02-14 17:29:34,438 : INFO : Initialized main objects
+2018-02-14 17:29:36,141 : DEBUG : 
+Stopped by user
+
+2018-02-14 17:30:21,785 : INFO : SMBUS is available
+2018-02-14 17:30:21,787 : INFO : Dummy is: False
+2018-02-14 17:30:21,788 : DEBUG : Setting up SMBus
+2018-02-14 17:30:21,789 : INFO : Successful set up for servo!
+2018-02-14 17:30:21,790 : INFO : Initialized main objects
+2018-02-14 17:30:27,798 : INFO : Servo cleanup done!
+2018-02-14 17:31:07,211 : INFO : SMBUS is available
+2018-02-14 17:31:07,212 : INFO : Dummy is: False
+2018-02-14 17:31:07,213 : DEBUG : Setting up SMBus
+2018-02-14 17:31:07,214 : INFO : Successful set up for servo!
+2018-02-14 17:31:07,214 : INFO : Initialized main objects
+2018-02-14 17:31:13,222 : INFO : Servo cleanup done!
+2018-02-14 17:31:58,519 : INFO : SMBUS is available
+2018-02-14 17:31:58,522 : INFO : Dummy is: False
+2018-02-14 17:31:58,522 : DEBUG : Setting up SMBus
+2018-02-14 17:31:58,523 : INFO : Successful set up for servo!
+2018-02-14 17:31:58,524 : INFO : Initialized main objects
+2018-02-14 17:32:04,531 : INFO : Servo cleanup done!
+2018-02-14 17:32:09,784 : INFO : SMBUS is available
+2018-02-14 17:32:09,786 : INFO : Dummy is: False
+2018-02-14 17:32:09,787 : DEBUG : Setting up SMBus
+2018-02-14 17:32:09,789 : INFO : Successful set up for servo!
+2018-02-14 17:32:09,790 : INFO : Initialized main objects
+2018-02-14 17:32:15,798 : INFO : Servo cleanup done!
+2018-02-14 17:32:40,492 : INFO : SMBUS is available
+2018-02-14 17:32:40,494 : INFO : Dummy is: False
+2018-02-14 17:32:40,496 : DEBUG : Setting up SMBus
+2018-02-14 17:32:40,497 : INFO : Successful set up for servo!
+2018-02-14 17:32:40,498 : INFO : Initialized main objects
+2018-02-14 17:32:46,505 : INFO : Servo cleanup done!
+2018-02-14 17:38:40,060 : INFO : SMBUS is available
+2018-02-14 17:38:40,076 : INFO : Dummy is: False
+2018-02-14 17:38:40,077 : DEBUG : Setting up SMBus
+2018-02-14 17:38:40,078 : INFO : Successful set up for servo!
+2018-02-14 17:38:40,079 : INFO : Initialized main objects
+2018-02-14 17:38:46,088 : INFO : Servo cleanup done!
+2018-02-14 17:39:08,541 : INFO : SMBUS is available
+2018-02-14 17:39:08,549 : INFO : Dummy is: False
+2018-02-14 17:39:08,551 : DEBUG : Setting up SMBus
+2018-02-14 17:39:08,553 : INFO : Successful set up for servo!
+2018-02-14 17:39:08,555 : INFO : Initialized main objects
+2018-02-14 17:39:10,905 : INFO : SMBUS is available
+2018-02-14 17:39:10,910 : INFO : Dummy is: False
+2018-02-14 17:39:10,911 : DEBUG : Setting up SMBus
+2018-02-14 17:39:10,913 : INFO : Successful set up for servo!
+2018-02-14 17:39:10,914 : INFO : Initialized main objects
+2018-02-14 17:39:14,563 : INFO : Servo cleanup done!
+2018-02-14 17:39:16,922 : INFO : Servo cleanup done!
+2018-02-14 17:39:23,034 : INFO : SMBUS is available
+2018-02-14 17:39:23,036 : INFO : Dummy is: False
+2018-02-14 17:39:23,037 : DEBUG : Setting up SMBus
+2018-02-14 17:39:23,038 : INFO : Successful set up for servo!
+2018-02-14 17:39:23,039 : INFO : Initialized main objects
+2018-02-14 17:39:29,046 : INFO : Servo cleanup done!
+2018-02-14 17:39:45,522 : INFO : SMBUS is available
+2018-02-14 17:39:45,525 : INFO : Dummy is: False
+2018-02-14 17:39:45,525 : DEBUG : Setting up SMBus
+2018-02-14 17:39:45,526 : INFO : Successful set up for servo!
+2018-02-14 17:39:45,527 : INFO : Initialized main objects
+2018-02-14 17:39:51,535 : INFO : Servo cleanup done!
+2018-02-14 17:40:03,819 : INFO : SMBUS is available
+2018-02-14 17:40:03,822 : INFO : Dummy is: False
+2018-02-14 17:40:03,823 : DEBUG : Setting up SMBus
+2018-02-14 17:40:03,825 : INFO : Successful set up for servo!
+2018-02-14 17:40:03,826 : INFO : Initialized main objects
+2018-02-14 17:40:09,835 : INFO : Servo cleanup done!
+2018-02-14 17:40:12,738 : INFO : SMBUS is available
+2018-02-14 17:40:12,741 : INFO : Dummy is: False
+2018-02-14 17:40:12,742 : DEBUG : Setting up SMBus
+2018-02-14 17:40:12,743 : INFO : Successful set up for servo!
+2018-02-14 17:40:12,743 : INFO : Initialized main objects
+2018-02-14 17:40:18,500 : INFO : SMBUS is available
+2018-02-14 17:40:18,505 : INFO : Dummy is: False
+2018-02-14 17:40:18,507 : DEBUG : Setting up SMBus
+2018-02-14 17:40:18,509 : INFO : Successful set up for servo!
+2018-02-14 17:40:18,510 : INFO : Initialized main objects
+2018-02-14 17:40:18,751 : INFO : Servo cleanup done!
+2018-02-14 17:40:24,520 : INFO : Servo cleanup done!
+2018-02-14 17:40:28,307 : INFO : SMBUS is available
+2018-02-14 17:40:28,310 : INFO : Dummy is: False
+2018-02-14 17:40:28,312 : DEBUG : Setting up SMBus
+2018-02-14 17:40:28,313 : INFO : Successful set up for servo!
+2018-02-14 17:40:28,314 : INFO : Initialized main objects
+2018-02-14 17:40:34,323 : INFO : Servo cleanup done!
+2018-02-14 17:40:44,056 : INFO : SMBUS is available
+2018-02-14 17:40:44,058 : INFO : Dummy is: False
+2018-02-14 17:40:44,059 : DEBUG : Setting up SMBus
+2018-02-14 17:40:44,060 : INFO : Successful set up for servo!
+2018-02-14 17:40:44,061 : INFO : Initialized main objects
+2018-02-14 17:40:50,068 : INFO : Servo cleanup done!
+2018-02-14 17:41:26,555 : INFO : SMBUS is available
+2018-02-14 17:41:26,557 : INFO : Dummy is: False
+2018-02-14 17:41:26,558 : DEBUG : Setting up SMBus
+2018-02-14 17:41:26,559 : INFO : Successful set up for servo!
+2018-02-14 17:41:26,560 : INFO : Initialized main objects
+2018-02-14 17:41:34,570 : INFO : Servo cleanup done!
+2018-02-14 17:41:47,855 : INFO : SMBUS is available
+2018-02-14 17:41:47,858 : INFO : Dummy is: False
+2018-02-14 17:41:47,858 : DEBUG : Setting up SMBus
+2018-02-14 17:41:47,859 : INFO : Successful set up for servo!
+2018-02-14 17:41:47,860 : INFO : Initialized main objects
+2018-02-14 17:41:55,870 : INFO : Servo cleanup done!
+2018-02-14 17:42:03,273 : INFO : SMBUS is available
+2018-02-14 17:42:03,276 : INFO : Dummy is: False
+2018-02-14 17:42:03,277 : DEBUG : Setting up SMBus
+2018-02-14 17:42:03,278 : INFO : Successful set up for servo!
+2018-02-14 17:42:03,278 : INFO : Initialized main objects
+2018-02-14 17:42:11,288 : INFO : Servo cleanup done!
+2018-02-14 17:42:28,018 : INFO : SMBUS is available
+2018-02-14 17:42:28,021 : INFO : Dummy is: False
+2018-02-14 17:42:28,022 : DEBUG : Setting up SMBus
+2018-02-14 17:42:28,023 : INFO : Successful set up for servo!
+2018-02-14 17:42:28,024 : INFO : Initialized main objects
+2018-02-14 17:42:38,035 : INFO : Servo cleanup done!
+2018-02-14 17:42:41,766 : INFO : SMBUS is available
+2018-02-14 17:42:41,769 : INFO : Dummy is: False
+2018-02-14 17:42:41,770 : DEBUG : Setting up SMBus
+2018-02-14 17:42:41,771 : INFO : Successful set up for servo!
+2018-02-14 17:42:41,771 : INFO : Initialized main objects
+2018-02-14 17:42:51,783 : INFO : Servo cleanup done!
+2018-02-14 17:43:04,035 : INFO : SMBUS is available
+2018-02-14 17:43:04,038 : INFO : Dummy is: False
+2018-02-14 17:43:04,039 : DEBUG : Setting up SMBus
+2018-02-14 17:43:04,040 : INFO : Successful set up for servo!
+2018-02-14 17:43:04,041 : INFO : Initialized main objects
+2018-02-14 17:43:14,054 : INFO : Servo cleanup done!
+2018-02-14 17:43:48,842 : INFO : SMBUS is available
+2018-02-14 17:43:48,845 : INFO : Dummy is: False
+2018-02-14 17:43:48,846 : DEBUG : Setting up SMBus
+2018-02-14 17:43:48,847 : INFO : Successful set up for servo!
+2018-02-14 17:43:48,848 : INFO : Initialized main objects
+2018-02-14 17:43:58,859 : INFO : Servo cleanup done!
+2018-02-14 17:44:07,141 : INFO : SMBUS is available
+2018-02-14 17:44:07,144 : INFO : Dummy is: False
+2018-02-14 17:44:07,145 : DEBUG : Setting up SMBus
+2018-02-14 17:44:07,146 : INFO : Successful set up for servo!
+2018-02-14 17:44:07,147 : INFO : Initialized main objects
+2018-02-14 17:44:20,161 : INFO : Servo cleanup done!
+2018-02-14 17:44:22,287 : INFO : SMBUS is available
+2018-02-14 17:44:22,291 : INFO : Dummy is: False
+2018-02-14 17:44:22,292 : DEBUG : Setting up SMBus
+2018-02-14 17:44:22,294 : INFO : Successful set up for servo!
+2018-02-14 17:44:22,295 : INFO : Initialized main objects
+2018-02-14 17:44:31,307 : INFO : Servo cleanup done!
+2018-02-14 17:56:49,238 : INFO : SMBUS is available
+2018-02-14 17:56:49,253 : INFO : Dummy is: False
+2018-02-14 17:56:49,254 : DEBUG : Setting up SMBus
+2018-02-14 17:56:49,256 : INFO : Successful set up for servo!
+2018-02-14 17:56:49,257 : INFO : Initialized main objects
+2018-02-14 17:57:29,919 : INFO : SMBUS is available
+2018-02-14 17:57:29,934 : INFO : Dummy is: False
+2018-02-14 17:57:29,935 : DEBUG : Setting up SMBus
+2018-02-14 17:57:29,936 : INFO : Successful set up for servo!
+2018-02-14 17:57:29,937 : INFO : Initialized main objects
+2018-02-14 17:57:39,948 : INFO : Servo cleanup done!
+2018-02-14 17:58:06,421 : INFO : SMBUS is available
+2018-02-14 17:58:06,436 : INFO : Dummy is: False
+2018-02-14 17:58:06,437 : DEBUG : Setting up SMBus
+2018-02-14 17:58:06,438 : INFO : Successful set up for servo!
+2018-02-14 17:58:06,439 : INFO : Initialized main objects
+2018-02-14 17:58:11,446 : INFO : Servo cleanup done!
+2018-02-14 17:58:49,509 : INFO : SMBUS is available
+2018-02-14 17:58:49,512 : INFO : Dummy is: False
+2018-02-14 17:58:49,513 : DEBUG : Setting up SMBus
+2018-02-14 17:58:49,514 : INFO : Successful set up for servo!
+2018-02-14 17:58:49,515 : INFO : Initialized main objects
+2018-02-14 17:58:56,523 : INFO : Servo cleanup done!
+2018-02-14 17:59:02,023 : INFO : SMBUS is available
+2018-02-14 17:59:02,026 : INFO : Dummy is: False
+2018-02-14 17:59:02,027 : DEBUG : Setting up SMBus
+2018-02-14 17:59:02,028 : INFO : Successful set up for servo!
+2018-02-14 17:59:02,028 : INFO : Initialized main objects
+2018-02-14 17:59:09,037 : INFO : Servo cleanup done!
+2018-02-14 18:14:36,103 : INFO : SMBUS is available
+2018-02-14 18:14:36,106 : INFO : Dummy is: False
+2018-02-14 18:14:36,106 : DEBUG : Setting up SMBus
+2018-02-14 18:14:36,108 : INFO : Successful set up for servo!
+2018-02-14 18:14:36,108 : INFO : Initialized main objects
+2018-02-14 18:14:40,827 : DEBUG : 
+Stopped by user
+
+2018-02-14 18:18:22,316 : INFO : SMBUS is available
+2018-02-14 18:18:22,317 : INFO : Dummy is: False
+2018-02-14 18:18:22,318 : DEBUG : Setting up SMBus
+2018-02-14 18:18:22,319 : INFO : Successful set up for servo!
+2018-02-14 18:18:22,319 : INFO : Initialized main objects
+2018-02-14 18:18:23,793 : DEBUG : 
+Stopped by user
+
+2018-02-14 18:18:27,557 : INFO : SMBUS is available
+2018-02-14 18:18:27,558 : INFO : Dummy is: False
+2018-02-14 18:18:27,559 : DEBUG : Setting up SMBus
+2018-02-14 18:18:27,560 : INFO : Successful set up for servo!
+2018-02-14 18:18:27,560 : INFO : Initialized main objects
+2018-02-14 18:19:32,191 : INFO : SMBUS is available
+2018-02-14 18:19:32,193 : INFO : Dummy is: False
+2018-02-14 18:19:32,194 : DEBUG : Setting up SMBus
+2018-02-14 18:19:32,196 : INFO : Successful set up for servo!
+2018-02-14 18:19:32,197 : INFO : Initialized main objects
+2018-02-14 18:19:32,225 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:32,253 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:32,281 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:32,309 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:32,337 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:32,365 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:32,393 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:32,421 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:32,449 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:32,478 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:32,506 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:32,534 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:32,562 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:32,590 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:32,618 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:32,646 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:32,674 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:32,702 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:32,730 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:32,759 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:32,787 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:32,815 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:32,843 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:32,871 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:32,899 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:32,927 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:32,955 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:32,983 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:33,011 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:33,039 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:33,068 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:33,096 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:33,124 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:33,152 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:33,180 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:33,208 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:33,236 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:33,264 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:33,292 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:33,320 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:33,349 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:33,377 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:33,405 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:33,433 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:33,461 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:33,489 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:33,517 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:33,545 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:33,573 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:33,601 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:33,629 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:33,657 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:33,686 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:33,714 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:33,742 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:33,770 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:33,798 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:33,826 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:33,854 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:33,882 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:33,910 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:33,938 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:33,966 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:33,994 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:34,023 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:34,051 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:34,079 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:34,107 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:34,135 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:34,163 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:34,191 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:34,219 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:34,247 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:34,275 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:34,303 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:34,332 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:34,360 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:34,388 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:34,416 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:34,444 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:34,472 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:34,500 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:34,528 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:34,556 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:34,584 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:34,612 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:34,640 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:34,669 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:34,697 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:34,725 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:34,753 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:34,781 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:34,809 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:34,837 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:34,865 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:34,893 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:34,921 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:34,949 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:34,978 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:35,006 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:35,034 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:35,062 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:35,090 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:35,118 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:35,146 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:35,174 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:35,202 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:35,230 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:35,258 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:35,287 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:35,315 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:35,343 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:35,371 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:35,399 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:35,427 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:35,455 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:35,483 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:35,511 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:35,539 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:35,568 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:35,596 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:35,624 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:35,652 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:35,680 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:35,708 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:35,736 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:35,764 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:35,792 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:35,820 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:35,848 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:35,876 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:35,904 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:35,933 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:35,961 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:35,989 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:36,017 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:36,045 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:36,073 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:36,101 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:36,129 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:36,157 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:36,185 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:36,214 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:36,242 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:36,270 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:36,298 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:36,326 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:36,354 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:36,382 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:36,410 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:36,438 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:36,466 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:36,495 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:36,523 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:36,551 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:36,579 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:36,607 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:36,635 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:36,663 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:36,692 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:36,720 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:36,748 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:36,776 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:36,804 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:36,832 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:36,860 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:36,888 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:36,916 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:36,944 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:36,972 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:37,000 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:37,029 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:37,057 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:37,085 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:37,113 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:37,141 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:37,169 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:37,197 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:37,225 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:37,253 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:37,281 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:37,309 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:37,338 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:37,366 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:37,394 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:37,422 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:37,450 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:37,478 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:37,506 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:37,534 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:37,562 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:37,590 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:37,619 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:37,647 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:37,675 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:37,703 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:37,731 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:37,759 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:37,787 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:37,815 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:37,844 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:37,872 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:37,900 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:37,928 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:37,956 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:37,984 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:38,012 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:38,040 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:38,068 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:38,096 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:38,124 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:38,153 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:38,181 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:38,209 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:38,237 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:38,265 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:38,293 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:38,321 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:38,349 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:38,377 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:38,406 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:38,434 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:38,462 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:38,490 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:38,518 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:38,546 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:38,574 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:38,602 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:38,630 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:38,658 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:38,686 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:38,715 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:38,743 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:38,771 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:38,799 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:38,827 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:38,855 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:38,883 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:38,911 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:38,940 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:38,968 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:38,996 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:39,024 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:39,052 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:39,080 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:39,108 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:39,136 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:39,164 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:39,192 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:39,220 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:39,248 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:39,277 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:39,305 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:39,333 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:39,361 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:39,389 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:39,417 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:39,445 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:39,473 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:39,501 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:39,529 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:39,557 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:39,586 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:39,614 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:39,642 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:39,670 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:39,698 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:39,726 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:39,754 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:39,782 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:39,810 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:39,838 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:39,866 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:39,894 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:39,923 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:39,951 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:39,979 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:40,007 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:40,035 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:40,063 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:40,091 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:40,120 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:40,148 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:40,176 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:40,204 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:40,232 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:40,260 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:40,288 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:40,316 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:40,344 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:40,372 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:40,400 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:40,429 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:40,457 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:40,485 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:40,513 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:40,541 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:40,569 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:40,597 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:40,625 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:40,653 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:40,681 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:40,709 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:40,738 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:40,766 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:40,794 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:40,822 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:40,850 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:40,878 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:40,906 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:40,934 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:40,962 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:40,990 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:41,018 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:41,047 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:41,075 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:41,103 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:41,131 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:41,159 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:41,187 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:41,215 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:41,243 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:41,271 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:41,299 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:41,328 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:41,356 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:41,384 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:41,412 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:41,440 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:41,468 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:41,496 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:41,524 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:41,552 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:41,580 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:41,608 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:41,636 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:41,665 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:41,693 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:41,721 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:41,749 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:41,777 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:41,805 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:41,833 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:41,861 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:41,889 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:41,918 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:41,946 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:41,974 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:42,002 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:42,030 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:42,058 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:42,086 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:42,114 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:42,142 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:42,170 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:42,198 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:42,226 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:42,255 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:42,283 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:42,311 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:42,339 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:42,367 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:42,395 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:42,423 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:42,451 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:42,479 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:42,507 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:42,535 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:42,564 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:42,592 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:42,620 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:42,648 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:42,676 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:42,704 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:42,732 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:42,761 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:42,789 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:42,817 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:42,845 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:42,873 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:42,901 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:42,929 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:42,957 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:42,985 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:43,013 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:43,042 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:43,070 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:43,098 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:43,126 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:43,154 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:43,182 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:43,210 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:43,238 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:43,266 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:43,294 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:43,322 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:43,350 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:43,379 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:43,407 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:43,435 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:43,463 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:43,491 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:43,519 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:43,547 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:43,575 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:43,603 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:43,631 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:43,659 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:43,688 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:43,716 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:43,744 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:43,772 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:43,800 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:43,828 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:43,856 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:43,884 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:43,912 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:43,940 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:43,969 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:43,997 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:44,025 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:44,053 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:44,081 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:44,109 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:44,137 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:44,165 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:44,193 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:44,221 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:44,249 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:44,278 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:44,306 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:44,334 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:44,362 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:44,390 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:44,418 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:44,446 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:44,474 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:44,502 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:44,530 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:44,559 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:44,587 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:44,615 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:44,643 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:44,671 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:44,699 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:44,727 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:44,755 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:44,783 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:44,811 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:44,839 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:44,867 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:44,896 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:44,924 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:44,952 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:44,980 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:45,008 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:45,036 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:45,064 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:45,092 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:45,120 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:45,149 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:45,177 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:45,205 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:45,233 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:45,261 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:45,289 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:45,317 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:45,345 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:45,373 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:45,401 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:45,429 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:45,458 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:45,486 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:45,514 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:45,542 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:45,570 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:45,598 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:45,626 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:45,654 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:45,682 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:45,710 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:45,738 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:45,767 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:45,795 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:45,823 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:45,851 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:45,879 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:45,907 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:45,935 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:45,963 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:45,991 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:46,019 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:46,047 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:46,076 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:46,104 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:46,132 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:46,160 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:46,188 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:46,216 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:46,244 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:46,272 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:46,301 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:46,329 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:46,357 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:46,385 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:46,413 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:46,441 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:46,469 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:46,497 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:46,525 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:46,553 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:46,581 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:46,610 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:46,638 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:46,666 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:46,694 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:46,722 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:46,750 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:46,778 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:46,806 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:46,834 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:46,862 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:46,890 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:46,918 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:46,946 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:46,975 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:47,003 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:47,031 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:47,059 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:47,087 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:47,115 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:47,143 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:47,171 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:47,197 : DEBUG : 
+Stopped by user
+
+2018-02-14 18:19:58,616 : INFO : SMBUS is available
+2018-02-14 18:19:58,617 : INFO : Dummy is: False
+2018-02-14 18:19:58,618 : DEBUG : Setting up SMBus
+2018-02-14 18:19:58,619 : INFO : Successful set up for servo!
+2018-02-14 18:19:58,619 : INFO : Initialized main objects
+2018-02-14 18:19:58,647 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:58,675 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:58,702 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:58,730 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:58,759 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:58,787 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:58,815 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:58,843 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:58,871 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:58,899 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:58,927 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:58,955 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:58,983 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:59,011 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:59,039 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:59,068 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:59,096 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:59,124 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:59,152 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:59,180 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:59,208 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:59,236 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:59,264 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:59,292 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:59,320 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:59,348 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:59,377 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:59,405 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:59,433 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:59,461 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:59,489 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:59,517 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:59,545 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:59,573 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:59,601 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:59,629 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:59,658 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:59,686 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:59,714 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:59,742 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:59,770 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:59,798 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:59,826 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:59,854 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:59,882 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:59,910 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:59,938 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:59,966 : DEBUG : Obstacle detected by Front
+2018-02-14 18:19:59,994 : DEBUG : Obstacle detected by Front
+2018-02-14 18:20:00,023 : DEBUG : Obstacle detected by Front
+2018-02-14 18:20:00,051 : DEBUG : Obstacle detected by Front
+2018-02-14 18:20:00,079 : DEBUG : Obstacle detected by Front
+2018-02-14 18:20:00,107 : DEBUG : Obstacle detected by Front
+2018-02-14 18:20:00,135 : DEBUG : Obstacle detected by Front
+2018-02-14 18:20:00,163 : DEBUG : Obstacle detected by Front
+2018-02-14 18:20:00,191 : DEBUG : Obstacle detected by Front
+2018-02-14 18:20:00,219 : DEBUG : Obstacle detected by Front
+2018-02-14 18:20:00,247 : DEBUG : Obstacle detected by Front
+2018-02-14 18:20:00,276 : DEBUG : Obstacle detected by Front
+2018-02-14 18:20:00,304 : DEBUG : Obstacle detected by Front
+2018-02-14 18:20:00,332 : DEBUG : Obstacle detected by Front
+2018-02-14 18:20:00,362 : DEBUG : Obstacle detected by Front
+2018-02-14 18:20:00,390 : DEBUG : Obstacle detected by Front
+2018-02-14 18:20:00,419 : DEBUG : Obstacle detected by Front
+2018-02-14 18:20:00,448 : DEBUG : Obstacle detected by Front
+2018-02-14 18:20:00,476 : DEBUG : Obstacle detected by Front
+2018-02-14 18:20:00,504 : DEBUG : Obstacle detected by Front
+2018-02-14 18:20:00,533 : DEBUG : Obstacle detected by Front
+2018-02-14 18:20:00,561 : DEBUG : Obstacle detected by Front
+2018-02-14 18:20:00,590 : DEBUG : Obstacle detected by Front
+2018-02-14 18:20:00,619 : DEBUG : Obstacle detected by Front
+2018-02-14 18:20:00,647 : DEBUG : Obstacle detected by Front
+2018-02-14 18:20:00,676 : DEBUG : Obstacle detected by Front
+2018-02-14 18:20:00,704 : DEBUG : Obstacle detected by Front
+2018-02-14 18:20:00,733 : DEBUG : Obstacle detected by Front
+2018-02-14 18:20:00,761 : DEBUG : Obstacle detected by Front
+2018-02-14 18:20:00,790 : DEBUG : Obstacle detected by Front
+2018-02-14 18:20:00,818 : DEBUG : Obstacle detected by Front
+2018-02-14 18:20:00,847 : DEBUG : Obstacle detected by Front
+2018-02-14 18:20:00,875 : DEBUG : Obstacle detected by Front
+2018-02-14 18:20:00,904 : DEBUG : 
+Stopped by user
+
+2018-02-14 18:20:04,071 : INFO : SMBUS is available
+2018-02-14 18:20:04,073 : INFO : Dummy is: False
+2018-02-14 18:20:04,073 : DEBUG : Setting up SMBus
+2018-02-14 18:20:04,074 : INFO : Successful set up for servo!
+2018-02-14 18:20:04,075 : INFO : Initialized main objects
+2018-02-14 18:20:12,183 : DEBUG : 
+Stopped by user
+
+2018-02-14 18:21:24,099 : INFO : SMBUS is available
+2018-02-14 18:21:24,100 : INFO : Dummy is: False
+2018-02-14 18:21:24,101 : DEBUG : Setting up SMBus
+2018-02-14 18:21:24,102 : INFO : Successful set up for servo!
+2018-02-14 18:21:24,103 : INFO : Initialized main objects
+2018-02-14 18:21:48,807 : INFO : SMBUS is available
+2018-02-14 18:21:48,808 : INFO : Dummy is: False
+2018-02-14 18:21:48,809 : DEBUG : Setting up SMBus
+2018-02-14 18:21:48,810 : INFO : Successful set up for servo!
+2018-02-14 18:21:48,811 : INFO : Initialized main objects
+2018-02-14 18:22:36,446 : INFO : SMBUS is available
+2018-02-14 18:22:36,447 : INFO : Dummy is: False
+2018-02-14 18:22:36,448 : DEBUG : Setting up SMBus
+2018-02-14 18:22:36,450 : INFO : Successful set up for servo!
+2018-02-14 18:22:36,451 : INFO : Initialized main objects
+2018-02-14 18:22:38,396 : DEBUG : 
+Stopped by user
+
+2018-02-14 18:23:58,927 : ERROR : Could not create main objects.!!! Error: name 'driving' is not defined
+2018-02-14 18:24:48,192 : INFO : SMBUS is available
+2018-02-14 18:24:48,194 : INFO : Dummy is: False
+2018-02-14 18:24:48,195 : DEBUG : Setting up SMBus
+2018-02-14 18:24:48,196 : INFO : Successful set up for servo!
+2018-02-14 18:24:48,197 : INFO : Initialized main objects
+2018-02-14 18:24:49,322 : DEBUG : 
+Stopped by user
+
+2018-02-14 18:25:01,126 : INFO : SMBUS is available
+2018-02-14 18:25:01,127 : INFO : Dummy is: False
+2018-02-14 18:25:01,127 : DEBUG : Setting up SMBus
+2018-02-14 18:25:01,129 : INFO : Successful set up for servo!
+2018-02-14 18:25:01,129 : INFO : Initialized main objects
+2018-02-14 18:25:03,181 : DEBUG : 
+Stopped by user
+
+2018-02-14 18:25:11,693 : INFO : SMBUS is available
+2018-02-14 18:25:11,695 : INFO : Dummy is: False
+2018-02-14 18:25:11,696 : DEBUG : Setting up SMBus
+2018-02-14 18:25:11,697 : INFO : Successful set up for servo!
+2018-02-14 18:25:11,698 : INFO : Initialized main objects
+2018-02-14 18:25:13,830 : DEBUG : 
+Stopped by user
+
+2018-02-15 17:24:03,562 : INFO : SMBUS is available
+2018-02-15 17:24:03,571 : INFO : Dummy is: False
+2018-02-15 17:24:03,571 : DEBUG : Setting up SMBus
+2018-02-15 17:24:03,572 : INFO : Successful set up for servo!
+2018-02-15 17:24:03,573 : INFO : Initialized main objects
+2018-02-15 17:46:55,419 : INFO : SMBUS is available
+2018-02-15 17:46:55,425 : INFO : Dummy is: False
+2018-02-15 17:46:55,426 : DEBUG : Setting up SMBus
+2018-02-15 17:46:55,428 : INFO : Successful set up for servo!
+2018-02-15 17:46:55,429 : INFO : Initialized main objects
+2018-02-15 17:47:12,241 : DEBUG : 
+Stopped by user
+
+2018-02-15 17:47:18,015 : INFO : SMBUS is available
+2018-02-15 17:47:18,018 : INFO : Dummy is: False
+2018-02-15 17:47:18,018 : DEBUG : Setting up SMBus
+2018-02-15 17:47:18,020 : INFO : Successful set up for servo!
+2018-02-15 17:47:18,021 : INFO : Initialized main objects
+2018-02-15 17:47:23,460 : DEBUG : 
+Stopped by user
+
+2018-02-15 17:47:30,534 : INFO : SMBUS is available
+2018-02-15 17:47:30,537 : INFO : Dummy is: False
+2018-02-15 17:47:30,537 : DEBUG : Setting up SMBus
+2018-02-15 17:47:30,538 : INFO : Successful set up for servo!
+2018-02-15 17:47:30,540 : INFO : Initialized main objects
+2018-02-15 17:47:41,445 : DEBUG : 
+Stopped by user
+
+2018-02-15 17:47:42,767 : INFO : SMBUS is available
+2018-02-15 17:47:42,770 : INFO : Dummy is: False
+2018-02-15 17:47:42,770 : DEBUG : Setting up SMBus
+2018-02-15 17:47:42,772 : INFO : Successful set up for servo!
+2018-02-15 17:47:42,772 : INFO : Initialized main objects
+2018-02-15 17:47:46,832 : DEBUG : 
+Stopped by user
+
+2018-02-15 17:47:51,017 : INFO : SMBUS is available
+2018-02-15 17:47:51,019 : INFO : Dummy is: False
+2018-02-15 17:47:51,020 : DEBUG : Setting up SMBus
+2018-02-15 17:47:51,021 : INFO : Successful set up for servo!
+2018-02-15 17:47:51,022 : INFO : Initialized main objects
+2018-02-15 17:47:53,383 : DEBUG : 
+Stopped by user
+
+2018-02-15 17:47:58,880 : INFO : SMBUS is available
+2018-02-15 17:47:58,883 : INFO : Dummy is: False
+2018-02-15 17:47:58,884 : DEBUG : Setting up SMBus
+2018-02-15 17:47:58,885 : INFO : Successful set up for servo!
+2018-02-15 17:47:58,885 : INFO : Initialized main objects
+2018-02-15 17:48:09,222 : DEBUG : 
+Stopped by user
+
+2018-02-15 17:48:10,221 : INFO : SMBUS is available
+2018-02-15 17:48:10,224 : INFO : Dummy is: False
+2018-02-15 17:48:10,224 : DEBUG : Setting up SMBus
+2018-02-15 17:48:10,225 : INFO : Successful set up for servo!
+2018-02-15 17:48:10,226 : INFO : Initialized main objects
+2018-02-15 17:48:13,265 : DEBUG : 
+Stopped by user
+
+2018-02-15 17:50:23,723 : INFO : SMBUS is available
+2018-02-15 17:50:23,726 : INFO : Dummy is: False
+2018-02-15 17:50:23,727 : DEBUG : Setting up SMBus
+2018-02-15 17:50:23,728 : INFO : Successful set up for servo!
+2018-02-15 17:50:23,729 : INFO : Initialized main objects
+2018-02-15 17:50:44,604 : DEBUG : 
+Stopped by user
+
+2018-02-15 17:50:50,590 : INFO : SMBUS is available
+2018-02-15 17:50:50,593 : INFO : Dummy is: False
+2018-02-15 17:50:50,594 : DEBUG : Setting up SMBus
+2018-02-15 17:50:50,595 : INFO : Successful set up for servo!
+2018-02-15 17:50:50,596 : INFO : Initialized main objects
+2018-02-15 17:50:55,264 : DEBUG : 
+Stopped by user
+
+2018-02-15 17:52:30,718 : INFO : SMBUS is available
+2018-02-15 17:52:30,721 : INFO : Dummy is: False
+2018-02-15 17:52:30,722 : DEBUG : Setting up SMBus
+2018-02-15 17:52:30,724 : INFO : Successful set up for servo!
+2018-02-15 17:52:30,725 : INFO : Initialized main objects
+2018-02-15 17:52:56,824 : INFO : SMBUS is available
+2018-02-15 17:52:56,827 : INFO : Dummy is: False
+2018-02-15 17:52:56,827 : DEBUG : Setting up SMBus
+2018-02-15 17:52:56,831 : INFO : Successful set up for servo!
+2018-02-15 17:52:56,831 : INFO : Initialized main objects
+2018-02-15 17:53:03,840 : INFO : Servo cleanup done!
+2018-02-15 17:53:15,411 : INFO : SMBUS is available
+2018-02-15 17:53:15,414 : INFO : Dummy is: False
+2018-02-15 17:53:15,415 : DEBUG : Setting up SMBus
+2018-02-15 17:53:15,416 : INFO : Successful set up for servo!
+2018-02-15 17:53:15,417 : INFO : Initialized main objects
+2018-02-15 17:53:22,425 : INFO : Servo cleanup done!
+2018-02-15 17:54:55,934 : INFO : SMBUS is available
+2018-02-15 17:54:55,936 : INFO : Dummy is: False
+2018-02-15 17:54:55,937 : DEBUG : Setting up SMBus
+2018-02-15 17:54:55,938 : INFO : Successful set up for servo!
+2018-02-15 17:54:55,939 : INFO : Initialized main objects
+2018-02-15 17:55:02,948 : INFO : Servo cleanup done!
+2018-02-15 17:55:06,369 : INFO : SMBUS is available
+2018-02-15 17:55:06,372 : INFO : Dummy is: False
+2018-02-15 17:55:06,373 : DEBUG : Setting up SMBus
+2018-02-15 17:55:06,374 : INFO : Successful set up for servo!
+2018-02-15 17:55:06,375 : INFO : Initialized main objects
+2018-02-15 17:55:12,848 : DEBUG : 
+Stopped by user
+
+2018-02-15 17:55:12,849 : DEBUG : 
+Stopped by user
+
+2018-02-15 17:55:14,595 : INFO : SMBUS is available
+2018-02-15 17:55:14,598 : INFO : Dummy is: False
+2018-02-15 17:55:14,599 : DEBUG : Setting up SMBus
+2018-02-15 17:55:14,600 : INFO : Successful set up for servo!
+2018-02-15 17:55:14,601 : INFO : Initialized main objects
+2018-02-15 17:55:21,609 : INFO : Servo cleanup done!
+2018-02-15 17:55:30,624 : INFO : SMBUS is available
+2018-02-15 17:55:30,627 : INFO : Dummy is: False
+2018-02-15 17:55:30,627 : DEBUG : Setting up SMBus
+2018-02-15 17:55:30,628 : INFO : Successful set up for servo!
+2018-02-15 17:55:30,629 : INFO : Initialized main objects
+2018-02-15 17:55:37,638 : INFO : Servo cleanup done!
+2018-02-15 17:55:43,986 : INFO : SMBUS is available
+2018-02-15 17:55:43,989 : INFO : Dummy is: False
+2018-02-15 17:55:43,989 : DEBUG : Setting up SMBus
+2018-02-15 17:55:43,991 : INFO : Successful set up for servo!
+2018-02-15 17:55:43,991 : INFO : Initialized main objects
+2018-02-15 17:55:51,000 : INFO : Servo cleanup done!
+2018-02-15 17:56:12,697 : INFO : SMBUS is available
+2018-02-15 17:56:12,700 : INFO : Dummy is: False
+2018-02-15 17:56:12,701 : DEBUG : Setting up SMBus
+2018-02-15 17:56:12,702 : INFO : Successful set up for servo!
+2018-02-15 17:56:12,703 : INFO : Initialized main objects
+2018-02-15 17:56:19,709 : INFO : Servo cleanup done!
+2018-02-15 17:57:56,510 : INFO : SMBUS is available
+2018-02-15 17:57:56,513 : INFO : Dummy is: False
+2018-02-15 17:57:56,513 : DEBUG : Setting up SMBus
+2018-02-15 17:57:56,515 : INFO : Successful set up for servo!
+2018-02-15 17:57:56,515 : INFO : Initialized main objects
+2018-02-15 17:58:03,524 : INFO : Servo cleanup done!
+2018-02-15 17:58:10,223 : INFO : SMBUS is available
+2018-02-15 17:58:10,226 : INFO : Dummy is: False
+2018-02-15 17:58:10,226 : DEBUG : Setting up SMBus
+2018-02-15 17:58:10,228 : INFO : Successful set up for servo!
+2018-02-15 17:58:10,228 : INFO : Initialized main objects
+2018-02-15 17:58:11,230 : INFO : Servo cleanup done!
+2018-02-15 17:58:24,798 : INFO : SMBUS is available
+2018-02-15 17:58:24,801 : INFO : Dummy is: False
+2018-02-15 17:58:24,802 : DEBUG : Setting up SMBus
+2018-02-15 17:58:24,803 : INFO : Successful set up for servo!
+2018-02-15 17:58:24,803 : INFO : Initialized main objects
+2018-02-15 17:58:30,811 : INFO : Servo cleanup done!
+2018-02-15 17:58:45,504 : INFO : SMBUS is available
+2018-02-15 17:58:45,507 : INFO : Dummy is: False
+2018-02-15 17:58:45,508 : DEBUG : Setting up SMBus
+2018-02-15 17:58:45,509 : INFO : Successful set up for servo!
+2018-02-15 17:58:45,510 : INFO : Initialized main objects
+2018-02-15 17:58:51,517 : INFO : Servo cleanup done!
+2018-02-15 17:59:07,467 : INFO : SMBUS is available
+2018-02-15 17:59:07,470 : INFO : Dummy is: False
+2018-02-15 17:59:07,471 : DEBUG : Setting up SMBus
+2018-02-15 17:59:07,473 : INFO : Successful set up for servo!
+2018-02-15 17:59:07,474 : INFO : Initialized main objects
+2018-02-15 17:59:13,101 : INFO : SMBUS is available
+2018-02-15 17:59:13,104 : INFO : Dummy is: False
+2018-02-15 17:59:13,104 : DEBUG : Setting up SMBus
+2018-02-15 17:59:13,106 : INFO : Successful set up for servo!
+2018-02-15 17:59:13,107 : INFO : Initialized main objects
+2018-02-15 17:59:13,482 : INFO : Servo cleanup done!
+2018-02-15 17:59:24,119 : INFO : Servo cleanup done!
+2018-02-15 17:59:24,315 : INFO : SMBUS is available
+2018-02-15 17:59:24,318 : INFO : Dummy is: False
+2018-02-15 17:59:24,319 : DEBUG : Setting up SMBus
+2018-02-15 17:59:24,320 : INFO : Successful set up for servo!
+2018-02-15 17:59:24,321 : INFO : Initialized main objects
+2018-02-15 17:59:35,333 : INFO : Servo cleanup done!
+2018-02-15 17:59:57,021 : INFO : SMBUS is available
+2018-02-15 17:59:57,023 : INFO : Dummy is: False
+2018-02-15 17:59:57,024 : DEBUG : Setting up SMBus
+2018-02-15 17:59:57,025 : INFO : Successful set up for servo!
+2018-02-15 17:59:57,026 : INFO : Initialized main objects
+2018-02-15 18:00:10,517 : INFO : SMBUS is available
+2018-02-15 18:00:10,520 : INFO : Dummy is: False
+2018-02-15 18:00:10,520 : DEBUG : Setting up SMBus
+2018-02-15 18:00:10,522 : INFO : Successful set up for servo!
+2018-02-15 18:00:10,523 : INFO : Initialized main objects
+2018-02-15 18:00:19,395 : INFO : SMBUS is available
+2018-02-15 18:00:19,398 : INFO : Dummy is: False
+2018-02-15 18:00:19,399 : DEBUG : Setting up SMBus
+2018-02-15 18:00:19,401 : INFO : Successful set up for servo!
+2018-02-15 18:00:19,402 : INFO : Initialized main objects
+2018-02-15 18:00:26,410 : INFO : Servo cleanup done!
+2018-02-15 18:00:35,606 : INFO : SMBUS is available
+2018-02-15 18:00:35,609 : INFO : Dummy is: False
+2018-02-15 18:00:35,609 : DEBUG : Setting up SMBus
+2018-02-15 18:00:35,611 : INFO : Successful set up for servo!
+2018-02-15 18:00:35,611 : INFO : Initialized main objects
+2018-02-15 18:00:42,620 : INFO : Servo cleanup done!
+2018-02-15 18:00:52,005 : INFO : SMBUS is available
+2018-02-15 18:00:52,008 : INFO : Dummy is: False
+2018-02-15 18:00:52,009 : DEBUG : Setting up SMBus
+2018-02-15 18:00:52,010 : INFO : Successful set up for servo!
+2018-02-15 18:00:52,011 : INFO : Initialized main objects
+2018-02-15 18:00:59,019 : INFO : Servo cleanup done!
+2018-02-15 18:01:10,184 : INFO : SMBUS is available
+2018-02-15 18:01:10,187 : INFO : Dummy is: False
+2018-02-15 18:01:10,188 : DEBUG : Setting up SMBus
+2018-02-15 18:01:10,189 : INFO : Successful set up for servo!
+2018-02-15 18:01:10,190 : INFO : Initialized main objects
+2018-02-15 18:01:17,200 : INFO : Servo cleanup done!
+2018-02-15 18:01:21,325 : INFO : SMBUS is available
+2018-02-15 18:01:21,328 : INFO : Dummy is: False
+2018-02-15 18:01:21,329 : DEBUG : Setting up SMBus
+2018-02-15 18:01:21,331 : INFO : Successful set up for servo!
+2018-02-15 18:01:21,332 : INFO : Initialized main objects
+2018-02-15 18:01:28,341 : INFO : Servo cleanup done!
+2018-02-15 18:01:31,908 : INFO : SMBUS is available
+2018-02-15 18:01:31,911 : INFO : Dummy is: False
+2018-02-15 18:01:31,912 : DEBUG : Setting up SMBus
+2018-02-15 18:01:31,913 : INFO : Successful set up for servo!
+2018-02-15 18:01:31,914 : INFO : Initialized main objects
+2018-02-15 18:01:38,922 : INFO : Servo cleanup done!
+2018-02-15 18:02:57,411 : INFO : SMBUS is available
+2018-02-15 18:02:57,414 : INFO : Dummy is: False
+2018-02-15 18:02:57,414 : DEBUG : Setting up SMBus
+2018-02-15 18:02:57,415 : INFO : Successful set up for servo!
+2018-02-15 18:02:57,416 : INFO : Initialized main objects
+2018-02-15 18:03:04,425 : INFO : Servo cleanup done!
+2018-02-15 18:03:06,583 : INFO : SMBUS is available
+2018-02-15 18:03:06,586 : INFO : Dummy is: False
+2018-02-15 18:03:06,586 : DEBUG : Setting up SMBus
+2018-02-15 18:03:06,588 : INFO : Successful set up for servo!
+2018-02-15 18:03:06,588 : INFO : Initialized main objects
+2018-02-15 18:03:13,597 : INFO : Servo cleanup done!
+2018-02-15 18:03:19,592 : INFO : SMBUS is available
+2018-02-15 18:03:19,595 : INFO : Dummy is: False
+2018-02-15 18:03:19,596 : DEBUG : Setting up SMBus
+2018-02-15 18:03:19,597 : INFO : Successful set up for servo!
+2018-02-15 18:03:19,597 : INFO : Initialized main objects
+2018-02-15 18:03:26,606 : INFO : Servo cleanup done!
+2018-02-15 18:03:35,014 : INFO : SMBUS is available
+2018-02-15 18:03:35,016 : INFO : Dummy is: False
+2018-02-15 18:03:35,017 : DEBUG : Setting up SMBus
+2018-02-15 18:03:35,018 : INFO : Successful set up for servo!
+2018-02-15 18:03:35,019 : INFO : Initialized main objects
+2018-02-15 18:03:42,028 : INFO : Servo cleanup done!
+2018-02-15 18:03:49,011 : INFO : SMBUS is available
+2018-02-15 18:03:49,014 : INFO : Dummy is: False
+2018-02-15 18:03:49,015 : DEBUG : Setting up SMBus
+2018-02-15 18:03:49,016 : INFO : Successful set up for servo!
+2018-02-15 18:03:49,017 : INFO : Initialized main objects
+2018-02-15 18:03:56,026 : INFO : Servo cleanup done!

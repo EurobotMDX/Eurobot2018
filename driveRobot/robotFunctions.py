@@ -200,8 +200,8 @@ class driving():
         self.sensor1 = Sensor(11, "Front", 0.02)
 
         # Slowing down variables
-        self.speedAdjusted1 = False
-        self.speedAdjusted2 = True
+        self.enterSpeedLoop1 = True
+        self.enterSpeedLoop2 = False
 
     def showCounterForWheel(self, timein=10):
         '''
@@ -257,28 +257,29 @@ class driving():
 
         return [threshold1, threshold2, enterSecondSlowDownOnly]
 
-    def slowDown(self, speed, tDist, stoppingThresholds, turn=False):
+    def speedControl(self, speed, tDist, stoppingThresholds, turn=False):
         speedThreshold = 3
 
         if turn:
             speedThreshold = 2
 
         if stoppingThresholds[2] == True:
-            self.speedAdjusted2 = False
+            self.enterSpeedLoop1 = False
+            self.enterSpeedLoop2 = True
 
-        if not self.speedAdjusted1 and tDist > stoppingThresholds[0] and speed > 11 and not stoppingThresholds[2]:
+        if self.enterSpeedLoop1 and tDist > stoppingThresholds[0] and speed > 11 and not stoppingThresholds[2]:
+
+            speed = speed - 1
 
             if speed > 30:
                 speed = 29
 
             if speed == 12:
-                self.speedAdjusted1 = True
-                self.speedAdjusted2 = False
+                self.enterSpeedLoop1 = False
+                self.enterSpeedLoop2 = False
                 print("Slow down 1 finished. Speed = {}".format(speed))
 
-            speed = speed - 1
-
-        if not self.speedAdjusted2 and tDist > stoppingThresholds[1] and speed >= speedThreshold:
+        if self.enterSpeedLoop2 and tDist > stoppingThresholds[1] and speed >= speedThreshold:
 
             speed = speed - 1
 
@@ -327,7 +328,7 @@ class driving():
             print("Travelled distance: {}".format(tDist))
 
             # Enter this function to slow down
-            speed = self.slowDown(speed, tDist, stoppingThresholds)
+            speed = self.speedControl(speed, tDist, stoppingThresholds)
 
             # print("Speed is {}".format(speed))
 
@@ -363,7 +364,7 @@ class driving():
 
                 tDist = self.travelledDistance(encoderDestination, encoder1Reading)
 
-                speed = self.slowDown(speed, tDist, stoppingThresholds, True)
+                speed = self.speedControl(speed, tDist, stoppingThresholds, True)
 
                 print("Travelled distance: {}".format(tDist))
 
@@ -380,7 +381,7 @@ class driving():
 
                 tDist = self.travelledDistance(encoderDestination, encoder2Reading)
 
-                speed = self.slowDown(speed, tDist, stoppingThresholds, True)
+                speed = self.speedControl(speed, tDist, stoppingThresholds, True)
 
                 print("Travelled distance: {}".format(tDist))
 
@@ -391,6 +392,59 @@ class driving():
 
         else:
             print("Error while robot turning the robot!")
+
+    def driveBack(self, distance, speed, sensorEnabled=True):
+        '''
+        This function drives a robot backward. By adjusting values such as: speed and distance can control a robot.
+        :param distance:
+        :param speed:
+        :return:
+        '''
+        self.mainRobot.reset_encoders()
+
+        encoderDestination = distance / self.oneEncMM
+
+        self.sensor1.setUp()
+
+        encoder1Reading = self.mainRobot.read_encoder1()
+        encoder2Reading = self.mainRobot.read_encoder2()
+
+        distance = float(distance)
+
+        # stoppingThresholds = self.calcStoppingThreshold(speed)
+
+        # Change acceleration mode if necessary
+        # changeAcc(10)
+
+        while encoder1Reading >= encoderDestination and encoder2Reading >= encoderDestination or encoder1Reading == 0 or encoder2Reading == 0:
+
+            encodersAvg = (encoder1Reading + encoder1Reading) / 2.0
+            currentTravelDistance = round(encodersAvg * self.oneEncMM, 3)
+            tDist = self.travelledDistance(distance, currentTravelDistance)
+
+            # Check if sensor detected any obstacle on the way if yes then stop the robot and wait
+            if sensorEnabled == True:
+                if self.sensor1.getSensorValue() <= self.sensorThreshold:
+                    print("Obstacle detected by {}".format(self.sensor1.sensorPosition))
+                    self.mainRobot.stop()
+                else:
+                    self.mainRobot.drive(-speed, -speed)
+                    print("Travelled distance: {}".format(tDist))
+            else:
+                print("Travelled distance: {}  {}".format(tDist, encodersAvg))
+
+
+            # Enter this function to slow down
+            # speed = self.speedControl(speed, tDist, stoppingThresholds)
+
+            # print("Speed is {}".format(speed))
+
+            encoder1Reading = self.mainRobot.read_encoder1()
+            encoder2Reading = self.mainRobot.read_encoder2()
+
+        else:
+            self.sensor1.stopSensor()
+            self.mainRobot.stop()
 
     def sensorTest(self, timein=10):
         '''
