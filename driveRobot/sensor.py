@@ -1,5 +1,8 @@
 import RPi.GPIO as GPIO
 import time
+import sys
+sys.path.insert(0, '..')
+from settings import logging as log
 
 # NOTE: don't use GPIO02 or GPIO03, they have
 # internal pullup resistors that prevents results.
@@ -8,19 +11,18 @@ import time
 class Sensor:
     "This class provides capabilities to measure a distance from different sensors"
     def __init__(self, sensorPin, sensorPos="Front", frequency=0.1):
-        # Setup
         self.sensorPin = sensorPin
         self.sensorPosition = sensorPos
         self.frequency = frequency
         self.measureRunning = True
 
+    # Setup
     def setUp(self):
         try:
-            # Setup
             GPIO.setmode(GPIO.BOARD)
             print("Successfully, set up sensor")
         except Exception as error:
-            print ("Failed setup for sensor")
+            log.error("Failed setup for sensor")
 
     def getSensorValue(self):
         sensorPin = self.sensorPin
@@ -66,6 +68,8 @@ class Sensor:
         time.sleep(self.frequency)
 
         return distance
+        # except Exception as error:
+        #     log.error("Error for sensor: '%s'. Pin number: %s" % (sensorPosition, sensorPin))
 
     def stopSensor(self):
         GPIO.cleanup()

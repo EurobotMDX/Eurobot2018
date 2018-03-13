@@ -197,11 +197,25 @@ class driving():
         self.sensorThreshold = config.robotSettings['sensorThreshold']
 
         # Setup sensors
-        self.sensor1 = Sensor(11, "Front", 0.02)
+        # self.sensor1 = Sensor(33, "Right", 0.02)
+        self.sensor1 = Sensor(35, "Middle", 0.02)
+        # self.sensor2 = Sensor(37, "Left", 0.02)
 
         # Slowing down variables
         self.enterSpeedLoop1 = True
         self.enterSpeedLoop2 = False
+
+        # Setup Valve
+        self.valvePin = 40
+        GPIO.setmode(GPIO.BOARD)
+        GPIO.setup(self.valvePin, GPIO.OUT)
+        GPIO.output(self.valvePin, GPIO.LOW)
+
+    def setValve(self, state=True):
+        if (state):
+            GPIO.output(self.valvePin, GPIO.HIGH)
+        else:
+            GPIO.output(self.valvePin, GPIO.LOW)
 
     def showCounterForWheel(self, timein=10):
         '''
@@ -217,8 +231,7 @@ class driving():
         self.self.mainRobot.reset_encoders()
 
         while (countdown > startTime):
-            print(
-            "Encoders values are --- encoder 1: {} --- encoder 2: {}\n".format(self.self.mainRobot.read_encoder1(),
+            print("Encoders values are --- encoder 1: {} --- encoder 2: {}\n".format(self.self.mainRobot.read_encoder1(),
                                                                                self.mainRobot.read_encoder2()))
 
     def travelledDistance(self, distance, current):
@@ -453,13 +466,22 @@ class driving():
         :return:
         '''
         countdown = time.time() + timein
-        startTime = time.time()
+
+        endTime = time.time()
 
         self.sensor1.setUp()
 
-        while (countdown > startTime):
-            print (self.sensor1.getSensorValue)
 
+
+        while (countdown > endTime):
+
+            # sensors = [self.sensor1.getSensorValue(), self.sensor2.getSensorValue(), self.sensor1.getSensorValue()]
+
+            # print("Sensor1: {} | Sensor2: {} | Sensor3: {}".format(sensors[0], sensors[1], sensors[2]))
+
+            print(self.sensor1.getSensorValue())
+
+            endTime = time.time()
         else:
             print("Stopped")
 
@@ -472,14 +494,14 @@ class driving():
         print("\n" + tc.FAIL + "Battery Status: " + str(getBatteryVoltage) + "V" + tc.ENDC + "\n")
 
         if float(getBatteryVoltage) < 11.0:
-            print(tc.FAIL + "Critical Battery Level. PLEASE REPLACE BATTERY!" + tc.ENDC)
+            log.error(tc.FAIL + "Critical Battery Level. PLEASE REPLACE BATTERY!" + tc.ENDC)
             canRun = False
 
         else:
-            print(tc.OKGREEN + "Battery in good level." + tc.ENDC + "\n")
+            log.info(tc.OKGREEN + "Battery in good level." + tc.ENDC + "\n")
 
         return canRun
 
     def changeAcc(self, value=5):
-        print("Changed acceleration to: {}".format(value))
+        log.info("Changed acceleration to: {}".format(value))
         self.mainRobot.setAcceleration(value)

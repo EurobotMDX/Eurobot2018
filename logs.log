@@ -1671,3 +1671,332 @@ Stopped by user
 2018-02-15 18:03:49,016 : INFO : Successful set up for servo!
 2018-02-15 18:03:49,017 : INFO : Initialized main objects
 2018-02-15 18:03:56,026 : INFO : Servo cleanup done!
+2018-02-28 18:08:21,346 : INFO : SMBUS is available
+2018-02-28 18:08:21,355 : INFO : Dummy is: False
+2018-02-28 18:08:21,355 : DEBUG : Setting up SMBus
+2018-02-28 18:08:21,356 : ERROR : IO error. Please check if batter is connected and MD25 working correctly.
+2018-02-28 18:08:21,357 : INFO : Successful set up for servo!
+2018-02-28 18:08:21,357 : INFO : Initialized main objects
+2018-02-28 19:53:46,349 : INFO : SMBUS is available
+2018-02-28 19:53:46,358 : INFO : Dummy is: False
+2018-02-28 19:53:46,359 : DEBUG : Setting up SMBus
+2018-02-28 19:53:46,359 : ERROR : IO error. Please check if batter is connected and MD25 working correctly.
+2018-02-28 19:53:46,360 : INFO : Successful set up for servo!
+2018-02-28 19:53:46,361 : INFO : Initialized main objects
+2018-02-28 19:54:15,497 : INFO : SMBUS is available
+2018-02-28 19:54:15,499 : INFO : Dummy is: False
+2018-02-28 19:54:15,509 : DEBUG : Setting up SMBus
+2018-02-28 19:54:15,510 : ERROR : IO error. Please check if batter is connected and MD25 working correctly.
+2018-02-28 19:54:15,516 : INFO : Successful set up for servo!
+2018-02-28 19:54:15,517 : INFO : Initialized main objects
+2018-02-28 19:55:41,920 : INFO : SMBUS is available
+2018-02-28 19:55:41,921 : INFO : Dummy is: False
+2018-02-28 19:55:41,922 : DEBUG : Setting up SMBus
+2018-02-28 19:55:41,923 : ERROR : IO error. Please check if batter is connected and MD25 working correctly.
+2018-02-28 19:55:41,924 : INFO : Successful set up for servo!
+2018-02-28 19:55:41,925 : INFO : Initialized main objects
+2018-02-28 19:56:13,764 : INFO : SMBUS is available
+2018-02-28 19:56:13,765 : INFO : Dummy is: False
+2018-02-28 19:56:13,766 : DEBUG : Setting up SMBus
+2018-02-28 19:56:13,767 : ERROR : IO error. Please check if batter is connected and MD25 working correctly.
+2018-02-28 19:56:13,768 : INFO : Successful set up for servo!
+2018-02-28 19:56:13,768 : INFO : Initialized main objects
+2018-02-28 19:56:13,769 : ERROR : CAUGHT: IOError. While reading battery voltage. [Errno 5] Input/output error
+2018-02-28 19:58:21,311 : INFO : SMBUS is available
+2018-02-28 19:58:21,312 : INFO : Dummy is: False
+2018-02-28 19:58:21,313 : DEBUG : Setting up SMBus
+2018-02-28 19:58:21,313 : ERROR : IO error. Please check if batter is connected and MD25 working correctly.
+2018-02-28 19:58:21,314 : INFO : Successful set up for servo!
+2018-02-28 19:58:21,315 : INFO : Initialized main objects
+2018-02-28 20:08:07,921 : INFO : SMBUS is available
+2018-02-28 20:08:07,923 : INFO : Dummy is: False
+2018-02-28 20:08:07,923 : DEBUG : Setting up SMBus
+2018-02-28 20:08:07,925 : INFO : Successful set up for servo!
+2018-02-28 20:08:07,925 : INFO : Initialized main objects
+2018-02-28 20:08:07,926 : INFO : [1;46mBattery in good level.[0m
+
+2018-02-28 20:08:10,211 : DEBUG : 
+Stopped by user
+
+2018-02-28 20:21:01,290 : INFO : SMBUS is available
+2018-02-28 20:21:01,291 : INFO : Dummy is: False
+2018-02-28 20:21:01,292 : DEBUG : Setting up SMBus
+2018-02-28 20:21:01,293 : INFO : Successful set up for servo!
+2018-02-28 20:21:01,293 : INFO : Initialized main objects
+2018-02-28 20:21:01,294 : INFO : [1;46mBattery in good level.[0m
+
+2018-02-28 20:21:11,888 : DEBUG : 
+Stopped by user
+
+2018-02-28 20:23:15,398 : INFO : SMBUS is available
+2018-02-28 20:23:15,400 : INFO : Dummy is: False
+2018-02-28 20:23:15,400 : DEBUG : Setting up SMBus
+2018-02-28 20:23:15,401 : INFO : Successful set up for servo!
+2018-02-28 20:23:15,402 : INFO : Initialized main objects
+2018-02-28 20:23:15,403 : INFO : [1;46mBattery in good level.[0m
+
+2018-02-28 20:23:21,509 : DEBUG : 
+Stopped by user
+
+2018-02-28 20:24:55,492 : INFO : SMBUS is available
+2018-02-28 20:24:55,493 : INFO : Dummy is: False
+2018-02-28 20:24:55,494 : DEBUG : Setting up SMBus
+2018-02-28 20:24:55,495 : INFO : Successful set up for servo!
+2018-02-28 20:24:55,495 : INFO : Initialized main objects
+2018-02-28 20:24:55,496 : INFO : [1;46mBattery in good level.[0m
+
+2018-02-28 20:25:51,394 : DEBUG : 
+Stopped by user
+
+2018-02-28 20:25:52,075 : INFO : SMBUS is available
+2018-02-28 20:25:52,076 : INFO : Dummy is: False
+2018-02-28 20:25:52,076 : DEBUG : Setting up SMBus
+2018-02-28 20:25:52,077 : INFO : Successful set up for servo!
+2018-02-28 20:25:52,078 : INFO : Initialized main objects
+2018-02-28 20:25:52,079 : INFO : [1;46mBattery in good level.[0m
+
+2018-02-28 20:26:02,671 : DEBUG : 
+Stopped by user
+
+2018-02-28 20:26:36,813 : INFO : SMBUS is available
+2018-02-28 20:26:36,815 : INFO : Dummy is: False
+2018-02-28 20:26:36,815 : DEBUG : Setting up SMBus
+2018-02-28 20:26:36,816 : INFO : Successful set up for servo!
+2018-02-28 20:26:36,817 : INFO : Initialized main objects
+2018-02-28 20:26:36,818 : INFO : [1;46mBattery in good level.[0m
+
+2018-02-28 20:26:53,757 : DEBUG : 
+Stopped by user
+
+2018-02-28 20:28:48,014 : INFO : SMBUS is available
+2018-02-28 20:28:48,015 : INFO : Dummy is: False
+2018-02-28 20:28:48,015 : DEBUG : Setting up SMBus
+2018-02-28 20:28:48,017 : INFO : Successful set up for servo!
+2018-02-28 20:28:48,017 : INFO : Initialized main objects
+2018-02-28 20:28:48,018 : INFO : [1;46mBattery in good level.[0m
+
+2018-02-28 20:31:53,904 : INFO : SMBUS is available
+2018-02-28 20:31:53,913 : INFO : Dummy is: False
+2018-02-28 20:31:53,913 : DEBUG : Setting up SMBus
+2018-02-28 20:31:53,914 : INFO : Successful set up for servo!
+2018-02-28 20:31:53,915 : INFO : Initialized main objects
+2018-02-28 20:31:53,916 : INFO : [1;46mBattery in good level.[0m
+
+2018-02-28 20:32:23,722 : INFO : SMBUS is available
+2018-02-28 20:32:23,724 : INFO : Dummy is: False
+2018-02-28 20:32:23,724 : DEBUG : Setting up SMBus
+2018-02-28 20:32:23,726 : INFO : Successful set up for servo!
+2018-02-28 20:32:23,727 : INFO : Initialized main objects
+2018-02-28 20:32:23,728 : INFO : [1;46mBattery in good level.[0m
+
+2018-02-28 20:39:04,458 : DEBUG : 
+Stopped by user
+
+2018-02-28 20:39:50,818 : INFO : SMBUS is available
+2018-02-28 20:39:50,821 : INFO : Dummy is: False
+2018-02-28 20:39:50,823 : DEBUG : Setting up SMBus
+2018-02-28 20:39:50,825 : INFO : Successful set up for servo!
+2018-02-28 20:39:50,826 : INFO : Initialized main objects
+2018-02-28 20:39:50,828 : INFO : [1;46mBattery in good level.[0m
+
+2018-02-28 20:40:00,889 : DEBUG : 
+Stopped by user
+
+2018-02-28 20:42:54,257 : INFO : SMBUS is available
+2018-02-28 20:42:54,259 : INFO : Dummy is: False
+2018-02-28 20:42:54,259 : DEBUG : Setting up SMBus
+2018-02-28 20:42:54,261 : INFO : Successful set up for servo!
+2018-02-28 20:42:54,261 : INFO : Initialized main objects
+2018-02-28 20:42:54,263 : INFO : [1;46mBattery in good level.[0m
+
+2018-02-28 20:42:57,999 : DEBUG : 
+Stopped by user
+
+2018-02-28 20:44:00,884 : INFO : SMBUS is available
+2018-02-28 20:44:00,886 : INFO : Dummy is: False
+2018-02-28 20:44:00,886 : DEBUG : Setting up SMBus
+2018-02-28 20:44:00,887 : INFO : Successful set up for servo!
+2018-02-28 20:44:00,888 : INFO : Initialized main objects
+2018-02-28 20:44:00,889 : INFO : [1;46mBattery in good level.[0m
+
+2018-02-28 20:44:10,890 : INFO : Servo cleanup done!
+2018-02-28 20:44:23,146 : INFO : SMBUS is available
+2018-02-28 20:44:23,147 : INFO : Dummy is: False
+2018-02-28 20:44:23,147 : DEBUG : Setting up SMBus
+2018-02-28 20:44:23,148 : INFO : Successful set up for servo!
+2018-02-28 20:44:23,149 : INFO : Initialized main objects
+2018-02-28 20:44:23,150 : INFO : [1;46mBattery in good level.[0m
+
+2018-02-28 20:44:29,572 : DEBUG : 
+Stopped by user
+
+2018-02-28 20:44:41,648 : INFO : SMBUS is available
+2018-02-28 20:44:41,649 : INFO : Dummy is: False
+2018-02-28 20:44:41,650 : DEBUG : Setting up SMBus
+2018-02-28 20:44:41,651 : INFO : Successful set up for servo!
+2018-02-28 20:44:41,651 : INFO : Initialized main objects
+2018-02-28 20:44:41,652 : INFO : [1;46mBattery in good level.[0m
+
+2018-02-28 20:44:43,452 : DEBUG : 
+Stopped by user
+
+2018-02-28 20:44:47,734 : INFO : SMBUS is available
+2018-02-28 20:44:47,735 : INFO : Dummy is: False
+2018-02-28 20:44:47,736 : DEBUG : Setting up SMBus
+2018-02-28 20:44:47,737 : INFO : Successful set up for servo!
+2018-02-28 20:44:47,738 : INFO : Initialized main objects
+2018-02-28 20:44:47,739 : INFO : [1;46mBattery in good level.[0m
+
+2018-02-28 20:44:57,739 : INFO : Servo cleanup done!
+2018-02-28 20:45:05,489 : INFO : SMBUS is available
+2018-02-28 20:45:05,490 : INFO : Dummy is: False
+2018-02-28 20:45:05,491 : DEBUG : Setting up SMBus
+2018-02-28 20:45:05,492 : INFO : Successful set up for servo!
+2018-02-28 20:45:05,493 : INFO : Initialized main objects
+2018-02-28 20:45:05,494 : INFO : [1;46mBattery in good level.[0m
+
+2018-02-28 20:45:15,523 : INFO : Servo cleanup done!
+2018-02-28 20:46:14,009 : INFO : SMBUS is available
+2018-02-28 20:46:14,010 : INFO : Dummy is: False
+2018-02-28 20:46:14,011 : DEBUG : Setting up SMBus
+2018-02-28 20:46:14,012 : INFO : Successful set up for servo!
+2018-02-28 20:46:14,013 : INFO : Initialized main objects
+2018-02-28 20:46:14,015 : INFO : [1;46mBattery in good level.[0m
+
+2018-02-28 20:46:24,045 : INFO : Servo cleanup done!
+2018-02-28 20:47:12,119 : INFO : SMBUS is available
+2018-02-28 20:47:12,120 : INFO : Dummy is: False
+2018-02-28 20:47:12,121 : DEBUG : Setting up SMBus
+2018-02-28 20:47:12,122 : INFO : Successful set up for servo!
+2018-02-28 20:47:12,123 : INFO : Initialized main objects
+2018-02-28 20:47:12,124 : INFO : [1;46mBattery in good level.[0m
+
+2018-02-28 20:47:22,226 : INFO : Servo cleanup done!
+2018-02-28 20:47:33,646 : INFO : SMBUS is available
+2018-02-28 20:47:33,647 : INFO : Dummy is: False
+2018-02-28 20:47:33,648 : DEBUG : Setting up SMBus
+2018-02-28 20:47:33,649 : INFO : Successful set up for servo!
+2018-02-28 20:47:33,649 : INFO : Initialized main objects
+2018-02-28 20:47:33,650 : INFO : [1;46mBattery in good level.[0m
+
+2018-02-28 20:48:17,518 : DEBUG : 
+Stopped by user
+
+2018-02-28 20:48:18,198 : INFO : SMBUS is available
+2018-02-28 20:48:18,199 : INFO : Dummy is: False
+2018-02-28 20:48:18,200 : DEBUG : Setting up SMBus
+2018-02-28 20:48:18,201 : INFO : Successful set up for servo!
+2018-02-28 20:48:18,201 : INFO : Initialized main objects
+2018-02-28 20:48:18,203 : INFO : [1;46mBattery in good level.[0m
+
+2018-02-28 20:48:28,298 : INFO : Servo cleanup done!
+2018-02-28 20:48:30,882 : INFO : SMBUS is available
+2018-02-28 20:48:30,883 : INFO : Dummy is: False
+2018-02-28 20:48:30,883 : DEBUG : Setting up SMBus
+2018-02-28 20:48:30,884 : INFO : Successful set up for servo!
+2018-02-28 20:48:30,885 : INFO : Initialized main objects
+2018-02-28 20:48:30,886 : INFO : [1;46mBattery in good level.[0m
+
+2018-02-28 20:48:40,904 : INFO : Servo cleanup done!
+2018-02-28 20:53:22,992 : INFO : SMBUS is available
+2018-02-28 20:53:22,993 : INFO : Dummy is: False
+2018-02-28 20:53:22,994 : DEBUG : Setting up SMBus
+2018-02-28 20:53:22,995 : INFO : Successful set up for servo!
+2018-02-28 20:53:22,996 : INFO : Initialized main objects
+2018-02-28 20:53:22,997 : INFO : [1;46mBattery in good level.[0m
+
+2018-02-28 20:53:33,107 : INFO : Servo cleanup done!
+2018-02-28 20:54:22,757 : INFO : SMBUS is available
+2018-02-28 20:54:22,758 : INFO : Dummy is: False
+2018-02-28 20:54:22,759 : DEBUG : Setting up SMBus
+2018-02-28 20:54:22,760 : INFO : Successful set up for servo!
+2018-02-28 20:54:22,760 : INFO : Initialized main objects
+2018-02-28 20:54:22,761 : INFO : [1;46mBattery in good level.[0m
+
+2018-02-28 20:54:32,872 : INFO : Servo cleanup done!
+2018-02-28 20:58:14,775 : INFO : SMBUS is available
+2018-02-28 20:58:14,777 : INFO : Dummy is: False
+2018-02-28 20:58:14,777 : DEBUG : Setting up SMBus
+2018-02-28 20:58:14,778 : INFO : Successful set up for servo!
+2018-02-28 20:58:14,779 : INFO : Initialized main objects
+2018-02-28 20:58:14,780 : INFO : [1;46mBattery in good level.[0m
+
+2018-02-28 20:58:24,890 : INFO : Servo cleanup done!
+2018-02-28 20:58:38,190 : INFO : SMBUS is available
+2018-02-28 20:58:38,191 : INFO : Dummy is: False
+2018-02-28 20:58:38,191 : DEBUG : Setting up SMBus
+2018-02-28 20:58:38,192 : INFO : Successful set up for servo!
+2018-02-28 20:58:38,193 : INFO : Initialized main objects
+2018-02-28 20:58:38,194 : INFO : [1;46mBattery in good level.[0m
+
+                                                                                                                                                                                                                                                                                                                                                          2018-02-28 21:03:48,730 : INFO : SMBUS is available
+2018-02-28 21:03:48,740 : INFO : Dummy is: False
+2018-02-28 21:03:48,741 : DEBUG : Setting up SMBus
+2018-02-28 21:03:48,742 : INFO : Successful set up for servo!
+2018-02-28 21:03:48,743 : INFO : Initialized main objects
+2018-02-28 21:03:48,744 : INFO : [1;46mBattery in good level.[0m
+
+2018-02-28 21:04:35,854 : INFO : Servo cleanup done!
+2018-02-28 21:05:52,993 : INFO : SMBUS is available
+2018-02-28 21:05:52,994 : INFO : Dummy is: False
+2018-02-28 21:05:52,994 : DEBUG : Setting up SMBus
+2018-02-28 21:05:52,995 : INFO : Successful set up for servo!
+2018-02-28 21:05:52,996 : INFO : Initialized main objects
+2018-02-28 21:05:52,997 : INFO : [1;46mBattery in good level.[0m
+
+2018-02-28 21:06:20,552 : INFO : SMBUS is available
+2018-02-28 21:06:20,553 : INFO : Dummy is: False
+2018-02-28 21:06:20,554 : DEBUG : Setting up SMBus
+2018-02-28 21:06:20,556 : INFO : Successful set up for servo!
+2018-02-28 21:06:20,557 : INFO : Initialized main objects
+2018-02-28 21:06:20,558 : INFO : [1;46mBattery in good level.[0m
+
+2018-02-28 21:06:30,569 : INFO : Servo cleanup done!
+2018-03-01 17:52:40,233 : INFO : SMBUS is available
+2018-03-01 17:52:40,244 : INFO : Dummy is: False
+2018-03-01 17:52:40,245 : DEBUG : Setting up SMBus
+2018-03-01 17:52:40,246 : INFO : Successful set up for servo!
+2018-03-01 17:52:40,247 : INFO : Initialized main objects
+2018-03-01 17:52:40,249 : INFO : [1;46mBattery in good level.[0m
+
+2018-03-01 17:52:50,284 : INFO : Servo cleanup done!
+2018-03-01 17:55:33,944 : INFO : SMBUS is available
+2018-03-01 17:55:33,946 : INFO : Dummy is: False
+2018-03-01 17:55:33,947 : DEBUG : Setting up SMBus
+2018-03-01 17:55:33,948 : INFO : Successful set up for servo!
+2018-03-01 17:55:33,949 : INFO : Initialized main objects
+2018-03-01 17:55:33,951 : INFO : [1;46mBattery in good level.[0m
+
+2018-03-01 17:55:43,972 : INFO : Servo cleanup done!
+2018-03-01 17:56:23,719 : INFO : SMBUS is available
+2018-03-01 17:56:23,721 : INFO : Dummy is: False
+2018-03-01 17:56:23,721 : DEBUG : Setting up SMBus
+2018-03-01 17:56:23,722 : INFO : Successful set up for servo!
+2018-03-01 17:56:23,723 : INFO : Initialized main objects
+2018-03-01 17:56:23,724 : INFO : [1;46mBattery in good level.[0m
+
+2018-03-01 17:56:33,731 : INFO : Servo cleanup done!
+2018-03-06 20:27:53,357 : INFO : SMBUS is available
+2018-03-06 20:27:53,367 : INFO : Dummy is: False
+2018-03-06 20:27:53,368 : DEBUG : Setting up SMBus
+2018-03-06 20:27:57,471 : INFO : SMBUS is available
+2018-03-06 20:27:57,480 : INFO : Dummy is: False
+2018-03-06 20:27:57,481 : DEBUG : Setting up SMBus
+2018-03-08 21:06:40,686 : INFO : SMBUS is available
+2018-03-08 21:07:13,952 : INFO : SMBUS is available
+2018-03-08 21:07:25,301 : INFO : SMBUS is available
+2018-03-08 21:07:25,302 : INFO : Dummy is: False
+2018-03-08 21:07:25,303 : DEBUG : Setting up SMBus
+2018-03-08 21:07:25,304 : ERROR : IO error. Please check if batter is connected and MD25 working correctly.
+2018-03-08 21:07:25,305 : INFO : Initialized main objects
+2018-03-08 21:08:11,526 : INFO : SMBUS is available
+2018-03-08 21:08:11,527 : INFO : Dummy is: False
+2018-03-08 21:08:11,527 : DEBUG : Setting up SMBus
+2018-03-08 21:08:11,529 : INFO : Initialized main objects
+2018-03-08 21:08:11,530 : INFO : [1;46mBattery in good level.[0m
+
+2018-03-08 21:11:59,666 : INFO : SMBUS is available
+2018-03-08 21:12:52,528 : INFO : Dummy is: False
+2018-03-08 21:12:52,530 : DEBUG : Setting up SMBus
+2018-03-08 21:34:40,869 : INFO : [1;46mBattery in good level.[0m
+
