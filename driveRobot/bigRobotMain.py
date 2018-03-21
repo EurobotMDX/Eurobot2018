@@ -3,7 +3,7 @@ from terminalColors import bcolors as tc
 import sys
 sys.path.insert(0, '..')
 from settings import logging as log
-# from servo import Servo
+from servo import Servo
 from time import sleep
 import datetime
 
@@ -13,7 +13,7 @@ if __name__ == '__main__':
 
     try:
         robot = driving()
-        # servo = Servo(15, "Balls pipe servo")
+        servo = Servo(11, "Balls pipe servo")
         log.info("Initialized main objects")
         canRun = True
     except Exception as error:
@@ -22,9 +22,10 @@ if __name__ == '__main__':
 
     if robot.checkStatus() and canRun:
         try:
-            robot.activateValve()
+
+            # robot.activateValve()
             # robot.sensorTest()
-            # robot.driveBack(30, 10, False)
+            robot.driveBack(30, 10, False)
 
 
             # robot.turnRobot(90, 15, False)
@@ -37,20 +38,20 @@ if __name__ == '__main__':
 
 
 
-            # servo.setAngle(1)
-            # sleep(1)
-            # servo.setAngle(0)
-            # sleep(3)
-            # servo.setAngle(8)
-            # sleep(3)
-            # servo.setAngle(0)
+            servo.setAngle(1)
+            sleep(1)
+            servo.setAngle(0)
+            sleep(3)
+            servo.setAngle(8)
+            sleep(3)
+            servo.setAngle(0)
 
 
 
 
             # Servo on 7 stops, middle point
 
-            # servo.setAngle(6.5)
+            servo.setAngle(6.5)
 
             servo.cleanup()
 
