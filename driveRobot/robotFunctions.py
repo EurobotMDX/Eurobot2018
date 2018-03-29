@@ -7,6 +7,8 @@ import settings as config
 from terminalColors import bcolors as tc
 from sensor import *
 
+from time import sleep
+
 log = config.logging
 
 dummy = True
@@ -505,3 +507,45 @@ class driving():
     def changeAcc(self, value=5):
         log.info("Changed acceleration to: {}".format(value))
         self.mainRobot.setAcceleration(value)
+
+    # import RPi.GPIO as GPIO  # import RPi.GPIO module
+
+class robotHelpers:
+
+    def __init__(self):
+        self.motorsPin = 29
+        self.valvePin = 31
+
+        GPIO.setmode(GPIO.BOARD)  # choose BCM or BOARD
+        GPIO.setup(self.motorsPin, GPIO.OUT)
+        GPIO.setup(self.valvePin, GPIO.OUT)
+
+        log.debug("Initialized robot helpers. (Valve and motors)")
+
+
+    def motorsOn(self):
+        GPIO.output(self.motorsPin, 1)
+        log.debug("Start motors")
+
+
+    def motorsOff(self):
+        GPIO.output(self.motorsPin, 0)
+        log.debug("Motors stopped")
+
+
+    def valveRelease(self):
+        k = 0
+        while k < 20:
+            GPIO.output(self.valvePin, 1)
+            sleep(0.03)
+            GPIO.output(self.valvePin, 0)
+            sleep(0.04)
+            k += 1
+
+        sleep(1)
+
+        GPIO.output(self.valvePin, 1)
+        sleep(0.05)
+        GPIO.output(self.valvePin, 0)
+        sleep(0.06)
+        k += 1

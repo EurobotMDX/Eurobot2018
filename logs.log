@@ -2000,3 +2000,1168 @@ Stopped by user
 2018-03-08 21:12:52,530 : DEBUG : Setting up SMBus
 2018-03-08 21:34:40,869 : INFO : [1;46mBattery in good level.[0m
 
+                                                                                                                                                                                                                                                                                                                                                                                                                                           2018-03-13 20:49:53,511 : INFO : SMBUS is available
+2018-03-13 20:49:53,526 : INFO : Dummy is: False
+2018-03-13 20:49:53,526 : DEBUG : Setting up SMBus
+2018-03-20 21:51:53,361 : INFO : SMBUS is available
+2018-03-20 21:53:48,248 : INFO : SMBUS is available
+2018-03-20 21:53:48,252 : INFO : Dummy is: False
+2018-03-20 21:53:48,253 : DEBUG : Setting up SMBus
+2018-03-20 21:53:48,255 : INFO : Successful set up for servo!
+2018-03-20 21:53:48,256 : INFO : Initialized main objects
+2018-03-20 21:53:48,258 : INFO : [1;46mBattery in good level.[0m
+
+2018-03-20 21:53:52,150 : DEBUG : 
+Stopped by user
+
+2018-03-24 18:28:21,387 : INFO : SMBUS is available
+2018-03-24 18:28:21,397 : INFO : Dummy is: False
+2018-03-24 18:28:21,398 : DEBUG : Setting up SMBus
+2018-03-29 18:33:48,227 : INFO : SMBUS is available
+2018-03-29 18:33:48,239 : INFO : Dummy is: False
+2018-03-29 18:33:48,240 : DEBUG : Setting up SMBus
+2018-03-29 18:33:48,310 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 18:33:48,312 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 18:33:48,314 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 18:33:48,315 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 18:33:48,317 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 18:33:48,319 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:33:48,327 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:33:48,329 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:33:48,335 : DEBUG : Setting PWM frequency to 60 Hz
+2018-03-29 18:33:48,336 : DEBUG : Estimated pre-scale: 100.725260417
+2018-03-29 18:33:48,338 : DEBUG : Final pre-scale: 101
+2018-03-29 18:33:48,340 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:33:48,342 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 18:33:48,344 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 18:33:48,346 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:33:48,353 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 18:33:48,357 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 18:33:48,359 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 18:33:48,361 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 18:33:48,363 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 18:33:48,365 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 18:33:48,367 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:33:48,374 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:33:48,376 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:33:48,382 : DEBUG : Setting PWM frequency to 60 Hz
+2018-03-29 18:33:48,384 : DEBUG : Estimated pre-scale: 100.725260417
+2018-03-29 18:33:48,385 : DEBUG : Final pre-scale: 101
+2018-03-29 18:33:48,387 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:33:48,389 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 18:33:48,391 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 18:33:48,393 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:33:48,400 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 18:33:48,404 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 18:33:48,406 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 18:33:48,408 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 18:33:48,410 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 18:33:48,412 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 18:33:48,414 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:33:48,421 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:33:48,423 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:33:48,430 : DEBUG : Setting PWM frequency to 60 Hz
+2018-03-29 18:33:48,431 : DEBUG : Estimated pre-scale: 100.725260417
+2018-03-29 18:33:48,433 : DEBUG : Final pre-scale: 101
+2018-03-29 18:33:48,435 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:33:48,437 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 18:33:48,439 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 18:33:48,440 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:33:48,447 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 18:33:48,449 : DEBUG : Initialized robot helpers. (Valve and motors)
+2018-03-29 18:33:48,450 : INFO : Initialized main objects
+2018-03-29 18:33:48,453 : INFO : [1;46mBattery in good level.[0m
+
+2018-03-29 18:33:48,455 : DEBUG : Wrote 0x00 to register 0x06
+2018-03-29 18:33:48,458 : DEBUG : Wrote 0x00 to register 0x07
+2018-03-29 18:33:48,459 : DEBUG : Wrote 0x8F to register 0x08
+2018-03-29 18:33:48,461 : DEBUG : Wrote 0x00 to register 0x09
+2018-03-29 18:33:51,467 : DEBUG : Start motors
+2018-03-29 18:37:31,389 : INFO : SMBUS is available
+2018-03-29 18:37:31,398 : INFO : Dummy is: False
+2018-03-29 18:37:31,398 : DEBUG : Setting up SMBus
+2018-03-29 18:37:31,459 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 18:37:31,460 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 18:37:31,461 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 18:37:31,461 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 18:37:31,462 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 18:37:31,463 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:37:31,469 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:37:31,470 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:37:31,476 : DEBUG : Setting PWM frequency to 60 Hz
+2018-03-29 18:37:31,476 : DEBUG : Estimated pre-scale: 100.725260417
+2018-03-29 18:37:31,477 : DEBUG : Final pre-scale: 101
+2018-03-29 18:37:31,478 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:37:31,478 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 18:37:31,479 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 18:37:31,480 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:37:31,486 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 18:37:31,488 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 18:37:31,489 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 18:37:31,490 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 18:37:31,491 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 18:37:31,493 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 18:37:31,494 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:37:31,501 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:37:31,502 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:37:31,508 : DEBUG : Setting PWM frequency to 60 Hz
+2018-03-29 18:37:31,509 : DEBUG : Estimated pre-scale: 100.725260417
+2018-03-29 18:37:31,510 : DEBUG : Final pre-scale: 101
+2018-03-29 18:37:31,511 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:37:31,512 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 18:37:31,514 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 18:37:31,515 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:37:31,521 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 18:37:31,525 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 18:37:31,526 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 18:37:31,527 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 18:37:31,528 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 18:37:31,530 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 18:37:31,531 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:37:31,538 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:37:31,539 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:37:31,545 : DEBUG : Setting PWM frequency to 60 Hz
+2018-03-29 18:37:31,546 : DEBUG : Estimated pre-scale: 100.725260417
+2018-03-29 18:37:31,546 : DEBUG : Final pre-scale: 101
+2018-03-29 18:37:31,548 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:37:31,549 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 18:37:31,550 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 18:37:31,552 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:37:31,558 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 18:37:31,559 : DEBUG : Initialized robot helpers. (Valve and motors)
+2018-03-29 18:37:31,560 : INFO : Initialized main objects
+2018-03-29 18:37:31,561 : INFO : [1;46mBattery in good level.[0m
+
+2018-03-29 18:37:31,562 : DEBUG : Wrote 0x00 to register 0x06
+2018-03-29 18:37:31,564 : DEBUG : Wrote 0x00 to register 0x07
+2018-03-29 18:37:31,565 : DEBUG : Wrote 0x8F to register 0x08
+2018-03-29 18:37:31,566 : DEBUG : Wrote 0x00 to register 0x09
+2018-03-29 18:37:34,570 : DEBUG : Start motors
+2018-03-29 18:37:36,102 : INFO : SMBUS is available
+2018-03-29 18:37:36,111 : INFO : Dummy is: False
+2018-03-29 18:37:36,112 : DEBUG : Setting up SMBus
+2018-03-29 18:37:36,226 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 18:37:36,228 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 18:37:36,229 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 18:37:36,231 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 18:37:36,233 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 18:37:36,234 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:37:36,242 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:37:36,243 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:37:36,249 : DEBUG : Setting PWM frequency to 60 Hz
+2018-03-29 18:37:36,250 : DEBUG : Estimated pre-scale: 100.725260417
+2018-03-29 18:37:36,251 : DEBUG : Final pre-scale: 101
+2018-03-29 18:37:36,253 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:37:36,255 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 18:37:36,256 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 18:37:36,257 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:37:36,264 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 18:37:36,268 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 18:37:36,269 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 18:37:36,271 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 18:37:36,273 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 18:37:36,275 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 18:37:36,276 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:37:36,283 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:37:36,285 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:37:36,292 : DEBUG : Setting PWM frequency to 60 Hz
+2018-03-29 18:37:36,293 : DEBUG : Estimated pre-scale: 100.725260417
+2018-03-29 18:37:36,294 : DEBUG : Final pre-scale: 101
+2018-03-29 18:37:36,296 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:37:36,297 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 18:37:36,299 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 18:37:36,301 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:37:36,308 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 18:37:36,312 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 18:37:36,313 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 18:37:36,315 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 18:37:36,317 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 18:37:36,318 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 18:37:36,319 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:37:36,326 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:37:36,328 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:37:36,334 : DEBUG : Setting PWM frequency to 60 Hz
+2018-03-29 18:37:36,335 : DEBUG : Estimated pre-scale: 100.725260417
+2018-03-29 18:37:36,336 : DEBUG : Final pre-scale: 101
+2018-03-29 18:37:36,338 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:37:36,339 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 18:37:36,340 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 18:37:36,342 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:37:36,348 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 18:37:36,349 : DEBUG : Initialized robot helpers. (Valve and motors)
+2018-03-29 18:37:36,350 : INFO : Initialized main objects
+2018-03-29 18:37:36,352 : INFO : [1;46mBattery in good level.[0m
+
+2018-03-29 18:37:36,354 : DEBUG : Wrote 0x00 to register 0x06
+2018-03-29 18:37:36,356 : DEBUG : Wrote 0x00 to register 0x07
+2018-03-29 18:37:36,357 : DEBUG : Wrote 0x8F to register 0x08
+2018-03-29 18:37:36,358 : DEBUG : Wrote 0x00 to register 0x09
+2018-03-29 18:37:39,363 : DEBUG : Start motors
+2018-03-29 18:39:12,217 : INFO : SMBUS is available
+2018-03-29 18:39:12,226 : INFO : Dummy is: False
+2018-03-29 18:39:12,226 : DEBUG : Setting up SMBus
+2018-03-29 18:39:12,306 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 18:39:12,307 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 18:39:12,309 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 18:39:12,310 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 18:39:12,311 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 18:39:12,312 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:39:12,319 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:39:12,321 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:39:12,327 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:39:12,329 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 18:39:12,330 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 18:39:12,331 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:39:12,337 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 18:39:12,341 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 18:39:12,342 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 18:39:12,344 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 18:39:12,345 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 18:39:12,346 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 18:39:12,347 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:39:12,354 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:39:12,355 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:39:12,362 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:39:12,363 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 18:39:12,364 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 18:39:12,365 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:39:12,372 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 18:39:12,375 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 18:39:12,376 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 18:39:12,378 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 18:39:12,379 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 18:39:12,380 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 18:39:12,381 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:39:12,388 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:39:12,389 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:39:12,395 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:39:12,397 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 18:39:12,398 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 18:39:12,399 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:39:12,405 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 18:39:12,406 : DEBUG : Initialized robot helpers. (Valve and motors)
+2018-03-29 18:39:12,407 : INFO : Initialized main objects
+2018-03-29 18:39:12,408 : INFO : [1;46mBattery in good level.[0m
+
+2018-03-29 18:39:12,409 : DEBUG : Wrote 0x00 to register 0x06
+2018-03-29 18:39:12,410 : DEBUG : Wrote 0x00 to register 0x07
+2018-03-29 18:39:12,412 : DEBUG : Wrote 0x8F to register 0x08
+2018-03-29 18:39:12,413 : DEBUG : Wrote 0x00 to register 0x09
+2018-03-29 18:39:15,417 : DEBUG : Start motors
+2018-03-29 18:39:29,973 : INFO : SMBUS is available
+2018-03-29 18:39:29,992 : INFO : Dummy is: False
+2018-03-29 18:39:29,993 : DEBUG : Setting up SMBus
+2018-03-29 18:39:30,107 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 18:39:30,108 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 18:39:30,109 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 18:39:30,111 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 18:39:30,112 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 18:39:30,113 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:39:30,120 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:39:30,121 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:39:30,128 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:39:30,129 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 18:39:30,130 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 18:39:30,132 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:39:30,138 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 18:39:30,142 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 18:39:30,143 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 18:39:30,144 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 18:39:30,145 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 18:39:30,147 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 18:39:30,148 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:39:30,154 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:39:30,156 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:39:30,162 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:39:30,164 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 18:39:30,165 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 18:39:30,166 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:39:30,172 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 18:39:30,176 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 18:39:30,177 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 18:39:30,178 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 18:39:30,179 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 18:39:30,181 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 18:39:30,182 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:39:30,189 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:39:30,190 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:39:30,197 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:39:30,198 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 18:39:30,199 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 18:39:30,200 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:39:30,207 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 18:39:30,208 : DEBUG : Initialized robot helpers. (Valve and motors)
+2018-03-29 18:39:30,208 : INFO : Initialized main objects
+2018-03-29 18:39:30,210 : INFO : [1;46mBattery in good level.[0m
+
+2018-03-29 18:39:30,211 : DEBUG : Wrote 0x00 to register 0x06
+2018-03-29 18:39:30,212 : DEBUG : Wrote 0x00 to register 0x07
+2018-03-29 18:39:30,214 : DEBUG : Wrote 0x8F to register 0x08
+2018-03-29 18:39:30,215 : DEBUG : Wrote 0x00 to register 0x09
+2018-03-29 18:39:33,219 : DEBUG : Start motors
+2018-03-29 18:42:53,598 : INFO : SMBUS is available
+2018-03-29 18:43:06,882 : INFO : SMBUS is available
+2018-03-29 18:43:06,894 : INFO : Dummy is: False
+2018-03-29 18:43:06,895 : DEBUG : Setting up SMBus
+2018-03-29 18:43:06,979 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 18:43:06,980 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 18:43:06,981 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 18:43:06,983 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 18:43:06,984 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 18:43:06,985 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:43:06,992 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:43:06,994 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:43:07,000 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:43:07,002 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 18:43:07,003 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 18:43:07,004 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:43:07,010 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 18:43:07,011 : DEBUG : Initialized servo Arm servo
+2018-03-29 18:43:07,015 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 18:43:07,016 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 18:43:07,017 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 18:43:07,018 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 18:43:07,020 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 18:43:07,021 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:43:07,028 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:43:07,029 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:43:07,035 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:43:07,037 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 18:43:07,038 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 18:43:07,039 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:43:07,045 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 18:43:07,046 : DEBUG : Initialized servo Pipe servo
+2018-03-29 18:43:07,050 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 18:43:07,051 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 18:43:07,052 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 18:43:07,053 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 18:43:07,055 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 18:43:07,056 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:43:07,062 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:43:07,064 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:43:07,070 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:43:07,072 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 18:43:07,073 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 18:43:07,074 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:43:07,080 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 18:43:07,081 : DEBUG : Initialized servo Bee servo
+2018-03-29 18:43:07,082 : DEBUG : Initialized robot helpers. (Valve and motors)
+2018-03-29 18:43:07,083 : INFO : Initialized main objects
+2018-03-29 18:43:07,084 : INFO : [1;46mBattery in good level.[0m
+
+2018-03-29 18:43:07,086 : DEBUG : Wrote 0x00 to register 0x06
+2018-03-29 18:43:07,087 : DEBUG : Wrote 0x00 to register 0x07
+2018-03-29 18:43:07,088 : DEBUG : Wrote 0x8F to register 0x08
+2018-03-29 18:43:07,089 : DEBUG : Wrote 0x00 to register 0x09
+2018-03-29 18:43:07,090 : DEBUG : Servo: Arm servo turned 0 degrees
+2018-03-29 18:43:10,094 : DEBUG : Start motors
+2018-03-29 18:46:29,396 : INFO : SMBUS is available
+2018-03-29 18:46:29,408 : INFO : Dummy is: False
+2018-03-29 18:46:29,409 : DEBUG : Setting up SMBus
+2018-03-29 18:46:29,469 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 18:46:29,470 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 18:46:29,471 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 18:46:29,472 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 18:46:29,473 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 18:46:29,473 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:46:29,480 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:46:29,481 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:46:29,487 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:46:29,488 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 18:46:29,488 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 18:46:29,489 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:46:29,495 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 18:46:29,495 : DEBUG : Initialized servo Arm servo
+2018-03-29 18:46:29,497 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 18:46:29,498 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 18:46:29,499 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 18:46:29,500 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 18:46:29,501 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 18:46:29,502 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:46:29,508 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:46:29,509 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:46:29,515 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:46:29,516 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 18:46:29,516 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 18:46:29,517 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:46:29,523 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 18:46:29,523 : DEBUG : Initialized servo Pipe servo
+2018-03-29 18:46:29,525 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 18:46:29,526 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 18:46:29,527 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 18:46:29,528 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 18:46:29,529 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 18:46:29,529 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:46:29,536 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:46:29,536 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:46:29,543 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:46:29,544 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 18:46:29,545 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 18:46:29,546 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:46:29,553 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 18:46:29,554 : DEBUG : Initialized servo Bee servo
+2018-03-29 18:46:29,554 : DEBUG : Initialized robot helpers. (Valve and motors)
+2018-03-29 18:46:29,555 : INFO : Initialized main objects
+2018-03-29 18:46:29,556 : INFO : [1;46mBattery in good level.[0m
+
+2018-03-29 18:46:29,558 : DEBUG : Wrote 0x00 to register 0x06
+2018-03-29 18:46:29,559 : DEBUG : Wrote 0x00 to register 0x07
+2018-03-29 18:46:29,560 : DEBUG : Wrote 0x8F to register 0x08
+2018-03-29 18:46:29,562 : DEBUG : Wrote 0x00 to register 0x09
+2018-03-29 18:46:29,562 : DEBUG : Servo: Arm servo turned 0 degrees
+2018-03-29 18:46:32,566 : DEBUG : Start motors
+2018-03-29 18:47:07,405 : INFO : SMBUS is available
+2018-03-29 18:47:07,414 : INFO : Dummy is: False
+2018-03-29 18:47:07,414 : DEBUG : Setting up SMBus
+2018-03-29 18:47:07,475 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 18:47:07,476 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 18:47:07,476 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 18:47:07,477 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 18:47:07,478 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 18:47:07,479 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:47:07,485 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:47:07,486 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:47:07,492 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:47:07,493 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 18:47:07,494 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 18:47:07,495 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:47:07,501 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 18:47:07,501 : DEBUG : Initialized servo Arm servo
+2018-03-29 18:47:07,503 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 18:47:07,504 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 18:47:07,504 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 18:47:07,505 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 18:47:07,506 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 18:47:07,507 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:47:07,513 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:47:07,514 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:47:07,520 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:47:07,522 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 18:47:07,523 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 18:47:07,524 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:47:07,530 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 18:47:07,531 : DEBUG : Initialized servo Pipe servo
+2018-03-29 18:47:07,534 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 18:47:07,536 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 18:47:07,537 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 18:47:07,538 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 18:47:07,539 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 18:47:07,540 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:47:07,547 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:47:07,548 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:47:07,554 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:47:07,556 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 18:47:07,557 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 18:47:07,558 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:47:07,564 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 18:47:07,565 : DEBUG : Initialized servo Bee servo
+2018-03-29 18:47:07,566 : DEBUG : Initialized robot helpers. (Valve and motors)
+2018-03-29 18:47:07,566 : INFO : Initialized main objects
+2018-03-29 18:47:07,568 : INFO : [1;46mBattery in good level.[0m
+
+2018-03-29 18:47:07,569 : DEBUG : Wrote 0x00 to register 0x06
+2018-03-29 18:47:07,570 : DEBUG : Wrote 0x00 to register 0x07
+2018-03-29 18:47:07,571 : DEBUG : Wrote 0x8F to register 0x08
+2018-03-29 18:47:07,573 : DEBUG : Wrote 0x00 to register 0x09
+2018-03-29 18:47:07,573 : DEBUG : Servo: Arm servo turned 0 degrees
+2018-03-29 18:47:10,577 : DEBUG : Start motors
+2018-03-29 18:49:23,860 : INFO : SMBUS is available
+2018-03-29 18:49:23,879 : INFO : Dummy is: False
+2018-03-29 18:49:23,880 : DEBUG : Setting up SMBus
+2018-03-29 18:49:23,942 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 18:49:23,943 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 18:49:23,944 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 18:49:23,944 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 18:49:23,945 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 18:49:23,946 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:49:23,952 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:49:23,953 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:49:23,960 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:49:23,960 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 18:49:23,961 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 18:49:23,962 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:49:23,968 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 18:49:23,969 : DEBUG : Initialized servo Arm servo
+2018-03-29 18:49:23,971 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 18:49:23,972 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 18:49:23,972 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 18:49:23,973 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 18:49:23,974 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 18:49:23,975 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:49:23,981 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:49:23,982 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:49:23,988 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:49:23,989 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 18:49:23,990 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 18:49:23,990 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:49:23,996 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 18:49:23,997 : DEBUG : Initialized servo Pipe servo
+2018-03-29 18:49:23,999 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 18:49:24,000 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 18:49:24,001 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 18:49:24,001 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 18:49:24,002 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 18:49:24,003 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:49:24,009 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:49:24,010 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:49:24,016 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:49:24,017 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 18:49:24,018 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 18:49:24,019 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:49:24,024 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 18:49:24,025 : DEBUG : Initialized servo Bee servo
+2018-03-29 18:49:24,025 : DEBUG : Initialized robot helpers. (Valve and motors)
+2018-03-29 18:49:24,026 : INFO : Initialized main objects
+2018-03-29 18:49:24,027 : INFO : [1;46mBattery in good level.[0m
+
+2018-03-29 18:49:24,028 : DEBUG : Wrote 0x00 to register 0x06
+2018-03-29 18:49:24,029 : DEBUG : Wrote 0x00 to register 0x07
+2018-03-29 18:49:24,029 : DEBUG : Wrote 0x8F to register 0x08
+2018-03-29 18:49:24,030 : DEBUG : Wrote 0x00 to register 0x09
+2018-03-29 18:49:24,031 : DEBUG : Servo: 'Arm servo' turned 0 degrees
+2018-03-29 18:49:27,034 : DEBUG : Start motors
+2018-03-29 18:49:44,224 : INFO : SMBUS is available
+2018-03-29 18:49:44,236 : INFO : Dummy is: False
+2018-03-29 18:49:44,237 : DEBUG : Setting up SMBus
+2018-03-29 18:49:44,298 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 18:49:44,299 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 18:49:44,300 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 18:49:44,301 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 18:49:44,301 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 18:49:44,302 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:49:44,309 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:49:44,310 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:49:44,316 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:49:44,317 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 18:49:44,318 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 18:49:44,320 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:49:44,326 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 18:49:44,327 : DEBUG : Initialized servo Arm servo
+2018-03-29 18:49:44,330 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 18:49:44,332 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 18:49:44,333 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 18:49:44,334 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 18:49:44,335 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 18:49:44,337 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:49:44,343 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:49:44,344 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:49:44,351 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:49:44,353 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 18:49:44,354 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 18:49:44,355 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:49:44,361 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 18:49:44,362 : DEBUG : Initialized servo Pipe servo
+2018-03-29 18:49:44,366 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 18:49:44,367 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 18:49:44,368 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 18:49:44,369 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 18:49:44,371 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 18:49:44,372 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:49:44,379 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:49:44,380 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:49:44,386 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:49:44,388 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 18:49:44,389 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 18:49:44,390 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:49:44,396 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 18:49:44,397 : DEBUG : Initialized servo Bee servo
+2018-03-29 18:49:44,398 : DEBUG : Initialized robot helpers. (Valve and motors)
+2018-03-29 18:49:44,399 : INFO : Initialized main objects
+2018-03-29 18:49:44,400 : INFO : [1;46mBattery in good level.[0m
+
+2018-03-29 18:49:44,402 : DEBUG : Wrote 0x00 to register 0x06
+2018-03-29 18:49:44,403 : DEBUG : Wrote 0x00 to register 0x07
+2018-03-29 18:49:44,404 : DEBUG : Wrote 0x8F to register 0x08
+2018-03-29 18:49:44,406 : DEBUG : Wrote 0x00 to register 0x09
+2018-03-29 18:49:44,406 : DEBUG : Servo: 'Arm servo' turned to 0 degrees
+2018-03-29 18:49:47,410 : DEBUG : Start motors
+2018-03-29 18:52:00,189 : INFO : SMBUS is available
+2018-03-29 18:52:00,201 : INFO : Dummy is: False
+2018-03-29 18:52:00,202 : DEBUG : Setting up SMBus
+2018-03-29 18:52:00,292 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 18:52:00,293 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 18:52:00,294 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 18:52:00,296 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 18:52:00,297 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 18:52:00,298 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:52:00,305 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:52:00,306 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:52:00,313 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:52:00,314 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 18:52:00,316 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 18:52:00,317 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:52:00,323 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 18:52:00,324 : DEBUG : Initialized servo Arm servo
+2018-03-29 18:52:00,327 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 18:52:00,329 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 18:52:00,330 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 18:52:00,331 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 18:52:00,333 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 18:52:00,334 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:52:00,340 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:52:00,342 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:52:00,348 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:52:00,350 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 18:52:00,351 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 18:52:00,352 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:52:00,358 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 18:52:00,359 : DEBUG : Initialized servo Pipe servo
+2018-03-29 18:52:00,363 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 18:52:00,364 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 18:52:00,365 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 18:52:00,367 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 18:52:00,368 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 18:52:00,369 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:52:00,376 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:52:00,377 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:52:00,384 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:52:00,385 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 18:52:00,386 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 18:52:00,387 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:52:00,394 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 18:52:00,395 : DEBUG : Initialized servo Bee servo
+2018-03-29 18:52:00,395 : DEBUG : Initialized robot helpers. (Valve and motors)
+2018-03-29 18:52:00,396 : INFO : Initialized main objects
+2018-03-29 18:52:00,398 : INFO : [1;46mBattery in good level.[0m
+
+2018-03-29 18:52:00,399 : DEBUG : Wrote 0x00 to register 0x06
+2018-03-29 18:52:00,400 : DEBUG : Wrote 0x00 to register 0x07
+2018-03-29 18:52:00,401 : DEBUG : Wrote 0x8F to register 0x08
+2018-03-29 18:52:00,403 : DEBUG : Wrote 0x00 to register 0x09
+2018-03-29 18:52:00,404 : DEBUG : Servo: 'Arm servo' turned to 0 degrees
+2018-03-29 18:52:03,408 : DEBUG : Start motors
+2018-03-29 18:52:08,414 : DEBUG : Motors stopped
+2018-03-29 18:52:43,760 : INFO : SMBUS is available
+2018-03-29 18:52:43,775 : INFO : Dummy is: False
+2018-03-29 18:52:43,776 : DEBUG : Setting up SMBus
+2018-03-29 18:52:43,841 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 18:52:43,843 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 18:52:43,844 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 18:52:43,845 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 18:52:43,846 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 18:52:43,848 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:52:43,855 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:52:43,856 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:52:43,863 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:52:43,864 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 18:52:43,865 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 18:52:43,866 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:52:43,873 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 18:52:43,873 : DEBUG : Initialized servo Arm servo
+2018-03-29 18:52:43,877 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 18:52:43,878 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 18:52:43,879 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 18:52:43,881 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 18:52:43,882 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 18:52:43,883 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:52:43,890 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:52:43,891 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:52:43,898 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:52:43,899 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 18:52:43,900 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 18:52:43,901 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:52:43,908 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 18:52:43,909 : DEBUG : Initialized servo Pipe servo
+2018-03-29 18:52:43,912 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 18:52:43,913 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 18:52:43,915 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 18:52:43,916 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 18:52:43,917 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 18:52:43,918 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:52:43,925 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:52:43,926 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:52:43,933 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:52:43,934 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 18:52:43,935 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 18:52:43,936 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:52:43,943 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 18:52:43,944 : DEBUG : Initialized servo Bee servo
+2018-03-29 18:52:43,944 : DEBUG : Initialized robot helpers. (Valve and motors)
+2018-03-29 18:52:43,945 : INFO : Initialized main objects
+2018-03-29 18:52:43,947 : INFO : [1;46mBattery in good level.[0m
+
+2018-03-29 18:52:43,948 : DEBUG : Wrote 0x00 to register 0x06
+2018-03-29 18:52:43,949 : DEBUG : Wrote 0x00 to register 0x07
+2018-03-29 18:52:43,950 : DEBUG : Wrote 0x8F to register 0x08
+2018-03-29 18:52:43,952 : DEBUG : Wrote 0x00 to register 0x09
+2018-03-29 18:52:43,952 : DEBUG : Servo: 'Arm servo' turned to 0 degrees
+2018-03-29 18:52:43,954 : DEBUG : Wrote 0x00 to register 0x06
+2018-03-29 18:52:43,955 : DEBUG : Wrote 0x00 to register 0x07
+2018-03-29 18:52:43,956 : DEBUG : Wrote 0x70 to register 0x08
+2018-03-29 18:52:43,957 : DEBUG : Wrote 0x01 to register 0x09
+2018-03-29 18:52:43,958 : DEBUG : Servo: 'Arm servo' turned to 90 degrees
+2018-03-29 18:52:46,963 : DEBUG : Wrote 0x00 to register 0x06
+2018-03-29 18:52:46,964 : DEBUG : Wrote 0x00 to register 0x07
+2018-03-29 18:52:46,965 : DEBUG : Wrote 0x8F to register 0x08
+2018-03-29 18:52:46,967 : DEBUG : Wrote 0x00 to register 0x09
+2018-03-29 18:52:46,967 : DEBUG : Servo: 'Arm servo' turned to 0 degrees
+2018-03-29 18:52:49,971 : DEBUG : Start motors
+2018-03-29 18:52:54,977 : DEBUG : Motors stopped
+2018-03-29 18:53:48,409 : INFO : SMBUS is available
+2018-03-29 18:53:48,418 : INFO : Dummy is: False
+2018-03-29 18:53:48,418 : DEBUG : Setting up SMBus
+2018-03-29 18:53:48,517 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 18:53:48,519 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 18:53:48,520 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 18:53:48,521 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 18:53:48,523 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 18:53:48,524 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:53:48,531 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:53:48,532 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:53:48,539 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:53:48,540 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 18:53:48,541 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 18:53:48,543 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:53:48,549 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 18:53:48,550 : DEBUG : Initialized servo Arm servo
+2018-03-29 18:53:48,553 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 18:53:48,555 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 18:53:48,556 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 18:53:48,557 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 18:53:48,558 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 18:53:48,559 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:53:48,566 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:53:48,567 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:53:48,574 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:53:48,575 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 18:53:48,576 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 18:53:48,577 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:53:48,584 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 18:53:48,585 : DEBUG : Initialized servo Pipe servo
+2018-03-29 18:53:48,588 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 18:53:48,589 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 18:53:48,590 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 18:53:48,592 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 18:53:48,593 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 18:53:48,594 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:53:48,601 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:53:48,602 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:53:48,609 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:53:48,610 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 18:53:48,611 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 18:53:48,612 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:53:48,619 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 18:53:48,620 : DEBUG : Initialized servo Bee servo
+2018-03-29 18:53:48,620 : DEBUG : Initialized robot helpers. (Valve and motors)
+2018-03-29 18:53:48,621 : INFO : Initialized main objects
+2018-03-29 18:53:48,623 : INFO : [1;46mBattery in good level.[0m
+
+2018-03-29 18:53:48,624 : DEBUG : Wrote 0x00 to register 0x06
+2018-03-29 18:53:48,625 : DEBUG : Wrote 0x00 to register 0x07
+2018-03-29 18:53:48,626 : DEBUG : Wrote 0x8F to register 0x08
+2018-03-29 18:53:48,628 : DEBUG : Wrote 0x00 to register 0x09
+2018-03-29 18:53:48,628 : DEBUG : Servo: 'Arm servo' turned to 0 degrees
+2018-03-29 18:53:48,630 : DEBUG : Wrote 0x00 to register 0x06
+2018-03-29 18:53:48,631 : DEBUG : Wrote 0x00 to register 0x07
+2018-03-29 18:53:48,632 : DEBUG : Wrote 0x70 to register 0x08
+2018-03-29 18:53:48,633 : DEBUG : Wrote 0x01 to register 0x09
+2018-03-29 18:53:48,634 : DEBUG : Servo: 'Arm servo' turned to 90 degrees
+2018-03-29 18:53:51,639 : DEBUG : Wrote 0x00 to register 0x06
+2018-03-29 18:53:51,643 : DEBUG : Wrote 0x00 to register 0x07
+2018-03-29 18:53:51,645 : DEBUG : Wrote 0x8F to register 0x08
+2018-03-29 18:53:51,646 : DEBUG : Wrote 0x00 to register 0x09
+2018-03-29 18:53:51,647 : DEBUG : Servo: 'Arm servo' turned to 0 degrees
+2018-03-29 18:53:54,651 : DEBUG : Start motors
+2018-03-29 18:53:59,657 : DEBUG : Motors stopped
+2018-03-29 18:54:46,991 : INFO : SMBUS is available
+2018-03-29 18:54:47,003 : INFO : Dummy is: False
+2018-03-29 18:54:47,004 : DEBUG : Setting up SMBus
+2018-03-29 18:54:47,091 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 18:54:47,093 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 18:54:47,094 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 18:54:47,095 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 18:54:47,096 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 18:54:47,097 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:54:47,104 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:54:47,106 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:54:47,112 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:54:47,114 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 18:54:47,115 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 18:54:47,116 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:54:47,122 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 18:54:47,123 : DEBUG : Initialized servo Arm servo
+2018-03-29 18:54:47,126 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 18:54:47,127 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 18:54:47,129 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 18:54:47,130 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 18:54:47,131 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 18:54:47,132 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:54:47,139 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:54:47,140 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:54:47,146 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:54:47,148 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 18:54:47,149 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 18:54:47,150 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:54:47,156 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 18:54:47,157 : DEBUG : Initialized servo Pipe servo
+2018-03-29 18:54:47,160 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 18:54:47,162 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 18:54:47,163 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 18:54:47,164 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 18:54:47,165 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 18:54:47,167 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:54:47,173 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:54:47,175 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:54:47,181 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:54:47,183 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 18:54:47,184 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 18:54:47,185 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:54:47,192 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 18:54:47,193 : DEBUG : Initialized servo Bee servo
+2018-03-29 18:54:47,193 : DEBUG : Initialized robot helpers. (Valve and motors)
+2018-03-29 18:54:47,194 : INFO : Initialized main objects
+2018-03-29 18:54:47,196 : INFO : [1;46mBattery in good level.[0m
+
+2018-03-29 18:54:47,197 : DEBUG : Wrote 0x00 to register 0x06
+2018-03-29 18:54:47,198 : DEBUG : Wrote 0x00 to register 0x07
+2018-03-29 18:54:47,199 : DEBUG : Wrote 0x8F to register 0x08
+2018-03-29 18:54:47,201 : DEBUG : Wrote 0x00 to register 0x09
+2018-03-29 18:54:47,202 : DEBUG : Servo: 'Arm servo' turned to 0 degrees
+2018-03-29 18:54:47,203 : DEBUG : Wrote 0x00 to register 0x06
+2018-03-29 18:54:47,204 : DEBUG : Wrote 0x00 to register 0x07
+2018-03-29 18:54:47,205 : DEBUG : Wrote 0x70 to register 0x08
+2018-03-29 18:54:47,207 : DEBUG : Wrote 0x01 to register 0x09
+2018-03-29 18:54:47,207 : DEBUG : Servo: 'Arm servo' turned to 90 degrees
+2018-03-29 18:54:50,212 : DEBUG : Wrote 0x00 to register 0x06
+2018-03-29 18:54:50,213 : DEBUG : Wrote 0x00 to register 0x07
+2018-03-29 18:54:50,215 : DEBUG : Wrote 0x8F to register 0x08
+2018-03-29 18:54:50,216 : DEBUG : Wrote 0x00 to register 0x09
+2018-03-29 18:54:50,217 : DEBUG : Servo: 'Arm servo' turned to 0 degrees
+2018-03-29 18:54:53,221 : DEBUG : Start motors
+2018-03-29 18:54:58,227 : DEBUG : Motors stopped
+2018-03-29 18:55:54,456 : INFO : SMBUS is available
+2018-03-29 18:55:54,465 : INFO : Dummy is: False
+2018-03-29 18:55:54,465 : DEBUG : Setting up SMBus
+2018-03-29 18:55:54,580 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 18:55:54,582 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 18:55:54,583 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 18:55:54,585 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 18:55:54,586 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 18:55:54,587 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:55:54,594 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:55:54,595 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:55:54,602 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:55:54,603 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 18:55:54,604 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 18:55:54,606 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:55:54,612 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 18:55:54,613 : DEBUG : Initialized servo Arm servo
+2018-03-29 18:55:54,616 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 18:55:54,618 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 18:55:54,619 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 18:55:54,620 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 18:55:54,621 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 18:55:54,623 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:55:54,629 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:55:54,630 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:55:54,637 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:55:54,638 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 18:55:54,639 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 18:55:54,641 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:55:54,647 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 18:55:54,648 : DEBUG : Initialized servo Pipe servo
+2018-03-29 18:55:54,651 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 18:55:54,653 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 18:55:54,654 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 18:55:54,655 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 18:55:54,656 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 18:55:54,658 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:55:54,664 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:55:54,666 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:55:54,672 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:55:54,674 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 18:55:54,675 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 18:55:54,676 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:55:54,682 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 18:55:54,683 : DEBUG : Initialized servo Bee servo
+2018-03-29 18:55:54,684 : DEBUG : Initialized robot helpers. (Valve and motors)
+2018-03-29 18:55:54,685 : INFO : Initialized main objects
+2018-03-29 18:55:54,686 : INFO : [1;46mBattery in good level.[0m
+
+2018-03-29 18:55:54,688 : DEBUG : Wrote 0x00 to register 0x06
+2018-03-29 18:55:54,689 : DEBUG : Wrote 0x00 to register 0x07
+2018-03-29 18:55:54,690 : DEBUG : Wrote 0x8F to register 0x08
+2018-03-29 18:55:54,692 : DEBUG : Wrote 0x00 to register 0x09
+2018-03-29 18:55:54,692 : DEBUG : Servo: 'Arm servo' turned to 0 degrees
+2018-03-29 18:55:54,694 : DEBUG : Wrote 0x00 to register 0x06
+2018-03-29 18:55:54,695 : DEBUG : Wrote 0x00 to register 0x07
+2018-03-29 18:55:54,696 : DEBUG : Wrote 0x70 to register 0x08
+2018-03-29 18:55:54,697 : DEBUG : Wrote 0x01 to register 0x09
+2018-03-29 18:55:54,698 : DEBUG : Servo: 'Arm servo' turned to 90 degrees
+2018-03-29 18:55:57,703 : DEBUG : Wrote 0x00 to register 0x06
+2018-03-29 18:55:57,704 : DEBUG : Wrote 0x00 to register 0x07
+2018-03-29 18:55:57,705 : DEBUG : Wrote 0x8F to register 0x08
+2018-03-29 18:55:57,707 : DEBUG : Wrote 0x00 to register 0x09
+2018-03-29 18:55:57,707 : DEBUG : Servo: 'Arm servo' turned to 0 degrees
+2018-03-29 18:56:00,711 : DEBUG : Start motors
+2018-03-29 18:56:05,718 : DEBUG : Motors stopped
+2018-03-29 18:59:08,614 : INFO : SMBUS is available
+2018-03-29 18:59:08,623 : INFO : Dummy is: False
+2018-03-29 18:59:08,624 : DEBUG : Setting up SMBus
+2018-03-29 18:59:08,688 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 18:59:08,690 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 18:59:08,691 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 18:59:08,692 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 18:59:08,693 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 18:59:08,695 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:59:08,702 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:59:08,703 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:59:08,710 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:59:08,711 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 18:59:08,712 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 18:59:08,714 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:59:08,720 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 18:59:08,721 : DEBUG : Initialized servo Arm servo
+2018-03-29 18:59:08,725 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 18:59:08,726 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 18:59:08,728 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 18:59:08,729 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 18:59:08,731 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 18:59:08,732 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:59:08,739 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:59:08,740 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:59:08,747 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:59:08,748 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 18:59:08,749 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 18:59:08,751 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:59:08,757 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 18:59:08,758 : DEBUG : Initialized servo Pipe servo
+2018-03-29 18:59:08,762 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 18:59:08,763 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 18:59:08,765 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 18:59:08,766 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 18:59:08,767 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 18:59:08,768 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:59:08,775 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:59:08,776 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:59:08,783 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 18:59:08,784 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 18:59:08,786 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 18:59:08,787 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 18:59:08,794 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 18:59:08,794 : DEBUG : Initialized servo Bee servo
+2018-03-29 18:59:08,795 : DEBUG : Initialized robot helpers. (Valve and motors)
+2018-03-29 18:59:08,796 : INFO : Initialized main objects
+2018-03-29 18:59:08,798 : INFO : [1;46mBattery in good level.[0m
+
+2018-03-29 18:59:08,799 : DEBUG : Wrote 0x00 to register 0x06
+2018-03-29 18:59:08,801 : DEBUG : Wrote 0x00 to register 0x07
+2018-03-29 18:59:08,802 : DEBUG : Wrote 0x8F to register 0x08
+2018-03-29 18:59:08,803 : DEBUG : Wrote 0x00 to register 0x09
+2018-03-29 18:59:08,804 : DEBUG : Servo: 'Arm servo' turned to 0 degrees
+2018-03-29 18:59:08,806 : DEBUG : Wrote 0x00 to register 0x06
+2018-03-29 18:59:08,807 : DEBUG : Wrote 0x00 to register 0x07
+2018-03-29 18:59:08,809 : DEBUG : Wrote 0x70 to register 0x08
+2018-03-29 18:59:08,810 : DEBUG : Wrote 0x01 to register 0x09
+2018-03-29 18:59:08,811 : DEBUG : Servo: 'Arm servo' turned to 90 degrees
+2018-03-29 18:59:11,816 : DEBUG : Wrote 0x00 to register 0x06
+2018-03-29 18:59:11,817 : DEBUG : Wrote 0x00 to register 0x07
+2018-03-29 18:59:11,818 : DEBUG : Wrote 0x8F to register 0x08
+2018-03-29 18:59:11,819 : DEBUG : Wrote 0x00 to register 0x09
+2018-03-29 18:59:11,820 : DEBUG : Servo: 'Arm servo' turned to 0 degrees
+2018-03-29 18:59:14,824 : DEBUG : Start motors
+2018-03-29 18:59:19,830 : DEBUG : Motors stopped
+2018-03-29 19:00:36,382 : INFO : SMBUS is available
+2018-03-29 19:00:36,391 : INFO : Dummy is: False
+2018-03-29 19:00:36,392 : DEBUG : Setting up SMBus
+2018-03-29 19:00:36,499 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 19:00:36,500 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 19:00:36,501 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 19:00:36,503 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 19:00:36,504 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 19:00:36,505 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 19:00:36,512 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 19:00:36,513 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 19:00:36,520 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 19:00:36,521 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 19:00:36,522 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 19:00:36,524 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 19:00:36,530 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 19:00:36,531 : DEBUG : Initialized servo Arm servo
+2018-03-29 19:00:36,534 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 19:00:36,535 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 19:00:36,537 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 19:00:36,538 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 19:00:36,539 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 19:00:36,540 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 19:00:36,546 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 19:00:36,548 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 19:00:36,554 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 19:00:36,555 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 19:00:36,557 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 19:00:36,558 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 19:00:36,564 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 19:00:36,565 : DEBUG : Initialized servo Pipe servo
+2018-03-29 19:00:36,568 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 19:00:36,569 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 19:00:36,571 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 19:00:36,572 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 19:00:36,573 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 19:00:36,574 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 19:00:36,581 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 19:00:36,582 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 19:00:36,588 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 19:00:36,590 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 19:00:36,591 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 19:00:36,592 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 19:00:36,598 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 19:00:36,599 : DEBUG : Initialized servo Bee servo
+2018-03-29 19:00:36,600 : DEBUG : Initialized robot helpers. (Valve and motors)
+2018-03-29 19:00:36,601 : INFO : Initialized main objects
+2018-03-29 19:00:36,602 : INFO : [1;46mBattery in good level.[0m
+
+2018-03-29 19:00:40,197 : DEBUG : Wrote 0x00 to register 0x06
+2018-03-29 19:00:40,199 : DEBUG : Wrote 0x00 to register 0x07
+2018-03-29 19:00:40,200 : DEBUG : Wrote 0x8F to register 0x08
+2018-03-29 19:00:40,201 : DEBUG : Wrote 0x00 to register 0x09
+2018-03-29 19:00:40,202 : DEBUG : Servo: 'Arm servo' turned to 0 degrees
+2018-03-29 19:00:40,204 : DEBUG : Wrote 0x00 to register 0x06
+2018-03-29 19:00:40,205 : DEBUG : Wrote 0x00 to register 0x07
+2018-03-29 19:00:40,206 : DEBUG : Wrote 0x70 to register 0x08
+2018-03-29 19:00:40,207 : DEBUG : Wrote 0x01 to register 0x09
+2018-03-29 19:00:40,208 : DEBUG : Servo: 'Arm servo' turned to 90 degrees
+2018-03-29 19:00:42,212 : DEBUG : Wrote 0x00 to register 0x06
+2018-03-29 19:00:42,213 : DEBUG : Wrote 0x00 to register 0x07
+2018-03-29 19:00:42,215 : DEBUG : Wrote 0x8F to register 0x08
+2018-03-29 19:00:42,216 : DEBUG : Wrote 0x00 to register 0x09
+2018-03-29 19:00:42,217 : DEBUG : Servo: 'Arm servo' turned to 0 degrees
+2018-03-29 19:00:44,220 : DEBUG : Start motors
+2018-03-29 19:00:46,223 : DEBUG : Motors stopped
+2018-03-29 19:00:56,140 : DEBUG : Start motors
+2018-03-29 19:00:58,144 : DEBUG : Motors stopped
+2018-03-29 19:02:15,801 : INFO : SMBUS is available
+2018-03-29 19:02:15,810 : INFO : Dummy is: False
+2018-03-29 19:02:15,810 : DEBUG : Setting up SMBus
+2018-03-29 19:02:15,876 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 19:02:15,877 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 19:02:15,879 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 19:02:15,880 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 19:02:15,881 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 19:02:15,883 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 19:02:15,889 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 19:02:15,891 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 19:02:15,897 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 19:02:15,899 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 19:02:15,900 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 19:02:15,901 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 19:02:15,908 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 19:02:15,909 : DEBUG : Initialized servo Arm servo
+2018-03-29 19:02:15,912 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 19:02:15,914 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 19:02:15,915 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 19:02:15,916 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 19:02:15,917 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 19:02:15,919 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 19:02:15,925 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 19:02:15,927 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 19:02:15,933 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 19:02:15,935 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 19:02:15,936 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 19:02:15,937 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 19:02:15,943 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 19:02:15,944 : DEBUG : Initialized servo Pipe servo
+2018-03-29 19:02:15,947 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 19:02:15,949 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 19:02:15,950 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 19:02:15,951 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 19:02:15,952 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 19:02:15,954 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 19:02:15,960 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 19:02:15,961 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 19:02:15,968 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 19:02:15,969 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 19:02:15,970 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 19:02:15,972 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 19:02:15,978 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 19:02:15,979 : DEBUG : Initialized servo Bee servo
+2018-03-29 19:02:15,980 : DEBUG : Initialized robot helpers. (Valve and motors)
+2018-03-29 19:02:15,980 : INFO : Initialized main objects
+2018-03-29 19:02:15,982 : INFO : [1;46mBattery in good level.[0m
+
+2018-03-29 19:02:18,777 : DEBUG : Wrote 0x00 to register 0x06
+2018-03-29 19:02:18,779 : DEBUG : Wrote 0x00 to register 0x07
+2018-03-29 19:02:18,780 : DEBUG : Wrote 0x8F to register 0x08
+2018-03-29 19:02:18,781 : DEBUG : Wrote 0x00 to register 0x09
+2018-03-29 19:02:18,782 : DEBUG : Servo: 'Arm servo' turned to 0 degrees
+2018-03-29 19:02:18,783 : DEBUG : Wrote 0x00 to register 0x06
+2018-03-29 19:02:18,785 : DEBUG : Wrote 0x00 to register 0x07
+2018-03-29 19:02:18,786 : DEBUG : Wrote 0x70 to register 0x08
+2018-03-29 19:02:18,787 : DEBUG : Wrote 0x01 to register 0x09
+2018-03-29 19:02:18,788 : DEBUG : Servo: 'Arm servo' turned to 90 degrees
+2018-03-29 19:02:20,791 : DEBUG : Wrote 0x00 to register 0x06
+2018-03-29 19:02:20,800 : DEBUG : Wrote 0x00 to register 0x07
+2018-03-29 19:02:20,802 : DEBUG : Wrote 0x8F to register 0x08
+2018-03-29 19:02:20,803 : DEBUG : Wrote 0x00 to register 0x09
+2018-03-29 19:02:20,804 : DEBUG : Servo: 'Arm servo' turned to 0 degrees
+2018-03-29 19:02:22,807 : DEBUG : Start motors
+2018-03-29 19:02:24,810 : DEBUG : Motors stopped
+2018-03-29 19:02:33,873 : DEBUG : Start motors
+2018-03-29 19:02:35,877 : DEBUG : Motors stopped
+2018-03-29 19:02:58,716 : INFO : SMBUS is available
+2018-03-29 19:02:58,725 : INFO : Dummy is: False
+2018-03-29 19:02:58,726 : DEBUG : Setting up SMBus
+2018-03-29 19:02:58,797 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 19:02:58,799 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 19:02:58,800 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 19:02:58,801 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 19:02:58,803 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 19:02:58,804 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 19:02:58,811 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 19:02:58,812 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 19:02:58,819 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 19:02:58,820 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 19:02:58,821 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 19:02:58,822 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 19:02:58,828 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 19:02:58,829 : DEBUG : Initialized servo Arm servo
+2018-03-29 19:02:58,833 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 19:02:58,834 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 19:02:58,835 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 19:02:58,836 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 19:02:58,837 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 19:02:58,839 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 19:02:58,845 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 19:02:58,846 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 19:02:58,853 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 19:02:58,854 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 19:02:58,855 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 19:02:58,856 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 19:02:58,863 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 19:02:58,863 : DEBUG : Initialized servo Pipe servo
+2018-03-29 19:02:58,867 : DEBUG : Wrote 0x00 to register 0xFA
+2018-03-29 19:02:58,868 : DEBUG : Wrote 0x00 to register 0xFB
+2018-03-29 19:02:58,869 : DEBUG : Wrote 0x00 to register 0xFC
+2018-03-29 19:02:58,870 : DEBUG : Wrote 0x00 to register 0xFD
+2018-03-29 19:02:58,871 : DEBUG : Wrote 0x04 to register 0x01
+2018-03-29 19:02:58,873 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 19:02:58,879 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 19:02:58,880 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 19:02:58,887 : DEBUG : Read 0x01 from register 0x00
+2018-03-29 19:02:58,888 : DEBUG : Wrote 0x11 to register 0x00
+2018-03-29 19:02:58,889 : DEBUG : Wrote 0x65 to register 0xFE
+2018-03-29 19:02:58,890 : DEBUG : Wrote 0x01 to register 0x00
+2018-03-29 19:02:58,897 : DEBUG : Wrote 0x81 to register 0x00
+2018-03-29 19:02:58,897 : DEBUG : Initialized servo Bee servo
+2018-03-29 19:02:58,898 : DEBUG : Initialized robot helpers. (Valve and motors)
+2018-03-29 19:02:58,899 : INFO : Initialized main objects
+2018-03-29 19:02:58,900 : INFO : [1;46mBattery in good level.[0m
+
+2018-03-29 19:03:01,721 : DEBUG : Wrote 0x00 to register 0x06
+2018-03-29 19:03:01,723 : DEBUG : Wrote 0x00 to register 0x07
+2018-03-29 19:03:01,724 : DEBUG : Wrote 0x8F to register 0x08
+2018-03-29 19:03:01,725 : DEBUG : Wrote 0x00 to register 0x09
+2018-03-29 19:03:01,726 : DEBUG : Servo: 'Arm servo' turned to 0 degrees
+2018-03-29 19:03:01,728 : DEBUG : Wrote 0x00 to register 0x06
+2018-03-29 19:03:01,729 : DEBUG : Wrote 0x00 to register 0x07
+2018-03-29 19:03:01,730 : DEBUG : Wrote 0x70 to register 0x08
+2018-03-29 19:03:01,731 : DEBUG : Wrote 0x01 to register 0x09
+2018-03-29 19:03:01,732 : DEBUG : Servo: 'Arm servo' turned to 90 degrees
+2018-03-29 19:03:03,736 : DEBUG : Wrote 0x00 to register 0x06
+2018-03-29 19:03:03,747 : DEBUG : Wrote 0x00 to register 0x07
+2018-03-29 19:03:03,748 : DEBUG : Wrote 0x8F to register 0x08
+2018-03-29 19:03:03,750 : DEBUG : Wrote 0x00 to register 0x09
+2018-03-29 19:03:03,751 : DEBUG : Servo: 'Arm servo' turned to 0 degrees
+2018-03-29 19:03:05,754 : DEBUG : Start motors
+2018-03-29 19:03:07,757 : DEBUG : Motors stopped
+2018-03-29 19:03:16,828 : DEBUG : Start motors
+2018-03-29 19:03:18,831 : DEBUG : Motors stopped

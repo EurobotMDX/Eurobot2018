@@ -3,9 +3,13 @@ from terminalColors import bcolors as tc
 import sys
 sys.path.insert(0, '..')
 from settings import logging as log
-from servo import Servo
 from time import sleep
 import datetime
+from servoControl import servoControl
+from valve import *
+
+# old servo
+# from servo import Servo
 
 
 if __name__ == '__main__':
@@ -13,22 +17,63 @@ if __name__ == '__main__':
 
     try:
         robot = driving()
-        servo = Servo(11, "Balls pipe servo")
+        # Initialize servos
+
+        servoArm = servoControl("Arm servo", 0, 60)
+        servoPipe = servoControl("Pipe servo", 1, 60)
+        servoBee = servoControl("Bee servo", 2, 60)
+
+        extra = robotHelpers()
+
         log.info("Initialized main objects")
+
         canRun = True
+
     except Exception as error:
         canRun = False
         log.error("Could not create main objects.!!! Error: %s" % error)
 
     if robot.checkStatus() and canRun:
+
         try:
 
-            # robot.activateValve()
-            # robot.sensorTest()
-            robot.driveBack(30, 10, False)
+            robot.turnRobot(180, 20, False)
 
+            servoArm.turn(0)
+            servoArm.turn(90)
 
-            # robot.turnRobot(90, 15, False)
+            sleep(2)
+
+            servoArm.turn(0)
+
+            sleep(2)
+
+            extra.motorsOn()
+
+            sleep(2)
+
+            extra.motorsOff()
+
+            sleep(2)
+
+            extra.valveRelease()
+
+            robot.turnRobot(180, 20, False)
+
+            sleep(2)
+
+            extra.motorsOn()
+
+            sleep(2)
+
+            extra.motorsOff()
+
+            sleep(2)
+
+            extra.valveRelease()
+
+            # robot.driveBack(30, 10, False)
+
             # sleep(0.5)
             # Delay between is used in order to make sure that encoders were reset completely.
             # robot.driveRobot(100, 50)
@@ -37,23 +82,6 @@ if __name__ == '__main__':
             # sleep(10)
 
 
-
-            servo.setAngle(1)
-            sleep(1)
-            servo.setAngle(0)
-            sleep(3)
-            servo.setAngle(8)
-            sleep(3)
-            servo.setAngle(0)
-
-
-
-
-            # Servo on 7 stops, middle point
-
-            servo.setAngle(6.5)
-
-            servo.cleanup()
 
         except KeyboardInterrupt:
             log.debug("\nStopped by user\n")
