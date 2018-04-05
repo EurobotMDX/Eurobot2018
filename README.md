@@ -17,5 +17,6 @@ https://github.com/jarzab3/Eurobot2018.git
 * Change wheel spacing as well as the name for the robot
 
 
+SENSOR I2C ADDRESS CONVERSION: https://www.raspberrypi.org/forums/viewtopic.php?t=134204
 
 __Team members:__
