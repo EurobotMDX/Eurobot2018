@@ -1,6 +1,5 @@
 import curses
 from robotFunctions import *
-from sensor import *
 
 # get the curses screen window
 screen = curses.initscr()
@@ -17,10 +16,6 @@ speed = 50
 
 turnSpeed = 15
 
-# Setup sensors
-sensor1 = Sensor(11, "Front", 0.02)
-
-sensor1.setUp()
 
 try:
     while True:

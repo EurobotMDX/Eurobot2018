@@ -35,106 +35,30 @@ if __name__ == '__main__':
         canRun = False
         log.error("Could not create main objects.!!! Error: %s" % error)
 
-    # TODO enable this function
+    # TODO enable this function 
     # if robot.checkStatus() and canRun:
     if canRun:
 
-        log.debug("Expecting for start switch")
         while not startSwitch():
-            # print(sideSwitch())
+            print(sideSwitch())
             pass
 
         sleep(0.5)
 
         try:
+
             turnSpeed = 15
 
             start_time = time.time()
 
-            if sideSwitch() == "Orange":
+            # robot.sensorTest(60)
+
+            for i in range(0, 0):
+
                 robot.turnRobot(90, turnSpeed, False)
-
-            else:
-                robot.turnRobot(90, turnSpeed, True)
-
-            sleep(0.3)
-
-            robot.driveRobot(69, 30)
-
-            sleep(0.3)
-
-            robot.turnRobot(90, turnSpeed, False)
-
-            sleep(0.3)
-
-            extra.motorsOn()
-
-            # Air valve here
-            sleep(10)
-
-            extra.motorsOff()
-
-            robot.turnRobot(90, turnSpeed, True)
-
-            sleep(0.3)
-
-            robot.driveRobot(115, 30)
-
-            sleep(0.3)
-
-            log.info("Bee deployment")
-
-            # Bee deployment
-            # servoBee.turn(0)
-
-            robot.turnRobot(90, turnSpeed, True)
-
-            sleep(2)
-
-            print("Servo operations")
-
-            if sideSwitch() == "Orange":
-
-                robot.driveRobot(23, 30)
-
                 sleep(0.3)
 
-                log.info("Bee closing servo")
-
-            else:
-                log.info("Bee open servo")
-
-            robot.turnRobot(90, turnSpeed, True)
-
-            sleep(0.3)
-
-            robot.driveRobot(18, 30)
-
-            sleep(0.3)
-
-            if sideSwitch() == "Orange":
-
-                robot.turnRobot(135, turnSpeed, False)
-
-            else:
-                robot.turnRobot(135, turnSpeed, True)
-
-            sleep(0.3)
-
-            robot.driveRobot(25, 30)
-
-            sleep(0.3)
-
-            log.info("Deploy servo for pipe")
-
-            if sideSwitch() == "Orange":
-
-                robot.turnRobot(45, turnSpeed, False)
-
-            else:
-                robot.turnRobot(45, turnSpeed, True)
-
-                
+            robot.driveRobot(100, 20)
 
             # extra.valveRelease()
 
