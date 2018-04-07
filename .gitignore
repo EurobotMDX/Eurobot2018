@@ -4,3 +4,5 @@ settings.py
 logs.log
 __pycache__
 driveRobot/__pycache__
+*.pyc
+driveRobot/*.pyc

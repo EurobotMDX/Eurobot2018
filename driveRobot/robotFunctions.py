@@ -191,7 +191,7 @@ class md25:
 
 
 class Driving:
-    def __init__(self):
+    def __init__(self, disableSensors=False):
         self.mainRobot = md25(mode=1)
 
         # Init configuration for robot
@@ -199,10 +199,13 @@ class Driving:
         self.oneEncMM = config.robotSettings['oneEncMM']
         self.sensorThreshold = config.robotSettings['sensorThreshold']
 
-        # Setup sensors
-        self.sensor2 = Sensor(0x72, "centre")
-        self.sensor3 = Sensor(0x71, "right")
-        self.sensor1 = Sensor(0x73, "left")
+        self.disableSensors = disableSensors
+
+        if not self.disableSensors:
+            # Setup sensors
+            self.sensor2 = Sensor(0x72, "centre")
+            self.sensor3 = Sensor(0x71, "right")
+            self.sensor1 = Sensor(0x73, "left")
 
         # Setup Valve
         self.valvePin = 40
@@ -401,7 +404,7 @@ class Driving:
         while encoder1Reading <= encoderDestination and encoder2Reading <= encoderDestination:
             # Check if sensor detected any obstacle on the way if yes then stop the robot and wait
             # if self.sensor1.getSensorValue() <= self.sensorThreshold:
-            if sensorEnabled:
+            if sensorEnabled and not self.disableSensors:
 
                 if self.checkForObstacle():
                     self.mainRobot.stop()
