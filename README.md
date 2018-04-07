@@ -19,4 +19,13 @@ https://github.com/jarzab3/Eurobot2018.git
 
 SENSOR I2C ADDRESS CONVERSION: https://www.raspberrypi.org/forums/viewtopic.php?t=134204
 
+## Library used for a servo board
+https://github.com/adafruit/Adafruit_Python_PCA9685
+
 __Team members:__
+
+Adam Jarzebak
+Timbo Cole
+Simon Klimek
+
+
