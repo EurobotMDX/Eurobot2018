@@ -37,7 +37,7 @@ __Team members:__
 - Cole Timbo (timbo@timbotek.com)
 - Galabov Momchil (mg1143@live.mdx.ac.uk) 
 - Jarzebak Adam (adam@jarzebak.eu)
-- Simon Klimek 
+- Simon Klimek (simonklimek91@gmail.com) 
 
 
 
