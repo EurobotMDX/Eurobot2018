@@ -22,6 +22,12 @@ SENSOR I2C ADDRESS CONVERSION: https://www.raspberrypi.org/forums/viewtopic.php?
 ## Library used for a servo board
 https://github.com/adafruit/Adafruit_Python_PCA9685
 
+
+##Sensors SRF08
+
+Docs:
+http://coecsl.ece.illinois.edu/ge423/DevantechSRF08UltraSonicRanger.pdf
+
 __Team members:__
 
 Adam Jarzebak
