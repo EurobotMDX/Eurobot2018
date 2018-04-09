@@ -33,5 +33,6 @@ __Team members:__
 Adam Jarzebak
 Timbo Cole
 Simon Klimek
+Momchil Galabov
 
 
