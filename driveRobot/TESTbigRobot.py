@@ -8,7 +8,7 @@ import time
 import datetime
 from servoControl import servoControl
 from Switches import *
-
+from Sensor import *
 
 # old servo
 # from servo import Servo
@@ -24,6 +24,12 @@ if __name__ == '__main__':
         servoArm = servoControl("Arm servo", 0, 60)
         servoPipe = servoControl("Pipe servo", 1, 60)
         servoBee = servoControl("Bee servo", 2, 60)
+
+        sensorCenter = Sensor(0x72, "centre")
+        sensorRight = Sensor(0x71, "right")
+        sensorLeft = Sensor(0x73, "left")
+
+        sensors = [sensorLeft, sensorCenter, sensorRight]
 
         extra = RobotHelpers()
 
@@ -51,14 +57,23 @@ if __name__ == '__main__':
 
             start_time = time.time()
 
-            # robot.sensorTest(60)
+            robot.driveRobot(69, 30, sensors)
 
-            for i in range(0, 0):
+            # robot.sensorTest(sensors, 60)
 
-                robot.turnRobot(90, turnSpeed, False)
-                sleep(0.3)
+            # servoArm.turn(60)
 
-            robot.driveRobot(100, 20)
+
+            # for i in range(0, 0):
+            #
+            #     robot.turnRobot(90, turnSpeed, False)
+            #     sleep(0.3)
+
+
+            # distance, speed, sensorEnabled=True, centerSensorOn=True, rightSensorOn=True, leftSensorOn=True
+
+            # robot.driveRobot(20, 20, False, True, True, True)
+            # robot.driveRobot(20, 20, False, False, False, False)
 
             # extra.valveRelease()
 
@@ -117,7 +132,6 @@ if __name__ == '__main__':
             extra.valveRelease()
 
         '''
-            # robot.driveBack(30, turnSpeed, False)
 
             # sleep(0.5)
             # Delay between is used in order to make sure that encoders were reset completely.
