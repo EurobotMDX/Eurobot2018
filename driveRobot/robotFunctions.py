@@ -233,9 +233,12 @@ class Driving:
                 obstacle = True
 
 <<<<<<< HEAD
+<<<<<<< HEAD
                 if obstacleClear:
                     log.info("Obstacle for sensor {} distance: {}".format(sensor.position, sensor.lastReading))
 
+=======
+>>>>>>> parent of c1f7fc5... fix senosors and add some logs,r efactoring in gerenral
 =======
 >>>>>>> parent of c1f7fc5... fix senosors and add some logs,r efactoring in gerenral
         return obstacle
@@ -390,9 +393,15 @@ class Driving:
 
         return speed
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     def driveRobot(self, distance, speed, sensors):
         """
+=======
+    
+    def driveRobot(self, distance, speed, sensorEnabled=True):
+        '''
+>>>>>>> parent of c1f7fc5... fix senosors and add some logs,r efactoring in gerenral
 =======
     
     def driveRobot(self, distance, speed, sensorEnabled=True):
@@ -535,9 +544,13 @@ class Driving:
         :param timein:
         :return:
 <<<<<<< HEAD
+<<<<<<< HEAD
         """
         log.info("Start testing for sensors")
 
+=======
+        '''
+>>>>>>> parent of c1f7fc5... fix senosors and add some logs,r efactoring in gerenral
 =======
         '''
 >>>>>>> parent of c1f7fc5... fix senosors and add some logs,r efactoring in gerenral
@@ -555,6 +568,9 @@ class Driving:
 =======
 
             endTime = time.time()
+<<<<<<< HEAD
+>>>>>>> parent of c1f7fc5... fix senosors and add some logs,r efactoring in gerenral
+=======
 >>>>>>> parent of c1f7fc5... fix senosors and add some logs,r efactoring in gerenral
         else:
             print("Stopped")

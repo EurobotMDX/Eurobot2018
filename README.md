@@ -13,7 +13,11 @@ https://github.com/jarzab3/Eurobot2018.git
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### After cloning, please go to `robotConfig.py` file and edit settings according to robot specifications
+=======
+# After cloning, please go to `robotConfig.py` file and edit settings according to robot specifications
+>>>>>>> parent of c1f7fc5... fix senosors and add some logs,r efactoring in gerenral
 =======
 # After cloning, please go to `robotConfig.py` file and edit settings according to robot specifications
 >>>>>>> parent of c1f7fc5... fix senosors and add some logs,r efactoring in gerenral
@@ -27,6 +31,7 @@ SENSOR I2C ADDRESS CONVERSION: https://www.raspberrypi.org/forums/viewtopic.php?
 ### Library used for a servo board
 https://github.com/adafruit/Adafruit_Python_PCA9685
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 ### Issues:
 * Disabling a logger for Adafruit i2c
@@ -44,6 +49,8 @@ __Team Leaders:__
 - Heeney Michael (m.heeney@mdx.ac.uk)
 - Knott Calum (c.knott@mdx.ac.uk)
 
+=======
+>>>>>>> parent of c1f7fc5... fix senosors and add some logs,r efactoring in gerenral
 =======
 >>>>>>> parent of c1f7fc5... fix senosors and add some logs,r efactoring in gerenral
 __Team members:__

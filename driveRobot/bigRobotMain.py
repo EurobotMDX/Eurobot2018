@@ -54,6 +54,7 @@ if __name__ == '__main__':
             start_time = time.time()
 
 <<<<<<< HEAD
+<<<<<<< HEAD
             # robot.driveRobot(115, 30, sensors)
 
             servoArm.turn(90)
@@ -65,6 +66,8 @@ if __name__ == '__main__':
 
             '''
 
+=======
+>>>>>>> parent of c1f7fc5... fix senosors and add some logs,r efactoring in gerenral
 =======
 >>>>>>> parent of c1f7fc5... fix senosors and add some logs,r efactoring in gerenral
             if sideSwitch() == "Orange":

@@ -8,9 +8,12 @@ import datetime
 from servoControl import servoControl
 from Switches import *
 <<<<<<< HEAD
+<<<<<<< HEAD
 from Sensor import *
 from settings import logging as log
 =======
+=======
+>>>>>>> parent of c1f7fc5... fix senosors and add some logs,r efactoring in gerenral
 
 
 # old servo
@@ -30,12 +33,15 @@ if __name__ == '__main__':
         # servoBee = servoControl("Bee servo", 2, 60)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         # sensorCenter = Sensor(0x72, "centre")
         # sensorRight = Sensor(0x71, "right")
         # sensorLeft = Sensor(0x73, "left")
 
         # sensors = [sensorLeft, sensorCenter, sensorRight]
 
+=======
+>>>>>>> parent of c1f7fc5... fix senosors and add some logs,r efactoring in gerenral
 =======
 >>>>>>> parent of c1f7fc5... fix senosors and add some logs,r efactoring in gerenral
         extra = RobotHelpers()
@@ -78,6 +84,7 @@ if __name__ == '__main__':
             start_time = time.time()
 
 <<<<<<< HEAD
+<<<<<<< HEAD
             # sleep(2)
             # servoPipe.turn(8)
             sleep(0.3)
@@ -100,6 +107,9 @@ if __name__ == '__main__':
             #
             #     robot.turnRobot(90, turnSpeed, False)
             #     sleep(0.3)
+=======
+            # robot.sensorTest(60)
+>>>>>>> parent of c1f7fc5... fix senosors and add some logs,r efactoring in gerenral
 =======
             # robot.sensorTest(60)
 >>>>>>> parent of c1f7fc5... fix senosors and add some logs,r efactoring in gerenral
