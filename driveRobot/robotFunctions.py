@@ -229,9 +229,6 @@ class Driving:
                 if obstacleClear:
                     log.info("Obstacle for sensor {} distance: {}".format(sensor.position, sensor.lastReading))
 
-                # if not obstacleClear:
-                #     log.info("Obstacle for sensor {} distance: {}".format(sensor.position, sensor.lastReading))
-
         return obstacle
         
     def setValve(self, state=True):
