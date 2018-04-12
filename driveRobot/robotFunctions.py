@@ -1,7 +1,7 @@
 import time
 import RPi.GPIO as GPIO
 import sys
-
+import subprocess
 sys.path.insert(0, '..')
 import settings as config
 from terminalColors import bcolors as tc
@@ -96,9 +96,10 @@ class md25:
                     self.bus.write_byte_data(self.address, MD25_REGISTER_SPEED1, speed)
                 if turn:
                     self.bus.write_byte_data(self.address, MD25_REGISTER_SPEED2_TURN, turn)
-        
+
+            # sleep(0.1)
         except IOError:
-            log.warning("CAUGHT: IOError")
+            log.warning("CAUGHT: IOError 'drive'")
 
     def stop(self):
         if (0 == self.mode or 2 == self.mode) and self.bus:
@@ -106,14 +107,14 @@ class md25:
                 self.bus.write_byte_data(self.address, MD25_REGISTER_SPEED1, 128)
                 self.bus.write_byte_data(self.address, MD25_REGISTER_SPEED2_TURN, 128)
             except IOError:
-                log.warning("CAUGHT: IOError")
+                log.warning("CAUGHT: IOError 'stop'")
 
         if (1 == self.mode or 3 == self.mode) and self.bus:
             try:
                 self.bus.write_byte_data(self.address, MD25_REGISTER_SPEED1, 0)
                 self.bus.write_byte_data(self.address, MD25_REGISTER_SPEED2_TURN, 0)
             except IOError:
-                log.warning("CAUGHT: IOError")
+                log.warning("CAUGHT: IOError 'stop'")
 
     def battery(self):
         if self.bus:
@@ -124,18 +125,18 @@ class md25:
 
     def read_encoder1(self):
         if self.bus:
+            totalEncoder = 0
             try:
                 e1 = self.bus.read_byte_data(self.address, MD25_REGISTER_ENC1A)
                 e2 = self.bus.read_byte_data(self.address, MD25_REGISTER_ENC1B)
                 e3 = self.bus.read_byte_data(self.address, MD25_REGISTER_ENC1C)
                 e4 = self.bus.read_byte_data(self.address, MD25_REGISTER_ENC1D)
-
                 # Return an array of encoder values
                 # return [e1, e2, e3, e4]
                 totalEncoder = e4 + (255 * e3) + (65025 * e2) + (16581375 * e1)
+
             except IOError:
-                totalEncoder = 0
-                log.warning("CAUGHT: IOError")
+                log.warning("CAUGHT: IOError 'read_encoder1'")
 
             return totalEncoder
         else:
@@ -143,18 +144,18 @@ class md25:
 
     def read_encoder2(self):
         if self.bus:
+            totalEncoder = 0
             try:
                 e1 = self.bus.read_byte_data(self.address, MD25_REGISTER_ENC2A)
                 e2 = self.bus.read_byte_data(self.address, MD25_REGISTER_ENC2B)
                 e3 = self.bus.read_byte_data(self.address, MD25_REGISTER_ENC2C)
                 e4 = self.bus.read_byte_data(self.address, MD25_REGISTER_ENC2D)
-
                 # Return an array of encoder values
                 # return [e1, e2, e3, e4]
                 totalEncoder = e4 + (255 * e3) + (65025 * e2) + (16581375 * e1)
+
             except IOError:
-                totalEncoder = 0
-                print("CAUGHT: IOError")
+                log.error("CAUGHT: IOError 'read_encoder2'")
 
             return totalEncoder
         else:
@@ -162,8 +163,13 @@ class md25:
 
     def reset_encoders(self):
         if self.bus:
-            self.bus.write_byte_data(self.address, MD25_REGISTER_COMMAND, 0x20)
-            print("Encoders are reset")
+            try:
+                self.bus.write_byte_data(self.address, MD25_REGISTER_COMMAND, 0x20)
+
+                log.info("Encoders are reset")
+            except IOError:
+                log.error("CAUGHT: IOError 'reset_encoders'")
+
         else:
             print("Could not reset encoders")
 
@@ -318,13 +324,13 @@ class Driving:
         return [threshold1, threshold2]
 
     def speedControlDrive(self, speed, travelledDistance, stoppingThresholds):
-        '''
+        """
         This function helps robot to reduce the speed when a robot is driving. It is due to achieve more accuracy when driving.
         :param speed:
         :param travelledDistance:
         :param stoppingThresholds:
         :return: speed
-        '''
+        """
 
         speedLimits = [20, 2]
 
@@ -349,15 +355,17 @@ class Driving:
         return speed
 
     def speedControlTurn(self, speed, travelledDistance, stoppingThresholds):
-        '''
+        """
         This function helps robot to reduce the speed when a robot is turning. It is due to achieve more accuracy when turning.
         :param speed:
         :param travelledDistance:
         :param stoppingThresholds:
         :return: speed
-        '''
-
+        """
         speedLimits = [5, 1]
+
+        # print (travelledDistance)
+        # print (stoppingThresholds)
 
         if travelledDistance >= stoppingThresholds[0]:
 
@@ -367,18 +375,18 @@ class Driving:
                     speed -= 1
 
                     if speed == speedLimits[0]:
-                        print("Turn speed reduced! Current speed: {} | Travelled distance: {}".format(speed, travelledDistance))
+                        log.info("Turn speed reduced! Current speed: {} | Travelled distance: {}".format(speed, travelledDistance))
 
-            if travelledDistance > stoppingThresholds[1]:
+            if travelledDistance <= stoppingThresholds[1]:
 
                 if speed > speedLimits[1]:
                     speed -= 1
 
                     if speed == speedLimits[1]:
-                        print("Turn speed reduced! Current speed: {} | Travelled distance: {}".format(speed, travelledDistance))
+                        log.info("Turn speed reduced! Current speed: {} | Travelled distance: {}".format(speed, travelledDistance))
 
         return speed
-    
+
     def driveRobot(self, distance, speed, sensors):
         """
         This function drives a robot forward. By adjusting values such as: speed and distance can control a robot.
@@ -446,13 +454,13 @@ class Driving:
             self.mainRobot.stop()
 
     def turnRobot(self, degrees, speed, clockwise=True):
-        '''
+        """
         This function turns a robot. Depending on the argument 'clockwise', a robot can turn right or left
         :param degrees:
         :param speed:
         :param clockwise:
         :return:
-        '''
+        """
         log.debug("Turn robot for: {} degrees | Current speed: {}".format(degrees, speed))
 
         self.mainRobot.reset_encoders()
@@ -463,7 +471,8 @@ class Driving:
 
         stoppingThresholds = self.calcSlowingTurnThreshold(speed)
 
-        # print('stoping thresh %s' % stoppingThresholds)
+        # print (stoppingThresholds)
+        # print ("dest encoders %s" %encoderDestination)
 
         encoder1Reading = self.mainRobot.read_encoder1()
         encoder2Reading = self.mainRobot.read_encoder2()
@@ -478,7 +487,7 @@ class Driving:
 
                 speed = self.speedControlTurn(speed, travelledDistance, stoppingThresholds)
 
-                # print("Travelled distance: {}".format(travelledDistance))
+                print("Travelled distance: {} speed value {}".format(travelledDistance, speed))
 
                 encoder1Reading = self.mainRobot.read_encoder1()
 
@@ -499,7 +508,9 @@ class Driving:
 
                 speed = self.speedControlTurn(speed, travelledDistance, stoppingThresholds)
 
-                # print("Travelled distance: {}".format(travelledDistance))
+                print("Travelled distance: {} speed value {}".format(travelledDistance, speed))
+
+                # print("Travelled distance: {} encoder2 values {}".format(travelledDistance, encoder2Reading))
 
                 encoder2Reading = self.mainRobot.read_encoder2()
 
@@ -521,6 +532,8 @@ class Driving:
         :param timein:
         :return:
         """
+        log.info("Start testing for sensors")
+
         countdown = time.time() + timein
 
         endTime = time.time()
@@ -533,7 +546,6 @@ class Driving:
                 printVals = printVals + "Sensor: {} value: {}  |  ".format(sensor.position, sensor.getSensorValue())
 
             print(printVals)
-
 
         else:
             print("Finish sensor test!")

@@ -17,21 +17,24 @@ if __name__ == '__main__':
         robot = Driving()
         # Initialize servos
 
-        servoPipe = servoControl("Pipe servo", 0, 60)
-        servoArm = servoControl("Arm servo", 1, 60)
-        servoBee = servoControl("Bee servo", 2, 60)
+        # servoPipe = servoControl("Pipe servo", 0, 60)
+        # servoArm = servoControl("Arm servo", 1, 60)
+        # servoBee = servoControl("Bee servo", 2, 60)
 
-        sensorCenter = Sensor(0x72, "centre")
-        sensorRight = Sensor(0x71, "right")
-        sensorLeft = Sensor(0x73, "left")
+        # sensorCenter = Sensor(0x72, "centre")
+        # sensorRight = Sensor(0x71, "right")
+        # sensorLeft = Sensor(0x73, "left")
 
-        sensors = [sensorLeft, sensorCenter, sensorRight]
+        # sensors = [sensorLeft, sensorCenter, sensorRight]
 
         extra = RobotHelpers()
 
         log.info("Initialized main objects")
 
         canRun = True
+        right = True
+        left = False
+        turnSpeed = 15
 
     except Exception as error:
         canRun = False
@@ -43,35 +46,36 @@ if __name__ == '__main__':
         if sideSwitch() == "Orange":
             log.info("Set 'Orange servo init, position: 8")
 
-            servoPipe.turn(8)
+            # servoPipe.turn(98)
+
         else:
             log.info("Set 'Orange servo init, position: 8")
 
-            servoPipe.turn(8)
+            # servoPipe.turn(8)
 
         log.debug("Expecting for start switch")
 
         log.debug("Side selection switch value: %s" % sideSwitch())
 
-        while not startSwitch():
+        while startSwitch():
             pass
 
         sleep(0.5)
 
         try:
 
-            turnSpeed = 15
-
             start_time = time.time()
 
-            # robot.driveRobot(200, 30, sensors)
+            # sleep(2)
+            # servoPipe.turn(8)
+            sleep(0.3)
 
-            servoPipe.turn(98)
-            sleep(2)
-            servoPipe.turn(8)
-            sleep(2)
+            # sensors = [sensorLeft, sensorCenter]
+            # robot.driveRobot(10, 10, sensors)
 
-            # robot.turnRobot(90, turnSpeed, True)
+            robot.turnRobot(100, turnSpeed, right)
+            # robot.turnRobot(100, turnSpeed, left)
+            # robot.turnRobot(100, turnSpeed, left)
 
             # robot.sensorTest(sensors, 60)
 
