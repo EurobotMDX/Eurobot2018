@@ -2,6 +2,7 @@
 from math import pi
 import logging
 import datetime
+import logging.config
 
 # Constants for robot
 
@@ -32,7 +33,8 @@ logging.root.handlers = []
 FORMAT = '%(asctime)s : %(levelname)s : %(message)s\r'
 
 logging.basicConfig(format=FORMAT, level=logging.DEBUG,
-                    filename='../logs.log')
+                    filename='../logs.log'
+                    )
 
 # set up logging to console
 console = logging.StreamHandler()
@@ -42,3 +44,9 @@ console.setLevel(logging.DEBUG)  # this is only if we want to error logs be prin
 formatter = logging.Formatter('%(asctime)s : %(levelname)s : %(message)s\r')
 console.setFormatter(formatter)
 logging.getLogger("").addHandler(console)
+
+
+logging.config.dictConfig({
+    'version': 1,
+    'disable_existing_loggers': True,
+})

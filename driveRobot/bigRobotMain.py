@@ -47,8 +47,10 @@ if __name__ == '__main__':
     if canRun:
 
         log.debug("Expecting for start switch")
+
+        log.debug("Side selection switch value: %s" % sideSwitch())
+
         while not startSwitch():
-            # print(sideSwitch())
             pass
 
         sleep(0.5)
@@ -62,11 +64,11 @@ if __name__ == '__main__':
 
             # robot.driveRobot(115, 30, sensors)
 
-            # servoPipe.turn(90)
-            # sleep(1)
+            servoArm.turn(90)
+            sleep(1)
             # servoPipe.turn(0)
             
-            robot.sensorTest(sensors, 60)
+            # robot.sensorTest(sensors, 60)
 
 
             '''

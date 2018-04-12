@@ -7,7 +7,6 @@ import time
 
 # Import the PCA9685 module.
 import Adafruit_PCA9685
-# from Adafruit_PCA9685 import Adafruit_PCA9685
 
 import sys
 sys.path.insert(0, '..')

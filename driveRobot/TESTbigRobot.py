@@ -2,16 +2,13 @@ from robotFunctions import *
 from terminalColors import bcolors as tc
 import sys
 sys.path.insert(0, '..')
-from settings import logging as log
 from time import sleep
 import time
 import datetime
 from servoControl import servoControl
 from Switches import *
 from Sensor import *
-
-# old servo
-# from servo import Servo
+from settings import logging as log
 
 
 if __name__ == '__main__':
@@ -21,8 +18,8 @@ if __name__ == '__main__':
         robot = Driving()
         # Initialize servos
 
-        servoArm = servoControl("Arm servo", 0, 60)
-        servoPipe = servoControl("Pipe servo", 1, 60)
+        servoPipe = servoControl("Pipe servo", 0, 60)
+        servoArm = servoControl("Arm servo", 1, 60)
         servoBee = servoControl("Bee servo", 2, 60)
 
         sensorCenter = Sensor(0x72, "centre")
@@ -44,9 +41,21 @@ if __name__ == '__main__':
     # TODO enable this function 
     # if robot.checkStatus() and canRun:
     if canRun:
+        if sideSwitch() == "Orange":
+            log.info("Set 'Orange servo init, position: 8")
+
+            servoPipe.turn(8)
+        else:
+            log.info("Set 'Orange servo init, position: 8")
+
+            servoPipe.turn(8)
+
+
+        log.debug("Expecting for start switch")
+
+        log.debug("Side selection switch value: %s" % sideSwitch())
 
         while not startSwitch():
-            print(sideSwitch())
             pass
 
         sleep(0.5)
@@ -57,11 +66,15 @@ if __name__ == '__main__':
 
             start_time = time.time()
 
-            robot.driveRobot(69, 30, sensors)
+            # robot.driveRobot(69, 30, sensors)
+
+            # servoPipe.turn(98)
 
             # robot.sensorTest(sensors, 60)
 
-            # servoArm.turn(60)
+            # servoPipe.turn(12)
+            # sleep(2)
+            # servoPipe.turn(8)
 
 
             # for i in range(0, 0):
