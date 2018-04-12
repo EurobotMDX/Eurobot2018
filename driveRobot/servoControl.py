@@ -13,9 +13,6 @@ sys.path.insert(0, '..')
 from settings import logging as log
 
 class servoControl:
-    # Uncomment to enable debug output.
-    #import logging
-    #logging.basicConfig(level=logging.DEBUG)
 
     def __init__(self, name, channel, frequency):
 

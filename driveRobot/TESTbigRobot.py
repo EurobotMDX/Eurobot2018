@@ -10,7 +10,6 @@ from Switches import *
 from Sensor import *
 from settings import logging as log
 
-
 if __name__ == '__main__':
     canRun = False
 
@@ -50,7 +49,6 @@ if __name__ == '__main__':
 
             servoPipe.turn(8)
 
-
         log.debug("Expecting for start switch")
 
         log.debug("Side selection switch value: %s" % sideSwitch())
@@ -66,9 +64,14 @@ if __name__ == '__main__':
 
             start_time = time.time()
 
-            # robot.driveRobot(69, 30, sensors)
+            # robot.driveRobot(200, 30, sensors)
 
-            # servoPipe.turn(98)
+            servoPipe.turn(98)
+            sleep(2)
+            servoPipe.turn(8)
+            sleep(2)
+
+            # robot.turnRobot(90, turnSpeed, True)
 
             # robot.sensorTest(sensors, 60)
 

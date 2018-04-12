@@ -27,6 +27,7 @@ robotSettings = {
 
 debugMode = True
 
+
 # Logger settings
 logging.root.handlers = []
 
