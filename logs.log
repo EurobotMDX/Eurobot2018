@@ -13111,6 +13111,7 @@ Stopped by user
 2018-04-05 03:45:00,417 : INFO : Deploy servo for pipe
 2018-04-05 03:45:00,418 : DEBUG : Turn robot for: 45 degrees | Current speed: 15
 2018-04-05 03:45:02,274 : INFO : Finished execution, clean up. Time elapsed: 00:00:52
+<<<<<<< HEAD
 2018-04-05 14:19:38,575 : INFO : SMBUS is available
 2018-04-05 14:19:38,598 : INFO : Dummy is: False
 2018-04-05 14:19:38,599 : DEBUG : Setting up SMBus
@@ -36051,3 +36052,5 @@ Stopped by user
 2018-04-12 20:53:18,627 : DEBUG : Turn robot for: 100 degrees | Current speed: 15
 2018-04-12 20:53:18,629 : INFO : Encoders are reset
 2018-04-12 20:53:18,708 : INFO : Finished execution, clean up. Time elapsed: 00:00:00
+=======
+>>>>>>> parent of c1f7fc5... fix senosors and add some logs,r efactoring in gerenral

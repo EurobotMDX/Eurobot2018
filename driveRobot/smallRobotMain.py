@@ -1,25 +1,24 @@
 from robotFunctions import *
 from terminalColors import bcolors as tc
 import sys
+
 sys.path.insert(0, '..')
 from settings import logging as log
 from time import sleep
 import time
 import datetime
-from Switches import *
 # from servoControl import servoControl
+from Switches import *
 
-turnLeft = False;
-turnRight = True;
+# old servo
+# from servo import Servo
+
 
 if __name__ == '__main__':
     canRun = False
 
     try:
-        robot = Driving(False)
-
-
-
+        robot = Driving(True)
         # Initialize servos
 
         # servoArm = servoControl("Arm servo", 0, 60)
@@ -48,7 +47,7 @@ if __name__ == '__main__':
         sleep(0.5)
 
         try:
-            turnSpeed = 100
+            turnSpeed = 10
 
             start_time = time.time()
 
@@ -64,7 +63,8 @@ if __name__ == '__main__':
 
             # sleep(0.3)
             #
-            #robot.turnRobot(360, turnSpeed, turnLeft)
+            robot.turnRobot(90, turnSpeed, False)
+            #
             # sleep(0.3)
 
             # extra.motorsOn()

@@ -8,7 +8,7 @@ import time
 import datetime
 from servoControl import servoControl
 from Switches import *
-from Sensor import *
+
 
 # old servo
 # from servo import Servo
@@ -24,13 +24,6 @@ if __name__ == '__main__':
         servoArm = servoControl("Arm servo", 0, 60)
         servoPipe = servoControl("Pipe servo", 1, 60)
         servoBee = servoControl("Bee servo", 2, 60)
-
-
-        sensorCenter = Sensor(0x72, "centre")
-        sensorRight = Sensor(0x71, "right")
-        sensorLeft = Sensor(0x73, "left")
-
-        sensors = [sensorLeft, sensorCenter, sensorRight]
 
         extra = RobotHelpers()
 
@@ -55,13 +48,12 @@ if __name__ == '__main__':
 
         sleep(0.5)
 
-
         try:
-
             turnSpeed = 15
 
             start_time = time.time()
 
+<<<<<<< HEAD
             # robot.driveRobot(115, 30, sensors)
 
             servoArm.turn(90)
@@ -73,6 +65,8 @@ if __name__ == '__main__':
 
             '''
 
+=======
+>>>>>>> parent of c1f7fc5... fix senosors and add some logs,r efactoring in gerenral
             if sideSwitch() == "Orange":
                 robot.turnRobot(90, turnSpeed, False)
 
@@ -183,7 +177,7 @@ if __name__ == '__main__':
 
             # servoArm.turn(0)
             # servoArm.turn(90)
-            
+            '''
             sleep(2)
 
             servoArm.turn(0)

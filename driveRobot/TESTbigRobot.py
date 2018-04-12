@@ -7,8 +7,16 @@ import time
 import datetime
 from servoControl import servoControl
 from Switches import *
+<<<<<<< HEAD
 from Sensor import *
 from settings import logging as log
+=======
+
+
+# old servo
+# from servo import Servo
+
+>>>>>>> parent of c1f7fc5... fix senosors and add some logs,r efactoring in gerenral
 
 if __name__ == '__main__':
     canRun = False
@@ -21,12 +29,15 @@ if __name__ == '__main__':
         # servoArm = servoControl("Arm servo", 1, 60)
         # servoBee = servoControl("Bee servo", 2, 60)
 
+<<<<<<< HEAD
         # sensorCenter = Sensor(0x72, "centre")
         # sensorRight = Sensor(0x71, "right")
         # sensorLeft = Sensor(0x73, "left")
 
         # sensors = [sensorLeft, sensorCenter, sensorRight]
 
+=======
+>>>>>>> parent of c1f7fc5... fix senosors and add some logs,r efactoring in gerenral
         extra = RobotHelpers()
 
         log.info("Initialized main objects")
@@ -66,6 +77,7 @@ if __name__ == '__main__':
 
             start_time = time.time()
 
+<<<<<<< HEAD
             # sleep(2)
             # servoPipe.turn(8)
             sleep(0.3)
@@ -88,12 +100,16 @@ if __name__ == '__main__':
             #
             #     robot.turnRobot(90, turnSpeed, False)
             #     sleep(0.3)
+=======
+            # robot.sensorTest(60)
+>>>>>>> parent of c1f7fc5... fix senosors and add some logs,r efactoring in gerenral
 
+            for i in range(0, 0):
 
-            # distance, speed, sensorEnabled=True, centerSensorOn=True, rightSensorOn=True, leftSensorOn=True
+                robot.turnRobot(90, turnSpeed, False)
+                sleep(0.3)
 
-            # robot.driveRobot(20, 20, False, True, True, True)
-            # robot.driveRobot(20, 20, False, False, False, False)
+            robot.driveRobot(100, 20)
 
             # extra.valveRelease()
 
@@ -152,6 +168,7 @@ if __name__ == '__main__':
             extra.valveRelease()
 
         '''
+            # robot.driveBack(30, turnSpeed, False)
 
             # sleep(0.5)
             # Delay between is used in order to make sure that encoders were reset completely.
