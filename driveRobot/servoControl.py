@@ -7,16 +7,12 @@ import time
 
 # Import the PCA9685 module.
 import Adafruit_PCA9685
-# from Adafruit_PCA9685 import Adafruit_PCA9685
 
 import sys
 sys.path.insert(0, '..')
 from settings import logging as log
 
 class servoControl:
-    # Uncomment to enable debug output.
-    #import logging
-    #logging.basicConfig(level=logging.DEBUG)
 
     def __init__(self, name, channel, frequency):
 

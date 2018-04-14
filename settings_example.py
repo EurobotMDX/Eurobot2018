@@ -2,6 +2,7 @@
 from math import pi
 import logging
 import datetime
+import logging.config
 
 # Constants for robot
 
@@ -21,10 +22,11 @@ robotSettings = {
     'robotType': 'main',
     'oneEncMM': 2 * pi * (wheelDiameter / 2) / oneRevolution / 10,
     'circumferenceOfCircle': 2 * pi * (wheelsSpacing / 2),
-    'sensorThreshold': 30,
+    'sensorThreshold': 10,
 }
 
 debugMode = True
+
 
 # Logger settings
 logging.root.handlers = []
@@ -32,7 +34,8 @@ logging.root.handlers = []
 FORMAT = '%(asctime)s : %(levelname)s : %(message)s\r'
 
 logging.basicConfig(format=FORMAT, level=logging.DEBUG,
-                    filename='../logs.log')
+                    filename='../logs.log'
+                    )
 
 # set up logging to console
 console = logging.StreamHandler()
@@ -42,3 +45,6 @@ console.setLevel(logging.DEBUG)  # this is only if we want to error logs be prin
 formatter = logging.Formatter('%(asctime)s : %(levelname)s : %(message)s\r')
 console.setFormatter(formatter)
 logging.getLogger("").addHandler(console)
+
+logger = logging.getLogger('Adafruit_I2C.Device')
+logger.setLevel(logging.CRITICAL)

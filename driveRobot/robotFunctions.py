@@ -5,7 +5,6 @@ import sys
 sys.path.insert(0, '..')
 import settings as config
 from terminalColors import bcolors as tc
-from Sensor import *
 
 from time import sleep
 
@@ -97,7 +96,7 @@ class md25:
                     self.bus.write_byte_data(self.address, MD25_REGISTER_SPEED1, speed)
                 if turn:
                     self.bus.write_byte_data(self.address, MD25_REGISTER_SPEED2_TURN, turn)
-        
+
         except IOError:
             log.warning("CAUGHT: IOError")
 
@@ -191,7 +190,7 @@ class md25:
 
 
 class Driving:
-    def __init__(self, disableSensors=False):
+    def __init__(self):
         self.mainRobot = md25(mode=1)
 
         # Init configuration for robot
@@ -199,35 +198,37 @@ class Driving:
         self.oneEncMM = config.robotSettings['oneEncMM']
         self.sensorThreshold = config.robotSettings['sensorThreshold']
 
-        self.disableSensors = disableSensors
-
-        if not self.disableSensors:
-            # Setup sensors
-            self.sensor2 = Sensor(0x72, "centre")
-            self.sensor3 = Sensor(0x71, "right")
-            self.sensor1 = Sensor(0x73, "left")
-
         # Setup Valve
         self.valvePin = 40
         GPIO.setmode(GPIO.BOARD)
         GPIO.setup(self.valvePin, GPIO.OUT)
         GPIO.output(self.valvePin, GPIO.LOW)
-        
-    def checkForObstacle(self):
+
+    def checkForObstacle(self, sensors, obstacleClear=True):
+        """
+        This function check the value for sensors and determince if there is any obstacle on the way.
+        :param centerSensorOn:
+        :param rightSensorOn:
+        :param leftSensorOn:
+        :return: obstacle - Boolean value
+        """
         obstacle = False
 
-        for sensor in [self.sensor1, self.sensor2, self.sensor3]:
+        for sensor in sensors:
             sensor.reqDistance()
-        sleep(self.sensor1.delay_time)
-        
-        for sensor in [self.sensor1, self.sensor2, self.sensor3]:
 
-            if sensor.readDistance() <= self.sensorThreshold:
-                log.info("Obstacle for sensor {} distance: {}".format(sensor.position, sensor.lastReading))
+        if len(sensors) > 0:
+            sleep(sensors[0].delay_time)
+
+        for sensor in sensors:
+            if sensor.readDistanceResponse() <= self.sensorThreshold:
                 obstacle = True
 
+                if obstacleClear:
+                    log.info("Obstacle for sensor {} distance: {}".format(sensor.position, sensor.lastReading))
+
         return obstacle
-        
+
     def setValve(self, state=True):
         if (state):
             GPIO.output(self.valvePin, GPIO.HIGH)
@@ -235,11 +236,11 @@ class Driving:
             GPIO.output(self.valvePin, GPIO.LOW)
 
     def showCounterForWheel(self, timein=10):
-        '''
+        """
         This function prints encoders values for given time in variable 'timein'.
         :param timein:
         :return:
-        '''
+        """
         countdown = time.time() + timein
         startTime = time.time()
 
@@ -248,16 +249,17 @@ class Driving:
         self.self.mainRobot.reset_encoders()
 
         while (countdown > startTime):
-            print("Encoders values are --- encoder 1: {} --- encoder 2: {}\n".format(self.self.mainRobot.read_encoder1(),
+            print(
+            "Encoders values are --- encoder 1: {} --- encoder 2: {}\n".format(self.self.mainRobot.read_encoder1(),
                                                                                self.mainRobot.read_encoder2()))
 
     def travelledDistance(self, distance, current):
-        '''
+        """
         Function takes two inputs such as; current distance travelled and destination distance, calculates the percentages of travelled distance
         :param distance: float
         :param current: float
         :return: percentage of travelled distance
-        '''
+        """
         if current != 0:
             remainingDistancePercentage = (current / distance) * 100
             return round(remainingDistancePercentage, 1)
@@ -265,21 +267,21 @@ class Driving:
             return 0
 
     def calcStoppingDriveThreshold(self, speed):
-        '''
+        """
         This function calculates slowing down thresholds for driving function.
-        :param speed: 
+        :param speed:
         :return: thresholds list
-        '''
+        """
 
-        if (speed >= 100):
+        if speed >= 100:
             threshold1 = 70.0
             threshold2 = 90.0
 
-        elif (speed >= 70):
+        elif speed >= 70:
             threshold1 = 75.0
             threshold2 = 90.0
 
-        elif (speed >= 60):
+        elif speed >= 60:
             threshold1 = 80.0
             threshold2 = 90.0
 
@@ -290,21 +292,21 @@ class Driving:
         return [threshold1, threshold2]
 
     def calcSlowingTurnThreshold(self, speed):
-        '''
+        """
            This function calculates slowing down thresholds for turning function.
-           :param speed: 
+           :param speed:
            :return: thresholds list
-           '''
-        
-        if (speed >= 15):
+        """
+
+        if speed >= 15:
             threshold1 = 70.0
             threshold2 = 90.0
 
-        elif (speed >= 10):
+        elif speed >= 10:
             threshold1 = 75.0
             threshold2 = 90.0
 
-        elif (speed >= 5):
+        elif speed >= 5:
             threshold1 = 80.0
             threshold2 = 90.0
 
@@ -327,21 +329,21 @@ class Driving:
 
         if travelledDistance >= stoppingThresholds[0]:
 
-            if travelledDistance >= stoppingThresholds[0]:
+            if speed >= speedLimits[0]:
+                speed -= 1
 
-                if speed > speedLimits[0]:
-                    speed -= 1
+                if speed == speedLimits[0]:
+                    print(
+                    "Drive speed reduced! Current speed:  {} | Travelled distance: {}".format(speed, travelledDistance))
 
-                    if speed == speedLimits[0]:
-                        print("Drive speed reduced! Current speed:  {} | Travelled distance: {}".format(speed, travelledDistance))
+        if travelledDistance >= stoppingThresholds[1]:
 
-            if travelledDistance > stoppingThresholds[1]:
+            if speed > speedLimits[1]:
+                speed -= 1
 
-                if speed > speedLimits[1]:
-                    speed -= 1
-
-                    if speed == speedLimits[1]:
-                        print("Drive speed reduced! Current speed:  {} | Travelled distance: {}".format(speed, travelledDistance))
+                if speed == speedLimits[1]:
+                    print(
+                    "Drive speed reduced! Current speed:  {} | Travelled distance: {}".format(speed, travelledDistance))
 
         return speed
 
@@ -364,7 +366,8 @@ class Driving:
                     speed -= 1
 
                     if speed == speedLimits[0]:
-                        print("Turn speed reduced! Current speed: {} | Travelled distance: {}".format(speed, travelledDistance))
+                        print("Turn speed reduced! Current speed: {} | Travelled distance: {}".format(speed,
+                                                                                                      travelledDistance))
 
             if travelledDistance > stoppingThresholds[1]:
 
@@ -372,21 +375,24 @@ class Driving:
                     speed -= 1
 
                     if speed == speedLimits[1]:
-                        print("Turn speed reduced! Current speed: {} | Travelled distance: {}".format(speed, travelledDistance))
+                        print("Turn speed reduced! Current speed: {} | Travelled distance: {}".format(speed,
+                                                                                                      travelledDistance))
 
         return speed
-    
-    def driveRobot(self, distance, speed, sensorEnabled=True):
-        '''
+
+    def driveRobot(self, distance, speed, sensors):
+        """
         This function drives a robot forward. By adjusting values such as: speed and distance can control a robot.
         :param distance:
         :param speed:
         :return:
-        '''
-
+        """
         log.info("Drive forward for: {} speed: {}".format(distance, speed))
 
         self.mainRobot.reset_encoders()
+
+        # TODO fix it
+        obstacleClear = True
 
         encoderDestination = distance / self.oneEncMM
 
@@ -404,15 +410,15 @@ class Driving:
         while encoder1Reading <= encoderDestination and encoder2Reading <= encoderDestination:
             # Check if sensor detected any obstacle on the way if yes then stop the robot and wait
             # if self.sensor1.getSensorValue() <= self.sensorThreshold:
-            if sensorEnabled and not self.disableSensors:
+            # if sensorEnabled and not self.disableSensors:
+            if self.checkForObstacle(sensors, obstacleClear):
 
-                if self.checkForObstacle():
-                    self.mainRobot.stop()
-                else:
-                    self.mainRobot.drive(speed, speed)
+                obstacleClear = False
 
+                self.mainRobot.stop()
             else:
                 self.mainRobot.drive(speed, speed)
+                obstacleClear = True
 
             encodersAvg = (encoder1Reading + encoder1Reading) / 2.0
 
@@ -437,7 +443,7 @@ class Driving:
         else:
             self.mainRobot.stop()
 
-    def turnRobot(self, degrees, speed, clockwise=True):
+    def turnRobot(self, degrees, speed, direction=True):
         '''
         This function turns a robot. Depending on the argument 'clockwise', a robot can turn right or left
         :param degrees:
@@ -462,7 +468,7 @@ class Driving:
 
         finishedLog = False
 
-        if clockwise:
+        if direction:
             while encoder1Reading <= encoderDestination:
                 self.mainRobot.drive(speed, -speed)
 
@@ -481,7 +487,7 @@ class Driving:
             else:
                 self.mainRobot.stop()
 
-        elif not clockwise:
+        elif not direction:
 
             while encoder2Reading <= encoderDestination:
 
@@ -505,27 +511,29 @@ class Driving:
         else:
             print("Error while robot turning the robot!")
 
-
-    def sensorTest(self, timein=10):
-        '''
-        This function prints sensor values for given time in variable 'timein'.
+    def sensorTest(self, sensors, timein=10):
+        """
+        Test sensors, provide values such 'center', 'left', 'right' or 'all'
+        :param sensorsToTest:
         :param timein:
         :return:
-        '''
+        """
         countdown = time.time() + timein
 
         endTime = time.time()
 
-        while (countdown > endTime):
+        while countdown > endTime:
 
-            sensors = [self.sensor1.getSensorValue(), self.sensor2.getSensorValue(), self.sensor3.getSensorValue()]
+            printVals = ""
 
-            print("Left: {} | Centre: {} | Right: {}".format(sensors[0], sensors[1], sensors[2]))
+            for sensor in sensors:
+                printVals = printVals + "Sensor: {} value: {}  |  ".format(sensor.position, sensor.getSensorValue())
+
+            print(printVals)
 
 
-            endTime = time.time()
         else:
-            print("Stopped")
+            print("Finish sensor test!")
 
     def checkStatus(self):
         canRun = True
@@ -550,7 +558,6 @@ class Driving:
 
 
 class RobotHelpers:
-
     def __init__(self):
         self.motorsPin = 29
         self.valvePin = 31
@@ -573,9 +580,9 @@ class RobotHelpers:
         k = 0
         while k < 20:
             GPIO.output(self.valvePin, 1)
-            sleep(0.03)
+            sleep(0.02)
             GPIO.output(self.valvePin, 0)
-            sleep(0.04)
+            sleep(0.06)
             k += 1
 
         sleep(1)

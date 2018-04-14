@@ -40,8 +40,10 @@ if __name__ == '__main__':
     if canRun:
 
         log.debug("Expecting for start switch")
+
+        log.debug("Side selection switch value: %s" % sideSwitch())
+
         while not startSwitch():
-            # print(sideSwitch())
             pass
 
         sleep(0.5)
@@ -51,6 +53,23 @@ if __name__ == '__main__':
 
             start_time = time.time()
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+            # robot.driveRobot(115, 30, sensors)
+
+            servoArm.turn(90)
+            sleep(1)
+            # servoPipe.turn(0)
+            
+            # robot.sensorTest(sensors, 60)
+
+
+            '''
+
+=======
+>>>>>>> parent of c1f7fc5... fix senosors and add some logs,r efactoring in gerenral
+=======
+>>>>>>> parent of c1f7fc5... fix senosors and add some logs,r efactoring in gerenral
             if sideSwitch() == "Orange":
                 robot.turnRobot(90, turnSpeed, False)
 

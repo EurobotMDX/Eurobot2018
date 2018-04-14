@@ -2,28 +2,38 @@ from robotFunctions import *
 from terminalColors import bcolors as tc
 import sys
 sys.path.insert(0, '..')
-from settings import logging as log
 from time import sleep
 import time
 import datetime
 from servoControl import servoControl
 from Switches import *
-
-
-# old servo
-# from servo import Servo
-
+from Sensor import *
+from settings import logging as log
 
 if __name__ == '__main__':
     canRun = False
+
+    sensorCenter = None
+    sensorRight = None
+    sensorLeft = None
+
+    right = True
+    left = False
+    turnSpeed = 15
 
     try:
         robot = Driving()
         # Initialize servos
 
-        servoArm = servoControl("Arm servo", 0, 60)
-        servoPipe = servoControl("Pipe servo", 1, 60)
+        servoPipe = servoControl("Pipe servo", 0, 60)
+        servoArm = servoControl("Arm servo", 1, 60)
         servoBee = servoControl("Bee servo", 2, 60)
+
+        sensorCenter = Sensor(0x72, "centre")
+        sensorRight = Sensor(0x71, "right")
+        sensorLeft = Sensor(0x73, "left")
+
+        sensors = [sensorLeft, sensorCenter, sensorRight]
 
         extra = RobotHelpers()
 
@@ -35,101 +45,81 @@ if __name__ == '__main__':
         canRun = False
         log.error("Could not create main objects.!!! Error: %s" % error)
 
-    # TODO enable this function 
-    # if robot.checkStatus() and canRun:
-    if canRun:
+    # TODO enable this function
+    if robot.checkStatus() and canRun:
+    # if canRun:
+        if sideSwitch() == "Orange":
+            log.info("Set 'Orange servo init, position: 8")
+
+            servoPipe.turn(98)
+        else:
+            log.info("Set 'Orange servo init, position: 8")
+
+            servoPipe.turn(8)
+
+        log.debug("Expecting for start switch")
+
+        log.debug("Side selection switch value: %s" % sideSwitch())
+
+        # extra.motorsOff()
+
+        # extra.motorsOff()
+        # extra.valveRelease()
 
         while not startSwitch():
-            print(sideSwitch())
             pass
 
         sleep(0.5)
 
         try:
-
-            turnSpeed = 15
-
             start_time = time.time()
 
-            # robot.sensorTest(60)
+            robot.driveRobot(distance=10, speed=15, sensors=[sensorLeft, sensorCenter])
 
-            for i in range(0, 0):
+            sleep(0.5)
 
-                robot.turnRobot(90, turnSpeed, False)
-                sleep(0.3)
+            robot.turnRobot(degrees=90, speed=5, direction=left)
 
-            robot.driveRobot(100, 20)
+            sleep(0.5)
 
-            # extra.valveRelease()
+            robot.driveRobot(distance=53, speed=15, sensors=[sensorLeft, sensorCenter, sensorRight])
 
-            #
-            # robot.turnRobot(90, turnSpeed, True)
-            #
-            # sleep(2)
-            #
-            # robot.turnRobot(90, turnSpeed, False)
-            #
-            # sleep(2)
-            #
-            # robot.turnRobot(180, turnSpeed, False)
-            #
-            # sleep(2)
-            #
-            # robot.turnRobot(180, turnSpeed, True)
-            #
-            # sleep(2)
-            #
-            # robot.turnRobot(360, turnSpeed, True)
+            sleep(0.5)
 
-            # robot.driveRobot(50, turnSpeed)
+            robot.turnRobot(degrees=45, speed=5, direction=left)
 
-            # servoArm.turn(0)
-            # servoArm.turn(90)
-            '''
-            sleep(2)
+            sleep(0.5)
 
-            servoArm.turn(0)
+            # Before pipe approaching
+            robot.driveRobot(distance=11, speed=5, sensors=[])
 
-            sleep(2)
+            sleep(0.5)
+
+            robot.turnRobot(degrees=50, speed=5, direction=left)
+
+            sleep(0.5)
 
             extra.motorsOn()
 
-            sleep(2)
+            robot.turnRobot(degrees=5, speed=5, direction=right)
 
-            extra.motorsOff()
+            sleep(0.5)
+
+            robot.driveRobot(distance=2, speed=2, sensors=[])
 
             sleep(2)
 
             extra.valveRelease()
 
-            robot.turnRobot(180, 20, False)
-
-            sleep(2)
-
-            extra.motorsOn()
-
-            sleep(2)
+            sleep(4)
 
             extra.motorsOff()
-
-            sleep(2)
-
-            extra.valveRelease()
-
-        '''
-            # robot.driveBack(30, turnSpeed, False)
-
-            # sleep(0.5)
-            # Delay between is used in order to make sure that encoders were reset completely.
-            # robot.driveRobot(turnSpeed0, 50)
-            # robot.turnRobot(180, 15, False)
-            # sleep(0.5)
-            # sleep(turnSpeed)
-
-
 
         except KeyboardInterrupt:
             log.debug("\nStopped by user\n")
+
+            extra.motorsOff()
+
             GPIO.cleanup()
 
         finally:
