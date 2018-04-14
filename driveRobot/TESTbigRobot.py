@@ -51,20 +51,15 @@ if __name__ == '__main__':
         if sideSwitch() == "Orange":
             log.info("Set 'Orange servo init, position: 8")
 
-            servoPipe.turn(98)
+            servoPipe.turn(degrees=98)
         else:
-            log.info("Set 'Orange servo init, position: 8")
+            log.info("Set 'Green servo init, position: 8")
 
-            servoPipe.turn(8)
-
-        log.debug("Expecting for start switch")
+            servoPipe.turn(degrees=8)
 
         log.debug("Side selection switch value: %s" % sideSwitch())
 
-        # extra.motorsOff()
-
-        # extra.motorsOff()
-        # extra.valveRelease()
+        log.debug("Expecting for start switch")
 
         while not startSwitch():
             pass

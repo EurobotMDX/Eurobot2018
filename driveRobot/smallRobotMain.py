@@ -7,11 +7,8 @@ from settings import logging as log
 from time import sleep
 import time
 import datetime
-# from servoControl import servoControl
+from servoControl import servoControl
 from Switches import *
-
-# old servo
-# from servo import Servo
 
 
 if __name__ == '__main__':
@@ -19,13 +16,15 @@ if __name__ == '__main__':
 
     try:
         robot = Driving(True)
-        # Initialize servos
 
-        # servoArm = servoControl("Arm servo", 0, 60)
+        # Initialize servos
+        servo1 = servoControl("Servo 1", 15, 60)
         # servoPipe = servoControl("Pipe servo", 1, 60)
         # servoBee = servoControl("Bee servo", 2, 60)
 
-        # extra = RobotHelpers()
+        # sensorCenter = Sensor(0x72, "centre")
+        # sensorRight = Sensor(0x71, "right")
+        # sensorLeft = Sensor(0x73, "left")
 
         log.info("Initialized main objects")
 
@@ -35,106 +34,33 @@ if __name__ == '__main__':
         canRun = False
         log.error("Could not create main objects.!!! Error: %s" % error)
 
-    # TODO enable this function
-    # if robot.checkStatus() and canRun:
-    if canRun:
+    if robot.checkStatus() and canRun:
 
         log.debug("Expecting for start switch")
-        # while not startSwitch():
-        #     print(sideSwitch())
-            # pass
+        while not startSwitch():
+            pass
 
         sleep(0.5)
 
         try:
+
+            if sideSwitch() == "Orange":
+                print ("Orange site")
+
+            if sideSwitch() == "Green":
+                print ("Green site")
+
             turnSpeed = 10
 
             start_time = time.time()
 
-            # if sideSwitch() == "Orange":
-            #     robot.turnRobot(90, turnSpeed, False)
+            servo1.turn(degrees=90)
 
-            # else:
-            #     robot.turnRobot(90, turnSpeed, True)
+            robot.driveRobot(distance=53, speed=15, sensors=[])
 
-            sleep(0.3)
+            sleep(0.5)
 
-            # robot.driveRobot(69, 30)
-
-            # sleep(0.3)
-            #
-            robot.turnRobot(90, turnSpeed, False)
-            #
-            # sleep(0.3)
-
-            # extra.motorsOn()
-
-            # Air valve here
-            # sleep(10)
-
-            # extra.motorsOff()
-
-            # robot.turnRobot(90, turnSpeed, True)
-            #
-            # sleep(0.3)
-            #
-            # robot.driveRobot(115, 30)
-            #
-            # sleep(0.3)
-            #
-            # log.info("Bee deployment")
-
-            # Bee deployment
-            # servoBee.turn(0)
-
-            # robot.turnRobot(90, turnSpeed, True)
-            #
-            # sleep(2)
-            #
-            # print("Servo operations")
-            #
-            # if sideSwitch() == "Orange":
-            #
-            #     robot.driveRobot(23, 30)
-            #
-            #     sleep(0.3)
-            #
-            #     log.info("Bee closing servo")
-            #
-            # else:
-            #     log.info("Bee open servo")
-            #
-            # robot.turnRobot(90, turnSpeed, True)
-            #
-            # sleep(0.3)
-            #
-            # robot.driveRobot(18, 30)
-            #
-            # sleep(0.3)
-            #
-            # if sideSwitch() == "Orange":
-            #
-            #     robot.turnRobot(135, turnSpeed, False)
-            #
-            # else:
-            #     robot.turnRobot(135, turnSpeed, True)
-            #
-            # sleep(0.3)
-            #
-            # robot.driveRobot(25, 30)
-            #
-            # sleep(0.3)
-            #
-            # log.info("Deploy servo for pipe")
-            #
-            # if sideSwitch() == "Orange":
-            #
-            #     robot.turnRobot(45, turnSpeed, False)
-            #
-            # else:
-            #     robot.turnRobot(45, turnSpeed, True)
-        #
-        #
+            robot.turnRobot(degrees=45, speed=5, direction=left)
 
 
         except KeyboardInterrupt:

@@ -543,7 +543,7 @@ class Driving:
 
         print("\n" + tc.FAIL + "Battery Status: " + str(getBatteryVoltage) + "V" + tc.ENDC + "\n")
 
-        if float(getBatteryVoltage) < 11.0:
+        if float(getBatteryVoltage) < 10.5:
             log.error(tc.FAIL + "Critical Battery Level. PLEASE REPLACE BATTERY!" + tc.ENDC)
             canRun = False
 
