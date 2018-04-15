@@ -576,7 +576,7 @@ class Driving:
         else:
             print("Error while robot turning the robot!")
 
-    def sensorTest(self, timein=10):
+    def sensorTest(self, sensors, timein=10):
         """
         Test sensors, provide values such 'center', 'left', 'right' or 'all'
         :param sensorsToTest:
@@ -587,6 +587,8 @@ class Driving:
 
         endTime = time.time()
 
+        printVals = ""
+
         while countdown > endTime:
 
             for sensor in sensors:
@@ -596,7 +598,7 @@ class Driving:
 
 
         else:
-            print("Finish encoders test!")
+            print("Finish sensor test!")
 
     def checkStatus(self):
         canRun = True
