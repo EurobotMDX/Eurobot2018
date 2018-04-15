@@ -98,7 +98,8 @@ class md25:
                     self.bus.write_byte_data(self.address, MD25_REGISTER_SPEED2_TURN, turn)
 
         except IOError:
-            log.warning("CAUGHT: IOError")
+            log.warning("CAUGHT: IOError 'drive'")
+            self.drive(motor0, motor1, speed, turn)
 
     def stop(self):
         if (0 == self.mode or 2 == self.mode) and self.bus:
@@ -106,14 +107,16 @@ class md25:
                 self.bus.write_byte_data(self.address, MD25_REGISTER_SPEED1, 128)
                 self.bus.write_byte_data(self.address, MD25_REGISTER_SPEED2_TURN, 128)
             except IOError:
-                log.warning("CAUGHT: IOError")
+                log.warning("CAUGHT: IOError 'stop motors'")
+                self.stop()
 
         if (1 == self.mode or 3 == self.mode) and self.bus:
             try:
                 self.bus.write_byte_data(self.address, MD25_REGISTER_SPEED1, 0)
                 self.bus.write_byte_data(self.address, MD25_REGISTER_SPEED2_TURN, 0)
             except IOError:
-                log.warning("CAUGHT: IOError")
+                log.warning("CAUGHT: IOError 'stop'")
+                self.stop()
 
     def battery(self):
         if self.bus:
@@ -124,6 +127,7 @@ class md25:
 
     def read_encoder1(self):
         if self.bus:
+            totalEncoder = 0
             try:
                 e1 = self.bus.read_byte_data(self.address, MD25_REGISTER_ENC1A)
                 e2 = self.bus.read_byte_data(self.address, MD25_REGISTER_ENC1B)
@@ -134,8 +138,8 @@ class md25:
                 # return [e1, e2, e3, e4]
                 totalEncoder = e4 + (255 * e3) + (65025 * e2) + (16581375 * e1)
             except IOError:
-                totalEncoder = 0
-                log.warning("CAUGHT: IOError")
+                log.warning("CAUGHT: IOError 'read_encoder1'")
+                self.read_encoder1()
 
             return totalEncoder
         else:
@@ -143,6 +147,7 @@ class md25:
 
     def read_encoder2(self):
         if self.bus:
+            totalEncoder = 0
             try:
                 e1 = self.bus.read_byte_data(self.address, MD25_REGISTER_ENC2A)
                 e2 = self.bus.read_byte_data(self.address, MD25_REGISTER_ENC2B)
@@ -153,8 +158,8 @@ class md25:
                 # return [e1, e2, e3, e4]
                 totalEncoder = e4 + (255 * e3) + (65025 * e2) + (16581375 * e1)
             except IOError:
-                totalEncoder = 0
-                print("CAUGHT: IOError")
+                log.warning("CAUGHT: IOError 'read_encoder2'")
+                self.read_encoder2()
 
             return totalEncoder
         else:
@@ -162,10 +167,16 @@ class md25:
 
     def reset_encoders(self):
         if self.bus:
-            self.bus.write_byte_data(self.address, MD25_REGISTER_COMMAND, 0x20)
-            print("Encoders are reset")
+            try:
+                self.bus.write_byte_data(self.address, MD25_REGISTER_COMMAND, 0x20)
+                log.info("Encoders were successfully reset")
+
+            except IOError:
+                log.warning("CAUGHT: IOError 'Encoders are reset'")
+                self.reset_encoders()
+
         else:
-            print("Could not reset encoders")
+            log.error("Could not reset encoders")
 
     def disable_2s_timeout(self):
         if self.bus:
@@ -197,6 +208,7 @@ class Driving:
         self.circumferenceOfCircle = config.robotSettings['circumferenceOfCircle']
         self.oneEncMM = config.robotSettings['oneEncMM']
         self.sensorThreshold = config.robotSettings['sensorThreshold']
+        self.encoderMaxValue = 4244897280
 
         # Setup Valve
         self.valvePin = 40
@@ -204,6 +216,8 @@ class Driving:
         GPIO.setup(self.valvePin, GPIO.OUT)
         GPIO.output(self.valvePin, GPIO.LOW)
 
+    # centerSensorOn=True, rightSensorOn=True, leftSensorOn=True
+    # , centerSensorOn, rightSensorOn, leftSensorOn
     def checkForObstacle(self, sensors, obstacleClear=True):
         """
         This function check the value for sensors and determince if there is any obstacle on the way.
@@ -273,15 +287,15 @@ class Driving:
         :return: thresholds list
         """
 
-        if speed >= 100:
+        if speed >= 60:
             threshold1 = 70.0
             threshold2 = 90.0
 
-        elif speed >= 70:
+        elif speed >= 40:
             threshold1 = 75.0
             threshold2 = 90.0
 
-        elif speed >= 60:
+        elif speed >= 30:
             threshold1 = 80.0
             threshold2 = 90.0
 
@@ -333,8 +347,8 @@ class Driving:
                 speed -= 1
 
                 if speed == speedLimits[0]:
-                    print(
-                    "Drive speed reduced! Current speed:  {} | Travelled distance: {}".format(speed, travelledDistance))
+                    log.info("Drive speed reduced! Current speed:  {} | Travelled distance: {}".format(speed,
+                                                                                                       travelledDistance))
 
         if travelledDistance >= stoppingThresholds[1]:
 
@@ -342,8 +356,8 @@ class Driving:
                 speed -= 1
 
                 if speed == speedLimits[1]:
-                    print(
-                    "Drive speed reduced! Current speed:  {} | Travelled distance: {}".format(speed, travelledDistance))
+                    log.info("Drive speed reduced! Current speed:  {} | Travelled distance: {}".format(speed,
+                                                                                                       travelledDistance))
 
         return speed
 
@@ -420,6 +434,9 @@ class Driving:
                 self.mainRobot.drive(speed, speed)
                 obstacleClear = True
 
+            # else:
+            #     self.mainRobot.drive(speed, speed)
+
             encodersAvg = (encoder1Reading + encoder1Reading) / 2.0
 
             currentTravelDistance = round(encodersAvg * self.oneEncMM, 3)
@@ -436,22 +453,70 @@ class Driving:
             encoder1Reading = self.mainRobot.read_encoder1()
             encoder2Reading = self.mainRobot.read_encoder2()
 
-            if travelledDistance == 100.0 and not finishedLog:
+            if travelledDistance >= 99 and not finishedLog:
                 log.info("Finished driving")
                 finishedLog = True
 
         else:
             self.mainRobot.stop()
 
+    def driveBack(self, distance, speed):
+        """
+        This function drives a robot backward. By adjusting values such as: speed and distance can control a robot.
+        :param distance:
+        :param speed:
+        :return:
+        """
+        log.info("Drive backward for: {} speed: {}".format(distance, speed))
+
+        self.mainRobot.reset_encoders()
+
+        encoderDestination = distance / self.oneEncMM
+
+        encoder1Reading = self.mainRobot.read_encoder1()
+        encoder2Reading = self.mainRobot.read_encoder2()
+
+        distance = float(distance)
+
+        stoppingThresholds = self.calcStoppingDriveThreshold(speed)
+
+        # Change acceleration mode if necessary
+        # changeAcc(10)
+
+        encoderDestination = self.encoderMaxValue - encoderDestination
+
+        while encoder1Reading >= encoderDestination and encoder2Reading >= encoderDestination or encoder1Reading == 0 or encoder2Reading == 0:
+
+            encodersAvg = (encoder1Reading + encoder1Reading) / 2.0
+
+            currentTravelDistance = round((self.encoderMaxValue - encodersAvg) * self.oneEncMM, 3)
+
+            travelledDistance = self.travelledDistance(distance, currentTravelDistance)
+
+            speed = self.speedControlDrive(speed, travelledDistance, stoppingThresholds)
+
+            self.mainRobot.drive(-speed, -speed)
+
+            encoder1Reading = self.mainRobot.read_encoder1()
+
+            encoder2Reading = self.mainRobot.read_encoder2()
+
+        else:
+            self.mainRobot.stop()
+
     def turnRobot(self, degrees, speed, direction=True):
-        '''
+        """
         This function turns a robot. Depending on the argument 'clockwise', a robot can turn right or left
         :param degrees:
         :param speed:
         :param clockwise:
         :return:
-        '''
-        log.debug("Turn robot for: {} degrees | Current speed: {}".format(degrees, speed))
+        """
+        if direction:
+            log.debug("Turn robot right for: {} degrees | Current speed: {}".format(degrees, speed))
+
+        else:
+            log.debug("Turn robot left for: {} degrees | Current speed: {}".format(degrees, speed))
 
         self.mainRobot.reset_encoders()
 
@@ -480,7 +545,7 @@ class Driving:
 
                 encoder1Reading = self.mainRobot.read_encoder1()
 
-                if travelledDistance == 100.0 and not finishedLog:
+                if travelledDistance >= 99 and not finishedLog:
                     log.info("Finished turning right")
                     finishedLog = True
 
@@ -501,7 +566,7 @@ class Driving:
 
                 encoder2Reading = self.mainRobot.read_encoder2()
 
-                if travelledDistance == 100.0 and not finishedLog:
+                if travelledDistance >= 99 and not finishedLog:
                     log.info("Finished turning left")
                     finishedLog = True
 
@@ -511,7 +576,7 @@ class Driving:
         else:
             print("Error while robot turning the robot!")
 
-    def sensorTest(self, sensors, timein=10):
+    def sensorTest(self, timein=10):
         """
         Test sensors, provide values such 'center', 'left', 'right' or 'all'
         :param sensorsToTest:
@@ -524,8 +589,6 @@ class Driving:
 
         while countdown > endTime:
 
-            printVals = ""
-
             for sensor in sensors:
                 printVals = printVals + "Sensor: {} value: {}  |  ".format(sensor.position, sensor.getSensorValue())
 
@@ -533,7 +596,7 @@ class Driving:
 
 
         else:
-            print("Finish sensor test!")
+            print("Finish encoders test!")
 
     def checkStatus(self):
         canRun = True
@@ -543,7 +606,7 @@ class Driving:
 
         print("\n" + tc.FAIL + "Battery Status: " + str(getBatteryVoltage) + "V" + tc.ENDC + "\n")
 
-        if float(getBatteryVoltage) < 10.5:
+        if float(getBatteryVoltage) < 11.0:
             log.error(tc.FAIL + "Critical Battery Level. PLEASE REPLACE BATTERY!" + tc.ENDC)
             canRun = False
 
@@ -570,15 +633,15 @@ class RobotHelpers:
 
     def motorsOn(self):
         GPIO.output(self.motorsPin, 1)
-        log.debug("Start motors")
+        log.debug("Start launcher motors")
 
     def motorsOff(self):
         GPIO.output(self.motorsPin, 0)
-        log.debug("Motors stopped")
+        log.debug("Motors launcher stopped")
 
     def valveRelease(self):
         k = 0
-        while k < 20:
+        while k < 30:
             GPIO.output(self.valvePin, 1)
             sleep(0.02)
             GPIO.output(self.valvePin, 0)
@@ -587,8 +650,11 @@ class RobotHelpers:
 
         sleep(1)
 
-        GPIO.output(self.valvePin, 1)
-        sleep(0.05)
-        GPIO.output(self.valvePin, 0)
-        sleep(0.06)
-        k += 1
+        k = 0
+
+        while k < 2:
+            GPIO.output(self.valvePin, 1)
+            sleep(0.04)
+            GPIO.output(self.valvePin, 0)
+            sleep(0.06)
+            k += 1

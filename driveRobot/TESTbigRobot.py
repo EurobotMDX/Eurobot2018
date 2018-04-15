@@ -51,15 +51,23 @@ if __name__ == '__main__':
         if sideSwitch() == "Orange":
             log.info("Set 'Orange servo init, position: 8")
 
-            servoPipe.turn(degrees=98)
-        else:
-            log.info("Set 'Green servo init, position: 8")
+            servoPipe.turn(98)
+            servoBee.turn(50)
+            servoArm.turn(160)
 
-            servoPipe.turn(degrees=8)
+        else:
+            log.info("Set 'Orange servo init, position: 8")
+
+            servoPipe.turn(8)
+
+        log.debug("Expecting for start switch")
 
         log.debug("Side selection switch value: %s" % sideSwitch())
 
-        log.debug("Expecting for start switch")
+        # extra.motorsOff()
+
+        # extra.motorsOff()
+        # extra.valveRelease()
 
         while not startSwitch():
             pass
@@ -69,46 +77,60 @@ if __name__ == '__main__':
         try:
             start_time = time.time()
 
-            robot.driveRobot(distance=10, speed=15, sensors=[sensorLeft, sensorCenter])
+            if True:
+                robot.driveRobot(distance=10, speed=15, sensors=[sensorLeft, sensorCenter])
 
-            sleep(0.5)
+                sleep(0.5)
 
-            robot.turnRobot(degrees=90, speed=5, direction=left)
+                robot.turnRobot(degrees=180, speed=5, direction=left)
 
-            sleep(0.5)
+                sleep(0.5)
 
-            robot.driveRobot(distance=53, speed=15, sensors=[sensorLeft, sensorCenter, sensorRight])
+                robot.driveRobot(distance=10, speed=20, sensors=[sensorLeft, sensorCenter, sensorRight])
 
-            sleep(0.5)
+                sleep(0.5)
 
-            robot.turnRobot(degrees=45, speed=5, direction=left)
+                robot.turnRobot(degrees=180, speed=5, direction=left)
 
-            sleep(0.5)
+                sleep(0.5)
 
-            # Before pipe approaching
-            robot.driveRobot(distance=11, speed=5, sensors=[])
+                robot.driveRobot(distance=50, speed=30, sensors=[sensorLeft, sensorCenter, sensorRight])
 
-            sleep(0.5)
+                sleep(0.5)
 
-            robot.turnRobot(degrees=50, speed=5, direction=left)
+                extra.motorsOn()
 
-            sleep(0.5)
+                sleep(1)
 
-            extra.motorsOn()
+                extra.valveRelease()
 
-            robot.turnRobot(degrees=5, speed=5, direction=right)
+                sleep(2)
 
-            sleep(0.5)
+                extra.motorsOff()
 
-            robot.driveRobot(distance=2, speed=2, sensors=[])
+                robot.driveBack(distance=3, speed=2)
+                sleep(0.5)
 
-            sleep(2)
+                # Bee deploy
+                servoBee.turn(165)
 
-            extra.valveRelease()
+                # Bee close
+                servoBee.turn(50)
 
-            sleep(4)
+                robot.turnRobot(degrees=90, speed=4, direction=left)
 
-            extra.motorsOff()
+                servoPipe.turn(13)
+
+                servoArm.turn(degrees=85)
+
+                sleep(0.5)
+
+                extra.valveRelease()
+
+                sleep(2)
+
+                servoArm.turn(degrees=160)
+
 
         except KeyboardInterrupt:
             log.debug("\nStopped by user\n")
@@ -125,8 +147,11 @@ if __name__ == '__main__':
 
             log.info("Finished execution, clean up. Time elapsed: {}".format(elapsed_time))
 
+            print ("\n")
+
+            log.info("All test pass")
+
             GPIO.cleanup()
 
     else:
         log.info(tc.FAIL + tc.UNDERLINE + "Could not start the program please check the conditions of the robot!" + tc.ENDC)
-

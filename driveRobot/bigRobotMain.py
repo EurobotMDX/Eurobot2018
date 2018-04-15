@@ -2,28 +2,38 @@ from robotFunctions import *
 from terminalColors import bcolors as tc
 import sys
 sys.path.insert(0, '..')
-from settings import logging as log
 from time import sleep
 import time
 import datetime
 from servoControl import servoControl
 from Switches import *
-
-
-# old servo
-# from servo import Servo
-
+from Sensor import *
+from settings import logging as log
 
 if __name__ == '__main__':
     canRun = False
+
+    sensorCenter = None
+    sensorRight = None
+    sensorLeft = None
+
+    right = True
+    left = False
+    turnSpeed = 15
 
     try:
         robot = Driving()
         # Initialize servos
 
-        servoArm = servoControl("Arm servo", 0, 60)
-        servoPipe = servoControl("Pipe servo", 1, 60)
+        servoPipe = servoControl("Pipe servo", 0, 60)
+        servoArm = servoControl("Arm servo", 1, 60)
         servoBee = servoControl("Bee servo", 2, 60)
+
+        sensorCenter = Sensor(0x72, "centre")
+        sensorRight = Sensor(0x71, "right")
+        sensorLeft = Sensor(0x73, "left")
+
+        sensors = [sensorLeft, sensorCenter, sensorRight]
 
         extra = RobotHelpers()
 
@@ -36,12 +46,28 @@ if __name__ == '__main__':
         log.error("Could not create main objects.!!! Error: %s" % error)
 
     # TODO enable this function
-    # if robot.checkStatus() and canRun:
-    if canRun:
+    if robot.checkStatus() and canRun:
+    # if canRun:
+        if sideSwitch() == "Orange":
+            log.info("Set 'Orange servo init, position: 8")
+
+            servoPipe.turn(98)
+            servoBee.turn(50)
+            servoArm.turn(160)
+
+        else:
+            log.info("Set 'Orange servo init, position: 8")
+
+            servoPipe.turn(8)
 
         log.debug("Expecting for start switch")
 
         log.debug("Side selection switch value: %s" % sideSwitch())
+
+        # extra.motorsOff()
+
+        # extra.motorsOff()
+        # extra.valveRelease()
 
         while not startSwitch():
             pass
@@ -49,182 +75,123 @@ if __name__ == '__main__':
         sleep(0.5)
 
         try:
-            turnSpeed = 15
-
             start_time = time.time()
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-            # robot.driveRobot(115, 30, sensors)
+            if True:
+                robot.driveRobot(distance=10, speed=15, sensors=[sensorLeft, sensorCenter])
 
-            servoArm.turn(90)
-            sleep(1)
-            # servoPipe.turn(0)
-            
-            # robot.sensorTest(sensors, 60)
+                sleep(0.5)
 
+                robot.turnRobot(degrees=90, speed=5, direction=left)
 
-            '''
+                sleep(1)
 
-=======
->>>>>>> parent of c1f7fc5... fix senosors and add some logs,r efactoring in gerenral
-=======
->>>>>>> parent of c1f7fc5... fix senosors and add some logs,r efactoring in gerenral
-            if sideSwitch() == "Orange":
-                robot.turnRobot(90, turnSpeed, False)
+                robot.driveRobot(distance=52, speed=20, sensors=[sensorLeft, sensorCenter, sensorRight])
 
-            else:
-                robot.turnRobot(90, turnSpeed, True)
+                sleep(0.5)
 
-            sleep(0.3)
+                robot.turnRobot(degrees=45, speed=5, direction=left)
 
-            robot.driveRobot(69, 30)
+                sleep(0.5)
 
-            sleep(0.3)
+                # Before pipe approaching
+                robot.driveRobot(distance=11, speed=5, sensors=[])
 
-            robot.turnRobot(90, turnSpeed, False)
+                sleep(0.5)
 
-            sleep(0.3)
+                robot.turnRobot(degrees=45, speed=3, direction=left)
 
-            extra.motorsOn()
+                sleep(0.5)
 
-            # Air valve here
-            sleep(10)
+                extra.motorsOn()
 
-            extra.motorsOff()
+                sleep(0.5)
 
-            robot.turnRobot(90, turnSpeed, True)
+                robot.driveRobot(distance=3, speed=1, sensors=[])
 
-            sleep(0.3)
+                sleep(2)
 
-            robot.driveRobot(115, 30)
+                extra.valveRelease()
 
-            sleep(0.3)
+                sleep(4)
 
-            log.info("Bee deployment")
+                extra.motorsOff()
 
-            # Bee deployment
-            # servoBee.turn(0)
+                # Leaving First recuperator
+                robot.driveBack(distance=3, speed=2)
+                sleep(1)
 
-            robot.turnRobot(90, turnSpeed, True)
+                robot.turnRobot(degrees=90, speed=15, direction=right)
 
-            sleep(2)
+                sleep(1)
 
-            print("Servo operations")
+                robot.driveRobot(distance=70, speed=20, sensors=[sensorCenter, sensorRight])
 
-            if sideSwitch() == "Orange":
+                sleep(0.5)
 
-                robot.driveRobot(23, 30)
+                # Bee deploy
+                servoBee.turn(165)
 
-                sleep(0.3)
+                robot.driveRobot(distance=20, speed=20, sensors=[])
 
-                log.info("Bee closing servo")
+                sleep(0.5)
 
-            else:
-                log.info("Bee open servo")
+                robot.turnRobot(degrees=90, speed=8, direction=right)
 
-            robot.turnRobot(90, turnSpeed, True)
+                sleep(1)
 
-            sleep(0.3)
+                # Bee close
+                servoBee.turn(50)
 
-            robot.driveRobot(18, 30)
+                robot.turnRobot(degrees=90, speed=15, direction=right)
 
-            sleep(0.3)
+            # if True:
+                sleep(0.5)
 
-            if sideSwitch() == "Orange":
+                robot.driveRobot(distance=10, speed=10, sensors=[sensorLeft, sensorCenter, sensorRight])
 
-                robot.turnRobot(135, turnSpeed, False)
+                sleep(0.5)
 
-            else:
-                robot.turnRobot(135, turnSpeed, True)
+                robot.turnRobot(degrees=90, speed=15, direction=left)
 
-            sleep(0.3)
+                sleep(0.5)
 
-            robot.driveRobot(25, 30)
+                robot.driveRobot(distance=25, speed=10, sensors=[sensorCenter, sensorRight])
 
-            sleep(0.3)
+                sleep(0.5)
 
-            log.info("Deploy servo for pipe")
+                robot.turnRobot(degrees=45, speed=15, direction=left)
 
-            if sideSwitch() == "Orange":
+                sleep(0.5)
 
-                robot.turnRobot(45, turnSpeed, False)
+                robot.driveRobot(distance=14, speed=10, sensors=[])
 
-            else:
-                robot.turnRobot(45, turnSpeed, True)
+                sleep(0.5)
 
-                
+                robot.turnRobot(degrees=55, speed=4, direction=left)
 
-            # extra.valveRelease()
+                sleep(0.5)
 
-            #
-            # robot.turnRobot(90, turnSpeed, True)
-            #
-            # sleep(2)
-            #
-            # robot.turnRobot(90, turnSpeed, False)
-            #
-            # sleep(2)
-            #
-            # robot.turnRobot(180, turnSpeed, False)
-            #
-            # sleep(2)
-            #
-            # robot.turnRobot(180, turnSpeed, True)
-            #
-            # sleep(2)
-            #
-            # robot.turnRobot(360, turnSpeed, True)
+                servoPipe.turn(13)
 
-            # robot.driveRobot(50, turnSpeed)
+                sleep(1)
 
-            # servoArm.turn(0)
-            # servoArm.turn(90)
-            '''
-            sleep(2)
+                servoArm.turn(degrees=85)
 
-            servoArm.turn(0)
+                sleep(0.5)
 
-            sleep(2)
+                extra.valveRelease()
 
-            extra.motorsOn()
+                sleep(5)
 
-            sleep(2)
-
-            extra.motorsOff()
-
-            sleep(2)
-
-            extra.valveRelease()
-
-            robot.turnRobot(180, 20, False)
-
-            sleep(2)
-
-            extra.motorsOn()
-
-            sleep(2)
-
-            extra.motorsOff()
-
-            sleep(2)
-
-            extra.valveRelease()
-
-        '''
-            # robot.driveBack(30, turnSpeed, False)
-
-            # sleep(0.5)
-            # Delay between is used in order to make sure that encoders were reset completely.
-            # robot.driveRobot(turnSpeed0, 50)
-            # robot.turnRobot(180, 15, False)
-            # sleep(0.5)
-            # sleep(turnSpeed)
-
+                servoArm.turn(degrees=160)
 
 
         except KeyboardInterrupt:
             log.debug("\nStopped by user\n")
+
+            extra.motorsOff()
+
             GPIO.cleanup()
 
         finally:
@@ -239,4 +206,3 @@ if __name__ == '__main__':
 
     else:
         log.info(tc.FAIL + tc.UNDERLINE + "Could not start the program please check the conditions of the robot!" + tc.ENDC)
-

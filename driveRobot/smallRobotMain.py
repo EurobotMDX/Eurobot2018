@@ -80,4 +80,3 @@ if __name__ == '__main__':
     else:
         log.info(
             tc.FAIL + tc.UNDERLINE + "Could not start the program please check the conditions of the robot!" + tc.ENDC)
-
