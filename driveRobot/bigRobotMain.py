@@ -48,22 +48,31 @@ if __name__ == '__main__':
 
     # TODO enable this function
     if robot.checkStatus() and canRun:
-    # if canRun:
+
         if sideSwitch() == "Orange":
-            log.info("Set 'Orange servo init, position: 8")
+
+            sideSelected = "Orange"
+
+        else:
+            sideSelected = "Green"
+
+        if sideSelected == "Orange":
+            log.info("Setting up init positions for 'Orange' site")
 
             servoPipe.turn(98)
             servoBee.turn(50)
             servoArm.turn(160)
 
         else:
-            log.info("Set 'Orange servo init, position: 8")
+            log.info("Setting up init positions for 'Green' site")
 
-            servoPipe.turn(8)
-
-        log.debug("Expecting for start switch")
+            servoPipe.turn(10)
+            servoBee.turn(50)
+            servoArm.turn(160)
 
         log.debug("Side selection switch value: %s" % sideSwitch())
+
+        log.debug("Expecting for start switch")
 
         sleepAfterEachOperation = 0.6
 
@@ -83,7 +92,8 @@ if __name__ == '__main__':
         try:
             start_time = time.time()
 
-            if True:
+            if sideSelected == "Orange":
+
                 robot.driveRobot(distance=10, speed=10, sensors=[sensorLeft, sensorCenter])
 
                 sleep(sleepAfterEachOperation)
@@ -155,6 +165,124 @@ if __name__ == '__main__':
                 robot.turnRobot(degrees=90, speed=15, direction=right)
 
                 sleep(sleepAfterEachOperation)
+
+                # Away from the wall
+                robot.driveRobot(distance=10, speed=10, sensors=[sensorLeft, sensorCenter])
+
+                sleep(sleepAfterEachOperation)
+
+                robot.turnRobot(degrees=90, speed=15, direction=left)
+
+                sleep(sleepAfterEachOperation)
+
+                # Straight before second pipe
+                robot.driveRobot(distance=25, speed=10, sensors=[sensorCenter, sensorRight])
+
+                sleep(sleepAfterEachOperation)
+
+                robot.turnRobot(degrees=45, speed=15, direction=left)
+
+                sleep(sleepAfterEachOperation)
+
+                robot.driveRobot(distance=15, speed=10, sensors=[])
+
+                sleep(sleepAfterEachOperation)
+
+                # Last turn under the pipe
+                robot.turnRobot(degrees=58, speed=5, direction=left)
+
+                sleep(sleepAfterEachOperation)
+
+                servoPipe.turn(13)
+
+                sleep(sleepAfterEachOperation)
+
+                servoArm.turn(degrees=86)
+
+                robot.driveRobot(distance=4.5, speed=1, sensors=[])
+
+                sleep(sleepAfterEachOperation + 1)
+
+                extra.valveRelease()
+
+                sleep(1)
+
+                # Do not close the arm
+                # servoArm.turn(degrees=160)
+
+            else:
+
+                robot.driveRobot(distance=10, speed=10, sensors=[sensorCenter, sensorRight])
+
+                sleep(sleepAfterEachOperation)
+
+                robot.turnRobot(degrees=90, speed=10, direction=right)
+
+                sleep(sleepAfterEachOperation)
+
+                robot.driveRobot(distance=54, speed=15, sensors=[sensorLeft, sensorCenter])
+
+                sleep(sleepAfterEachOperation)
+
+                robot.turnRobot(degrees=45, speed=8, direction=right)
+
+                sleep(sleepAfterEachOperation)
+
+                # Before pipe approaching
+                robot.driveRobot(distance=9, speed=5, sensors=[])
+
+                sleep(sleepAfterEachOperation)
+
+                robot.turnRobot(degrees=230, speed=20, direction=right)
+
+                sleep(sleepAfterEachOperation)
+
+                extra.motorsOn()
+
+                sleep(sleepAfterEachOperation)
+
+                # Last straight before pipe approach
+                robot.driveBack(distance=3, speed=1)
+
+                sleep(1)
+
+                extra.valveRelease()
+
+                sleep(2)
+
+                extra.motorsOff()
+
+                # Leaving first recuperator
+                robot.driveRobot(distance=6, speed=5, sensors=[sensorLeft, sensorCenter, sensorRight])
+
+                sleep(sleepAfterEachOperation)
+
+                robot.turnRobot(degrees=90, speed=15, direction=right)
+
+                sleep(1)
+
+                robot.driveRobot(distance=70, speed=20, sensors=[sensorLeft, sensorCenter])
+
+                sleep(sleepAfterEachOperation)
+
+                robot.turnRobot(degrees=45, speed=15, direction=right)
+
+                # Bee deploy
+                servoBee.turn(165)
+                sleep(sleepAfterEachOperation)
+
+                robot.driveRobot(distance=20, speed=10, sensors=[])
+
+                sleep(sleepAfterEachOperation)
+
+                robot.turnRobot(degrees=135, speed=8, direction=left)
+
+                sleep(sleepAfterEachOperation)
+
+                # Bee close
+                servoBee.turn(50)
+
+                # robot.turnRobot(degrees=90, speed=15, direction=right)
 
                 # Away from the wall
                 robot.driveRobot(distance=10, speed=10, sensors=[sensorLeft, sensorCenter])

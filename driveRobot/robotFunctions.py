@@ -648,11 +648,11 @@ class RobotHelpers:
 
     def valveRelease(self):
         k = 0
-        while k < 35:
+        while k < 30:
             GPIO.output(self.valvePin, 1)
             sleep(0.02)
             GPIO.output(self.valvePin, 0)
-            sleep(0.05)
+            sleep(0.06)
             k += 1
 
         sleep(1)
@@ -663,11 +663,10 @@ class RobotHelpers:
             GPIO.output(self.valvePin, 1)
             sleep(0.02)
             GPIO.output(self.valvePin, 0)
-            sleep(0.07)
+            sleep(0.08)
             k += 1
 
     def timer(self, drive):
-        progressbar.streams.wrap_stderr()
 
         end_time = time.time() + 99
 
