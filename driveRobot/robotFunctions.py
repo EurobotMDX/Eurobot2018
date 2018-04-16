@@ -385,7 +385,7 @@ class Driving:
                     speed -= 1
 
                     if speed == speedLimits[0]:
-                        print("Turn speed reduced! Current speed: {} | Travelled distance: {}".format(speed,
+                        log.info("Turn speed reduced! Current speed: {} | Travelled distance: {}".format(speed,
                                                                                                       travelledDistance))
 
             if travelledDistance > stoppingThresholds[1]:
@@ -394,7 +394,7 @@ class Driving:
                     speed -= 1
 
                     if speed == speedLimits[1]:
-                        print("Turn speed reduced! Current speed: {} | Travelled distance: {}".format(speed,
+                        log.info("Turn speed reduced! Current speed: {} | Travelled distance: {}".format(speed,
                                                                                                       travelledDistance))
 
         return speed
@@ -579,7 +579,7 @@ class Driving:
                 self.mainRobot.stop()
 
         else:
-            print("Error while robot turning the robot!")
+            log.error("Error while robot turning the robot!")
 
     def sensorTest(self, sensors, timein=10):
         """
@@ -667,6 +667,8 @@ class RobotHelpers:
             k += 1
 
     def timer(self, drive):
+        progressbar.streams.wrap_stderr()
+
         end_time = time.time() + 99
 
         while time.time() < end_time:
@@ -675,4 +677,5 @@ class RobotHelpers:
         drive.stopDriving()
 
         log.debug("Shutting down! Time is over")
+
         thread.interrupt_main()

@@ -65,7 +65,7 @@ if __name__ == '__main__':
 
         log.debug("Side selection switch value: %s" % sideSwitch())
 
-        sleepAfterEachOperation = 0.7
+        sleepAfterEachOperation = 0.6
 
         while not startSwitch():
             pass
@@ -114,7 +114,7 @@ if __name__ == '__main__':
                 sleep(sleepAfterEachOperation)
 
                 # Last straight before pipe approach
-                robot.driveRobot(distance=3, speed=1, sensors=[])
+                robot.driveRobot(distance=2.7, speed=1, sensors=[])
 
                 sleep(1)
 
@@ -124,8 +124,9 @@ if __name__ == '__main__':
 
                 extra.motorsOff()
 
-                # Leaving First recuperator
+                # Leaving first recuperator
                 robot.driveBack(distance=3, speed=2)
+
                 sleep(sleepAfterEachOperation)
 
                 robot.turnRobot(degrees=90, speed=15, direction=right)
@@ -177,7 +178,8 @@ if __name__ == '__main__':
 
                 sleep(sleepAfterEachOperation)
 
-                robot.turnRobot(degrees=61, speed=5, direction=left)
+                # Last turn under the pipe
+                robot.turnRobot(degrees=58, speed=5, direction=left)
 
                 sleep(sleepAfterEachOperation)
 
@@ -187,15 +189,16 @@ if __name__ == '__main__':
 
                 servoArm.turn(degrees=86)
 
-                robot.driveRobot(distance=4, speed=1, sensors=[])
+                robot.driveRobot(distance=4.5, speed=1, sensors=[])
 
                 sleep(sleepAfterEachOperation + 1)
 
                 extra.valveRelease()
 
-                sleep(2)
+                sleep(1)
 
-                servoArm.turn(degrees=160)
+                # Do not close the arm
+                # servoArm.turn(degrees=160)
 
         except KeyboardInterrupt:
             log.debug("\nStopped by user\n")
