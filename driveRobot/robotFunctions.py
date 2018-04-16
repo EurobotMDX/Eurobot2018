@@ -1,7 +1,7 @@
 import time
 import RPi.GPIO as GPIO
 import sys
-
+import thread
 sys.path.insert(0, '..')
 import settings as config
 from terminalColors import bcolors as tc
@@ -217,7 +217,7 @@ class Driving:
         GPIO.output(self.valvePin, GPIO.LOW)
 
     # centerSensorOn=True, rightSensorOn=True, leftSensorOn=True
-    # , centerSensorOn, rightSensorOn, leftSensorOn
+    # centerSensorOn, rightSensorOn, leftSensorOn
     def checkForObstacle(self, sensors, obstacleClear=True):
         """
         This function check the value for sensors and determince if there is any obstacle on the way.
@@ -242,6 +242,11 @@ class Driving:
                     log.info("Obstacle for sensor {} distance: {}".format(sensor.position, sensor.lastReading))
 
         return obstacle
+
+    def stopDriving(self):
+        self.mainRobot.stop()
+        log.info("Emergency stop drive")
+
 
     def setValve(self, state=True):
         if (state):
@@ -643,20 +648,31 @@ class RobotHelpers:
 
     def valveRelease(self):
         k = 0
-        while k < 30:
+        while k < 35:
             GPIO.output(self.valvePin, 1)
             sleep(0.02)
             GPIO.output(self.valvePin, 0)
-            sleep(0.06)
+            sleep(0.05)
             k += 1
 
         sleep(1)
 
         k = 0
 
-        while k < 2:
+        while k < 3:
             GPIO.output(self.valvePin, 1)
-            sleep(0.04)
+            sleep(0.02)
             GPIO.output(self.valvePin, 0)
-            sleep(0.06)
+            sleep(0.07)
             k += 1
+
+    def timer(self, drive):
+        end_time = time.time() + 99
+
+        while time.time() < end_time:
+            sleep(0.00001)
+
+        drive.stopDriving()
+
+        log.debug("Shutting down! Time is over")
+        thread.interrupt_main()

@@ -9,6 +9,7 @@ from servoControl import servoControl
 from Switches import *
 from Sensor import *
 from settings import logging as log
+import thread
 
 if __name__ == '__main__':
     canRun = False
@@ -64,133 +65,143 @@ if __name__ == '__main__':
 
         log.debug("Side selection switch value: %s" % sideSwitch())
 
-        # extra.motorsOff()
-
-        # extra.motorsOff()
-        # extra.valveRelease()
+        sleepAfterEachOperation = 0.7
 
         while not startSwitch():
             pass
 
-        sleep(0.5)
+        sleep(sleepAfterEachOperation)
+
+        # Create two threads as follows
+        try:
+            thread.start_new_thread(extra.timer, (robot,))
+            log.info("Start timer thread")
+
+        except Exception as error:
+            log.error("Error: unable to start thread %s" %error)
 
         try:
             start_time = time.time()
 
             if True:
-                robot.driveRobot(distance=10, speed=15, sensors=[sensorLeft, sensorCenter])
+                robot.driveRobot(distance=10, speed=10, sensors=[sensorLeft, sensorCenter])
 
-                sleep(0.5)
+                sleep(sleepAfterEachOperation)
 
-                robot.turnRobot(degrees=90, speed=5, direction=left)
+                robot.turnRobot(degrees=90, speed=10, direction=left)
 
-                sleep(1)
+                sleep(sleepAfterEachOperation)
 
-                robot.driveRobot(distance=52, speed=20, sensors=[sensorLeft, sensorCenter, sensorRight])
+                robot.driveRobot(distance=54, speed=15, sensors=[sensorLeft, sensorCenter, sensorRight])
 
-                sleep(0.5)
+                sleep(sleepAfterEachOperation)
 
-                robot.turnRobot(degrees=45, speed=5, direction=left)
+                robot.turnRobot(degrees=45, speed=8, direction=left)
 
-                sleep(0.5)
+                sleep(sleepAfterEachOperation)
 
                 # Before pipe approaching
-                robot.driveRobot(distance=11, speed=5, sensors=[])
+                robot.driveRobot(distance=9, speed=5, sensors=[])
 
-                sleep(0.5)
+                sleep(sleepAfterEachOperation)
 
-                robot.turnRobot(degrees=45, speed=3, direction=left)
+                robot.turnRobot(degrees=45, speed=8, direction=left)
 
-                sleep(0.5)
+                sleep(sleepAfterEachOperation)
 
                 extra.motorsOn()
 
-                sleep(0.5)
+                sleep(sleepAfterEachOperation)
 
+                # Last straight before pipe approach
                 robot.driveRobot(distance=3, speed=1, sensors=[])
 
-                sleep(2)
+                sleep(1)
 
                 extra.valveRelease()
 
-                sleep(4)
+                sleep(2)
 
                 extra.motorsOff()
 
                 # Leaving First recuperator
                 robot.driveBack(distance=3, speed=2)
-                sleep(1)
+                sleep(sleepAfterEachOperation)
 
                 robot.turnRobot(degrees=90, speed=15, direction=right)
 
                 sleep(1)
 
                 robot.driveRobot(distance=70, speed=20, sensors=[sensorCenter, sensorRight])
+                # robot.driveRobot(distance=70, speed=20, sensors=[])
 
-                sleep(0.5)
+                sleep(sleepAfterEachOperation)
 
                 # Bee deploy
                 servoBee.turn(165)
 
                 robot.driveRobot(distance=20, speed=20, sensors=[])
 
-                sleep(0.5)
+                sleep(sleepAfterEachOperation)
 
                 robot.turnRobot(degrees=90, speed=8, direction=right)
 
-                sleep(1)
+                sleep(sleepAfterEachOperation)
 
                 # Bee close
                 servoBee.turn(50)
 
                 robot.turnRobot(degrees=90, speed=15, direction=right)
 
-            # if True:
-                sleep(0.5)
+                sleep(sleepAfterEachOperation)
 
-                robot.driveRobot(distance=10, speed=10, sensors=[sensorLeft, sensorCenter, sensorRight])
+                # Away from the wall
+                robot.driveRobot(distance=10, speed=10, sensors=[sensorLeft, sensorCenter])
 
-                sleep(0.5)
+                sleep(sleepAfterEachOperation)
 
                 robot.turnRobot(degrees=90, speed=15, direction=left)
 
-                sleep(0.5)
+                sleep(sleepAfterEachOperation)
 
+                # Straight before second pipe
                 robot.driveRobot(distance=25, speed=10, sensors=[sensorCenter, sensorRight])
 
-                sleep(0.5)
+                sleep(sleepAfterEachOperation)
 
                 robot.turnRobot(degrees=45, speed=15, direction=left)
 
-                sleep(0.5)
+                sleep(sleepAfterEachOperation)
 
-                robot.driveRobot(distance=14, speed=10, sensors=[])
+                robot.driveRobot(distance=15, speed=10, sensors=[])
 
-                sleep(0.5)
+                sleep(sleepAfterEachOperation)
 
-                robot.turnRobot(degrees=55, speed=4, direction=left)
+                robot.turnRobot(degrees=61, speed=5, direction=left)
 
-                sleep(0.5)
+                sleep(sleepAfterEachOperation)
 
                 servoPipe.turn(13)
 
-                sleep(1)
+                sleep(sleepAfterEachOperation)
 
-                servoArm.turn(degrees=85)
+                servoArm.turn(degrees=86)
 
-                sleep(0.5)
+                robot.driveRobot(distance=4, speed=1, sensors=[])
+
+                sleep(sleepAfterEachOperation + 1)
 
                 extra.valveRelease()
 
-                sleep(5)
+                sleep(2)
 
                 servoArm.turn(degrees=160)
-
 
         except KeyboardInterrupt:
             log.debug("\nStopped by user\n")
 
             extra.motorsOff()
+            servoArm.turn(160)
 
             GPIO.cleanup()
 
@@ -202,7 +213,13 @@ if __name__ == '__main__':
 
             log.info("Finished execution, clean up. Time elapsed: {}".format(elapsed_time))
 
+            extra.motorsOff()
+
+            servoArm.turn(160)
+
             GPIO.cleanup()
+
+
 
     else:
         log.info(tc.FAIL + tc.UNDERLINE + "Could not start the program please check the conditions of the robot!" + tc.ENDC)

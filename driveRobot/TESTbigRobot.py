@@ -45,9 +45,7 @@ if __name__ == '__main__':
         canRun = False
         log.error("Could not create main objects.!!! Error: %s" % error)
 
-    # TODO enable this function
     if robot.checkStatus() and canRun:
-    # if canRun:
         if sideSwitch() == "Orange":
             log.info("Set 'Orange servo init, position: 8")
 
@@ -64,11 +62,6 @@ if __name__ == '__main__':
 
         log.debug("Side selection switch value: %s" % sideSwitch())
 
-        # extra.motorsOff()
-
-        # extra.motorsOff()
-        # extra.valveRelease()
-
         while not startSwitch():
             pass
 
@@ -77,7 +70,9 @@ if __name__ == '__main__':
         try:
             start_time = time.time()
 
-            if True:
+            robot.turnRobot(degrees=180, speed=20, direction=left)
+
+            if False:
                 robot.driveRobot(distance=10, speed=15, sensors=[sensorLeft, sensorCenter])
 
                 sleep(0.5)

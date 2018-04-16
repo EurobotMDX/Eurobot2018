@@ -1,5 +1,4 @@
 Eurobot project 2018
-
 ======
 
 # Development Process
@@ -31,6 +30,12 @@ logger = logging.getLogger('Adafruit_I2C.Device')
 logger.setLevel(logging.CRITICAL)
 
 ### Sensors SRF08
+
+
+### SSH on AirPen 
+Skip ssh hostcheck:
+
+ssh -o "UserKnownHostsFile=/dev/null" -o "StrictHostKeyChecking=no" mate@eurobotat.local
 
 ## Docs:
 http://coecsl.ece.illinois.edu/ge423/DevantechSRF08UltraSonicRanger.pdf
