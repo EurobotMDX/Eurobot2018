@@ -59,22 +59,22 @@ if __name__ == '__main__':
         if sideSelected == "Orange":
             log.info("Setting up init positions for 'Orange' site")
 
-            servoPipe.turn(98)
-            servoBee.turn(50)
-            servoArm.turn(160)
+            servoPipe.turn(125) # 125 Initial, 20 Deployed
+            servoBee.turn(11) # 11 Initial, 180 Deployed
+            servoArm.turn(165) # 165 Initial, 100 Deployed
 
         else:
             log.info("Setting up init positions for 'Green' site")
 
-            servoPipe.turn(10)
-            servoBee.turn(50)
-            servoArm.turn(160)
+            servoPipe.turn(15)
+            servoBee.turn(11)
+            servoArm.turn(165)
 
         log.debug("Side selection switch value: %s" % sideSwitch())
 
         log.debug("Expecting for start switch")
 
-        sleepAfterEachOperation = 0.6
+        sleepAfterEachOperation = 1
 
         while not startSwitch():
             pass
@@ -98,11 +98,11 @@ if __name__ == '__main__':
 
                 sleep(sleepAfterEachOperation)
 
-                robot.turnRobot(degrees=90, speed=10, direction=left)
+                robot.turnRobot(degrees=90, speed=8, direction=left)
 
                 sleep(sleepAfterEachOperation)
 
-                robot.driveRobot(distance=54, speed=15, sensors=[sensorLeft, sensorCenter, sensorRight])
+                robot.driveRobot(distance=52, speed=15, sensors=[sensorLeft, sensorCenter, sensorRight])
 
                 sleep(sleepAfterEachOperation)
 
@@ -111,7 +111,7 @@ if __name__ == '__main__':
                 sleep(sleepAfterEachOperation)
 
                 # Before pipe approaching
-                robot.driveRobot(distance=9, speed=5, sensors=[])
+                robot.driveRobot(distance=11, speed=5, sensors=[])
 
                 sleep(sleepAfterEachOperation)
 
@@ -124,7 +124,7 @@ if __name__ == '__main__':
                 sleep(sleepAfterEachOperation)
 
                 # Last straight before pipe approach
-                robot.driveRobot(distance=2.7, speed=1, sensors=[])
+                robot.driveRobot(distance=4, speed=1, sensors=[])
 
                 sleep(1)
 
@@ -149,7 +149,7 @@ if __name__ == '__main__':
                 sleep(sleepAfterEachOperation)
 
                 # Bee deploy
-                servoBee.turn(165)
+                servoBee.turn(180)
 
                 robot.driveRobot(distance=20, speed=20, sensors=[])
 
@@ -160,7 +160,7 @@ if __name__ == '__main__':
                 sleep(sleepAfterEachOperation)
 
                 # Bee close
-                servoBee.turn(50)
+                servoBee.turn(11)
 
                 robot.turnRobot(degrees=90, speed=15, direction=right)
 
@@ -176,7 +176,7 @@ if __name__ == '__main__':
                 sleep(sleepAfterEachOperation)
 
                 # Straight before second pipe
-                robot.driveRobot(distance=25, speed=10, sensors=[sensorCenter, sensorRight])
+                robot.driveRobot(distance=32, speed=10, sensors=[sensorCenter, sensorRight])
 
                 sleep(sleepAfterEachOperation)
 
@@ -184,33 +184,39 @@ if __name__ == '__main__':
 
                 sleep(sleepAfterEachOperation)
 
-                robot.driveRobot(distance=15, speed=10, sensors=[])
+                robot.driveRobot(distance=8, speed=10, sensors=[])
 
                 sleep(sleepAfterEachOperation)
 
                 # Last turn under the pipe
-                robot.turnRobot(degrees=58, speed=5, direction=left)
+                robot.turnRobot(degrees=53, speed=5, direction=left)
 
                 sleep(sleepAfterEachOperation)
 
-                servoPipe.turn(13)
+                servoPipe.turn(20)
 
                 sleep(sleepAfterEachOperation)
 
-                servoArm.turn(degrees=86)
+                servoArm.turn(degrees=100)
 
-                robot.driveRobot(distance=4.5, speed=1, sensors=[])
+                robot.driveRobot(distance=8, speed=1, sensors=[])
 
                 sleep(sleepAfterEachOperation + 1)
 
-                extra.valveRelease()
+                robot.turnRobot(degrees=9, speed=5, direction=left)
 
                 sleep(1)
+
+                extra.valveRelease()
+
+                sleep(2)
 
                 # Do not close the arm
                 # servoArm.turn(degrees=160)
 
             else:
+
+                sleep(10)
 
                 robot.driveRobot(distance=10, speed=10, sensors=[sensorCenter, sensorRight])
 

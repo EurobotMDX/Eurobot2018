@@ -39,4 +39,12 @@ class Compass:
     def setMode(self, mode):
         self.device.write_byte_data(self.address, 0x02, mode)
 
+    def test(self):
 
+        while True:
+            print ("Heading {}".format(heading()))
+
+
+
+if __name__ == '__main__':
+    c = Compass()

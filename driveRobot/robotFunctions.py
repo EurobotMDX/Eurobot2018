@@ -211,6 +211,7 @@ class Driving:
         self.sensorThreshold = config.robotSettings['sensorThreshold']
         self.encoderMaxValue = config.robotSettings['encoderMaxValue']
         self.robotType = config.robotSettings['robotType']
+        self.acceleration = 3
 
         # Setup Valve
         self.valvePin = 40
@@ -437,7 +438,8 @@ class Driving:
         stoppingThresholds = self.calcStoppingDriveThreshold(speed)
 
         # Change acceleration mode if necessary
-        # changeAcc(10)
+        self.changeAcc(self.acceleration)
+
         finishedLog = False
 
         while encoder1Reading <= encoderDestination and encoder2Reading <= encoderDestination:
@@ -497,7 +499,7 @@ class Driving:
         stoppingThresholds = self.calcStoppingDriveThreshold(speed)
 
         # Change acceleration mode if necessary
-        # changeAcc(10)
+        # changeAcc(self.acceleration)
 
         encoderDestination = self.encoderMaxValue - encoderDestination
 
@@ -548,6 +550,8 @@ class Driving:
         encoder2Reading = self.mainRobot.read_encoder2()
 
         finishedLog = False
+
+        self.changeAcc(self.acceleration)
 
         if direction:
             while encoder1Reading <= encoderDestination:
@@ -634,9 +638,17 @@ class Driving:
         return canRun
 
     def changeAcc(self, value=5):
+        """
+        This changes an acceleration if none then returs nothing and does not change the mode
+        :param value:
+        :return:
+        """
         log.info("Changed acceleration to: {}".format(value))
-        self.mainRobot.setAcceleration(value)
 
+        if value == None:
+            return
+
+        self.mainRobot.setAcceleration(value)
 
 class RobotHelpers:
     def __init__(self):

@@ -46,17 +46,18 @@ if __name__ == '__main__':
         log.error("Could not create main objects.!!! Error: %s" % error)
 
     if robot.checkStatus() and canRun:
-        if sideSwitch() == "Orange":
-            log.info("Set 'Orange servo init, position: 8")
 
-            servoPipe.turn(98)
-            servoBee.turn(50)
-            servoArm.turn(160)
-
-        else:
-            log.info("Set 'Orange servo init, position: 8")
-
-            servoPipe.turn(8)
+        # if sideSwitch() == "Orange":
+        log.info(sideSwitch())
+        #
+        #     servoPipe.turn(98)
+        #     servoBee.turn(20)
+        #     servoArm.turn(160)
+        #
+        # else:
+        #
+        # log.info("Set 'Orange servo init, position: 8")
+        # servoPipe.turn(8)
 
         log.debug("Expecting for start switch")
 
@@ -69,62 +70,77 @@ if __name__ == '__main__':
 
         try:
             start_time = time.time()
+            sleep(1)
+
+            servoBee.turn(17)
+            sleep(2)
+            # servoBee.turn(180)
+            servoBee.turn(180)
 
             robot.turnRobot(degrees=180, speed=20, direction=left)
 
-            if False:
-                robot.driveRobot(distance=10, speed=15, sensors=[sensorLeft, sensorCenter])
+            robot.driveRobot(distance=10, speed=15, sensors=[sensorLeft, sensorCenter])
 
-                sleep(0.5)
+            sleep(1)
 
-                robot.turnRobot(degrees=180, speed=5, direction=left)
+            servoPipe.turn(8)
 
-                sleep(0.5)
+            sleep(1)
 
-                robot.driveRobot(distance=10, speed=20, sensors=[sensorLeft, sensorCenter, sensorRight])
+            servoPipe.turn(108)
 
-                sleep(0.5)
+            sleep(1)
 
-                robot.turnRobot(degrees=180, speed=5, direction=left)
+            servoPipe.turn(50)
 
-                sleep(0.5)
+            robot.turnRobot(degrees=180, speed=5, direction=left)
 
-                robot.driveRobot(distance=50, speed=30, sensors=[sensorLeft, sensorCenter, sensorRight])
+            sleep(0.5)
 
-                sleep(0.5)
+            robot.driveRobot(distance=10, speed=20, sensors=[sensorLeft, sensorCenter, sensorRight])
 
-                extra.motorsOn()
+            sleep(0.5)
 
-                sleep(1)
+            robot.turnRobot(degrees=180, speed=5, direction=left)
 
-                extra.valveRelease()
+            sleep(0.5)
 
-                sleep(2)
+            robot.driveRobot(distance=50, speed=30, sensors=[sensorLeft, sensorCenter, sensorRight])
 
-                extra.motorsOff()
+            sleep(0.5)
 
-                robot.driveBack(distance=3, speed=2)
-                sleep(0.5)
+            extra.motorsOn()
 
-                # Bee deploy
-                servoBee.turn(165)
+            sleep(1)
 
-                # Bee close
-                servoBee.turn(50)
+            extra.valveRelease()
 
-                robot.turnRobot(degrees=90, speed=4, direction=left)
+            sleep(2)
 
-                servoPipe.turn(13)
+            extra.motorsOff()
 
-                servoArm.turn(degrees=85)
+            robot.driveBack(distance=3, speed=2)
+            sleep(0.5)
 
-                sleep(0.5)
+            # Bee deploy
+            servoBee.turn(165)
 
-                extra.valveRelease()
+            # Bee close
+            servoBee.turn(50)
 
-                sleep(2)
+            robot.turnRobot(degrees=90, speed=4, direction=left)
 
-                servoArm.turn(degrees=160)
+            servoPipe.turn(13)
+
+            servoArm.turn(degrees=85)
+
+            sleep(0.5)
+
+            extra.valveRelease()
+
+            sleep(2)
+
+            servoArm.turn(degrees=160)
 
 
         except KeyboardInterrupt:
