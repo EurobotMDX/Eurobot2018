@@ -6,6 +6,8 @@ sys.path.insert(0, '..')
 import settings as config
 from terminalColors import bcolors as tc
 
+from sensorSmallRobot import *
+
 from time import sleep
 
 log = config.logging
@@ -40,7 +42,6 @@ MD25_REGISTER_SOFTWARE_REV = 0x0D
 MD25_REGISTER_ACCELERATION_RATE = 0x0E
 MD25_REGISTER_MODE = 0x0F
 MD25_REGISTER_COMMAND = 0x10
-
 
 class md25:
     def __init__(self, mode=MD25_DEFAULT_MODE, bus=1, address=MD25_DEFAULT_ADDRESS):
@@ -208,7 +209,8 @@ class Driving:
         self.circumferenceOfCircle = config.robotSettings['circumferenceOfCircle']
         self.oneEncMM = config.robotSettings['oneEncMM']
         self.sensorThreshold = config.robotSettings['sensorThreshold']
-        self.encoderMaxValue = 4244897280
+        self.encoderMaxValue = config.robotSettings['encoderMaxValue']
+        self.robotType = config.robotSettings['robotType']
 
         # Setup Valve
         self.valvePin = 40
@@ -216,8 +218,6 @@ class Driving:
         GPIO.setup(self.valvePin, GPIO.OUT)
         GPIO.output(self.valvePin, GPIO.LOW)
 
-    # centerSensorOn=True, rightSensorOn=True, leftSensorOn=True
-    # centerSensorOn, rightSensorOn, leftSensorOn
     def checkForObstacle(self, sensors, obstacleClear=True):
         """
         This function check the value for sensors and determince if there is any obstacle on the way.
@@ -228,25 +228,39 @@ class Driving:
         """
         obstacle = False
 
-        for sensor in sensors:
-            sensor.reqDistance()
+        if self.robotType == "main":
 
-        if len(sensors) > 0:
-            sleep(sensors[0].delay_time)
+            for sensor in sensors:
+                sensor.reqDistance()
 
-        for sensor in sensors:
-            if sensor.readDistanceResponse() <= self.sensorThreshold:
-                obstacle = True
+            if len(sensors) > 0:
+                sleep(sensors[0].delay_time)
 
-                if obstacleClear:
-                    log.info("Obstacle for sensor {} distance: {}".format(sensor.position, sensor.lastReading))
+            for sensor in sensors:
+                if sensor.readDistanceResponse() <= self.sensorThreshold:
+                    obstacle = True
 
-        return obstacle
+                    if obstacleClear:
+                        log.info("Obstacle for sensor {} distance: {}".format(sensor.position, sensor.lastReading))
+
+            return obstacle
+
+        if self.robotType == "small":
+            for sensor in sensors:
+
+                distance = getSensorHCValue(sensor)
+
+                if distance <= self.sensorThreshold:
+                    obstacle = True
+
+                    if obstacleClear:
+                        log.info("Obstacle for sensor {} distance: {}".format(sensor, distance))
+
+            return obstacle
 
     def stopDriving(self):
         self.mainRobot.stop()
         log.info("Emergency stop drive")
-
 
     def setValve(self, state=True):
         if (state):
@@ -336,13 +350,13 @@ class Driving:
         return [threshold1, threshold2]
 
     def speedControlDrive(self, speed, travelledDistance, stoppingThresholds):
-        '''
+        """
         This function helps robot to reduce the speed when a robot is driving. It is due to achieve more accuracy when driving.
         :param speed:
         :param travelledDistance:
         :param stoppingThresholds:
         :return: speed
-        '''
+        """
 
         speedLimits = [20, 2]
 
@@ -438,9 +452,6 @@ class Driving:
             else:
                 self.mainRobot.drive(speed, speed)
                 obstacleClear = True
-
-            # else:
-            #     self.mainRobot.drive(speed, speed)
 
             encodersAvg = (encoder1Reading + encoder1Reading) / 2.0
 
@@ -596,11 +607,11 @@ class Driving:
 
         while countdown > endTime:
 
+
             for sensor in sensors:
-                printVals = printVals + "Sensor: {} value: {}  |  ".format(sensor.position, sensor.getSensorValue())
+                printVals = printVals + "Sensor: {} value: {}  |  \n".format(sensor.position, sensor.getSensorValue())
 
             print(printVals)
-
 
         else:
             print("Finish sensor test!")
