@@ -211,7 +211,7 @@ class Driving:
         self.sensorThreshold = config.robotSettings['sensorThreshold']
         self.encoderMaxValue = config.robotSettings['encoderMaxValue']
         self.robotType = config.robotSettings['robotType']
-        self.acceleration = 3
+        self.acceleration = 1
 
         # Setup Valve
         self.valvePin = 40

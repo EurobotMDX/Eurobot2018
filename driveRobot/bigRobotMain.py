@@ -27,7 +27,7 @@ if __name__ == '__main__':
         # Initialize servos
 
         servoPipe = servoControl("Pipe servo", 0, 60)
-        servoArm = servoControl("Arm servo", 1, 60)
+        # servoArm = servoControl("Arm servo", 1, 60)
         servoBee = servoControl("Bee servo", 2, 60)
 
         sensorCenter = Sensor(0x72, "centre")
@@ -49,6 +49,9 @@ if __name__ == '__main__':
     # TODO enable this function
     if robot.checkStatus() and canRun:
 
+        while not startSwitch():
+            pass
+
         if sideSwitch() == "Orange":
 
             sideSelected = "Orange"
@@ -61,23 +64,20 @@ if __name__ == '__main__':
 
             servoPipe.turn(125) # 125 Initial, 20 Deployed
             servoBee.turn(11) # 11 Initial, 180 Deployed
-            servoArm.turn(165) # 165 Initial, 100 Deployed
+            # servoArm.turn(165) # 165 Initial, 100 Deployed
 
         else:
             log.info("Setting up init positions for 'Green' site")
 
-            servoPipe.turn(15)
+            servoPipe.turn(20)
             servoBee.turn(11)
-            servoArm.turn(165)
+            # servoArm.turn(165)
 
         log.debug("Side selection switch value: %s" % sideSwitch())
 
         log.debug("Expecting for start switch")
 
         sleepAfterEachOperation = 1
-
-        while not startSwitch():
-            pass
 
         sleep(sleepAfterEachOperation)
 
@@ -166,6 +166,7 @@ if __name__ == '__main__':
 
                 sleep(sleepAfterEachOperation)
 
+                '''
                 # Away from the wall
                 robot.driveRobot(distance=10, speed=10, sensors=[sensorLeft, sensorCenter])
 
@@ -213,10 +214,9 @@ if __name__ == '__main__':
 
                 # Do not close the arm
                 # servoArm.turn(degrees=160)
+                '''
 
             else:
-
-                sleep(10)
 
                 robot.driveRobot(distance=10, speed=10, sensors=[sensorCenter, sensorRight])
 
@@ -226,20 +226,20 @@ if __name__ == '__main__':
 
                 sleep(sleepAfterEachOperation)
 
-                robot.driveRobot(distance=54, speed=15, sensors=[sensorLeft, sensorCenter])
+                robot.driveRobot(distance=68, speed=15, sensors=[sensorLeft, sensorCenter])
 
                 sleep(sleepAfterEachOperation)
 
-                robot.turnRobot(degrees=45, speed=8, direction=right)
+                robot.turnRobot(degrees=45, speed=8, direction=left)
 
                 sleep(sleepAfterEachOperation)
 
                 # Before pipe approaching
-                robot.driveRobot(distance=9, speed=5, sensors=[])
+                robot.driveBack(distance=11, speed=2)
 
                 sleep(sleepAfterEachOperation)
 
-                robot.turnRobot(degrees=230, speed=20, direction=right)
+                robot.turnRobot(degrees=45, speed=8, direction=left)
 
                 sleep(sleepAfterEachOperation)
 
@@ -250,7 +250,15 @@ if __name__ == '__main__':
                 # Last straight before pipe approach
                 robot.driveBack(distance=3, speed=1)
 
-                sleep(1)
+                # sleep(0.2)
+
+                # robot.turnRobot(degrees=2, speed=1, direction=left)
+
+                # sleep(0.2)
+
+                # robot.turnRobot(degrees=2, speed=1, direction=right)
+
+                sleep(sleepAfterEachOperation)
 
                 extra.valveRelease()
 
@@ -271,25 +279,36 @@ if __name__ == '__main__':
 
                 sleep(sleepAfterEachOperation)
 
-                robot.turnRobot(degrees=45, speed=15, direction=right)
-
-                # Bee deploy
-                servoBee.turn(165)
-                sleep(sleepAfterEachOperation)
-
                 robot.driveRobot(distance=20, speed=10, sensors=[])
 
                 sleep(sleepAfterEachOperation)
 
-                robot.turnRobot(degrees=135, speed=8, direction=left)
+                robot.turnRobot(degrees=90, speed=15, direction=right)
+
+                sleep(sleepAfterEachOperation)
+
+                robot.driveRobot(distance=8, speed=10, sensors=[])
+
+                sleep(sleepAfterEachOperation)
+
+                # Bee deploy
+                servoBee.turn(180)
+                sleep(sleepAfterEachOperation)
+
+                robot.turnRobot(degrees=225, speed=15, direction=left)
 
                 sleep(sleepAfterEachOperation)
 
                 # Bee close
-                servoBee.turn(50)
+                servoBee.turn(11)
+
+                sleep(sleepAfterEachOperation)
+
+                robot.driveBack(distance=8, speed=2)
 
                 # robot.turnRobot(degrees=90, speed=15, direction=right)
 
+                '''
                 # Away from the wall
                 robot.driveRobot(distance=10, speed=10, sensors=[sensorLeft, sensorCenter])
 
@@ -317,11 +336,11 @@ if __name__ == '__main__':
 
                 sleep(sleepAfterEachOperation)
 
-                servoPipe.turn(13)
+                servoPipe.turn(125)
 
                 sleep(sleepAfterEachOperation)
 
-                servoArm.turn(degrees=86)
+                servoArm.turn(degrees=100)
 
                 robot.driveRobot(distance=4.5, speed=1, sensors=[])
 
@@ -333,12 +352,11 @@ if __name__ == '__main__':
 
                 # Do not close the arm
                 # servoArm.turn(degrees=160)
-
+                '''
         except KeyboardInterrupt:
             log.debug("\nStopped by user\n")
 
             extra.motorsOff()
-            servoArm.turn(160)
 
             GPIO.cleanup()
 
@@ -352,11 +370,7 @@ if __name__ == '__main__':
 
             extra.motorsOff()
 
-            servoArm.turn(160)
-
             GPIO.cleanup()
-
-
 
     else:
         log.info(tc.FAIL + tc.UNDERLINE + "Could not start the program please check the conditions of the robot!" + tc.ENDC)
