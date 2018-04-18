@@ -212,7 +212,7 @@ class Driving:
         self.encoderMaxValue = config.robotSettings['encoderMaxValue']
         self.robotType = config.robotSettings['robotType']
         self.acceleration = 1
-
+        self.changeAcc(1)
         # Setup Valve
         self.valvePin = 40
         GPIO.setmode(GPIO.BOARD)
@@ -438,7 +438,7 @@ class Driving:
         stoppingThresholds = self.calcStoppingDriveThreshold(speed)
 
         # Change acceleration mode if necessary
-        self.changeAcc(self.acceleration)
+        # self.changeAcc(self.acceleration)
 
         finishedLog = False
 
@@ -551,7 +551,7 @@ class Driving:
 
         finishedLog = False
 
-        self.changeAcc(self.acceleration)
+        # self.changeAcc(self.acceleration)
 
         if direction:
             while encoder1Reading <= encoderDestination:

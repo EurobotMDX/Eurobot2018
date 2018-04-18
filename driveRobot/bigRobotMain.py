@@ -77,7 +77,7 @@ if __name__ == '__main__':
 
         log.debug("Expecting for start switch")
 
-        sleepAfterEachOperation = 1
+        sleepAfterEachOperation = 1.1
 
         sleep(sleepAfterEachOperation)
 
@@ -94,15 +94,17 @@ if __name__ == '__main__':
 
             if sideSelected == "Orange":
 
+                sleep(2)
+
                 robot.driveRobot(distance=10, speed=10, sensors=[sensorLeft, sensorCenter])
 
                 sleep(sleepAfterEachOperation)
 
-                robot.turnRobot(degrees=90, speed=8, direction=left)
+                robot.turnRobot(degrees=90, speed=5, direction=left)
 
                 sleep(sleepAfterEachOperation)
 
-                robot.driveRobot(distance=52, speed=15, sensors=[sensorLeft, sensorCenter, sensorRight])
+                robot.driveRobot(distance=53, speed=15, sensors=[sensorLeft, sensorCenter, sensorRight])
 
                 sleep(sleepAfterEachOperation)
 
@@ -127,6 +129,10 @@ if __name__ == '__main__':
                 robot.driveRobot(distance=4, speed=1, sensors=[])
 
                 sleep(1)
+
+                extra.valveRelease()
+
+                sleep(2)
 
                 extra.valveRelease()
 
@@ -218,19 +224,21 @@ if __name__ == '__main__':
 
             else:
 
+                sleep(2)
+
                 robot.driveRobot(distance=10, speed=10, sensors=[sensorCenter, sensorRight])
 
                 sleep(sleepAfterEachOperation)
 
-                robot.turnRobot(degrees=90, speed=10, direction=right)
+                robot.turnRobot(degrees=90, speed=5, direction=right)
 
                 sleep(sleepAfterEachOperation)
 
-                robot.driveRobot(distance=68, speed=15, sensors=[sensorLeft, sensorCenter])
+                robot.driveRobot(distance=69, speed=15, sensors=[sensorCenter])
 
                 sleep(sleepAfterEachOperation)
 
-                robot.turnRobot(degrees=45, speed=8, direction=left)
+                robot.turnRobot(degrees=45, speed=5, direction=left)
 
                 sleep(sleepAfterEachOperation)
 
@@ -239,7 +247,7 @@ if __name__ == '__main__':
 
                 sleep(sleepAfterEachOperation)
 
-                robot.turnRobot(degrees=45, speed=8, direction=left)
+                robot.turnRobot(degrees=45, speed=5, direction=left)
 
                 sleep(sleepAfterEachOperation)
 
@@ -250,15 +258,11 @@ if __name__ == '__main__':
                 # Last straight before pipe approach
                 robot.driveBack(distance=3, speed=1)
 
-                # sleep(0.2)
-
-                # robot.turnRobot(degrees=2, speed=1, direction=left)
-
-                # sleep(0.2)
-
-                # robot.turnRobot(degrees=2, speed=1, direction=right)
-
                 sleep(sleepAfterEachOperation)
+
+                extra.valveRelease()
+
+                sleep(2)
 
                 extra.valveRelease()
 
@@ -275,7 +279,7 @@ if __name__ == '__main__':
 
                 sleep(1)
 
-                robot.driveRobot(distance=70, speed=20, sensors=[sensorLeft, sensorCenter])
+                robot.driveRobot(distance=70, speed=15, sensors=[sensorLeft, sensorCenter])
 
                 sleep(sleepAfterEachOperation)
 
@@ -304,7 +308,7 @@ if __name__ == '__main__':
 
                 sleep(sleepAfterEachOperation)
 
-                robot.driveBack(distance=8, speed=2)
+                robot.driveBack(distance=4, speed=2)
 
                 # robot.turnRobot(degrees=90, speed=15, direction=right)
 
