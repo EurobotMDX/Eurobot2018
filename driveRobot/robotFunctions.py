@@ -213,6 +213,8 @@ class Driving:
         self.robotType = config.robotSettings['robotType']
         self.acceleration = 1
 
+        self.changeAcc(self.acceleration)
+
         # Setup Valve
         self.valvePin = 40
         GPIO.setmode(GPIO.BOARD)
@@ -283,9 +285,7 @@ class Driving:
         self.self.mainRobot.reset_encoders()
 
         while (countdown > startTime):
-            print(
-            "Encoders values are --- encoder 1: {} --- encoder 2: {}\n".format(self.self.mainRobot.read_encoder1(),
-                                                                               self.mainRobot.read_encoder2()))
+            print("Encoders values are --- encoder 1: {} --- encoder 2: {}\n".format(self.self.mainRobot.read_encoder1(), self.mainRobot.read_encoder2()))
 
     def travelledDistance(self, distance, current):
         """
@@ -425,7 +425,6 @@ class Driving:
 
         self.mainRobot.reset_encoders()
 
-        # TODO fix it
         obstacleClear = True
 
         encoderDestination = distance / self.oneEncMM
@@ -437,15 +436,10 @@ class Driving:
 
         stoppingThresholds = self.calcStoppingDriveThreshold(speed)
 
-        # Change acceleration mode if necessary
-        self.changeAcc(self.acceleration)
-
         finishedLog = False
 
         while encoder1Reading <= encoderDestination and encoder2Reading <= encoderDestination:
             # Check if sensor detected any obstacle on the way if yes then stop the robot and wait
-            # if self.sensor1.getSensorValue() <= self.sensorThreshold:
-            # if sensorEnabled and not self.disableSensors:
             if self.checkForObstacle(sensors, obstacleClear):
 
                 obstacleClear = False
@@ -465,8 +459,6 @@ class Driving:
 
             # Function belows is controlling a speed for the robot.
             speed = self.speedControlDrive(speed, travelledDistance, stoppingThresholds)
-
-            # print("Speed is {}".format(speed))
 
             encoder1Reading = self.mainRobot.read_encoder1()
             encoder2Reading = self.mainRobot.read_encoder2()
@@ -497,9 +489,6 @@ class Driving:
         distance = float(distance)
 
         stoppingThresholds = self.calcStoppingDriveThreshold(speed)
-
-        # Change acceleration mode if necessary
-        # changeAcc(self.acceleration)
 
         encoderDestination = self.encoderMaxValue - encoderDestination
 
@@ -540,21 +529,19 @@ class Driving:
 
         oneWheelDistance = (self.circumferenceOfCircle / 360) * degrees
 
-        encoderDestination = oneWheelDistance / self.oneEncMM
+        encoder1Destination = oneWheelDistance / self.oneEncMM
+        encoder2Destination = self.encoderMaxValue - (oneWheelDistance / self.oneEncMM)
 
         stoppingThresholds = self.calcSlowingTurnThreshold(speed)
-
-        # print('stoping thresh %s' % stoppingThresholds)
 
         encoder1Reading = self.mainRobot.read_encoder1()
         encoder2Reading = self.mainRobot.read_encoder2()
 
         finishedLog = False
 
-        self.changeAcc(self.acceleration)
-
         if direction:
-            while encoder1Reading <= encoderDestination:
+            while encoder1Reading <= encoder1Destination and \
+                    (encoder2Reading >= encoder2Destination or encoder2Reading == 0 or encoder2Reading == 1):
                 self.mainRobot.drive(speed, -speed)
 
                 travelledDistance = self.travelledDistance(encoderDestination, encoder1Reading)
@@ -564,6 +551,7 @@ class Driving:
                 # print("Travelled distance: {}".format(travelledDistance))
 
                 encoder1Reading = self.mainRobot.read_encoder1()
+                encoder2Reading = self.mainRobot.read_encoder2()
 
                 if travelledDistance >= 99 and not finishedLog:
                     log.info("Finished turning right")
@@ -574,7 +562,8 @@ class Driving:
 
         elif not direction:
 
-            while encoder2Reading <= encoderDestination:
+            while encoder2Reading <= encoderDestination and \
+                    (encoder1Reading >= encoder1Destination or encoder1Reading == 0 or encoder1Reading == 1):
 
                 self.mainRobot.drive(-speed, speed)
 
@@ -582,7 +571,7 @@ class Driving:
 
                 speed = self.speedControlTurn(speed, travelledDistance, stoppingThresholds)
 
-                # print("Travelled distance: {}".format(travelledDistance))
+                encoder1Reading = self.mainRobot.read_encoder1()
 
                 encoder2Reading = self.mainRobot.read_encoder2()
 
@@ -610,7 +599,6 @@ class Driving:
         printVals = ""
 
         while countdown > endTime:
-
 
             for sensor in sensors:
                 printVals = printVals + "Sensor: {} value: {}  |  \n".format(sensor.position, sensor.getSensorValue())
