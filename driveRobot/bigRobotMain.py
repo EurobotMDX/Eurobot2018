@@ -1,17 +1,16 @@
-from robotFunctions import *
-from terminalColors import bcolors as tc
 import sys
 sys.path.insert(0, '..')
 from time import sleep
 import time
 import datetime
+import thread
+
+from robotFunctions import *
+from terminalColors import bcolors as tc
 from servoControl import servoControl
 from Switches import *
 from Sensor import *
 from settings import logging as log
-import thread
-
-sys.path.insert(0, '..')
 import settings as config
 
 if __name__ == '__main__':
