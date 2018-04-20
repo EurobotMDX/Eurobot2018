@@ -652,8 +652,8 @@ class Driving:
 
 class RobotHelpers:
     def __init__(self):
-        self.motorsPin = 29
-        self.valvePin = 31
+        self.motorsPin = config.robotSettings['motorsPin']
+        self.valvePin = config.robotSettings['valvePin']
 
         GPIO.setmode(GPIO.BOARD)  # choose BCM or BOARD
         GPIO.setup(self.motorsPin, GPIO.OUT)
