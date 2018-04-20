@@ -37,33 +37,33 @@ def orangeSide():
     robot.driveRobot(distance=55, speed=20, sensors=[1, 2])
     sleep(sleepAfterEachOperation)
     # Start turning
-    robot.turnRobot(degrees=15, speed=turnSpeed, direction=right)
+    robot.turnRobot(degrees=15, speed=turnSpeed, direction=right, smallRobotSensors=[1, 2])
     sleep(sleepAfterEachOperation)
-    robot.turnRobot(degrees=15, speed=turnSpeed, direction=right)
+    robot.turnRobot(degrees=15, speed=turnSpeed, direction=right, smallRobotSensors=[1, 2])
     sleep(sleepAfterEachOperation)
-    robot.turnRobot(degrees=15, speed=turnSpeed, direction=right)
+    robot.turnRobot(degrees=15, speed=turnSpeed, direction=right, smallRobotSensors=[1, 2])
     sleep(sleepAfterEachOperation)
-    robot.turnRobot(degrees=15, speed=turnSpeed, direction=right)
+    robot.turnRobot(degrees=15, speed=turnSpeed, direction=right, smallRobotSensors=[1, 2])
     sleep(sleepAfterEachOperation)
-    robot.turnRobot(degrees=15, speed=turnSpeed, direction=right)
+    robot.turnRobot(degrees=15, speed=turnSpeed, direction=right, smallRobotSensors=[1, 2])
     sleep(sleepAfterEachOperation)
-    robot.turnRobot(degrees=15, speed=turnSpeed, direction=right)
+    robot.turnRobot(degrees=15, speed=turnSpeed, direction=right, smallRobotSensors=[1, 2])
     sleep(sleepAfterEachOperation)
 
     robot.driveRobot(distance=50, speed=20, sensors=[1, 2])
     sleep(sleepAfterEachOperation)
 
-    robot.turnRobot(degrees=15, speed=turnSpeed, direction=right)
+    robot.turnRobot(degrees=15, speed=turnSpeed, direction=right, smallRobotSensors=[1, 2])
     sleep(sleepAfterEachOperation)
-    robot.turnRobot(degrees=15, speed=turnSpeed, direction=right)
+    robot.turnRobot(degrees=15, speed=turnSpeed, direction=right, smallRobotSensors=[1, 2])
     sleep(sleepAfterEachOperation)
-    robot.turnRobot(degrees=15, speed=turnSpeed, direction=right)
+    robot.turnRobot(degrees=15, speed=turnSpeed, direction=right, smallRobotSensors=[1, 2])
     sleep(sleepAfterEachOperation)
-    robot.turnRobot(degrees=15, speed=turnSpeed, direction=right)
+    robot.turnRobot(degrees=15, speed=turnSpeed, direction=right, smallRobotSensors=[1, 2])
     sleep(sleepAfterEachOperation)
-    robot.turnRobot(degrees=15, speed=turnSpeed, direction=right)
+    robot.turnRobot(degrees=15, speed=turnSpeed, direction=right, smallRobotSensors=[1, 2])
     sleep(sleepAfterEachOperation)
-    robot.turnRobot(degrees=15, speed=turnSpeed, direction=right)
+    robot.turnRobot(degrees=15, speed=turnSpeed, direction=right, smallRobotSensors=[1, 2])
     sleep(sleepAfterEachOperation)
 
     robot.driveRobot(distance=85, speed=20, sensors=[1, 2])
@@ -76,33 +76,33 @@ def greenSide():
     robot.driveRobot(distance=55, speed=20, sensors=[1, 2])
     sleep(sleepAfterEachOperation)
 
-    robot.turnRobot(degrees=15, speed=turnSpeed, direction=left)
+    robot.turnRobot(degrees=15, speed=turnSpeed, direction=left, smallRobotSensors=[1, 2])
     sleep(sleepAfterEachOperation)
-    robot.turnRobot(degrees=15, speed=turnSpeed, direction=left)
+    robot.turnRobot(degrees=15, speed=turnSpeed, direction=left, smallRobotSensors=[1, 2])
     sleep(sleepAfterEachOperation)
-    robot.turnRobot(degrees=15, speed=turnSpeed, direction=left)
+    robot.turnRobot(degrees=15, speed=turnSpeed, direction=left, smallRobotSensors=[1, 2])
     sleep(sleepAfterEachOperation)
-    robot.turnRobot(degrees=15, speed=turnSpeed, direction=left)
+    robot.turnRobot(degrees=15, speed=turnSpeed, direction=left, smallRobotSensors=[1, 2])
     sleep(sleepAfterEachOperation)
-    robot.turnRobot(degrees=15, speed=turnSpeed, direction=left)
+    robot.turnRobot(degrees=15, speed=turnSpeed, direction=left, smallRobotSensors=[1, 2])
     sleep(sleepAfterEachOperation)
-    robot.turnRobot(degrees=15, speed=turnSpeed, direction=left)
+    robot.turnRobot(degrees=15, speed=turnSpeed, direction=left, smallRobotSensors=[1, 2])
     sleep(sleepAfterEachOperation)
 
     robot.driveRobot(distance=50, speed=20, sensors=[1, 2])
     sleep(sleepAfterEachOperation)
 
-    robot.turnRobot(degrees=15, speed=turnSpeed, direction=left)
+    robot.turnRobot(degrees=15, speed=turnSpeed, direction=left, smallRobotSensors=[1, 2])
     sleep(sleepAfterEachOperation)
-    robot.turnRobot(degrees=15, speed=turnSpeed, direction=left)
+    robot.turnRobot(degrees=15, speed=turnSpeed, direction=left, smallRobotSensors=[1, 2])
     sleep(sleepAfterEachOperation)
-    robot.turnRobot(degrees=15, speed=turnSpeed, direction=left)
+    robot.turnRobot(degrees=15, speed=turnSpeed, direction=left, smallRobotSensors=[1, 2])
     sleep(sleepAfterEachOperation)
-    robot.turnRobot(degrees=15, speed=turnSpeed, direction=left)
+    robot.turnRobot(degrees=15, speed=turnSpeed, direction=left, smallRobotSensors=[1, 2])
     sleep(sleepAfterEachOperation)
-    robot.turnRobot(degrees=15, speed=turnSpeed, direction=left)
+    robot.turnRobot(degrees=15, speed=turnSpeed, direction=left, smallRobotSensors=[1, 2])
     sleep(sleepAfterEachOperation)
-    robot.turnRobot(degrees=15, speed=turnSpeed, direction=left)
+    robot.turnRobot(degrees=15, speed=turnSpeed, direction=left, smallRobotSensors=[1, 2])
     sleep(sleepAfterEachOperation)
 
     robot.driveRobot(distance=85, speed=20, sensors=[1, 2])
@@ -130,9 +130,9 @@ if __name__ == '__main__':
 
     if robot.checkStatus() and canRun:
 
-        rightArm.turn(135)
-        sleep(1)
-        rightArm.turn(10)
+        # rightArm.turn(135)
+        # sleep(1)
+        # rightArm.turn(10)
         # leftArm.turn(190)
 
         sleep(1)
@@ -143,7 +143,7 @@ if __name__ == '__main__':
         try:
             start_time = time.time()
 
-            '''
+
 
             if sideSwitch() == "Orange":
                 print ("Orange site")
@@ -157,7 +157,7 @@ if __name__ == '__main__':
                 openRight()
                 greenSide()
 
-                '''
+
 
         except KeyboardInterrupt:
             log.debug("\nStopped by user\n")

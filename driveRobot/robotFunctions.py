@@ -519,28 +519,28 @@ class Driving:
         :param clockwise:
         :return:
         """
-        if direction:
-            log.debug("Turn robot right for: {} degrees | Current speed: {}".format(degrees, speed))
-
-        else:
-            log.debug("Turn robot left for: {} degrees | Current speed: {}".format(degrees, speed))
 
         self.mainRobot.reset_encoders()
 
         oneWheelDistance = (self.circumferenceOfCircle / 360) * degrees
 
         if direction:
+            log.debug("Turn robot right for: {} degrees | Current speed: {}".format(degrees, speed))
             encoder1Destination = oneWheelDistance / self.oneEncMM
             encoder2Destination = self.encoderMaxValue - (oneWheelDistance / self.oneEncMM)
 
         else:
+            log.debug("Turn robot left for: {} degrees | Current speed: {}".format(degrees, speed))
             encoder1Destination = self.encoderMaxValue - (oneWheelDistance / self.oneEncMM)
             encoder2Destination = oneWheelDistance / self.oneEncMM
+
 
         stoppingThresholds = self.calcSlowingTurnThreshold(speed)
 
         encoder1Reading = self.mainRobot.read_encoder1()
         encoder2Reading = self.mainRobot.read_encoder2()
+
+        obstacleClear = True
 
         finishedLog = False
 
@@ -550,7 +550,6 @@ class Driving:
                 if self.checkForObstacle(smallRobotSensors, obstacleClear):
 
                     obstacleClear = False
-
                     self.mainRobot.stop()
                 else:
                     self.mainRobot.drive(speed, -speed)
@@ -583,6 +582,7 @@ class Driving:
 
                 if self.checkForObstacle(smallRobotSensors, obstacleClear):
                     obstacleClear = False
+
                     self.mainRobot.stop()
 
                 else:
