@@ -231,6 +231,8 @@ class Driving:
         """
         obstacle = False
 
+
+
         if self.robotType == "main":
 
             for sensor in sensors:
@@ -252,7 +254,6 @@ class Driving:
             for sensor in sensors:
 
                 distance = getSensorHCValue(sensor)
-
                 if distance <= self.sensorThreshold:
                     obstacle = True
 
@@ -470,9 +471,9 @@ class Driving:
         else:
             self.mainRobot.stop()
 
-    def driveBack(self, distance, speed):
+    def driveBack(self, distance, speed, sensors=[]):
         """
-        This function drives a robot backward. By adjusting values such as: speed and distance can control a robot.
+        This function drives a robot ba ckward. By adjusting values such as: speed and distance can control a robot.
         :param distance:
         :param speed:
         :return:
@@ -488,11 +489,23 @@ class Driving:
 
         distance = float(distance)
 
+        obstacleClear = True
+
         stoppingThresholds = self.calcStoppingDriveThreshold(speed)
 
         encoderDestination = self.encoderMaxValue - encoderDestination
 
         while encoder1Reading >= encoderDestination and encoder2Reading >= encoderDestination or encoder1Reading == 0 or encoder2Reading == 0:
+
+            if self.checkForObstacle(sensors, obstacleClear):
+
+                obstacleClear = False
+
+                self.mainRobot.stop()
+            else:
+
+                self.mainRobot.drive(-speed, -speed)
+                obstacleClear = True
 
             encodersAvg = (encoder1Reading + encoder1Reading) / 2.0
 
@@ -500,9 +513,7 @@ class Driving:
 
             travelledDistance = self.travelledDistance(distance, currentTravelDistance)
 
-            speed = self.speedControlDrive(speed, travelledDistance, stoppingThresholds)
-
-            self.mainRobot.drive(-speed, -speed)
+            # speed = self.speedControlDrive(speed, travelledDistance, stoppingThresholds)
 
             encoder1Reading = self.mainRobot.read_encoder1()
 
@@ -510,6 +521,8 @@ class Driving:
 
         else:
             self.mainRobot.stop()
+
+
 
     def turnRobot(self, degrees, speed, direction=True, smallRobotSensors=[]):
         """
@@ -595,7 +608,7 @@ class Driving:
 
                 travelledDistance = self.travelledDistance(encoder1Destination, currentTravelDistance)
 
-                # travelledDistance = self.travelledDistance(encoder2Destination, encoder2Reading)
+                travelledDistance = self.travelledDistance(encoder2Destination, encoder2Reading)
 
                 speed = self.speedControlTurn(speed, travelledDistance, stoppingThresholds)
 
