@@ -529,8 +529,13 @@ class Driving:
 
         oneWheelDistance = (self.circumferenceOfCircle / 360) * degrees
 
-        encoder1Destination = oneWheelDistance / self.oneEncMM
-        encoder2Destination = self.encoderMaxValue - (oneWheelDistance / self.oneEncMM)
+        if direction:
+            encoder1Destination = oneWheelDistance / self.oneEncMM
+            encoder2Destination = self.encoderMaxValue - (oneWheelDistance / self.oneEncMM)
+
+        else:
+            encoder1Destination = self.encoderMaxValue - (oneWheelDistance / self.oneEncMM)
+            encoder2Destination = oneWheelDistance / self.oneEncMM
 
         stoppingThresholds = self.calcSlowingTurnThreshold(speed)
 
@@ -551,7 +556,11 @@ class Driving:
                     self.mainRobot.drive(speed, -speed)
                     obstacleClear = True
 
-                travelledDistance = self.travelledDistance(encoderDestination, encoder1Reading)
+                encodersAvg = (encoder1Reading + encoder1Reading) / 2.0
+
+                currentTravelDistance = round(encodersAvg * self.oneEncMM, 3)
+
+                travelledDistance = self.travelledDistance(encoder1Destination, currentTravelDistance)
 
                 speed = self.speedControlTurn(speed, travelledDistance, stoppingThresholds)
 
@@ -569,17 +578,28 @@ class Driving:
 
         elif not direction:
 
-            while encoder2Reading <= encoderDestination and \
+            while encoder2Reading <= encoder2Destination and \
                     (encoder1Reading >= encoder1Destination or encoder1Reading == 0 or encoder1Reading == 1):
 
-                self.mainRobot.drive(-speed, speed)
+                if self.checkForObstacle(smallRobotSensors, obstacleClear):
+                    obstacleClear = False
+                    self.mainRobot.stop()
 
-                travelledDistance = self.travelledDistance(encoderDestination, encoder2Reading)
+                else:
+                    self.mainRobot.drive(-speed, speed)
+                    obstacleClear = True
+
+                encodersAvg = (encoder1Reading + encoder1Reading) / 2.0
+
+                currentTravelDistance = round(encodersAvg * self.oneEncMM, 3)
+
+                travelledDistance = self.travelledDistance(encoder1Destination, currentTravelDistance)
+
+                # travelledDistance = self.travelledDistance(encoder2Destination, encoder2Reading)
 
                 speed = self.speedControlTurn(speed, travelledDistance, stoppingThresholds)
 
                 encoder1Reading = self.mainRobot.read_encoder1()
-
                 encoder2Reading = self.mainRobot.read_encoder2()
 
                 if travelledDistance >= 99 and not finishedLog:

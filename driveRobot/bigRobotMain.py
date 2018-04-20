@@ -389,7 +389,7 @@ if __name__ == '__main__':
 
             log.info("Finished execution, clean up. Time elapsed: {}".format(elapsed_time))
 
-            extra.motorsOff()
+            # extra.motorsOff()
 
             GPIO.cleanup()
 
