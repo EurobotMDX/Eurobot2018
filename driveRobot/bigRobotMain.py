@@ -11,6 +11,9 @@ from Sensor import *
 from settings import logging as log
 import thread
 
+sys.path.insert(0, '..')
+import settings as config
+
 if __name__ == '__main__':
     canRun = False
 
@@ -22,13 +25,16 @@ if __name__ == '__main__':
     left = False
     turnSpeed = 15
 
+    servoPipeChannel = config.robotSettings['servoPipeChannel']
+    servoBeeChannel = config.robotSettings['servoBeeChannel']
+
     try:
         robot = Driving()
         # Initialize servos
 
-        servoPipe = servoControl("Pipe servo", 0, 60)
+        servoPipe = servoControl("Pipe servo", servoPipeChannel, 60)
+        servoBee = servoControl("Bee servo", servoBeeChannel, 60)
         # servoArm = servoControl("Arm servo", 1, 60)
-        servoBee = servoControl("Bee servo", 2, 60)
 
         sensorCenter = Sensor(0x72, "centre")
         sensorRight = Sensor(0x71, "right")
