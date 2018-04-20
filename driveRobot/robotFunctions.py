@@ -511,7 +511,7 @@ class Driving:
         else:
             self.mainRobot.stop()
 
-    def turnRobot(self, degrees, speed, direction=True):
+    def turnRobot(self, degrees, speed, direction=True, smallRobotSensors=[]):
         """
         This function turns a robot. Depending on the argument 'clockwise', a robot can turn right or left
         :param degrees:
@@ -542,7 +542,14 @@ class Driving:
         if direction:
             while encoder1Reading <= encoder1Destination and \
                     (encoder2Reading >= encoder2Destination or encoder2Reading == 0 or encoder2Reading == 1):
-                self.mainRobot.drive(speed, -speed)
+                if self.checkForObstacle(smallRobotSensors, obstacleClear):
+
+                    obstacleClear = False
+
+                    self.mainRobot.stop()
+                else:
+                    self.mainRobot.drive(speed, -speed)
+                    obstacleClear = True
 
                 travelledDistance = self.travelledDistance(encoderDestination, encoder1Reading)
 
