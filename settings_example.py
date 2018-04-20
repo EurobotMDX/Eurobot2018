@@ -13,7 +13,7 @@ wheelDiameter = 100
 oneRevolution = 360
 
 # Space  between wheels
-wheelsSpacing = 22
+wheelsSpacing = 25.9
 
 # Robot types:
 # main or secondary
@@ -22,12 +22,18 @@ robotSettings = {
     'robotType': 'main',
     'oneEncMM': 2 * pi * (wheelDiameter / 2) / oneRevolution / 10,
     'circumferenceOfCircle': 2 * pi * (wheelsSpacing / 2),
-    'sensorThreshold': 10,
+    'sensorThreshold': 30,
     'encoderMaxValue': 4244897280,
+    'motorsPin': 29,
+    'valvePin': 31,
+    'servoPipeChannel': 0,
+    'servoBeeChannel': 2,
+    'sideSwitchPin': 35,
+    'startSwitchPin': 37,
+
 }
 
 debugMode = True
-
 
 # Logger settings
 logging.root.handlers = []

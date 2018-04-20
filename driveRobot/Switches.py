@@ -1,5 +1,5 @@
 import RPi.GPIO as GPIO  # import RPi.GPIO module
-
+import sys
 sys.path.insert(0, '..')
 import settings as config
 
