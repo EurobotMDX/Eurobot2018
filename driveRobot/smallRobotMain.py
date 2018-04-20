@@ -1,45 +1,128 @@
 from robotFunctions import *
 from terminalColors import bcolors as tc
 import sys
+
 sys.path.insert(0, '..')
 from settings import logging as log
 from time import sleep
 import time
 import datetime
-
 from servoControl import servoControl
-
 from Switches import *
-
-def openArms():
-    rightArm.turn(degrees=120)
-    sleep(0.5)
-    leftArm.turn(degrees=52)
-    sleep(1)
+import settings as config
 
 
-def closeArms():
-    leftArm.turn(degrees=190)
-    sleep(0.5)
-    rightArm.turn(degrees=0)
-    sleep(1)
+sleepAfterEachOperation = 1
+left = False
+right = True
+
+turnSpeed = 10
+
+
+#
+def openRight():
+    rightArm.turn(120)
+    sleep(sleepAfterEachOperation)
+
+
+def openLeft():
+    leftArm.turn(52)
+    sleep(sleepAfterEachOperation)
+
+
+def orangeSide():
+    sleep(sleepAfterEachOperation)
+    openLeft()
+    sleep(sleepAfterEachOperation)
+    robot.driveRobot(distance=55, speed=20, sensors=[1, 2])
+    sleep(sleepAfterEachOperation)
+    # Start turning
+    robot.turnRobot(degrees=15, speed=turnSpeed, direction=right)
+    sleep(sleepAfterEachOperation)
+    robot.turnRobot(degrees=15, speed=turnSpeed, direction=right)
+    sleep(sleepAfterEachOperation)
+    robot.turnRobot(degrees=15, speed=turnSpeed, direction=right)
+    sleep(sleepAfterEachOperation)
+    robot.turnRobot(degrees=15, speed=turnSpeed, direction=right)
+    sleep(sleepAfterEachOperation)
+    robot.turnRobot(degrees=15, speed=turnSpeed, direction=right)
+    sleep(sleepAfterEachOperation)
+    robot.turnRobot(degrees=15, speed=turnSpeed, direction=right)
+    sleep(sleepAfterEachOperation)
+
+    robot.driveRobot(distance=50, speed=20, sensors=[1, 2])
+    sleep(sleepAfterEachOperation)
+
+    robot.turnRobot(degrees=15, speed=turnSpeed, direction=right)
+    sleep(sleepAfterEachOperation)
+    robot.turnRobot(degrees=15, speed=turnSpeed, direction=right)
+    sleep(sleepAfterEachOperation)
+    robot.turnRobot(degrees=15, speed=turnSpeed, direction=right)
+    sleep(sleepAfterEachOperation)
+    robot.turnRobot(degrees=15, speed=turnSpeed, direction=right)
+    sleep(sleepAfterEachOperation)
+    robot.turnRobot(degrees=15, speed=turnSpeed, direction=right)
+    sleep(sleepAfterEachOperation)
+    robot.turnRobot(degrees=15, speed=turnSpeed, direction=right)
+    sleep(sleepAfterEachOperation)
+
+    robot.driveRobot(distance=85, speed=20, sensors=[1, 2])
+
+
+def greenSide():
+    sleep(sleepAfterEachOperation)
+    openLeft()
+    sleep(sleepAfterEachOperation)
+    robot.driveRobot(distance=55, speed=20, sensors=[1, 2])
+    sleep(sleepAfterEachOperation)
+
+    robot.turnRobot(degrees=15, speed=turnSpeed, direction=left)
+    sleep(sleepAfterEachOperation)
+    robot.turnRobot(degrees=15, speed=turnSpeed, direction=left)
+    sleep(sleepAfterEachOperation)
+    robot.turnRobot(degrees=15, speed=turnSpeed, direction=left)
+    sleep(sleepAfterEachOperation)
+    robot.turnRobot(degrees=15, speed=turnSpeed, direction=left)
+    sleep(sleepAfterEachOperation)
+    robot.turnRobot(degrees=15, speed=turnSpeed, direction=left)
+    sleep(sleepAfterEachOperation)
+    robot.turnRobot(degrees=15, speed=turnSpeed, direction=left)
+    sleep(sleepAfterEachOperation)
+
+    robot.driveRobot(distance=50, speed=20, sensors=[1, 2])
+    sleep(sleepAfterEachOperation)
+
+    robot.turnRobot(degrees=15, speed=turnSpeed, direction=left)
+    sleep(sleepAfterEachOperation)
+    robot.turnRobot(degrees=15, speed=turnSpeed, direction=left)
+    sleep(sleepAfterEachOperation)
+    robot.turnRobot(degrees=15, speed=turnSpeed, direction=left)
+    sleep(sleepAfterEachOperation)
+    robot.turnRobot(degrees=15, speed=turnSpeed, direction=left)
+    sleep(sleepAfterEachOperation)
+    robot.turnRobot(degrees=15, speed=turnSpeed, direction=left)
+    sleep(sleepAfterEachOperation)
+    robot.turnRobot(degrees=15, speed=turnSpeed, direction=left)
+    sleep(sleepAfterEachOperation)
+
+    robot.driveRobot(distance=85, speed=20, sensors=[1, 2])
+
 
 if __name__ == '__main__':
     canRun = False
 
-    try:
+    rightArmServoChannel = config.robotSettings['rightArmServoChannel']
+    leftArmServoChannel = config.robotSettings['leftArmServoChannel']
+
+    try:  #
         robot = Driving()
 
-        # Initialize servos
-        rightArm = servoControl("Right Arm", 15, 60)
-        leftArm = servoControl("Left Arm", 13, 60)
-        switchArm = servoControl("Switch Arm", 14, 60)
+        rightArm = servoControl("Right Arm", rightArmServoChannel, 60)
+        leftArm = servoControl("Left Arm", leftArmServoChannel, 60)
 
         log.info("Initialized main objects")
 
         canRun = True
-        turnSpeed = 10
-
 
     except Exception as error:
         canRun = False
@@ -47,31 +130,34 @@ if __name__ == '__main__':
 
     if robot.checkStatus() and canRun:
 
+        rightArm.turn(135)
+        sleep(1)
+        rightArm.turn(10)
+        # leftArm.turn(190)
+
+        sleep(1)
+
         log.debug("Expecting for start switch")
         while startSwitch():
             pass
-
-        try:
-            thread.start_new_thread(extra.timer, (robot,))
-            log.info("Start timer thread")
-
-        except Exception as error:
-            log.error("Error: unable to start thread %s" %error)
-
         try:
             start_time = time.time()
 
+            '''
+
             if sideSwitch() == "Orange":
                 print ("Orange site")
+                sleep(1)
+                openLeft()
+                orangeSide()
 
             if sideSwitch() == "Green":
                 print ("Green site")
+                sleep(1)
+                openRight()
+                greenSide()
 
-            openArms()
-
-            closeArms()
-
-            robot.driveRobot(distance=100, speed=10, sensors=[1, 2])
+                '''
 
         except KeyboardInterrupt:
             log.debug("\nStopped by user\n")
