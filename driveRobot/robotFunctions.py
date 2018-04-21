@@ -383,14 +383,13 @@ class Driving:
         return speed
 
     def speedControlTurn(self, speed, travelledDistance, stoppingThresholds):
-        '''
+        """
         This function helps robot to reduce the speed when a robot is turning. It is due to achieve more accuracy when turning.
         :param speed:
         :param travelledDistance:
         :param stoppingThresholds:
         :return: speed
-        '''
-
+        """
         speedLimits = [5, 1]
 
         if travelledDistance >= stoppingThresholds[0]:

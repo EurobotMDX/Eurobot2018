@@ -10,7 +10,7 @@ ECHO1 = config.robotSettings['ECHO1'] #16
 TRIG2 = config.robotSettings['TRIG2'] #22
 ECHO2 = config.robotSettings['ECHO2'] #24
 TRIG3 = config.robotSettings['TRIG3'] #31
-ECHO4 = config.robotSettings['ECHO3'] #33
+ECHO3 = config.robotSettings['ECHO3'] #33
 
 
 # print "Distance Measurement In Progress"
