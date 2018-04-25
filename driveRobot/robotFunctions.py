@@ -102,21 +102,34 @@ class md25:
             log.warning("CAUGHT: IOError 'drive'")
             self.drive(motor0, motor1, speed, turn)
 
-    def stop(self):
+    def stop1(self):
         if (0 == self.mode or 2 == self.mode) and self.bus:
             try:
                 self.bus.write_byte_data(self.address, MD25_REGISTER_SPEED1, 128)
-                self.bus.write_byte_data(self.address, MD25_REGISTER_SPEED2_TURN, 128)
             except IOError:
-                log.warning("CAUGHT: IOError 'stop motors'")
+                log.warning("CAUGHT: IOError 'stop motor1'")
                 self.stop()
 
         if (1 == self.mode or 3 == self.mode) and self.bus:
             try:
                 self.bus.write_byte_data(self.address, MD25_REGISTER_SPEED1, 0)
+            except IOError:
+                log.warning("CAUGHT: IOError 'stop motor1'")
+                self.stop()
+
+    def stop2(self):
+        if (0 == self.mode or 2 == self.mode) and self.bus:
+            try:
+                self.bus.write_byte_data(self.address, MD25_REGISTER_SPEED2_TURN, 128)
+            except IOError:
+                log.warning("CAUGHT: IOError 'stop motor2'")
+                self.stop()
+
+        if (1 == self.mode or 3 == self.mode) and self.bus:
+            try:
                 self.bus.write_byte_data(self.address, MD25_REGISTER_SPEED2_TURN, 0)
             except IOError:
-                log.warning("CAUGHT: IOError 'stop'")
+                log.warning("CAUGHT: IOError 'stop motor2'")
                 self.stop()
 
     def battery(self):
@@ -231,8 +244,6 @@ class Driving:
         """
         obstacle = False
 
-
-
         if self.robotType == "main":
 
             for sensor in sensors:
@@ -263,7 +274,8 @@ class Driving:
             return obstacle
 
     def stopDriving(self):
-        self.mainRobot.stop()
+        self.mainRobot.stop1()
+        self.mainRobot.stop2()
         log.info("Emergency stop drive")
 
     def setValve(self, state=True):
@@ -379,7 +391,6 @@ class Driving:
                 if speed == speedLimits[1]:
                     log.info("Drive speed reduced! Current speed:  {} | Travelled distance: {}".format(speed,
                                                                                                        travelledDistance))
-
         return speed
 
     def speedControlTurn(self, speed, travelledDistance, stoppingThresholds):
@@ -436,39 +447,52 @@ class Driving:
 
         stoppingThresholds = self.calcStoppingDriveThreshold(speed)
 
-        finishedLog = False
+        motor1Drive = True
+        motor2Drive = True
 
-        while encoder1Reading <= encoderDestination and encoder2Reading <= encoderDestination:
-            # Check if sensor detected any obstacle on the way if yes then stop the robot and wait
+        while True:
+
             if self.checkForObstacle(sensors, obstacleClear):
 
                 obstacleClear = False
 
-                self.mainRobot.stop()
+                self.mainRobot.stop1()
+                self.mainRobot.stop2()
+
             else:
-                self.mainRobot.drive(speed, speed)
                 obstacleClear = True
 
-            encodersAvg = (encoder1Reading + encoder1Reading) / 2.0
+                encodersAvg = (encoder1Reading + encoder1Reading) / 2.0
 
-            currentTravelDistance = round(encodersAvg * self.oneEncMM, 3)
+                currentTravelDistance = round(encodersAvg * self.oneEncMM, 3)
 
-            travelledDistance = self.travelledDistance(distance, currentTravelDistance)
+                travelledDistance = self.travelledDistance(distance, currentTravelDistance)
 
-            # print("Travelled distance: {}".format(travelledDistance))
+                # print("Travelled distance: {}".format(travelledDistance))
 
-            # Function belows is controlling a speed for the robot.
-            speed = self.speedControlDrive(speed, travelledDistance, stoppingThresholds)
+                # Function belows is controlling a speed for the robot.
+                speed = self.speedControlDrive(speed, travelledDistance, stoppingThresholds)
 
-            encoder1Reading = self.mainRobot.read_encoder1()
-            encoder2Reading = self.mainRobot.read_encoder2()
+                encoder1Reading = self.mainRobot.read_encoder1()
+                encoder2Reading = self.mainRobot.read_encoder2()
 
-            if travelledDistance >= 99 and not finishedLog:
+                if encoder1Reading >= encoderDestination:
+                    self.mainRobot.stop1()
+                    motor1Drive = False
+
+                else:
+                    self.mainRobot.drive(speed, 0)
+
+                if encoder2Reading >= encoderDestination:
+                    self.mainRobot.stop2()
+                    motor2Drive = False
+
+                else:
+                    self.mainRobot.drive(0, speed)
+
+            if not motor1Drive and not motor2Drive:
                 log.info("Finished driving")
-                finishedLog = True
-
-        else:
-            self.mainRobot.stop()
+                break
 
     def driveBack(self, distance, speed, sensors=[]):
         """
@@ -500,7 +524,8 @@ class Driving:
 
                 obstacleClear = False
 
-                self.mainRobot.stop()
+                self.mainRobot.stop1()
+                self.mainRobot.stop2()
             else:
 
                 self.mainRobot.drive(-speed, -speed)
@@ -519,9 +544,8 @@ class Driving:
             encoder2Reading = self.mainRobot.read_encoder2()
 
         else:
-            self.mainRobot.stop()
-
-
+            self.mainRobot.stop1()
+            self.mainRobot.stop2()
 
     def turnRobot(self, degrees, speed, direction=True, smallRobotSensors=[]):
         """
@@ -562,7 +586,8 @@ class Driving:
                 if self.checkForObstacle(smallRobotSensors, obstacleClear):
 
                     obstacleClear = False
-                    self.mainRobot.stop()
+                    self.mainRobot.stop1()
+                    self.mainRobot.stop2()
                 else:
                     self.mainRobot.drive(speed, -speed)
                     obstacleClear = True
@@ -585,7 +610,8 @@ class Driving:
                     finishedLog = True
 
             else:
-                self.mainRobot.stop()
+                self.mainRobot.stop1()
+                self.mainRobot.stop2()
 
         elif not direction:
 
@@ -595,7 +621,8 @@ class Driving:
                 if self.checkForObstacle(smallRobotSensors, obstacleClear):
                     obstacleClear = False
 
-                    self.mainRobot.stop()
+                    self.mainRobot.stop1()
+                    self.mainRobot.stop2()
 
                 else:
                     self.mainRobot.drive(-speed, speed)
@@ -619,7 +646,8 @@ class Driving:
                     finishedLog = True
 
             else:
-                self.mainRobot.stop()
+                self.mainRobot.stop1()
+                self.mainRobot.stop2()
 
         else:
             log.error("Error while robot turning the robot!")

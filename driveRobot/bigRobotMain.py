@@ -109,7 +109,11 @@ if __name__ == '__main__':
 
                 sleep(sleepAfterEachOperation)
 
-                robot.driveRobot(distance=55, speed=15, sensors=[sensorLeft, sensorCenter, sensorRight])
+                # first table from a door
+                # robot.driveRobot(distance=55, speed=15, sensors=[sensorLeft, sensorCenter, sensorRight])
+                # Differenence in tables
+                # Second table
+                robot.driveRobot(distance=54, speed=15, sensors=[sensorLeft, sensorCenter, sensorRight])
 
                 sleep(sleepAfterEachOperation)
 
@@ -118,7 +122,10 @@ if __name__ == '__main__':
                 sleep(sleepAfterEachOperation)
 
                 # Before pipe approaching
-                robot.driveRobot(distance=9, speed=2, sensors=[])
+                # first table
+                # robot.driveRobot(distance=9, speed=2, sensors=[])
+                # second table
+                robot.driveRobot(distance=8, speed=2, sensors=[])
 
                 sleep(sleepAfterEachOperation)
 
@@ -131,7 +138,10 @@ if __name__ == '__main__':
                 sleep(sleepAfterEachOperation)
 
                 # Last straight before pipe approach
-                robot.driveRobot(distance=3, speed=1, sensors=[])
+                # First
+                # robot.driveRobot(distance=3, speed=1, sensors=[])
+                # Second
+                robot.driveRobot(distance=5, speed=1, sensors=[])
 
                 sleep(1)
 
@@ -180,7 +190,7 @@ if __name__ == '__main__':
 
                 sleep(1)
 
-                robot.driveRobot(distance=10, speed=8, sensors=[sensorCenter])
+                robot.driveRobot(distance=13, speed=8, sensors=[sensorCenter])
 
                 sleep(sleepAfterEachOperation)
 
@@ -188,7 +198,7 @@ if __name__ == '__main__':
 
                 sleep(sleepAfterEachOperation)
 
-                robot.driveRobot(distance=66, speed=15, sensors=[sensorCenter])
+                robot.driveRobot(distance=67, speed=15, sensors=[sensorCenter])
 
                 sleep(sleepAfterEachOperation)
 
@@ -197,7 +207,7 @@ if __name__ == '__main__':
                 sleep(sleepAfterEachOperation)
 
                 # Before pipe approaching
-                robot.driveBack(distance=7, speed=2)
+                robot.driveBack(distance=5, speed=2)
 
                 sleep(sleepAfterEachOperation)
 
@@ -210,7 +220,7 @@ if __name__ == '__main__':
                 sleep(sleepAfterEachOperation)
 
                 # Last straight before pipe approach
-                robot.driveBack(distance=2, speed=1)
+                robot.driveBack(distance=3, speed=1)
 
                 sleep(sleepAfterEachOperation)
 
@@ -229,19 +239,19 @@ if __name__ == '__main__':
 
                 sleep(sleepAfterEachOperation)
 
-                robot.turnRobot(degrees=45, speed=10, direction=right)
+                robot.turnRobot(degrees=85, speed=6, direction=right)
 
-                sleep(sleepAfterEachOperation)
+                # sleep(sleepAfterEachOperation)
 
-                robot.turnRobot(degrees=45, speed=10, direction=right)
+                # robot.turnRobot(degrees=45, speed=10, direction=right)
 
                 sleep(1)
 
-                robot.driveRobot(distance=70, speed=15, sensors=[sensorLeft, sensorCenter])
+                robot.driveRobot(distance=60, speed=15, sensors=[sensorLeft, sensorCenter])
 
                 sleep(sleepAfterEachOperation)
 
-                robot.driveRobot(distance=20, speed=10, sensors=[])
+                robot.driveRobot(distance=30, speed=10, sensors=[])
 
                 sleep(sleepAfterEachOperation)
 
