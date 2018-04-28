@@ -23,27 +23,19 @@ if __name__ == '__main__':
 
     try:
         robot = Driving()
-<<<<<<< HEAD
 
-        log.info("Initialized main objects")
 
         if robot.checkStatus():
             canRun = True
+            log.info("Initialized main objects")
+
         else:
             canRun = False
-=======
-        # Initialize servos
-
-        log.info("Initialized main objects")
-
-        canRun = True
->>>>>>> b11c8671361f15a4c60cdd1d8581c38248923cf1
 
     except Exception as error:
         canRun = False
         log.error("Could not create main objects.!!! Error: %s" % error)
 
-<<<<<<< HEAD
     if canRun:
 
         try:
@@ -63,22 +55,6 @@ if __name__ == '__main__':
             sleep(1)
 
             robot.turnRobot(degrees=180, speed=10, direction=left)
-
-=======
-    if robot.checkStatus() and canRun:
-
-        try:
-            start_time = time.time()
-            sleep(1)
-
-            # robot.turnRobot(degrees=20, speed=15, direction=right)
-
-            robot.driveRobot(distance=5, speed=5, sensors=[])
->>>>>>> b11c8671361f15a4c60cdd1d8581c38248923cf1
-
-
-        except KeyboardInterrupt:
-            log.debug("\nStopped by user\n")
 
             GPIO.cleanup()
 

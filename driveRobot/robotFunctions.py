@@ -549,16 +549,11 @@ class Driving:
                 # print("Travelled distance: {}".format(travelledDistance))
 
                 # Function belows is controlling a speed for the robot.
-<<<<<<< HEAD
                 # speed = self.speedControlDrive(speed, travelledDistance, stoppingThresholds)
-=======
-                speed = self.speedControlDrive(speed, travelledDistance, stoppingThresholds)
->>>>>>> b11c8671361f15a4c60cdd1d8581c38248923cf1
 
                 encoder1Reading = self.mainRobot.read_encoder1()
                 encoder2Reading = self.mainRobot.read_encoder2()
 
-<<<<<<< HEAD
                 # def pid_controller(self, y, yc, h=1, Ti=1, Td=1, Kp=1, u0=0, e0=0):
                 # print ("Motor1 current: {} | motor2 current: {}".format(self.mainRobot.get_current_motor_1() ,self.mainRobot.get_current_motor_2()))
                 # print (self.pid_controller(encoder1Reading, 100))
@@ -581,26 +576,6 @@ class Driving:
                 log.info("Finished driving")
                 break
 
-=======
-                if encoder1Reading >= encoderDestination:
-                    self.mainRobot.stop1()
-                    motor1Drive = False
-
-                else:
-                    self.mainRobot.drive(speed, 0)
-
-                if encoder2Reading >= encoderDestination:
-                    self.mainRobot.stop2()
-                    motor2Drive = False
-
-                else:
-                    self.mainRobot.drive(0, speed)
-
-            if not motor1Drive and not motor2Drive:
-                log.info("Finished driving")
-                break
-
->>>>>>> b11c8671361f15a4c60cdd1d8581c38248923cf1
     def driveBack(self, distance, speed, sensors=[]):
         """
         This function drives a robot ba ckward. By adjusting values such as: speed and distance can control a robot.
@@ -691,7 +666,6 @@ class Driving:
             while encoder1Reading <= encoder1Destination and \
                     (encoder2Reading >= encoder2Destination or encoder2Reading == 0 or encoder2Reading == 1):
                 if self.checkForObstacle(smallRobotSensors, obstacleClear):
-<<<<<<< HEAD
 
                     obstacleClear = False
                     self.mainRobot.stop1()
@@ -703,21 +677,6 @@ class Driving:
                 encodersAvg = (encoder1Reading + encoder1Reading) / 2.0
 
                 currentTravelDistance = round(encodersAvg * self.oneEncMM, 3)
-=======
-
-                    obstacleClear = False
-                    self.mainRobot.stop1()
-                    self.mainRobot.stop2()
-                else:
-                    self.mainRobot.drive(speed, -speed)
-                    obstacleClear = True
-
-                encodersAvg = (encoder1Reading + encoder1Reading) / 2.0
-
-                currentTravelDistance = round(encodersAvg * self.oneEncMM, 3)
-
-                travelledDistance = self.travelledDistance(encoder1Destination, currentTravelDistance)
->>>>>>> b11c8671361f15a4c60cdd1d8581c38248923cf1
 
                 travelledDistance = self.travelledDistance(encoder1Destination, currentTravelDistance)
 
@@ -752,7 +711,6 @@ class Driving:
                     obstacleClear = True
 
                 encodersAvg = (encoder1Reading + encoder1Reading) / 2.0
-<<<<<<< HEAD
 
                 currentTravelDistance = round(encodersAvg * self.oneEncMM, 3)
 
@@ -761,16 +719,6 @@ class Driving:
                 travelledDistance = self.travelledDistance(encoder2Destination, encoder2Reading)
 
                 # speed = self.speedControlTurn(speed, travelledDistance, stoppingThresholds)
-=======
-
-                currentTravelDistance = round(encodersAvg * self.oneEncMM, 3)
-
-                travelledDistance = self.travelledDistance(encoder1Destination, currentTravelDistance)
-
-                travelledDistance = self.travelledDistance(encoder2Destination, encoder2Reading)
-
-                speed = self.speedControlTurn(speed, travelledDistance, stoppingThresholds)
->>>>>>> b11c8671361f15a4c60cdd1d8581c38248923cf1
 
                 encoder1Reading = self.mainRobot.read_encoder1()
                 encoder2Reading = self.mainRobot.read_encoder2()
