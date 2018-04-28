@@ -122,10 +122,14 @@ if __name__ == '__main__':
 
         log.info("Initialized main objects")
 
+<<<<<<< HEAD
         if robot.checkStatus():
             canRun = True
         else:
             canRun = False
+=======
+        canRun = True
+>>>>>>> b11c8671361f15a4c60cdd1d8581c38248923cf1
 
     except Exception as error:
         canRun = False
@@ -135,13 +139,24 @@ if __name__ == '__main__':
 
         sleep(1)
 
+        # rightArm.turn(135)
+        # sleep(1)
+        # rightArm.turn(10)
+        # leftArm.turn(190)
+
+        sleep(1)
+
         log.debug("Expecting for start switch")
 
         while startSwitch():
             pass
-
         try:
             start_time = time.time()
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> b11c8671361f15a4c60cdd1d8581c38248923cf1
 
             if sideSwitch() == "Orange":
                 print ("Orange site")
