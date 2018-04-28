@@ -24,6 +24,8 @@ if __name__ == '__main__':
     try:
         robot = Driving()
 
+        robot.changeAcc(1)
+
 
         if robot.checkStatus():
             canRun = True
@@ -42,21 +44,23 @@ if __name__ == '__main__':
 
             start_time = time.time()
 
-            robot.driveRobot(distance=150, speed=50, sensors=[])
+            # robot.driveRobot(distance=150, speed=30, sensors=[])
 
-            sleep(2)
+            # sleep(2)
 
-            robot.turnRobot(degrees=180, speed=10, direction=left)
+            # robot.driveRobot(distance=100, speed=20, sensors=[])
 
-            sleep(1)
+            # sleep(1)
 
-            robot.driveRobot(distance=150, speed=50, sensors=[])
+            # robot.turnRobot(degrees=180, speed=10, direction=left)
 
-            sleep(1)
+            # sleep(1)
+            #
+            # robot.driveRobot(distance=150, speed=60, sensors=[])
 
-            robot.turnRobot(degrees=180, speed=10, direction=left)
+            # sleep(1)
 
-            GPIO.cleanup()
+            robot.turnRobot(degrees=180, speed=10, direction=right)
 
         finally:
 
