@@ -382,6 +382,14 @@ class Driving:
         return speed
 
     def getDecelerationDistance(self, distance, speed, offset=10):
+        """
+        Calculates distance from which the robot will start slowing down
+        :param distance:
+        :param speed:
+        :param offset:
+        :return:
+        """
+        # f value indicates any possible skirt on the surface
         f = 0.9
         return (distance - math.pow(speed, 2) / (250 * f)) - offset
 
@@ -390,6 +398,7 @@ class Driving:
         This function drives a robot forward. By adjusting values such as: speed and distance can control a robot.
         :param distance:
         :param speed:
+        :param sensors:
         :return:
         """
         distance = float(distance)
@@ -433,32 +442,28 @@ class Driving:
                     if not init_time:
                         self.when = time.time() + self.speed_interval
                         init_time = True
-
                         speed = self.deceleration_control(speed)
-                        # speed1 = self.deceleration_control(speed1)
-                        # speed2 = self.deceleration_control(speed2)
 
                     else:
-
                         speed = self.deceleration_control(speed)
-                        # speed2 = self.deceleration_control(speed2)
 
                 # For debug only
                 # travelledDistance = self.travelledDistance(distance, currentTravelDistance)
                 # print("Travelled distance: {}".format(travelledDistance))
                 # print("Speed {}".format(currentTravelDistance / (time.time() - start_driving_time)))
-                diff_enc = encoder1Reading - encoder2Reading
+                error = encoder1Reading - encoder2Reading
 
                 speed1 = speed
                 speed2 = speed
 
-                if diff_enc < 0:
+                # Using master and slave solution;
+                if error < 0:
                     speed1 += 1
-                    # print("Diff {} speed1: {}".format(diff_enc, speed1))
+                    print("Error {} speed1: {}".format(error, speed1))
 
-                elif diff_enc > 0:
-                    speed2 += 1
-                    # print("Diff {} speed2: {}".format(diff_enc, speed2))
+                elif error > 0:
+                    speed1 -= 1
+                    print("Error {} speed1: {}".format(error, speed1))
 
                 encoder1Reading = self.mainRobot.read_encoder1()
                 encoder2Reading = self.mainRobot.read_encoder2()
@@ -482,13 +487,13 @@ class Driving:
                 sleep(self.rest_after_drive)
                 break
 
-
     def turnRobot(self, degrees, speed, direction=True, smallRobotSensors=[]):
         """
         This function turns a robot. Depending on the argument 'clockwise', a robot can turn right or left
         :param degrees:
         :param speed:
-        :param clockwise:
+        :param direction:
+        :param smallRobotSensors:
         :return:
         """
         self.mainRobot.reset_encoders()
@@ -545,10 +550,9 @@ class Driving:
                         if not init_time:
                             self.when = time.time() + self.speed_interval
                             init_time = True
-
                             speed = self.deceleration_control(speed)
-
                         else:
+                            
                             speed = self.deceleration_control(speed)
 
                     encoder1Reading = self.mainRobot.read_encoder1()
