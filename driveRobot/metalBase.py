@@ -26,7 +26,6 @@ if __name__ == '__main__':
 
         robot.changeAcc(1)
 
-
         if robot.checkStatus():
             canRun = True
             log.info("Initialized main objects")
@@ -44,23 +43,13 @@ if __name__ == '__main__':
 
             start_time = time.time()
 
-            # robot.driveRobot(distance=150, speed=30, sensors=[])
+            robot.driveRobot(distance=50, speed=20, sensors=[])
 
-            # sleep(2)
+            robot.turnRobot(degrees=180, speed=20, direction=right)
 
-            # robot.driveRobot(distance=100, speed=20, sensors=[])
+            robot.driveRobot(distance=50, speed=20, sensors=[])
 
-            # sleep(1)
-
-            # robot.turnRobot(degrees=180, speed=10, direction=left)
-
-            # sleep(1)
-            #
-            # robot.driveRobot(distance=150, speed=60, sensors=[])
-
-            # sleep(1)
-
-            robot.turnRobot(degrees=180, speed=10, direction=right)
+            robot.turnRobot(degrees=180, speed=20, direction=left)
 
         finally:
 
