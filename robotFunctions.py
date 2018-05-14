@@ -48,6 +48,7 @@ class md25:
         self.mode = mode
         self.address = address
         self.bus = None
+
         log.info('Dummy is: %s' % dummy)
 
         if not dummy:
@@ -56,7 +57,26 @@ class md25:
                 self.bus = smbus.SMBus(bus)
                 self.bus.write_byte_data(self.address, MD25_REGISTER_MODE, self.mode)
             except IOError:
-                log.error("IO error. Please check if batter is connected and MD25 working correctly.")
+                log.error("IO error. Please check if batter is connected and i2c connection established.")
+
+    def read_i2c(self, register):
+        # try up to 3 times on a failure
+        success = False
+        caught_exception = None
+        for _ in range(3):
+            try:
+                value = self.bus.read_byte_data(self.address, register)
+                # if we get here, we succeeded, so break out of the loop
+                success = True
+                return value
+                # break
+            except IOError as e:
+                log.warning("{}".format(e))
+                # wait a second for the retry
+                time.sleep(0.01)
+
+        if not success:
+            log.error("Failed write to i2c bus after 3 retries!")
 
     def ensureSet(self, args, message='', all=True):
         for name in args:
@@ -145,8 +165,6 @@ class md25:
                 return self.bus.read_byte_data(self.address, MD25_REGISTER_GET_CURRENT_1)
             except IOError:
                 log.warning("CAUGHT: IOError 'get_current_motor_1'")
-        else:
-            log.error("Problem while reading the current from motor1!")
 
     def get_current_motor_2(self):
         if self.bus:
@@ -155,8 +173,6 @@ class md25:
 
             except IOError:
                 log.warning("CAUGHT: IOError 'get_current_motor_2'")
-        else:
-            log.error("Problem while reading the current from motor2!")
 
     def get_speed_motor_1(self):
         if self.bus:
@@ -165,8 +181,6 @@ class md25:
 
             except IOError:
                 log.warning("CAUGHT: IOError 'get_speed_motor_1'")
-        else:
-            log.error("Problem while reading the current from get_speed_motor_1!")
 
     def get_speed_motor_2(self):
         if self.bus:
@@ -175,48 +189,52 @@ class md25:
 
             except IOError:
                 log.warning("CAUGHT: IOError 'get_speed_motor_2'")
-        else:
-            log.error("Problem while reading the current from get_speed_motor_2!")
 
     def read_encoder1(self):
         if self.bus:
             totalEncoder = 0
-            try:
-                e1 = self.bus.read_byte_data(self.address, MD25_REGISTER_ENC1A)
-                e2 = self.bus.read_byte_data(self.address, MD25_REGISTER_ENC1B)
-                e3 = self.bus.read_byte_data(self.address, MD25_REGISTER_ENC1C)
-                e4 = self.bus.read_byte_data(self.address, MD25_REGISTER_ENC1D)
-
-                # Return an array of encoder values
-                # return [e1, e2, e3, e4]
-                totalEncoder = e4 + (255 * e3) + (65025 * e2) + (16581375 * e1)
-            except IOError:
-                log.warning("CAUGHT: IOError 'read_encoder1'")
-                self.read_encoder1()
+            # try:
+            # e1 = self.bus.read_byte_data(self.address, MD25_REGISTER_ENC1A)
+            # e2 = self.bus.read_byte_data(self.address, MD25_REGISTER_ENC1B)
+            # e3 = self.bus.read_byte_data(self.address, MD25_REGISTER_ENC1C)
+            # e4 = self.bus.read_byte_data(self.address, MD25_REGISTER_ENC1D)
+            e1 = self.read_i2c(MD25_REGISTER_ENC1A)
+            e2 = self.read_i2c(MD25_REGISTER_ENC1B)
+            e3 = self.read_i2c(MD25_REGISTER_ENC1C)
+            e4 = self.read_i2c(MD25_REGISTER_ENC1D)
+            # Return an array of encoder values
+            # return [e1, e2, e3, e4]
+            totalEncoder = e4 + (255 * e3) + (65025 * e2) + (16581375 * e1)
+            # except IOError:
+            #     log.warning("CAUGHT: IOError 'read_encoder1'")
+            #     self.read_encoder1()
 
             return totalEncoder
-        else:
-            return "Error while reading encoder for motor 1"
 
     def read_encoder2(self):
         if self.bus:
             totalEncoder = 0
-            try:
-                e1 = self.bus.read_byte_data(self.address, MD25_REGISTER_ENC2A)
-                e2 = self.bus.read_byte_data(self.address, MD25_REGISTER_ENC2B)
-                e3 = self.bus.read_byte_data(self.address, MD25_REGISTER_ENC2C)
-                e4 = self.bus.read_byte_data(self.address, MD25_REGISTER_ENC2D)
+            # try:
+            # e1 = self.bus.read_byte_data(self.address, MD25_REGISTER_ENC2A)
+            # e2 = self.bus.read_byte_data(self.address, MD25_REGISTER_ENC2B)
+            # e3 = self.bus.read_byte_data(self.address, MD25_REGISTER_ENC2C)
+            # e4 = self.bus.read_byte_data(self.address, MD25_REGISTER_ENC2D)
+            e1 = self.read_i2c(MD25_REGISTER_ENC2A)
+            e2 = self.read_i2c(MD25_REGISTER_ENC2B)
+            e3 = self.read_i2c(MD25_REGISTER_ENC2C)
+            e4 = self.read_i2c(MD25_REGISTER_ENC2D)
+            # Return an array of encoder values
+            temp = [e1, e2, e3, e4]
+            for i in temp:
+                if i > 10000:
+                    print (i)
 
-                # Return an array of encoder values
-                # return [e1, e2, e3, e4]
-                totalEncoder = e4 + (255 * e3) + (65025 * e2) + (16581375 * e1)
-            except IOError:
-                log.warning("CAUGHT: IOError 'read_encoder2'")
-                self.read_encoder2()
+            totalEncoder = e4 + (255 * e3) + (65025 * e2) + (16581375 * e1)
+            # except IOError:
+            #     log.warning("CAUGHT: IOError 'read_encoder2'")
+            #     self.read_encoder2()
 
             return totalEncoder
-        else:
-            return "Error while reading encoder for motor 1"
 
     def send_command(self, command):
         try:
@@ -235,9 +253,6 @@ class md25:
             except IOError:
                 log.warning("CAUGHT: IOError 'Encoders are reset'")
                 self.reset_encoders()
-
-        else:
-            log.error("Could not reset encoders")
 
     def disable_auto_speed_reg(self):
         if self.bus:
@@ -276,9 +291,10 @@ class Driving:
         self.encoderMaxValue = config.robotSettings['encoderMaxValue']
         self.robotType = config.robotSettings['robotType']
         self.speed_interval = 0.06
-        self.min_deceleration_speed = 2
+        self.min_deceleration_speed = 1
         self.rest_after_drive = 1
-
+        self.deceleration_offset = 9
+        self.encoder_valid_value = 50
         # self.acceleration = 2
         # self.changeAcc(self.acceleration)
 
@@ -373,12 +389,10 @@ class Driving:
             return 0
 
     def deceleration_control(self, speed, step=1):
-
         if time.time() >= self.when and speed > self.min_deceleration_speed:
             self.when = time.time() + self.speed_interval
             speed -= step
-            # print("speed: {}".format(speed))
-
+            # print("Speed: {}".format(speed))
         return speed
 
     def getDecelerationDistance(self, distance, speed, offset=10):
@@ -391,11 +405,18 @@ class Driving:
         """
         # f value indicates any possible skirt on the surface
         f = 0.9
-        return (distance - math.pow(speed, 2) / (250 * f)) - offset
 
-    def driveRobot(self, distance, speed, sensors):
+        distance = (distance - math.pow(speed, 2) / (250 * f)) - offset
+
+        if distance <= 1:
+            distance = (distance - math.pow(speed, 2) / (250 * f))
+
+        return distance
+
+    def driveRobot(self, distance, speed, sensors, deceleration_offset=5):
         """
         This function drives a robot forward. By adjusting values such as: speed and distance can control a robot.
+        :param deceleration_offset:
         :param distance:
         :param speed:
         :param sensors:
@@ -405,16 +426,13 @@ class Driving:
 
         self.mainRobot.reset_encoders()
 
-        deceleration_threshold = self.getDecelerationDistance(distance, speed, 10)
+        deceleration_threshold = self.getDecelerationDistance(distance, speed, deceleration_offset)
 
         log.info("Drive forward distance: {} | speed: {} | start deceleration at: {}".format(distance, speed, deceleration_threshold))
 
         obstacleClear = True
 
         encoderDestination = distance / self.oneEncMM
-
-        encoder1Reading = self.mainRobot.read_encoder1()
-        encoder2Reading = self.mainRobot.read_encoder2()
 
         motor1Drive = True
         motor2Drive = True
@@ -431,6 +449,9 @@ class Driving:
                 self.mainRobot.stop2()
 
             else:
+                encoder1Reading = self.mainRobot.read_encoder1()
+                encoder2Reading = self.mainRobot.read_encoder2()
+
                 obstacleClear = True
 
                 encodersAvg = int((encoder1Reading + encoder2Reading) / 2.0)
@@ -451,23 +472,27 @@ class Driving:
                 # travelledDistance = self.travelledDistance(distance, currentTravelDistance)
                 # print("Travelled distance: {}".format(travelledDistance))
                 # print("Speed {}".format(currentTravelDistance / (time.time() - start_driving_time)))
+
+                # Error correction
+
                 error = encoder1Reading - encoder2Reading
 
                 speed1 = speed
                 speed2 = speed
 
                 # Using master and slave solution;
-                if error < 0:
+                if error == 0:
+                    speed1 = speed
+                    speed2 = speed
+
+                elif error < 0 and not speed == self.min_deceleration_speed:
                     speed1 += 1
-                    print("Error {} speed1: {}".format(error, speed1))
 
-                elif error > 0:
+                elif error > 0 and not speed == self.min_deceleration_speed:
                     speed1 -= 1
-                    print("Error {} speed1: {}".format(error, speed1))
 
-                encoder1Reading = self.mainRobot.read_encoder1()
-                encoder2Reading = self.mainRobot.read_encoder2()
-
+                # Drive until the encoder reaches its destination
+                # Driving is split into two motors hence they are more accurate
                 if encoder1Reading >= encoderDestination:
                     self.mainRobot.stop1()
                     motor1Drive = False
@@ -487,9 +512,9 @@ class Driving:
                 sleep(self.rest_after_drive)
                 break
 
-    def turnRobot(self, degrees, speed, direction=True, smallRobotSensors=[]):
+    def turnRobot(self, degrees, speed, direction=True, smallRobotSensors=[], deceleration_offset=5):
         """
-        This function turns a robot. Depending on the argument 'clockwise', a robot can turn right or left
+        This function turns a robot. Depending on the argument 'direction', a robot can turn right or left
         :param degrees:
         :param speed:
         :param direction:
@@ -498,11 +523,12 @@ class Driving:
         """
         self.mainRobot.reset_encoders()
 
-        self.speed = speed
-
         oneWheelDistance = (self.circumferenceOfCircle / 360) * degrees
 
-        deceleration_threshold = self.getDecelerationDistance(oneWheelDistance, speed, 10)
+        deceleration_threshold = self.getDecelerationDistance(oneWheelDistance, speed, deceleration_offset)
+
+        encoder1_reading_buffer = 0
+        encoder2_reading_buffer = 0
 
         if direction:
             log.debug("Turn robot right: {} degrees | speed: {} | start deceleration at: {}".format(degrees, speed, deceleration_threshold))
@@ -514,9 +540,6 @@ class Driving:
             encoder1Destination = self.encoderMaxValue - (oneWheelDistance / self.oneEncMM)
             encoder2Destination = oneWheelDistance / self.oneEncMM
 
-        encoder1Reading = self.mainRobot.read_encoder1()
-        encoder2Reading = self.mainRobot.read_encoder2()
-
         obstacleClear = True
 
         motor1Drive = True
@@ -524,8 +547,31 @@ class Driving:
 
         init_time = False
 
+        motor1_speed = 0
+        motor2_speed = 0
+
         if direction:
+
+            # encoder1_reading_buffer = self.encoderMaxValue
+
             while True:
+
+                # Read sensors and filter incorrect values
+                encoder1Reading = self.mainRobot.read_encoder1()
+                encoder2Reading = self.mainRobot.read_encoder2()
+
+                if (encoder1Reading - encoder1_reading_buffer) > self.encoder_valid_value:
+                    encoder1Reading = encoder1_reading_buffer
+
+                else:
+                    encoder1_reading_buffer = encoder1Reading
+
+                #     encoder1Reading = self.mainRobot.read_encoder1()
+                #     encoder1_reading_buffer = encoder1Reading
+                #
+                # if (encoder2Reading - encoder2_reading_buffer) > self.encoder_valid_value:
+                #     encoder2Reading = self.mainRobot.read_encoder2()
+                #     encoder2_reading_buffer = self.mainRobot.read_encoder2()
 
                 if self.checkForObstacle(smallRobotSensors, obstacleClear):
 
@@ -552,25 +598,32 @@ class Driving:
                             init_time = True
                             speed = self.deceleration_control(speed)
                         else:
-
+                            
                             speed = self.deceleration_control(speed)
 
-                    encoder1Reading = self.mainRobot.read_encoder1()
-                    encoder2Reading = self.mainRobot.read_encoder2()
+                    # print ("Encoder1: {} Encoder2: {}".format(encoder1Reading,encoder2Reading))
+
+                    # print("Dist: {}".format(currentTravelDistance))
+
+                    # print("Diff: {}".format((encoder1Destination - encoder1Reading) - round(abs(encoder2Destination - encoder2Reading)), 2))
 
                     if encoder1Reading <= encoder1Destination or encoder1Reading == 0 or encoder2Reading == 0:
-                        self.mainRobot.drive(speed, 0)
+                        motor1_speed = speed
 
                     else:
+                        motor1_speed = 0
                         self.mainRobot.stop1()
                         motor1Drive = False
 
                     if encoder2Reading >= encoder2Destination or encoder1Reading == 0 or encoder2Reading == 0:
-                        self.mainRobot.drive(0, -speed)
+                        motor2_speed = -speed
 
                     else:
+                        motor2_speed = 0
                         self.mainRobot.stop2()
                         motor2Drive = False
+
+                    self.mainRobot.drive(motor1_speed, motor2_speed)
 
                 if not motor1Drive and not motor2Drive:
                     log.info("Finished turning right")
@@ -578,8 +631,22 @@ class Driving:
                     break
 
         else:
+            # encoder2_reading_buffer = self.encoderMaxValue
 
             while True:
+                # Read sensors and filter incorrect values
+                encoder1Reading = self.mainRobot.read_encoder1()
+                encoder2Reading = self.mainRobot.read_encoder2()
+
+                # if (encoder1Reading - encoder1_reading_buffer) > self.encoder_valid_value:
+                #     print (encoder1_reading_buffer)
+                #     encoder1Reading = self.mainRobot.read_encoder1()
+                #     encoder1_reading_buffer = encoder1Reading
+                #
+                # if (encoder2Reading - encoder2_reading_buffer) > self.encoder_valid_value:
+                #     encoder2Reading = self.mainRobot.read_encoder2()
+                #     print (encoder2_reading_buffer)
+                #     encoder2_reading_buffer = self.mainRobot.read_encoder2()
 
                 if self.checkForObstacle(smallRobotSensors, obstacleClear):
 
@@ -610,22 +677,23 @@ class Driving:
                         else:
                             speed = self.deceleration_control(speed)
 
-                    encoder1Reading = self.mainRobot.read_encoder1()
-                    encoder2Reading = self.mainRobot.read_encoder2()
-
                     if encoder1Reading >= encoder1Destination or encoder1Reading == 0 or encoder2Reading == 0:
-                        self.mainRobot.drive(-speed, 0)
+                        motor1_speed = speed
 
                     else:
+                        motor1_speed = 0
                         self.mainRobot.stop1()
                         motor1Drive = False
 
                     if encoder2Reading <= encoder2Destination or encoder1Reading == 0 or encoder2Reading == 0:
-                        self.mainRobot.drive(0, speed)
+                        motor2_speed = -speed
 
                     else:
+                        motor2_speed = 0
                         self.mainRobot.stop2()
                         motor2Drive = False
+
+                    self.mainRobot.drive(motor1_speed, motor2_speed)
 
                 if not motor1Drive and not motor2Drive:
                     log.info("Finished turning left")
@@ -701,8 +769,10 @@ class Driving:
 
             for sensor in sensors:
                 printVals = printVals + "Sensor: {} value: {}  |  \n".format(sensor.position, sensor.getSensorValue())
+                # sleep(0.1)
 
             print(printVals)
+
 
         else:
             print("Finish sensor test!")
