@@ -276,9 +276,9 @@ class Driving:
         self.encoderMaxValue = config.robotSettings['encoderMaxValue']
         self.robotType = config.robotSettings['robotType']
         self.speed_interval = 0.06
-        self.min_deceleration_speed = 2
+        self.min_deceleration_speed = 1
         self.rest_after_drive = 1
-
+        self.deceleration_offset = 12
         # self.acceleration = 2
         # self.changeAcc(self.acceleration)
 
@@ -405,16 +405,13 @@ class Driving:
 
         self.mainRobot.reset_encoders()
 
-        deceleration_threshold = self.getDecelerationDistance(distance, speed, 10)
+        deceleration_threshold = self.getDecelerationDistance(distance, speed, self.deceleration_offset)
 
         log.info("Drive forward distance: {} | speed: {} | start deceleration at: {}".format(distance, speed, deceleration_threshold))
 
         obstacleClear = True
 
         encoderDestination = distance / self.oneEncMM
-
-        encoder1Reading = self.mainRobot.read_encoder1()
-        encoder2Reading = self.mainRobot.read_encoder2()
 
         motor1Drive = True
         motor2Drive = True
@@ -431,6 +428,9 @@ class Driving:
                 self.mainRobot.stop2()
 
             else:
+                encoder1Reading = self.mainRobot.read_encoder1()
+                encoder2Reading = self.mainRobot.read_encoder2()
+
                 obstacleClear = True
 
                 encodersAvg = int((encoder1Reading + encoder2Reading) / 2.0)
@@ -457,17 +457,18 @@ class Driving:
                 speed2 = speed
 
                 # Using master and slave solution;
-                if error < 0:
+                if error == 0:
+                    speed1 = speed
+                    speed2 = speed
+
+                elif error < 0 and not speed == self.min_deceleration_speed:
                     speed1 += 1
-                    print("Error {} speed1: {}".format(error, speed1))
 
-                elif error > 0:
+                elif error > 0 and not speed == self.min_deceleration_speed:
                     speed1 -= 1
-                    print("Error {} speed1: {}".format(error, speed1))
 
-                encoder1Reading = self.mainRobot.read_encoder1()
-                encoder2Reading = self.mainRobot.read_encoder2()
-
+                # Drive until the encoder reaches its destination
+                # Driving is split into two motors hence they are more accurate
                 if encoder1Reading >= encoderDestination:
                     self.mainRobot.stop1()
                     motor1Drive = False
@@ -489,7 +490,7 @@ class Driving:
 
     def turnRobot(self, degrees, speed, direction=True, smallRobotSensors=[]):
         """
-        This function turns a robot. Depending on the argument 'clockwise', a robot can turn right or left
+        This function turns a robot. Depending on the argument 'direction', a robot can turn right or left
         :param degrees:
         :param speed:
         :param direction:
@@ -502,7 +503,7 @@ class Driving:
 
         oneWheelDistance = (self.circumferenceOfCircle / 360) * degrees
 
-        deceleration_threshold = self.getDecelerationDistance(oneWheelDistance, speed, 10)
+        deceleration_threshold = self.getDecelerationDistance(oneWheelDistance, speed, self.deceleration_offset)
 
         if direction:
             log.debug("Turn robot right: {} degrees | speed: {} | start deceleration at: {}".format(degrees, speed, deceleration_threshold))
